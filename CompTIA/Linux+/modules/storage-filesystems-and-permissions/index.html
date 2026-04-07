@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CompTIA Linux+ XK0-006 — Module VIII: Storage, Filesystems and Permissions</title>
+  <meta name="description" content="Linux+ module VIII: Storage, Filesystems and Permissions" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/styles.css" />
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">L+</div>
+      <div class="brand-copy">
+        <h1>CompTIA Linux+</h1>
+        <div class="sub">XK0-006 Study Guide</div>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-kicker">Module VIII</div>
+    <h2>Storage, Filesystems and Permissions</h2>
+    <p>Partitioning, lvm, mount persistence, acls, and ownership.</p>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../index.html">Home</a><a class="btn" href="../../quizzes/storage-filesystems-and-permissions-quiz/index.html">Quiz</a><a class="btn" href="../users-groups-and-account-security/index.html">← Module VII</a><a class="btn" href="../hardware-drivers-and-kernel-views/index.html">Module IX →</a></div></div>
+      <div class="sidebar-section"><div class="sidebar-label">On this page</div><div class="section-nav"><a class="section-link" href="#s1">Storage layout</a><a class="section-link" href="#s2">Filesystems and mounts</a><a class="section-link" href="#s3">Permissions and ACLs</a></div></div>
+    </aside>
+    <section class="content-wrap"><div class="content"><h2>Storage, Filesystems and Permissions</h2><p>Partitioning, lvm, mount persistence, acls, and ownership.</p><section id="s1"><h3>Storage layout</h3><ul><li>Linux storage combines partitions, logical volumes, filesystems, and mount points.</li><li>GPT supports larger disks and more flexible layouts than classic MBR.</li><li>LVM adds flexibility for resizing and storage lifecycle management.</li></ul></section><section id="s2"><h3>Filesystems and mounts</h3><ul><li>Persistent mounts are commonly defined in /etc/fstab.</li><li>ext4 and XFS remain common Linux filesystem choices.</li><li>File system checks, formatting, and mount troubleshooting are routine admin tasks.</li></ul></section><section id="s3"><h3>Permissions and ACLs</h3><ul><li>Traditional rwx permissions work with ownership and groups.</li><li>ACLs allow more granular access when classic permission bits are not enough.</li><li>umask shapes the default permission bits removed from newly created files and directories.</li></ul></section><div class="summary"><div class="summary-label">Quick takeaway</div><p>Use this module to connect commands to operational intent. Linux+ rewards knowing which tool to reach for first and why.</p></div><div class="exam-tip"><div class="exam-tip-label">Exam note</div><p>Pair these notes with the module quiz, then revisit any weak areas before the cumulative midterm.</p></div></div></section>
+  </div>
+</main>
+<footer>
+  <span>CompTIA Linux+ · XK0-006</span>
+  <span id="year"></span>
+</footer>
+<script src="../../assets/theme.js"></script>
+</body>
+</html>
