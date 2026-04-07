@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CompTIA A+ 220-1201 — Connector Match Lab</title>
+  <meta name="description" content="Interactive drag-and-drop connector lab where students match common network cable ends to the correct ports." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/quiz.css" />
+  <style>
+    :root {
+      --lab-bg: #0b1f38;
+      --lab-bg-soft: #12325c;
+      --lab-panel: #09172a;
+      --lab-line: rgba(255,255,255,.09);
+      --lab-green: #8bf18b;
+      --lab-blue: #98c7ff;
+      --lab-red: #ff8b8b;
+      --lab-yellow: #ffd981;
+      --lab-amber: #ffbd59;
+    }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; }
+    main { width: 100%; }
+    .hero,
+    .wrap,
+    header .topbar,
+    footer {
+      width: min(1600px, calc(100vw - 20px)) !important;
+      max-width: none !important;
+      margin-inline: auto !important;
+    }
+    .hero p { max-width: 1120px; }
+    .panel { width: 100% !important; max-width: none !important; }
+    .lab-shell {
+      display: grid;
+      grid-template-columns: minmax(310px, 390px) minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .sidebar,
+    .board-panel {
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .sidebar {
+      padding: 20px;
+      min-height: 100%;
+    }
+    .sidebar-title,
+    .section-mini {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .scenario-list {
+      display: grid;
+      gap: 10px;
+    }
+    .scenario-btn {
+      width: 100%;
+      text-align: left;
+      padding: 14px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface) 92%, transparent);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .scenario-btn:hover,
+    .scenario-btn.active {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      background: color-mix(in oklab, var(--surface) 80%, transparent);
+    }
+    .scenario-name { display: block; font-weight: 600; margin-bottom: 6px; }
+    .scenario-meta { display: block; font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .progress-wrap { margin-top: 16px; }
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+    .progress-bar {
+      height: 10px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface) 88%, transparent);
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 40%, white));
+      transition: width .25s ease;
+    }
+    .sidebar-footer,
+    .instructions-box {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .board-panel { overflow: hidden; }
+    .lab-window {
+      background: linear-gradient(180deg, var(--lab-bg-soft), var(--lab-bg));
+      color: #f3f7ff;
+      min-height: clamp(780px, 84vh, 1060px);
+      display: flex;
+      flex-direction: column;
+    }
+    .lab-titlebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      background: rgba(0,0,0,.18);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 13px;
+    }
+    .terminal-actions { display: flex; gap: 8px; align-items: center; }
+    .terminal-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.35);
+    }
+    .scenario-header {
+      padding: 22px 24px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.14);
+    }
+    .scenario-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.66);
+      margin-bottom: 8px;
+    }
+    .scenario-question {
+      font-size: 24px;
+      line-height: 1.35;
+      margin: 0 0 10px;
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .scenario-helper {
+      color: rgba(255,255,255,.78);
+      line-height: 1.75;
+      font-size: 14px;
+      max-width: 1020px;
+    }
+    .board-body {
+      padding: 22px 24px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap: 24px;
+      align-items: start;
+      flex: 1;
+      min-height: 0;
+    }
+    .panel-shell {
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 18px;
+    }
+    .drop-grid,
+    .cable-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .port-card {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      min-height: 220px;
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 10px;
+      transition: border-color .2s ease, transform .2s ease, background .2s ease, box-shadow .2s ease;
+      position: relative;
+    }
+    .port-card.drop-hover {
+      border-color: color-mix(in oklab, var(--accent) 68%, white);
+      box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 26%, transparent), 0 0 22px rgba(152, 199, 255, .12);
+      transform: translateY(-1px);
+    }
+    .port-card.correct {
+      border-color: rgba(139,241,139,.6);
+      background: rgba(139,241,139,.08);
+    }
+    .port-card.error {
+      border-color: rgba(255,139,139,.65);
+      background: rgba(255,139,139,.08);
+      animation: shake .24s linear 1;
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-3px); }
+    }
+    .port-name { font-weight: 600; font-size: 17px; }
+    .port-sub { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.62); }
+    .port-desc { color: rgba(255,255,255,.76); font-size: 13px; line-height: 1.6; }
+    .matched-tag {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--lab-green);
+      border: 1px solid rgba(139,241,139,.35);
+      padding: 6px 10px;
+      background: rgba(139,241,139,.08);
+    }
+    .port-graphic,
+    .cable-graphic {
+      display: grid;
+      place-items: center;
+      min-height: 84px;
+    }
+    .port-graphic svg,
+    .cable-graphic svg {
+      width: min(180px, 100%);
+      height: auto;
+      display: block;
+    }
+    .cable-card {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      min-height: 182px;
+      cursor: grab;
+      transition: border-color .18s ease, transform .18s ease, background .18s ease, opacity .18s ease;
+      user-select: none;
+    }
+    .cable-card:hover,
+    .cable-card.selected {
+      border-color: color-mix(in oklab, var(--accent) 70%, white);
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.08);
+    }
+    .cable-card.matched {
+      opacity: .35;
+      cursor: default;
+      pointer-events: none;
+      transform: none;
+    }
+    .cable-name { font-weight: 600; font-size: 16px; }
+    .cable-desc { color: rgba(255,255,255,.76); font-size: 13px; line-height: 1.6; }
+    .status-panel {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+    .status-box {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
+      padding: 16px;
+    }
+    .status-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.62);
+      margin-bottom: 10px;
+    }
+    .status-message {
+      min-height: 72px;
+      line-height: 1.75;
+      color: rgba(255,255,255,.9);
+    }
+    .detail-card {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      padding: 14px;
+      line-height: 1.7;
+    }
+    .detail-title { font-weight: 600; margin-bottom: 6px; }
+    .control-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .lab-btn {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: background .15s ease, transform .15s ease, border-color .15s ease;
+    }
+    .lab-btn:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.24);
+      transform: translateY(-1px);
+    }
+    .lab-btn.primary {
+      background: color-mix(in oklab, var(--accent) 26%, #ffffff 6%);
+      border-color: color-mix(in oklab, var(--accent) 48%, white);
+    }
+    .lab-btn.primary:hover {
+      background: color-mix(in oklab, var(--accent) 34%, #ffffff 8%);
+    }
+    .small-note { color: rgba(255,255,255,.62); font-size: 12px; line-height: 1.6; }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .status-pill {
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 6px 10px;
+      background: rgba(255,255,255,.05);
+      font-size: 12px;
+    }
+    .port-zone[data-selected="true"] {
+      outline: 2px solid rgba(152,199,255,.22);
+      outline-offset: 3px;
+    }
+    @media (max-width: 1320px) {
+      .hero,
+      .wrap,
+      header .topbar,
+      footer {
+        width: min(100%, calc(100vw - 20px)) !important;
+      }
+      .lab-shell,
+      .board-body {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 820px) {
+      .drop-grid,
+      .cable-grid {
+        grid-template-columns: 1fr;
+      }
+      .lab-window {
+        min-height: 700px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">CompTIA A+ · Connector Match Lab</div>
+    <div class="controls">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-10V2m0 20v-4M4.22 4.22l2.83 2.83m9.9 9.9 2.83 2.83M2 12h4m16 0h-4M4.22 19.78l2.83-2.83m9.9-9.9 2.83-2.83"/></svg>
+      </button>
+      <a class="btn" href="./index.html">Back to Exams</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-kicker">Interactive Lab</div>
+    <h1>Drag-and-Drop Connector Match Practice</h1>
+    <p>Students can drag a cable end onto the correct wall jack or device port, or tap a cable first and then tap a port. The cards use visual recognition first, without connector names on the board, and correct matches reveal short identification notes afterward.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="section-label"><span>Connector Lab</span><div class="section-rule"></div></div>
+
+    <article class="panel" style="padding:18px;">
+      <div class="lab-shell">
+        <aside class="sidebar">
+          <div class="sidebar-title">Scenario Tracks</div>
+          <div class="scenario-list" id="scenarioList"></div>
+
+          <div class="progress-wrap">
+            <div class="progress-top">
+              <span>Overall progress</span>
+              <span id="overallProgressLabel">0%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="overallProgressFill"></div></div>
+          </div>
+
+          <div class="instructions-box">
+            Drag a cable onto a port, or click a cable and then click the matching port. This lab is designed to feel tactile on desktop while still working on touch devices.
+          </div>
+
+          <div class="sidebar-footer">
+            Included connector families: common copper data, legacy voice, coaxial broadband, and fiber optic links. Each scenario resets independently so students can replay the practice set as often as needed.
+          </div>
+        </aside>
+
+        <section class="board-panel">
+          <div class="lab-window">
+            <div class="lab-titlebar">
+              <span id="labWindowTitle">Connector Lab — Student Match Board</span>
+              <div class="terminal-actions">
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+              </div>
+            </div>
+
+            <div class="scenario-header">
+              <div class="scenario-kicker" id="scenarioKicker">Scenario 1</div>
+              <h2 class="scenario-question" id="scenarioQuestion">Loading scenario...</h2>
+              <div class="scenario-helper" id="scenarioHelper"></div>
+              <div class="chip-row">
+                <div class="status-pill" id="scenarioStatus">0 of 0 matched</div>
+                <div class="status-pill" id="selectedCableStatus">No cable selected</div>
+              </div>
+            </div>
+
+            <div class="board-body">
+              <div class="status-panel">
+                <div class="panel-shell">
+                  <div class="section-mini">Match the ports</div>
+                  <div class="drop-grid" id="portGrid"></div>
+                </div>
+
+                <div class="panel-shell">
+                  <div class="section-mini">Available cable ends</div>
+                  <div class="cable-grid" id="cableGrid"></div>
+                </div>
+              </div>
+
+              <div class="status-panel">
+                <div class="status-box">
+                  <div class="status-label">Status</div>
+                  <div class="status-message" id="statusMessage">Choose a scenario to begin. When a connector is selected, matching ports will accept a click or drop.</div>
+                  <div class="control-row">
+                    <button class="lab-btn primary" type="button" id="hintBtn">Show Hint</button>
+                    <button class="lab-btn" type="button" id="resetBtn">Reset Scenario</button>
+                    <button class="lab-btn" type="button" id="nextBtn">Next Scenario</button>
+                  </div>
+                  <div class="small-note" style="margin-top:12px;">Tip: on tablets or touchscreens, tap a cable card first, then tap the port you want to connect.</div>
+                </div>
+
+                <div class="status-box">
+                  <div class="status-label">Matched connector notes</div>
+                  <div id="matchedDetails">
+                    <div class="detail-card">
+                      <div class="detail-title">No matches yet</div>
+                      <div>Correct matches will appear here with quick reminders about what each connector is typically used for.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <span>CompTIA A+ 220-1201</span>
+  <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const themeBtn = document.getElementById("themeBtn");
+  const saved = localStorage.getItem("kb_theme");
+  if (saved === "light" || saved === "dark") {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+  themeBtn.addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") || "dark";
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("kb_theme", next);
+  });
+
+  const SCENARIOS = [
+    {
+      id: "wall-plate",
+      title: "Wall Plate Basics",
+      blurb: "Match the cable ends to the correct classroom wall ports.",
+      helper: "This round is visual-first. Connector names are hidden on the board, so students identify each match mainly by the plug and port shape.",
+      ports: [
+        {
+          id: "eth-wall",
+          type: "ethernet",
+          name: "Port 1",
+          sub: "Classroom data drop",
+          desc: "Common wall jack used for a wired workstation, printer, switch uplink, or VoIP handset.",
+          note: "This is an Ethernet network jack, commonly called RJ45 or 8P8C. It has eight contacts and accepts a standard Ethernet patch cable."
+        },
+        {
+          id: "phone-wall",
+          type: "phone",
+          name: "Port 2",
+          sub: "Legacy voice line",
+          desc: "Smaller wall jack used for analog voice service, fax equipment, or other traditional phone-line devices.",
+          note: "This is a telephone-style jack, commonly called RJ11. It is narrower than Ethernet and typically shows four visible contacts in this lab."
+        },
+        {
+          id: "coax-wall",
+          type: "coax",
+          name: "Port 3",
+          sub: "Broadband wall feed",
+          desc: "Threaded wall connector used for a cable modem feed, cable TV run, or similar broadband drop.",
+          note: "This is a coaxial F-type connector. The round threaded shell and single center conductor make it easy to distinguish from modular copper plugs."
+        },
+        {
+          id: "fiber-wall",
+          type: "fiber",
+          name: "Port 4",
+          sub: "Optical uplink",
+          desc: "Optical wall coupler used where a fiber patch cable is needed instead of copper cabling.",
+          note: "This is a duplex fiber coupler using an LC-style shape in the lab art. Fiber connectors carry light, not an electrical copper signal."
+        }
+      ],
+      cables: [
+        {
+          id: "c1",
+          type: "fiber",
+          name: "Cable End A",
+          desc: "Paired optical connector with a distinct duplex shape for an uplink or backbone run."
+        },
+        {
+          id: "c2",
+          type: "ethernet",
+          name: "Cable End B",
+          desc: "Larger modular copper plug with eight visible contact pins."
+        },
+        {
+          id: "c3",
+          type: "coax",
+          name: "Cable End C",
+          desc: "Round threaded connector with a center conductor for broadband service."
+        },
+        {
+          id: "c4",
+          type: "phone",
+          name: "Cable End D",
+          desc: "Smaller modular plug used on a voice line or legacy phone circuit."
+        }
+      ]
+    },
+    {
+      id: "device-bay",
+      title: "Device Connection Bay",
+      blurb: "Match the right cable to the right device-side port.",
+      helper: "Use the physical connector shape first, then the device role as a backup clue. This round still avoids giving the connector names directly on the board.",
+      ports: [
+        {
+          id: "eth-switch",
+          type: "ethernet",
+          name: "Port A",
+          sub: "Switch access port",
+          desc: "Standard copper access port on a small switch or patch panel.",
+          note: "This device-side port takes the same Ethernet patch plug used on a wall network jack."
+        },
+        {
+          id: "phone-device",
+          type: "phone",
+          name: "Port B",
+          sub: "Analog desk line",
+          desc: "Small modular port used for a plain old telephone line or fax connection.",
+          note: "The smaller telephone plug fits here, not the larger Ethernet plug."
+        },
+        {
+          id: "coax-modem",
+          type: "coax",
+          name: "Port C",
+          sub: "Cable modem feed",
+          desc: "Threaded connector where the incoming broadband signal is attached.",
+          note: "Cable internet equipment often takes in coax first, then hands off Ethernet to the local network."
+        },
+        {
+          id: "fiber-panel",
+          type: "fiber",
+          name: "Port D",
+          sub: "Patch panel uplink",
+          desc: "Duplex optical coupler used in a network closet or fiber tray.",
+          note: "Fiber patch panels are common for high-speed uplinks and longer-distance runs."
+        }
+      ],
+      cables: [
+        {
+          id: "c5",
+          type: "coax",
+          name: "Connector 1",
+          desc: "Threaded broadband cable end used for a cable modem or wall feed."
+        },
+        {
+          id: "c6",
+          type: "phone",
+          name: "Connector 2",
+          desc: "Small modular plug intended for a voice or fax line."
+        },
+        {
+          id: "c7",
+          type: "fiber",
+          name: "Connector 3",
+          desc: "Optical duplex end used for a high-speed fiber link."
+        },
+        {
+          id: "c8",
+          type: "ethernet",
+          name: "Connector 4",
+          desc: "Copper network plug used between a switch, a wall jack, and a workstation."
+        }
+      ]
+    },
+    {
+      id: "mixed-check",
+      title: "Quick Connector Check",
+      blurb: "A final mixed round for rapid visual recognition.",
+      helper: "This is the fastest review round. Use the connector shape and the short device clue together, but no direct connector names are shown on the board.",
+      ports: [
+        {
+          id: "eth-lab",
+          type: "ethernet",
+          name: "Drop 1",
+          sub: "Lab workstation",
+          desc: "This port needs a normal wired copper data connection to the LAN.",
+          note: "Choose the Ethernet patch connector for a standard workstation network connection."
+        },
+        {
+          id: "coax-lab",
+          type: "coax",
+          name: "Drop 2",
+          sub: "Provider feed",
+          desc: "This connection comes in from a cable provider or broadband wall feed.",
+          note: "Coax is easy to spot by the round threaded connector body and central conductor."
+        },
+        {
+          id: "phone-lab",
+          type: "phone",
+          name: "Drop 3",
+          sub: "Voice service",
+          desc: "This smaller modular jack is intended for traditional telephone service.",
+          note: "Telephone connectors are narrower than Ethernet plugs and fit the smaller jack."
+        },
+        {
+          id: "fiber-lab",
+          type: "fiber",
+          name: "Drop 4",
+          sub: "Backbone link",
+          desc: "Use the optical cable for the high-speed uplink or backbone connection.",
+          note: "Fiber connectors are used where the link is optical instead of copper-based."
+        }
+      ],
+      cables: [
+        { id: "c9", type: "phone", name: "Piece A", desc: "Small modular voice-line plug." },
+        { id: "c10", type: "fiber", name: "Piece B", desc: "Optical duplex connector for a fiber link." },
+        { id: "c11", type: "ethernet", name: "Piece C", desc: "Larger modular copper network connector with eight contacts." },
+        { id: "c12", type: "coax", name: "Piece D", desc: "Threaded broadband connector with a single center conductor." }
+      ]
+    }
+  ];
+
+  const scenarioList = document.getElementById("scenarioList");
+  const portGrid = document.getElementById("portGrid");
+  const cableGrid = document.getElementById("cableGrid");
+  const scenarioKicker = document.getElementById("scenarioKicker");
+  const scenarioQuestion = document.getElementById("scenarioQuestion");
+  const scenarioHelper = document.getElementById("scenarioHelper");
+  const scenarioStatus = document.getElementById("scenarioStatus");
+  const selectedCableStatus = document.getElementById("selectedCableStatus");
+  const statusMessage = document.getElementById("statusMessage");
+  const matchedDetails = document.getElementById("matchedDetails");
+  const overallProgressLabel = document.getElementById("overallProgressLabel");
+  const overallProgressFill = document.getElementById("overallProgressFill");
+  const hintBtn = document.getElementById("hintBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const state = {
+    currentScenarioIndex: 0,
+    selectedCableId: null,
+    scenarios: SCENARIOS.map(s => ({ matched: {}, completed: false }))
+  };
+
+  function getPortSvg(type) {
+    const svgs = {
+      ethernet: `<svg viewBox="0 0 220 110" aria-hidden="true"><rect x="24" y="18" width="172" height="74" rx="12" fill="#d8dee8" opacity=".22"/><rect x="56" y="28" width="108" height="56" rx="8" fill="#0f172a" stroke="#9fb3cb" stroke-width="4"/><rect x="73" y="40" width="74" height="18" rx="4" fill="#1e293b"/><path d="M93 60h34v10H93z" fill="#334155"/><path d="M77 34h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6z" fill="#ffd166"/></svg>`,
+      phone: `<svg viewBox="0 0 220 110" aria-hidden="true"><rect x="30" y="24" width="160" height="62" rx="12" fill="#d8dee8" opacity=".2"/><rect x="70" y="30" width="80" height="50" rx="8" fill="#0f172a" stroke="#9fb3cb" stroke-width="4"/><rect x="82" y="40" width="56" height="16" rx="4" fill="#1e293b"/><path d="M90 34h7v9h-7zm9 0h7v9h-7zm9 0h7v9h-7zm9 0h7v9h-7z" fill="#ffd166"/><path d="M96 56h28v8H96z" fill="#334155"/></svg>`,
+      coax: `<svg viewBox="0 0 220 110" aria-hidden="true"><rect x="28" y="20" width="164" height="70" rx="12" fill="#d8dee8" opacity=".18"/><circle cx="110" cy="55" r="28" fill="#0f172a" stroke="#cdd9ea" stroke-width="5"/><circle cx="110" cy="55" r="16" fill="#64748b"/><circle cx="110" cy="55" r="6" fill="#ffd166"/></svg>`,
+      fiber: `<svg viewBox="0 0 220 110" aria-hidden="true"><rect x="20" y="18" width="180" height="74" rx="12" fill="#d8dee8" opacity=".16"/><rect x="64" y="34" width="34" height="40" rx="6" fill="#0f172a" stroke="#9fb3cb" stroke-width="4"/><rect x="122" y="34" width="34" height="40" rx="6" fill="#0f172a" stroke="#9fb3cb" stroke-width="4"/><rect x="72" y="28" width="18" height="10" rx="3" fill="#ffb347"/><rect x="130" y="28" width="18" height="10" rx="3" fill="#ffb347"/></svg>`
+    };
+    return svgs[type] || "";
+  }
+
+  function getCableSvg(type) {
+    const svgs = {
+      ethernet: `<svg viewBox="0 0 220 90" aria-hidden="true"><path d="M22 48h80" stroke="#67c3ec" stroke-width="10" stroke-linecap="round"/><rect x="102" y="35" width="14" height="20" rx="3" fill="#78b7cf"/><path d="M116 30h40v34c0 3.3-2.7 6-6 6h-28c-3.3 0-6-2.7-6-6V30z" fill="#8fd6fb" stroke="#dff7ff" stroke-width="3"/><path d="M126 24h18c3 0 5 2 5 5v4h-28v-4c0-3 2-5 5-5z" fill="#dbe7f2"/><path d="M121 34h4v10h-4zm6 0h4v10h-4zm6 0h4v10h-4zm6 0h4v10h-4zm12 0h4v10h-4zm-6 0h4v10h-4zm12 0h4v10h-4zm-48 0h4v10h-4" fill="#ffd166" opacity="0"/><path d="M122 34h4v10h-4zm6 0h4v10h-4zm6 0h4v10h-4zm6 0h4v10h-4zm24 0h4v10h-4zm-6 0h4v10h-4zm-12 0h4v10h-4zm-6 0h4v10h-4" fill="#ffd166"/><path d="M156 34h10v22h-10" fill="#7ed0f9" stroke="#dff7ff" stroke-width="3"/><path d="M166 38h8v14h-8" fill="#ecf8ff"/></svg>`,
+      phone: `<svg viewBox="0 0 220 90" aria-hidden="true"><path d="M22 48h86" stroke="#a2adbf" stroke-width="8" stroke-linecap="round"/><rect x="106" y="36" width="12" height="18" rx="3" fill="#c5cfdd"/><path d="M118 32h32v28c0 3.3-2.7 6-6 6h-20c-3.3 0-6-2.7-6-6V32z" fill="#edf2f8" stroke="#ffffff" stroke-width="2"/><path d="M126 26h16c2.5 0 4 1.5 4 4v3h-24v-3c0-2.5 1.5-4 4-4z" fill="#f8fafc"/><path d="M124 34h5v8h-5zm7 0h5v8h-5zm7 0h5v8h-5zm7 0h5v8h-5z" fill="#ffd166"/><path d="M150 36h7v18h-7" fill="#f8fafc"/></svg>`,
+      coax: `<svg viewBox="0 0 220 90" aria-hidden="true"><path d="M22 46h96" stroke="#8a96ab" stroke-width="10" stroke-linecap="round"/><rect x="118" y="34" width="28" height="24" rx="5" fill="#d3dae5"/><rect x="146" y="31" width="12" height="30" rx="4" fill="#bcc6d4"/><circle cx="170" cy="46" r="14" fill="#d3dae5" stroke="#ffffff" stroke-width="3"/><circle cx="170" cy="46" r="8" fill="#66758b"/><path d="M184 46h18" stroke="#8a96ab" stroke-width="4" stroke-linecap="round"/><circle cx="170" cy="46" r="2.5" fill="#ffd166"/></svg>`,
+      fiber: `<svg viewBox="0 0 220 90" aria-hidden="true"><path d="M22 38h80" stroke="#f97316" stroke-width="8" stroke-linecap="round"/><path d="M22 52h80" stroke="#fb923c" stroke-width="8" stroke-linecap="round"/><rect x="100" y="28" width="16" height="14" rx="3" fill="#f8c98c"/><rect x="100" y="48" width="16" height="14" rx="3" fill="#f1b56f"/><rect x="116" y="24" width="28" height="28" rx="5" fill="#fed7aa" stroke="#ffffff" stroke-width="2"/><rect x="116" y="44" width="28" height="22" rx="5" fill="#fdba74" stroke="#ffffff" stroke-width="2"/><rect x="150" y="24" width="28" height="28" rx="5" fill="#fed7aa" stroke="#ffffff" stroke-width="2"/><rect x="150" y="44" width="28" height="22" rx="5" fill="#fdba74" stroke="#ffffff" stroke-width="2"/><path d="M178 38h20" stroke="#f97316" stroke-width="6" stroke-linecap="round"/><path d="M178 52h20" stroke="#fb923c" stroke-width="6" stroke-linecap="round"/></svg>`
+    };
+    return svgs[type] || "";
+  }
+
+  function getCurrentScenario() {
+    return SCENARIOS[state.currentScenarioIndex];
+  }
+
+  function getScenarioProgress(index) {
+    const scenario = SCENARIOS[index];
+    const matched = Object.keys(state.scenarios[index].matched).length;
+    return { matched, total: scenario.ports.length };
+  }
+
+  function updateOverallProgress() {
+    const totalPorts = SCENARIOS.reduce((sum, s) => sum + s.ports.length, 0);
+    const matchedPorts = state.scenarios.reduce((sum, entry) => sum + Object.keys(entry.matched).length, 0);
+    const pct = totalPorts ? Math.round((matchedPorts / totalPorts) * 100) : 0;
+    overallProgressLabel.textContent = `${pct}%`;
+    overallProgressFill.style.width = `${pct}%`;
+  }
+
+  function renderScenarioButtons() {
+    scenarioList.innerHTML = SCENARIOS.map((scenario, index) => {
+      const progress = getScenarioProgress(index);
+      const active = index === state.currentScenarioIndex ? "active" : "";
+      const doneText = progress.matched === progress.total ? "completed" : `${progress.matched}/${progress.total} matched`;
+      return `
+        <button class="scenario-btn ${active}" type="button" data-index="${index}">
+          <span class="scenario-name">${scenario.title}</span>
+          <span class="scenario-meta">${scenario.blurb}<br>${doneText}</span>
+        </button>
+      `;
+    }).join("");
+
+    scenarioList.querySelectorAll(".scenario-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        state.currentScenarioIndex = Number(btn.dataset.index);
+        state.selectedCableId = null;
+        renderScenario();
+      });
+    });
+  }
+
+  function renderMatchedDetails() {
+    const scenario = getCurrentScenario();
+    const matched = state.scenarios[state.currentScenarioIndex].matched;
+    const entries = Object.entries(matched);
+    if (!entries.length) {
+      matchedDetails.innerHTML = `
+        <div class="detail-card">
+          <div class="detail-title">No matches yet</div>
+          <div>Correct matches will appear here with quick reminders about what each connector is typically used for.</div>
+        </div>
+      `;
+      return;
+    }
+
+    matchedDetails.innerHTML = entries.map(([portId, cableId]) => {
+      const port = scenario.ports.find(p => p.id === portId);
+      const cable = scenario.cables.find(c => c.id === cableId);
+      return `
+        <div class="detail-card">
+          <div class="detail-title">${cable.name} → ${port.name}</div>
+          <div>${port.note}</div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  function renderScenario() {
+    const scenario = getCurrentScenario();
+    const progress = getScenarioProgress(state.currentScenarioIndex);
+    const matched = state.scenarios[state.currentScenarioIndex].matched;
+
+    renderScenarioButtons();
+    updateOverallProgress();
+
+    scenarioKicker.textContent = `Scenario ${state.currentScenarioIndex + 1} of ${SCENARIOS.length}`;
+    scenarioQuestion.textContent = scenario.title;
+    scenarioHelper.textContent = scenario.helper;
+    scenarioStatus.textContent = `${progress.matched} of ${progress.total} matched`;
+    selectedCableStatus.textContent = state.selectedCableId ? `Selected: ${scenario.cables.find(c => c.id === state.selectedCableId)?.name || "cable"}` : "No cable selected";
+
+    portGrid.innerHTML = scenario.ports.map(port => {
+      const isMatched = Boolean(matched[port.id]);
+      const cable = isMatched ? scenario.cables.find(c => c.id === matched[port.id]) : null;
+      return `
+        <div class="port-card ${isMatched ? "correct" : ""}" data-port-id="${port.id}">
+          <div class="port-sub">${port.sub}</div>
+          <div class="port-name">${port.name}</div>
+          <div class="port-graphic port-zone" data-port-id="${port.id}" data-selected="${state.selectedCableId ? "true" : "false"}">${getPortSvg(port.type)}</div>
+          <div class="port-desc">${port.desc}</div>
+          ${isMatched ? `<div class="matched-tag">Connected · ${cable.name}</div>` : ""}
+        </div>
+      `;
+    }).join("");
+
+    cableGrid.innerHTML = scenario.cables.map(cable => {
+      const isMatched = Object.values(matched).includes(cable.id);
+      const selected = state.selectedCableId === cable.id;
+      return `
+        <div class="cable-card ${isMatched ? "matched" : ""} ${selected ? "selected" : ""}" draggable="${!isMatched}" data-cable-id="${cable.id}">
+          <div class="cable-name">${cable.name}</div>
+          <div class="cable-graphic">${getCableSvg(cable.type)}</div>
+          <div class="cable-desc">${cable.desc}</div>
+        </div>
+      `;
+    }).join("");
+
+    attachPortEvents();
+    attachCableEvents();
+    renderMatchedDetails();
+
+    if (progress.matched === progress.total) {
+      statusMessage.textContent = `Scenario complete. All ${progress.total} connectors are matched correctly.`;
+      state.scenarios[state.currentScenarioIndex].completed = true;
+    }
+  }
+
+  function attachCableEvents() {
+    cableGrid.querySelectorAll(".cable-card").forEach(card => {
+      if (card.classList.contains("matched")) return;
+
+      card.addEventListener("click", () => {
+        state.selectedCableId = card.dataset.cableId;
+        selectedCableStatus.textContent = `Selected: ${card.querySelector('.cable-name').textContent}`;
+        statusMessage.textContent = "Cable selected. Now click the matching port or drag the cable to it.";
+        renderScenario();
+      });
+
+      card.addEventListener("dragstart", event => {
+        state.selectedCableId = card.dataset.cableId;
+        event.dataTransfer.setData("text/plain", card.dataset.cableId);
+        event.dataTransfer.effectAllowed = "move";
+      });
+    });
+  }
+
+  function attachPortEvents() {
+    portGrid.querySelectorAll(".port-card").forEach(card => {
+      const portId = card.dataset.portId;
+      card.addEventListener("dragover", event => {
+        event.preventDefault();
+        card.classList.add("drop-hover");
+      });
+      card.addEventListener("dragleave", () => card.classList.remove("drop-hover"));
+      card.addEventListener("drop", event => {
+        event.preventDefault();
+        card.classList.remove("drop-hover");
+        const cableId = event.dataTransfer.getData("text/plain") || state.selectedCableId;
+        if (!cableId) return;
+        attemptMatch(cableId, portId);
+      });
+      card.addEventListener("click", () => {
+        if (!state.selectedCableId) {
+          statusMessage.textContent = "Select a cable first, then click the port you want to connect.";
+          return;
+        }
+        attemptMatch(state.selectedCableId, portId);
+      });
+    });
+  }
+
+  function flashPort(portId, className) {
+    const card = portGrid.querySelector(`[data-port-id="${portId}"]`);
+    if (!card) return;
+    card.classList.add(className);
+    setTimeout(() => card.classList.remove(className), 520);
+  }
+
+  function attemptMatch(cableId, portId) {
+    const scenario = getCurrentScenario();
+    const cable = scenario.cables.find(c => c.id === cableId);
+    const port = scenario.ports.find(p => p.id === portId);
+    const scenarioState = state.scenarios[state.currentScenarioIndex];
+
+    if (!cable || !port) return;
+    if (scenarioState.matched[portId]) {
+      statusMessage.textContent = `${port.name} is already connected.`;
+      return;
+    }
+    if (Object.values(scenarioState.matched).includes(cableId)) {
+      statusMessage.textContent = `${cable.name} is already in use.`;
+      return;
+    }
+
+    if (cable.type === port.type) {
+      scenarioState.matched[portId] = cableId;
+      state.selectedCableId = null;
+      statusMessage.textContent = `Correct. ${cable.name} fits ${port.name}.`;
+      renderScenario();
+    } else {
+      flashPort(portId, "error");
+      statusMessage.textContent = `Not quite. ${cable.name} does not fit ${port.name}. Try a different shape.`;
+    }
+  }
+
+  hintBtn.addEventListener("click", () => {
+    const scenario = getCurrentScenario();
+    const matched = state.scenarios[state.currentScenarioIndex].matched;
+    const unmatchedPort = scenario.ports.find(port => !matched[port.id]);
+    if (!unmatchedPort) {
+      statusMessage.textContent = "This scenario is already complete.";
+      return;
+    }
+    const matchingCable = scenario.cables.find(cable => cable.type === unmatchedPort.type && !Object.values(matched).includes(cable.id));
+    statusMessage.textContent = `Hint: compare the physical shape of the open port with the plug end. ${matchingCable ? `A good next choice is ${matchingCable.name}.` : ""}`;
+  });
+
+  resetBtn.addEventListener("click", () => {
+    state.scenarios[state.currentScenarioIndex].matched = {};
+    state.scenarios[state.currentScenarioIndex].completed = false;
+    state.selectedCableId = null;
+    statusMessage.textContent = "Scenario reset. All connectors are available again.";
+    renderScenario();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    state.currentScenarioIndex = (state.currentScenarioIndex + 1) % SCENARIOS.length;
+    state.selectedCableId = null;
+    renderScenario();
+    statusMessage.textContent = "Next scenario loaded.";
+  });
+
+  renderScenario();
+</script>
+</body>
+</html>
