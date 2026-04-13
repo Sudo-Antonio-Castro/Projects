@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EC-Council CEH — Enumeration &amp; Target Profiling</title>
+  <meta name="description" content="EC-Council CEH study module covering turning open services into concrete users, shares, systems, and resources.." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+:root{--bg:#faf9f7;--surface:#ffffff;--surface-soft:#f6f3ee;--text:#1a1814;--muted:#7a756c;--border:#e8e4de;--accent:#1a1814;--good:#1f6d3a;--font-sans:'Inter',ui-sans-serif,system-ui,sans-serif;--font-serif:'Playfair Display',Georgia,serif;--max:1080px;--radius:4px}
+[data-theme="dark"]{--bg:#0f0e0c;--surface:#171612;--surface-soft:#1d1b16;--text:#f0ece4;--muted:#8a8578;--border:#2a2820;--accent:#f0ece4;--good:#7fd19c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}button{font:inherit}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 90%,transparent)}
+.topbar{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.controls{display:flex;gap:10px;align-items:center}
+.theme-toggle,.icon-btn{width:40px;height:40px;border:1px solid var(--border);background:var(--surface);border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--text)}
+.theme-toggle svg,.icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+main{padding:36px 24px 60px}
+.wrap{max-width:var(--max);margin:0 auto}
+.hero{padding:28px 0 18px}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h1,h2,h3{font-family:var(--font-serif);font-weight:700;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,5vw,4rem);max-width:10ch}
+.hero p{max-width:72ch;color:var(--muted);font-size:1.03rem;margin:16px 0 0}
+.section-label{display:flex;align-items:center;gap:14px;margin:28px 0 18px}
+.section-label span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.section-rule{height:1px;flex:1;background:var(--border)}
+.grid{display:grid;gap:18px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card,.panel{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:22px}
+.card h3{font-size:1.35rem;margin-bottom:10px}
+.card p,.panel p,.panel li{color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--surface-soft);border-radius:999px;padding:8px 12px;font-size:.92rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:12px 18px;font-weight:600}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.lesson{padding:22px;border:1px solid var(--border);border-radius:24px;background:var(--surface)}
+.lesson h3{font-size:1.5rem;margin-bottom:8px}
+.lesson h4{margin:18px 0 8px;font-size:1rem;letter-spacing:.02em}
+.lesson ul{margin:8px 0 0 18px;padding:0}
+.lesson .summary{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.sidebar-list{display:grid;gap:14px}
+.sidebar-item{padding:16px;border:1px solid var(--border);border-radius:18px;background:var(--surface-soft)}
+.home-table{display:grid;gap:14px}
+.module-row{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px;border:1px solid var(--border);border-radius:22px;background:var(--surface)}
+.module-row .roman{font-family:var(--font-serif);font-size:1.6rem;min-width:2ch}
+.module-row .title{font-weight:600}
+.module-row .desc{color:var(--muted);font-size:.96rem}
+footer{border-top:1px solid var(--border);padding:22px 24px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media (max-width:840px){.two-col{grid-template-columns:1fr}h1{max-width:none}.module-row{grid-template-columns:1fr}.module-row .roman{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">EC-Council CEH · Study Hub</div>
+    <div class="controls">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-10V2m0 20v-4M4.22 4.22l2.83 2.83m9.9 9.9 2.83 2.83M2 12h4m16 0h-4M4.22 19.78l2.83-2.83m9.9-9.9 2.83-2.83"/></svg></button>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="wrap">
+        <section class="hero">
+          <div class="kicker">Module VI</div>
+          <h1>Enumeration &amp; Target Profiling</h1>
+          <p>Enumeration extracts practical details from accessible services and protocols, helping a tester understand accounts, systems, and network resources in usable detail.</p>
+          <div class="actions">
+            <a class="btn" href="../index.html">Return Home</a>
+            <a class="btn primary" href="../Quiz_Enumeration_and_Target_Profiling/">Take Module Quiz</a>
+          </div>
+        </section>
+
+        <div class="section-label"><span>Study content</span><div class="section-rule"></div></div>
+        <section class="two-col">
+          <div class="grid">
+            
+        <article class="lesson">
+          <div class="kicker">Lesson 1: Enumeration</div>
+          <h3>Naming the environment</h3>
+          <p>Enumeration pulls structured data from live services after scanning identifies the available surface.</p>
+          <h4>Focus points</h4>
+          <ul><li>Common outputs include usernames, computer names, network shares, services, and application details.</li><li>Windows, Linux, databases, and name services may all be enumerated differently.</li><li>Tools and commands can reveal far more than a simple port list.</li></ul>
+          <div class="summary">
+            <h4>Summary</h4>
+            <p>Enumeration converts raw connectivity into targetable intelligence.</p>
+            <h4>Exam angle</h4>
+            <p>If a question mentions names, shares, or service details pulled from a host, think enumeration.</p>
+          </div>
+        </article>
+        
+        <article class="lesson">
+          <div class="kicker">Lesson 2: Defensive Controls</div>
+          <h3>Restricting service exposure</h3>
+          <p>Enumeration defenses focus on reducing unnecessary disclosures and enforcing secure defaults.</p>
+          <h4>Focus points</h4>
+          <ul><li>Limiting unauthenticated information exposure can frustrate early attacker profiling.</li><li>DNS zone-transfer restrictions are a classic example of blocking useful enumeration data.</li><li>Service hardening reduces both visibility and exploitability.</li></ul>
+          <div class="summary">
+            <h4>Summary</h4>
+            <p>A smaller information footprint is easier to defend and harder to profile.</p>
+            <h4>Exam angle</h4>
+            <p>Zone transfer prevention is a common answer when the question involves excessive DNS disclosure.</p>
+          </div>
+        </article>
+        
+          </div>
+          <aside class="sidebar-list">
+            <div class="sidebar-item"><strong>Module focus</strong><p>Turning open services into concrete users, shares, systems, and resources.</p></div><div class="sidebar-item"><strong>Why it matters</strong><p>Move beyond ports into usernames, shares, services, and exposed trust paths.</p></div><div class="sidebar-item"><strong>Checkpoint</strong><p>Finish this module, then take the matching quiz before moving on.</p></div>
+          </aside>
+        </section>
+      </div>
+    </main>
+    
+<footer>
+  <div class="wrap">
+    <span>EC-Council CEH · Study Hub</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script>
+  const savedTheme = localStorage.getItem('kb_theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.setAttribute('data-theme', savedTheme);
+  const btn = document.getElementById('themeBtn');
+  if (btn) btn.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('kb_theme', next);
+  });
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
