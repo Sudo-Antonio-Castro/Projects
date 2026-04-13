@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CompTIA A+ 220-1201 - Supporting Network Services</title>
+  <meta name="description" content="CompTIA A+ 220-1201 study module covering supporting network services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#faf9f7;
+      --surface:#ffffff;
+      --surface-soft:#f6f3ee;
+      --text:#1a1814;
+      --muted:#7a756c;
+      --border:#e8e4de;
+      --accent:#1a1814;
+      --accent-soft:#f0ece6;
+      --font-sans:'Inter',ui-sans-serif,system-ui,sans-serif;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --max:960px;
+      --radius:4px;
+      --shadow:none;
+    }
+    [data-theme="dark"]{
+      --bg:#0f0e0c;
+      --surface:#171612;
+      --surface-soft:#1d1b16;
+      --text:#f0ece4;
+      --muted:#8a8578;
+      --border:#2a2820;
+      --accent:#f0ece4;
+      --accent-soft:#222018;
+      --shadow:none;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:var(--font-sans);
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none;}
+    button{font:inherit;}
+    :focus-visible{outline:2px solid color-mix(in oklab,var(--accent) 55%,transparent);outline-offset:2px;}
+
+    header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(16px);}
+    .topbar{max-width:var(--max);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0;}
+    .logo{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--muted);flex:0 0 auto;}
+    .logo svg{width:14px;height:14px;fill:currentColor;}
+    .brand-copy{min-width:0;}
+    .brand h1{margin:0;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text);opacity:.9;}
+    .sub{font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .controls{display:flex;align-items:center;gap:8px;flex:0 0 auto;}
+    .theme-toggle,.icon-btn{background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;transition:border-color .2s,color .2s;}
+    .theme-toggle:hover,.icon-btn:hover{border-color:var(--accent);color:var(--text);}
+    .theme-toggle svg,.icon-btn svg{width:14px;height:14px;fill:currentColor;}
+
+    .hero{max-width:var(--max);margin:0 auto;padding:72px 32px 56px;border-bottom:1px solid var(--border);}
+    .hero-kicker{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+    .hero-kicker::before{content:"";display:block;width:24px;height:1px;background:var(--muted);}
+    .hero h2{margin:0 0 18px;font-family:var(--font-serif);font-size:clamp(34px,5.2vw,58px);font-weight:700;line-height:1.06;letter-spacing:-.01em;color:var(--text);max-width:760px;}
+    .hero p{margin:0;max-width:640px;font-size:16px;color:var(--muted);line-height:1.75;}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:44px 32px 64px;display:flex;flex-direction:column;gap:26px;}
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .section-label{display:flex;align-items:center;gap:16px;padding:0 0 24px;}
+    .section-label span{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+    .section-rule{flex:1;height:1px;background:var(--border);}
+
+    .bar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;padding:18px 20px;border-bottom:1px solid var(--border);}
+    .group{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+    .btn{border:1px solid var(--border);background:none;color:var(--muted);border-radius:999px;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;transition:border-color .18s,color .18s;}
+    .btn:hover{border-color:var(--accent);color:var(--text);}
+    .btn svg{width:14px;height:14px;fill:currentColor;}
+    .btn:disabled{opacity:.4;cursor:not-allowed;}
+    #counter{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 4px;}
+
+    .lesson-tabs{display:flex;flex-wrap:wrap;gap:10px 16px;padding:18px 24px;border-bottom:1px solid var(--border);}
+    .lesson-tab{appearance:none;border:none;background:none;padding:0;color:var(--muted);cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.01em;transition:color .18s;position:relative;}
+    .lesson-tab:hover{color:var(--text);}
+    .lesson-tab.active{color:var(--text);}
+    .lesson-tab.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--accent);}
+
+    .lesson-panel{display:none;}
+    .lesson-panel.active{display:block;}
+    .content{padding:30px 24px 32px;}
+    .content h2{margin:0 0 16px;font-family:var(--font-serif);font-size:clamp(28px,4vw,40px);line-height:1.08;letter-spacing:-.015em;font-weight:700;color:var(--text);max-width:760px;}
+    .content h3{margin:28px 0 10px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+    .content p{margin:0 0 14px;color:color-mix(in oklab,var(--text) 86%,var(--muted));font-size:15px;line-height:1.8;max-width:760px;}
+    .content ul{margin:10px 0 16px 20px;padding:0;color:color-mix(in oklab,var(--text) 86%,var(--muted));font-size:15px;line-height:1.8;max-width:780px;}
+    .content li{margin-bottom:8px;}
+    .summary,.exam-tip{margin-top:18px;padding:16px 18px;border:1px solid var(--border);border-radius:var(--radius);background:transparent;}
+    .summary-label,.exam-tip-label{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+    .summary p,.exam-tip p{margin:0;font-size:14px;line-height:1.75;color:color-mix(in oklab,var(--text) 84%,var(--muted));max-width:none;}
+
+    footer{max-width:var(--max);margin:0 auto;padding:24px 32px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted);letter-spacing:.04em;}
+
+    @media (max-width:720px){
+      .topbar{padding:0 20px;}
+      .hero{padding:48px 20px 40px;}
+      .wrap{padding:36px 20px 52px;}
+      .content{padding:24px 20px 26px;}
+      .lesson-tabs{padding:16px 20px;}
+      .bar{padding:16px;}
+      footer{padding:20px;}
+      .brand h1{font-size:11px;}
+      .sub{max-width:150px;}
+    }
+
+    @media print{
+      header,.bar,footer{display:none !important;}
+      body{background:#fff;color:#000;}
+      .panel{border:1px solid #ddd;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-3.8 9.7-9 10-5.2-.3-9-5-9-10V6l9-4zm0 4.2L6 8.7v3.4c0 3.7 2.7 7.1 6 7.6 3.3-.5 6-3.9 6-7.6V8.7l-6-2.5z"/></svg>
+      </div>
+      <div class="brand-copy">
+        <h1>CompTIA A+ - 220-1201</h1>
+        <div class="sub">Supporting Network Services</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-10V2m0 20v-4M4.22 4.22l2.83 2.83m9.9 9.9 2.83 2.83M2 12h4m16 0h-4M4.22 19.78l2.83-2.83m9.9-9.9 2.83-2.83"/></svg>
+      </button>
+      <button class="icon-btn" id="printBtn" type="button" aria-label="Print">
+        <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7H6zm10-5H8v3h8V4zM6 22v-5h12v5H6zm2-3v1h8v-1H8zm-4-9h20v8h-4v-3H4v3H0v-8h4z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-kicker">Module 6</div>
+    <h2>Services make the network useful - and they give technicians a new layer of failures to diagnose.</h2>
+    <p>Study the server roles, internet appliances, IoT concepts, and troubleshooting methods needed to support modern small-business and enterprise networks.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="section-label">
+      <span>Module Content</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <article class="panel" aria-label="Study content">
+      <div class="bar" aria-label="Navigation">
+        <div class="group">
+          <button class="btn" onclick="goHome()">Return Home</button>
+          <button class="btn" id="prevBtn" onclick="prevLesson()">◀ Previous</button>
+          <button class="btn" id="nextBtn" onclick="nextLesson()">Next ▶</button>
+          <span id="counter">1 / 3</span>
+        </div>
+        <div class="group">
+          <button class="btn" onclick="window.print()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7H6zm10-5H8v3h8V4zM6 22v-5h12v5H6zm2-3v1h8v-1H8zm-4-9h20v8h-4v-3H4v3H0v-8h4z"/></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div class="lesson-tabs" role="tablist">
+        <button class="lesson-tab active" onclick="switchLesson(0, this)">Host Services</button> <button class="lesson-tab" onclick="switchLesson(1, this)">Appliances</button> <button class="lesson-tab" onclick="switchLesson(2, this)">Troubleshoot</button>
+      </div>
+
+      <div class="lesson-panel active" id="lesson-7a">
+<div class="content">
+<h2>Networked Host Services</h2>
+<p>A connected network still needs services to deliver names, addresses, files, authentication, and time. When one of these services fails, many users can be affected at once.</p>
+<h3>Core Infrastructure Services</h3>
+<ul>
+<li>DNS resolves names to IP addresses, and DHCP distributes addressing information automatically to clients.</li>
+<li>NTP keeps system clocks synchronized, which is especially important for logging, certificates, and authentication.</li>
+<li>Directory and authentication services centralize identity, permissions, and policy management.</li>
+</ul>
+<h3>User-Facing Services</h3>
+<ul>
+<li>File, print, web, mail, and database services support day-to-day business operations.</li>
+<li>Proxy, content-filtering, and remote logging services may also appear in managed environments.</li>
+<li>A single failed service can look like a workstation issue unless you check whether multiple users are affected.</li>
+</ul>
+<h3>Management Concepts</h3>
+<ul>
+<li>Reservations, DNS zones, resource records, and service logs are part of the support workflow for network services.</li>
+<li>Syslog and similar logging tools help centralize events from appliances and servers.</li>
+<li>When a service issue is suspected, verify both the client settings and the health of the service itself.</li>
+</ul>
+<div class="summary">
+            <div class="summary-label">Summary</div>
+            <p>Network services are the invisible backbone of a working environment. When DNS, DHCP, file, or authentication services fail, the symptom can spread across the whole site.</p>
+          </div>
+<div class="exam-tip">
+            <div class="exam-tip-label">A+ Exam Tip</div>
+            <p>If multiple systems fail in the same way, stop thinking endpoint-first. On the exam, that often points to a shared service such as DHCP or DNS.</p>
+          </div>
+</div></div> <div class="lesson-panel" id="lesson-7b">
+<div class="content">
+<h2>Internet and Embedded Appliances</h2>
+<p>Modern environments include many devices that are not traditional PCs. Technicians still need to deploy, connect, and secure them.</p>
+<h3>Common Appliances</h3>
+<ul>
+<li>Examples include NAS devices, VoIP phones, smart TVs, cameras, kiosks, building controls, and network security appliances.</li>
+<li>Internet-facing devices often use embedded operating systems and web-based management interfaces.</li>
+<li>Many appliances provide their own logging, remote-management, or cloud-registration features.</li>
+</ul>
+<h3>IoT Concepts</h3>
+<ul>
+<li>Internet of Things devices often rely on a control hub, mobile app, or smart speaker because many endpoints are headless.</li>
+<li>They may communicate over Wi-Fi, Bluetooth, Zigbee, or Z-Wave depending on range and power requirements.</li>
+<li>Because they are networked computers in miniature, they must be treated as security-sensitive devices.</li>
+</ul>
+<h3>Support and Risk</h3>
+<ul>
+<li>Default credentials, outdated firmware, and exposed services are common security weaknesses in embedded devices.</li>
+<li>Power, connectivity, and IP assignment issues are frequent first-layer problems when a new appliance will not come online.</li>
+<li>Documenting where the appliance lives on the network makes later support much easier.</li>
+</ul>
+<div class="summary">
+            <div class="summary-label">Summary</div>
+            <p>Appliances and IoT devices extend the network beyond desktops and laptops. Their small size does not reduce their support needs or their security impact.</p>
+          </div>
+<div class="exam-tip">
+            <div class="exam-tip-label">A+ Exam Tip</div>
+            <p>On A+, remember that many embedded appliances are managed through a browser, mobile app, or cloud portal rather than a traditional local console.</p>
+          </div>
+</div></div> <div class="lesson-panel" id="lesson-7c">
+<div class="content">
+<h2>Troubleshoot Networks</h2>
+<p>Network troubleshooting starts by deciding whether the problem is wired, wireless, logical, or service-related. Then you work outward from the endpoint.</p>
+<h3>Wired Troubleshooting</h3>
+<ul>
+<li>Check link lights, patch cables, wall jacks, switch ports, and NIC status first.</li>
+<li>Use a known-good patch cable, a loopback test, or another working port to isolate the fault quickly.</li>
+<li>Port flapping, bad terminations, and speed or duplex mismatches can create intermittent connectivity.</li>
+</ul>
+<h3>Wireless Troubleshooting</h3>
+<ul>
+<li>For Wi-Fi, verify the SSID, security settings, signal quality, and interference conditions.</li>
+<li>Poor roaming, overlapping channels, distance, and physical barriers are frequent causes of slow or unstable wireless performance.</li>
+<li>Restarting the access point may help, but configuration review is just as important as rebooting.</li>
+</ul>
+<h3>Logical and Service Checks</h3>
+<ul>
+<li>Confirm IP configuration, gateway, DNS resolution, and whether the problem affects one host or many.</li>
+<li>VoIP issues may involve latency, jitter, congestion, or QoS misconfiguration rather than a total network outage.</li>
+<li>Tools such as ping, tracert, nslookup, cable testers, and switch status indicators belong in every troubleshooting flow.</li>
+</ul>
+<div class="summary">
+            <div class="summary-label">Summary</div>
+            <p>The fastest network fixes usually come from ruling out the obvious physical problem before diving into advanced theory. Start with the endpoint, then move to the path and the services.</p>
+          </div>
+<div class="exam-tip">
+            <div class="exam-tip-label">A+ Exam Tip</div>
+            <p>A+ expects known-good substitution, link-light checks, and IP verification before deeper analysis. Do not skip the basics.</p>
+          </div>
+</div></div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <span>CompTIA A+ 220-1201 - Supporting Network Services</span>
+  <span id="year"></span>
+</footer>
+
+<script>
+  const themeBtn = document.getElementById("themeBtn");
+  const saved = localStorage.getItem("kb_theme");
+  if (saved === "light" || saved === "dark") {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+  themeBtn.addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") || "dark";
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("kb_theme", next);
+  });
+
+  document.getElementById("printBtn").addEventListener("click", () => window.print());
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const lessonTitles = ["Host Services","Appliances","Troubleshoot"];
+  let lessonIndex = 0;
+
+  function switchLesson(idx, btn) {
+    lessonIndex = idx;
+    document.querySelectorAll('.lesson-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.lesson-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.lesson-panel')[idx].classList.add('active');
+    updateCounter();
+  }
+
+  function goToLesson(idx) {
+    if (idx < 0 || idx >= lessonTitles.length) return;
+    lessonIndex = idx;
+    const tabs = document.querySelectorAll('.lesson-tab');
+    const panels = document.querySelectorAll('.lesson-panel');
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    if (tabs[idx]) tabs[idx].classList.add('active');
+    if (panels[idx]) panels[idx].classList.add('active');
+    updateCounter();
+  }
+
+  function nextLesson() { goToLesson(lessonIndex + 1); }
+  function prevLesson() { goToLesson(lessonIndex - 1); }
+
+  function updateCounter() {
+    document.getElementById('counter').textContent = `${lessonIndex + 1} / ${lessonTitles.length}`;
+    document.getElementById('prevBtn').disabled = lessonIndex === 0;
+    document.getElementById('nextBtn').disabled = lessonIndex === lessonTitles.length - 1;
+  }
+
+  function goHome() { window.location.href = '../'; }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextLesson();
+    if (e.key === 'ArrowLeft') prevLesson();
+    if (e.key === 'Home') goToLesson(0);
+  });
+
+  updateCounter();
+</script>
+</body>
+</html>
