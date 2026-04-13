@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CompTIA Linux+ XK0-006 — Module XI: Logging, Monitoring and Performance</title>
+  <meta name="description" content="Linux+ module XI: Logging, Monitoring and Performance" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/styles.css" />
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">L+</div>
+      <div class="brand-copy">
+        <h1>CompTIA Linux+</h1>
+        <div class="sub">XK0-006 Study Guide</div>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-kicker">Module XI</div>
+    <h2>Logging, Monitoring and Performance</h2>
+    <p>Journals, rotation, baselines, resource tracking, and bottlenecks.</p>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../index.html">Home</a><a class="btn" href="../../quizzes/logging-monitoring-and-performance-quiz/index.html">Quiz</a><a class="btn" href="../processes-services-and-job-scheduling/index.html">← Module X</a><a class="btn" href="../networking-routing-and-firewall-rules/index.html">Module XII →</a></div></div>
+      <div class="sidebar-section"><div class="sidebar-label">On this page</div><div class="section-nav"><a class="section-link" href="#s1">Log collection</a><a class="section-link" href="#s2">Monitoring basics</a><a class="section-link" href="#s3">Performance thinking</a></div></div>
+    </aside>
+    <section class="content-wrap"><div class="content"><h2>Logging, Monitoring and Performance</h2><p>Journals, rotation, baselines, resource tracking, and bottlenecks.</p><section id="s1"><h3>Log collection</h3><ul><li>systemd-based systems commonly use journalctl to inspect the journal.</li><li>Traditional log files still matter for many applications and agents.</li><li>logrotate helps prevent logs from growing without limit.</li></ul></section><section id="s2"><h3>Monitoring basics</h3><ul><li>Baselines help you determine when current behavior is abnormal.</li><li>Common checks include uptime, memory, disk, I/O, and process behavior.</li><li>Load averages should be interpreted alongside CPU, memory, and I/O context.</li></ul></section><section id="s3"><h3>Performance thinking</h3><ul><li>High load with modest CPU usage can point to blocked or I/O-heavy tasks.</li><li>Memory pressure can trigger swap activity and major slowdowns.</li><li>Data collection should come before tuning.</li></ul></section><div class="summary"><div class="summary-label">Quick takeaway</div><p>Use this module to connect commands to operational intent. Linux+ rewards knowing which tool to reach for first and why.</p></div><div class="exam-tip"><div class="exam-tip-label">Exam note</div><p>Pair these notes with the module quiz, then revisit any weak areas before the cumulative midterm.</p></div></div></section>
+  </div>
+</main>
+<footer>
+  <span>CompTIA Linux+ · XK0-006</span>
+  <span id="year"></span>
+</footer>
+<script src="../../assets/theme.js"></script>
+</body>
+</html>
