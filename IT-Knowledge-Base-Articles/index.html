@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects • IT Knowledge Base Articles</title>
+  <meta name="description" content="Use this page to open your current knowledge-base articles and to make future article groups easier to discover." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root{
+  --bg:#0a0c10;
+  --panel:#11151c;
+  --panel-2:#151b24;
+  --text:#f5f7fb;
+  --muted:#aab3c5;
+  --line:rgba(255,255,255,.08);
+  --accent:#7cc7ff;
+  --accent-2:#9effc6;
+  --shadow:0 18px 50px rgba(0,0,0,.35);
+  --radius:24px;
+  --radius-sm:18px;
+  --max:1240px;
+  --font:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:radial-gradient(circle at top,#172133 0%,#0a0c10 50%);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.shell{max-width:var(--max);margin:0 auto;padding:24px}
+header{position:sticky;top:0;z-index:10;background:rgba(10,12,16,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#041018;display:grid;place-items:center;font-weight:800;box-shadow:var(--shadow)}
+.brand-copy h1,.brand-copy p{margin:0}.brand-copy h1{font-size:1rem;letter-spacing:.06em;text-transform:uppercase}.brand-copy p{color:var(--muted);font-size:.92rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:12px}.nav-links a{padding:10px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}.nav-links a:hover{border-color:rgba(255,255,255,.25);color:var(--text)}
+.hero{padding:56px 0 28px}.eyebrow{display:inline-flex;padding:8px 12px;border:1px solid rgba(124,199,255,.25);border-radius:999px;color:var(--accent);background:rgba(124,199,255,.08);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.hero h2{font-size:clamp(2.1rem,4vw,4.6rem);line-height:1.05;margin:18px 0 14px;max-width:11ch}.hero p{margin:0;max-width:760px;color:var(--muted);font-size:1.04rem}
+.hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:24px;align-items:stretch}.hero-card,.panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero-card{padding:28px}.stat-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}.stat{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}.stat strong{display:block;font-size:1.6rem}.stat span{color:var(--muted);font-size:.92rem}
+.section{margin-top:34px}.section h3{font-size:1.25rem;margin:0 0 14px}.section p{margin:0 0 18px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.card{padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));display:flex;flex-direction:column;gap:12px;min-height:220px;box-shadow:var(--shadow)}.card:hover{transform:translateY(-2px);transition:transform .18s ease,border-color .18s ease;border-color:rgba(255,255,255,.18)}
+.card-kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800}.card h4{margin:0;font-size:1.25rem}.card p{margin:0;color:var(--muted)}.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}.chip{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:.82rem;color:#d8deea}.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:700}.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#041018;border-color:transparent}.btn.ghost{color:var(--muted)}
+.note{padding:18px;border:1px dashed rgba(255,255,255,.18);border-radius:18px;color:var(--muted);background:rgba(255,255,255,.02)}
+.footer{padding:34px 0 12px;color:var(--muted);font-size:.92rem}
+@media (max-width: 920px){.hero-grid{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start}.nav-links{width:100%}.hero h2{max-width:none}.stat-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">P</div>
+      <div class="brand-copy">
+        <h1>Projects • IT Knowledge Base Articles</h1>
+        <p><a href="../index.html">Projects Home</a> / IT-Knowledge-Base-Articles</p>
+      </div>
+    </div>
+    <nav class="nav-links"></nav>
+  </div>
+</header>
+<main class="shell">
+  <section class="hero-grid">
+    <div class="hero-card">
+      <span class="eyebrow">Article launcher</span>
+      <h2>A simple launch page for article-style references.</h2>
+      <p>Use this page to open your current knowledge-base articles and to make future article groups easier to discover.</p>
+      <div class="stat-list"><div class="stat"><strong>2</strong><span>Current article groups</span></div><div class="stat"><strong>2</strong><span>HTML articles</span></div><div class="stat"><strong>Reference library</strong><span>Use case</span></div></div>
+    </div>
+    <div class="hero-card">
+      <div class="section">
+        <h3>What you can do here</h3>
+        <p>Use the cards below to jump directly into the areas you want to study, demo, or expand later. These pages are designed to be easy to grow as you add new folders.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="AI/Ollama.html">Open first option</a>
+          <a class="btn ghost" href="../index.html">Back to top level</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <section class="section">
+    <h3>Available options</h3>
+    <p>Select a section below. Future folders can be added by dropping in a new card and pointing it to the new path.</p>
+    <div class="grid"><a class="card" href="AI/Ollama.html"><div class="card-kicker">AI</div><h4>Ollama setup article</h4><p>Open the existing knowledge-base article covering winget, PowerShell 7, Python, and Ollama setup.</p><div class="chip-row"><span class="chip">AI</span><span class="chip">KB article</span><span class="chip">Setup guide</span></div></a><a class="card" href="Kali-Linux/Wifite.html"><div class="card-kicker">Kali Linux</div><h4>Wifite article</h4><p>Open the current Kali Linux knowledge-base article in this repo.</p><div class="chip-row"><span class="chip">Kali Linux</span><span class="chip">KB article</span><span class="chip">Tooling</span></div></a></div>
+  </section>
+</main>
+<footer class="shell footer">Built as a GitHub Pages friendly index with self-contained HTML files.</footer>
+</body>
+</html>
