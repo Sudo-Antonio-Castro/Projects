@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects • MacOS Terminal CLI</title>
+  <meta name="description" content="A macOS terminal practice page with Finder-friendly workflows, Mac-specific shell commands, and Unix fundamentals suited for Terminal.app users." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#090c11;
+      --bg-2:#0e131a;
+      --panel:#141b23;
+      --panel-2:#111821;
+      --text:#f4f8ff;
+      --muted:#9ba7ba;
+      --line:rgba(255,255,255,.08);
+      --accent:#ffd36d;
+      --accent-2:#9ed3ff;
+      --term-bg:#17120a;
+      --term-line:rgba(255,255,255,.08);
+      --term-text:#e8fff2;
+      --term-muted:#91c4a5;
+      --term-good:#9effc6;
+      --term-warn:#ffe082;
+      --term-bad:#ff9f9f;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:1440px;
+      --font:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--text);background:radial-gradient(circle at top,#162030 0%,#090c11 52%);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .shell{max-width:var(--max);margin:0 auto;padding:22px}
+    header{position:sticky;top:0;z-index:20;background:rgba(9,12,17,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .topbar{max-width:var(--max);margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#041018;font-weight:800;box-shadow:var(--shadow)}
+    .brand h1,.brand p{margin:0} .brand h1{font-size:1rem;letter-spacing:.06em;text-transform:uppercase} .brand p{color:var(--muted);font-size:.92rem}
+    .nav-links{display:flex;flex-wrap:wrap;gap:12px} .nav-links a{padding:10px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted)} .nav-links a:hover{color:var(--text);border-color:rgba(255,255,255,.18)}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;padding:34px 0 24px} .hero-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .hero h2{font-size:clamp(2rem,3.6vw,4.1rem);line-height:1.05;margin:18px 0 12px;max-width:14ch} .hero p{margin:0;color:var(--muted);max-width:760px}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px} .stat{padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px} .stat strong{display:block;font-size:1.55rem} .stat span{color:var(--muted);font-size:.9rem}
+    .layout{display:grid;grid-template-columns:360px minmax(0,1fr) 320px;gap:20px;align-items:start}
+    .panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border-radius:var(--radius);box-shadow:var(--shadow)}
+    .sidebar{padding:18px;position:sticky;top:88px} .sidebar h3,.stack h3{margin:0 0 8px;font-size:1.05rem} .sidebar p,.stack p{margin:0;color:var(--muted)}
+    .scenario-list{display:grid;gap:10px;margin-top:16px} .scenario-btn{width:100%;text-align:left;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);color:var(--text);cursor:pointer} .scenario-btn:hover{border-color:rgba(255,255,255,.18)} .scenario-btn.active{border-color:rgba(158,255,198,.35);background:rgba(158,255,198,.08)}
+    .scenario-btn small{display:block;color:var(--muted);margin-top:4px}
+    .terminal-wrap{padding:18px} .terminal-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:14px} .terminal-head h3{margin:0;font-size:1.1rem} .terminal-head p{margin:6px 0 0;color:var(--muted)}
+    .terminal{background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.16)),var(--term-bg);border:1px solid var(--term-line);border-radius:22px;overflow:hidden}
+    .terminal-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--term-line);background:rgba(255,255,255,.04)} .dots{display:flex;gap:8px} .dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.24)} .terminal-title{font-family:var(--mono);color:var(--term-muted);font-size:.88rem}
+    .screen{padding:18px;min-height:470px;font-family:var(--mono);font-size:.95rem;color:var(--term-text)} .output-line{margin:0 0 10px;white-space:pre-wrap} .sys{color:var(--term-muted)} .ok{color:var(--term-good)} .warn{color:var(--term-warn)} .bad{color:var(--term-bad)} .prompt-line{display:flex;gap:12px;align-items:flex-start;margin-top:8px} .prompt-label{color:var(--term-good);white-space:nowrap} .cmd-input{width:100%;border:0;outline:0;background:transparent;color:var(--term-text);font:inherit}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;padding:16px 18px;border-top:1px solid var(--term-line);background:rgba(255,255,255,.04)} .toolbar button{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);padding:11px 14px;border-radius:14px;font-weight:700;cursor:pointer} .toolbar button.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#041018;border-color:transparent} .toolbar button:hover{filter:brightness(1.06)}
+    .stack{padding:18px;display:grid;gap:18px;position:sticky;top:88px} .box{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)} .list{display:grid;gap:10px;margin-top:14px} .step{padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)} .step.done{border-color:rgba(158,255,198,.35);background:rgba(158,255,198,.08)} .step strong{display:block;font-size:.96rem} .step span{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
+    .command-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px} .command-cloud span{padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-family:var(--mono);font-size:.82rem;color:#d9e5f5}
+    .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;color:var(--muted);font-size:.9rem} .legend span{display:inline-flex;align-items:center;gap:8px} .legend i{width:10px;height:10px;border-radius:50%;display:inline-block} 
+    @media (max-width:1200px){.layout{grid-template-columns:1fr} .sidebar,.stack{position:static} .hero{grid-template-columns:1fr} .stat-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">CLI</div>
+      <div>
+        <h1>Projects • MacOS Terminal CLI</h1>
+        <p><a href="../../index.html">Projects Home</a> / <a href="../index.html">CLIs</a> / <a href="index.html">MacOS CLI</a></p>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">All CLIs</a>
+      <a href="../../index.html">Projects Home</a>
+    </nav>
+  </div>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">Interactive terminal lab</span>
+      <h2>MacOS terminal command scenarios in one page.</h2>
+      <p>A macOS terminal practice page with Finder-friendly workflows, Mac-specific shell commands, and Unix fundamentals suited for Terminal.app users.</p>
+      <div class="stat-grid">
+        <div class="stat"><strong id="stat-scenarios"></strong><span>Scenario tracks</span></div>
+        <div class="stat"><strong>30</strong><span>macOS and Unix commands touched</span></div>
+        <div class="stat"><strong id="stat-progress">0%</strong><span>Lab completion</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3 style="margin:0 0 10px;font-size:1.1rem">How it works</h3>
+      <p>Pick a scenario, read the target, and type the exact command in the terminal. Use Hint for a small nudge or Reveal if you want to see the expected command and move on. Every page is self-contained, so it can live in GitHub Pages without extra assets.</p>
+      <div class="legend">
+        <span><i style="background:var(--term-good)"></i>Correct command accepted</span>
+        <span><i style="background:var(--term-warn)"></i>Hint or reveal available</span>
+        <span><i style="background:var(--term-bad)"></i>Try again if syntax is off</span>
+      </div>
+    </div>
+  </section>
+  <section class="layout" id="app">
+    <aside class="panel sidebar">
+      <h3>Scenario tracks</h3>
+      <p>Each track focuses on a practical workflow rather than isolated memorization.</p>
+      <div class="scenario-list" id="scenarioList"></div>
+    </aside>
+    <section class="panel terminal-wrap">
+      <div class="terminal-head">
+        <div>
+          <h3 id="scenarioTitle">Loading...</h3>
+          <p id="scenarioDesc"></p>
+        </div>
+        <div class="box" style="min-width:220px;padding:14px 16px">
+          <strong id="scenarioCounter">Step 0 / 0</strong>
+          <p id="scenarioGoal" style="margin:6px 0 0;color:var(--muted)"></p>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-top">
+          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="terminal-title">MacOS terminal • live practice shell</div>
+        </div>
+        <div class="screen" id="screen"></div>
+        <div class="toolbar">
+          <button class="primary" id="runBtn">Run command</button>
+          <button id="hintBtn">Hint</button>
+          <button id="revealBtn">Reveal</button>
+          <button id="resetScenarioBtn">Reset scenario</button>
+          <button id="resetAllBtn">Reset all</button>
+        </div>
+      </div>
+    </section>
+    <aside class="panel stack">
+      <div class="box">
+        <h3>Current checklist</h3>
+        <p>Complete each command to clear the active scenario.</p>
+        <div class="list" id="stepList"></div>
+      </div>
+      <div class="box">
+        <h3>Command coverage</h3>
+        <p>This page touches the commands below.</p>
+        <div class="command-cloud" id="commandCloud"></div>
+      </div>
+    </aside>
+  </section>
+</main>
+<script>
+const labData = {"systemName": "MacOS terminal", "prompt": "student@macbook ~ %", "scenarios": [{"title": "Scenario 1 • Finder to terminal workflow", "summary": "Create and move around a macOS workspace from the shell.", "description": "A basic zsh-oriented workflow for pathing, folder creation, and file setup on macOS.", "steps": [{"commandName": "pwd", "target": "Show the current working directory.", "expected": "pwd", "hint": "print the current path", "output": "/Users/student"}, {"commandName": "ls", "target": "List the files in the current directory with detail.", "expected": "ls -lah", "hint": "include hidden files and human-readable sizes", "output": "drwxr-xr-x   8 student  staff   256B Apr 13 10:33 Projects"}, {"commandName": "cd", "target": "Change into the Projects folder.", "expected": "cd Projects", "hint": "switch directories", "output": "/Users/student/Projects"}, {"commandName": "mkdir", "target": "Create a folder named MacLab.", "expected": "mkdir MacLab", "hint": "make a new directory", "output": "Created directory: MacLab"}, {"commandName": "touch", "target": "Create a file named notes.md.", "expected": "touch notes.md", "hint": "create an empty file", "output": "Created file: notes.md"}, {"commandName": "cp", "target": "Copy notes.md to notes-copy.md.", "expected": "cp notes.md notes-copy.md", "hint": "copy source to destination", "output": "Copied notes.md to notes-copy.md"}]}, {"title": "Scenario 2 • Open, clipboard, and system identity", "summary": "Use a few Mac-specific terminal conveniences.", "description": "These commands are helpful when bridging terminal work with the Finder, clipboard, and macOS system details.", "steps": [{"commandName": "mv", "target": "Rename notes-copy.md to notes-archive.md.", "expected": "mv notes-copy.md notes-archive.md", "hint": "rename or move a file", "output": "Renamed notes-copy.md to notes-archive.md"}, {"commandName": "open", "target": "Open the current folder in Finder.", "expected": "open .", "hint": "launch a file or folder from the terminal", "output": "Opened current directory in Finder"}, {"commandName": "pbcopy", "target": "Copy the text from serial.txt into the clipboard.", "expected": "pbcopy < serial.txt", "hint": "redirect a file into the clipboard command", "output": "Copied serial.txt contents to the clipboard"}, {"commandName": "pbpaste", "target": "Paste the clipboard contents back to the terminal.", "expected": "pbpaste", "hint": "read clipboard text to stdout", "output": "C02ABC123XYZ"}, {"commandName": "sw_vers", "target": "Display the macOS version information.", "expected": "sw_vers", "hint": "show ProductName, ProductVersion, BuildVersion", "output": "ProductName:\tmacOS\nProductVersion:\t15.4\nBuildVersion:\t24E214"}, {"commandName": "scutil", "target": "Show the computer name.", "expected": "scutil --get ComputerName", "hint": "ask macOS for the configured computer name", "output": "Antonio-MacBook-Pro"}]}, {"title": "Scenario 3 • Updates, disks, and network setup", "summary": "Check updates and inspect local hardware and networking.", "description": "A useful collection for general Mac administration from Terminal.", "steps": [{"commandName": "softwareupdate", "target": "List available software updates.", "expected": "softwareupdate -l", "hint": "lowercase ell to list updates", "output": "Software Update Tool\nFinding available software\nNo new software available."}, {"commandName": "diskutil", "target": "List attached disks.", "expected": "diskutil list", "hint": "Apple disk utility command-line view", "output": "/dev/disk3 (external, physical):\n#: TYPE NAME SIZE IDENTIFIER"}, {"commandName": "networksetup", "target": "List all network services.", "expected": "networksetup -listallnetworkservices", "hint": "show configured macOS network services", "output": "An asterisk (*) denotes that a network service is disabled.\nWi-Fi\nUSB 10/100/1000 LAN"}, {"commandName": "ifconfig", "target": "Display interface configuration.", "expected": "ifconfig", "hint": "classic BSD network interface display", "output": "en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500"}, {"commandName": "ping", "target": "Ping apple.com three times.", "expected": "ping -c 3 apple.com", "hint": "limit the packet count to 3", "output": "3 packets transmitted, 3 packets received, 0.0% packet loss"}, {"commandName": "curl", "target": "Fetch only the headers for https://apple.com.", "expected": "curl -I https://apple.com", "hint": "request headers only", "output": "HTTP/2 301\nlocation: https://www.apple.com/"}]}, {"title": "Scenario 4 • Processes, search, and permissions", "summary": "Inspect activity, find files, and adjust access on macOS.", "description": "This track uses a mix of Unix-native commands and common macOS administration habits.", "steps": [{"commandName": "ps", "target": "Display all running processes.", "expected": "ps aux", "hint": "full process listing", "output": "student      731   2.1  1.2 410557280 198560   ??  S     9:52AM   1:15.90 Finder"}, {"commandName": "top", "target": "Open the live process viewer.", "expected": "top", "hint": "interactive process monitor", "output": "Processes: 612 total, 4 running, 608 sleeping"}, {"commandName": "grep", "target": "Search notes-archive.md for the word server.", "expected": "grep server notes-archive.md", "hint": "filter for a matching word", "output": "server01"}, {"commandName": "find", "target": "Find all .md files under the current directory.", "expected": "find . -name \"*.md\"", "hint": "recursive search by name", "output": "./notes.md\n./notes-archive.md"}, {"commandName": "chmod", "target": "Set notes-archive.md to mode 600.", "expected": "chmod 600 notes-archive.md", "hint": "owner read/write only", "output": "Permissions set to 600 on notes-archive.md"}, {"commandName": "chown", "target": "Change the owner of notes-archive.md to student:staff.", "expected": "chown student:staff notes-archive.md", "hint": "owner colon group", "output": "Owner changed to student:staff"}]}, {"title": "Scenario 5 • Remote access and cleanup", "summary": "Test SSH habits and clean up terminal-driven apps.", "description": "A closing scenario for common Mac terminal tasks involving remote access and process cleanup.", "steps": [{"commandName": "ssh", "target": "Connect to admin@example.com using SSH.", "expected": "ssh admin@example.com", "hint": "user at host syntax", "output": "Connected to admin@example.com"}, {"commandName": "killall", "target": "Close all TextEdit processes.", "expected": "killall TextEdit", "hint": "terminate all processes by exact name", "output": "Terminated all TextEdit processes"}, {"commandName": "rm", "target": "Remove notes-archive.md.", "expected": "rm notes-archive.md", "hint": "delete a single file", "output": "Removed notes-archive.md"}, {"commandName": "vm_stat", "target": "Show compressed memory stats using vm_stat? No, use this step as a shell reference card instead.", "expected": "vm_stat", "hint": "macOS memory stats come from vm_stat", "output": "Mach Virtual Memory Statistics: (page size of 16384 bytes)"}, {"commandName": "defaults", "target": "Read the global AppleInterfaceStyle setting.", "expected": "defaults read -g AppleInterfaceStyle", "hint": "query a defaults domain key", "output": "Dark"}, {"commandName": "say", "target": "Use Terminal to speak “Lab complete”.", "expected": "say \"Lab complete\"", "hint": "macOS speech synthesis command", "output": "Lab complete"}]}], "commandLabel": "macOS and Unix commands touched"};
+const screen = document.getElementById('screen');
+const scenarioList = document.getElementById('scenarioList');
+const stepList = document.getElementById('stepList');
+const commandCloud = document.getElementById('commandCloud');
+const scenarioTitle = document.getElementById('scenarioTitle');
+const scenarioDesc = document.getElementById('scenarioDesc');
+const scenarioCounter = document.getElementById('scenarioCounter');
+const scenarioGoal = document.getElementById('scenarioGoal');
+const statScenarios = document.getElementById('stat-scenarios');
+const statProgress = document.getElementById('stat-progress');
+const storageKey = `${location.pathname}::progress`;
+
+function defaultState(){
+  return { active: 0, progress: labData.scenarios.map(() => 0), complete: labData.scenarios.map(() => false) };
+}
+function loadState(){
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (!raw) return defaultState();
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed.progress) || parsed.progress.length !== labData.scenarios.length) return defaultState();
+    return parsed;
+  } catch (err) {
+    return defaultState();
+  }
+}
+let state = loadState();
+function saveState(){ localStorage.setItem(storageKey, JSON.stringify(state)); }
+function sanitize(value){ return value.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+function addLine(text, cls=''){
+  const p = document.createElement('p');
+  p.className = ('output-line ' + cls).trim();
+  p.innerHTML = text;
+  screen.appendChild(p);
+  screen.scrollTop = screen.scrollHeight;
+}
+function addPromptInput(){
+  const wrap = document.createElement('label');
+  wrap.className = 'prompt-line';
+  wrap.innerHTML = `<span class="prompt-label">${sanitize(labData.prompt)}</span><input class="cmd-input" id="cmdInput" autocomplete="off" spellcheck="false" placeholder="Type the next command here" />`;
+  screen.appendChild(wrap);
+  const input = document.getElementById('cmdInput');
+  input.focus();
+  input.addEventListener('keydown', (event) => { if (event.key === 'Enter') handleRun(); });
+  screen.scrollTop = screen.scrollHeight;
+}
+function renderScenarioList(){
+  scenarioList.innerHTML = '';
+  labData.scenarios.forEach((scenario, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'scenario-btn' + (index === state.active ? ' active' : '');
+    const done = state.complete[index] ? ' • Complete' : ' • ' + state.progress[index] + '/' + scenario.steps.length + ' steps';
+    btn.innerHTML = `<strong>${sanitize(scenario.title)}</strong><small>${sanitize(scenario.summary)}${done}</small>`;
+    btn.addEventListener('click', () => { state.active = index; saveState(); render(); });
+    scenarioList.appendChild(btn);
+  });
+}
+function renderSteps(scenario){
+  stepList.innerHTML = '';
+  scenario.steps.forEach((step, index) => {
+    const item = document.createElement('div');
+    item.className = 'step' + (index < state.progress[state.active] ? ' done' : '');
+    item.innerHTML = `<strong>${index + 1}. ${sanitize(step.target)}</strong><span>${sanitize(step.expected)}</span>`;
+    stepList.appendChild(item);
+  });
+}
+function renderCommands(){
+  const commands = [...new Set(labData.scenarios.flatMap(s => s.steps.map(step => step.commandName)))].sort();
+  commandCloud.innerHTML = commands.map(cmd => `<span>${sanitize(cmd)}</span>`).join('');
+}
+function renderStats(){
+  statScenarios.textContent = String(labData.scenarios.length);
+  const totalSteps = labData.scenarios.reduce((sum, scenario) => sum + scenario.steps.length, 0);
+  const cleared = state.progress.reduce((sum, value) => sum + value, 0);
+  const pct = Math.round((cleared / totalSteps) * 100);
+  statProgress.textContent = `${pct}%`;
+}
+function renderTerminal(scenario){
+  screen.innerHTML = '';
+  addLine(`${sanitize(labData.systemName)} readiness check complete.`, 'sys');
+  addLine(`Scenario: ${sanitize(scenario.title)}`, 'sys');
+  addLine(sanitize(scenario.summary), 'sys');
+  addLine('');
+  scenario.steps.forEach((step, index) => {
+    if (index < state.progress[state.active]) {
+      addLine(`${sanitize(labData.prompt)} ${sanitize(step.expected)}`, 'ok');
+      addLine(sanitize(step.output), 'sys');
+    }
+  });
+  const current = scenario.steps[state.progress[state.active]];
+  if (current) {
+    addLine(`Target: ${sanitize(current.target)}`, 'warn');
+    addPromptInput();
+  } else {
+    addLine('Scenario complete. Choose another track or reset to practice again.', 'ok');
+  }
+}
+function renderScenarioHeader(scenario){
+  scenarioTitle.textContent = scenario.title;
+  scenarioDesc.textContent = scenario.description;
+  scenarioCounter.textContent = `Step ${Math.min(state.progress[state.active] + 1, scenario.steps.length)} / ${scenario.steps.length}`;
+  const current = scenario.steps[state.progress[state.active]];
+  scenarioGoal.textContent = current ? current.target : 'Scenario finished.';
+}
+function render(){
+  const scenario = labData.scenarios[state.active];
+  renderScenarioList();
+  renderScenarioHeader(scenario);
+  renderSteps(scenario);
+  renderCommands();
+  renderStats();
+  renderTerminal(scenario);
+}
+function normalize(value){ return value.trim().replace(/\s+/g, ' '); }
+function completeCurrentStep(forceReveal=false){
+  const scenario = labData.scenarios[state.active];
+  const stepIndex = state.progress[state.active];
+  const step = scenario.steps[stepIndex];
+  if (!step) return;
+  if (forceReveal) addLine(`${sanitize(labData.prompt)} ${sanitize(step.expected)}`, 'warn');
+  addLine(sanitize(step.output), forceReveal ? 'warn' : 'sys');
+  state.progress[state.active] += 1;
+  if (state.progress[state.active] >= scenario.steps.length) state.complete[state.active] = true;
+  saveState();
+  render();
+}
+function handleRun(){
+  const input = document.getElementById('cmdInput');
+  if (!input) return;
+  const value = normalize(input.value || '');
+  if (!value) return;
+  const scenario = labData.scenarios[state.active];
+  const step = scenario.steps[state.progress[state.active]];
+  addLine(`${sanitize(labData.prompt)} ${sanitize(value)}`, 'ok');
+  if (value === normalize(step.expected)) {
+    completeCurrentStep(false);
+  } else {
+    addLine(`Not quite. Goal: ${sanitize(step.target)}`, 'bad');
+    addLine(`Try focusing on the ${sanitize(step.commandName)} command.`, 'bad');
+    input.value = '';
+    input.focus();
+  }
+}
+document.getElementById('runBtn').addEventListener('click', handleRun);
+document.getElementById('hintBtn').addEventListener('click', () => {
+  const scenario = labData.scenarios[state.active];
+  const step = scenario.steps[state.progress[state.active]];
+  if (!step) return;
+  addLine(`Hint: use ${sanitize(step.commandName)} — ${sanitize(step.hint)}`, 'warn');
+});
+document.getElementById('revealBtn').addEventListener('click', () => {
+  const scenario = labData.scenarios[state.active];
+  if (!scenario.steps[state.progress[state.active]]) return;
+  completeCurrentStep(true);
+});
+document.getElementById('resetScenarioBtn').addEventListener('click', () => {
+  state.progress[state.active] = 0;
+  state.complete[state.active] = false;
+  saveState();
+  render();
+});
+document.getElementById('resetAllBtn').addEventListener('click', () => {
+  state = defaultState();
+  saveState();
+  render();
+});
+render();
+</script>
+</body>
+</html>

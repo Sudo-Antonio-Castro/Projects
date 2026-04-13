@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects • Linux CLI</title>
+  <meta name="description" content="A Linux-style terminal lab with eight scenario tracks and 56 distinct command names. It is built to echo the exam-style CLI experience you liked while staying fully self-contained for this standalone repo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#090c11;
+      --bg-2:#0e131a;
+      --panel:#141b23;
+      --panel-2:#111821;
+      --text:#f4f8ff;
+      --muted:#9ba7ba;
+      --line:rgba(255,255,255,.08);
+      --accent:#7cf7a0;
+      --accent-2:#8dd3ff;
+      --term-bg:#07120b;
+      --term-line:rgba(255,255,255,.08);
+      --term-text:#e8fff2;
+      --term-muted:#91c4a5;
+      --term-good:#9effc6;
+      --term-warn:#ffe082;
+      --term-bad:#ff9f9f;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:1440px;
+      --font:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--text);background:radial-gradient(circle at top,#162030 0%,#090c11 52%);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .shell{max-width:var(--max);margin:0 auto;padding:22px}
+    header{position:sticky;top:0;z-index:20;background:rgba(9,12,17,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .topbar{max-width:var(--max);margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#041018;font-weight:800;box-shadow:var(--shadow)}
+    .brand h1,.brand p{margin:0} .brand h1{font-size:1rem;letter-spacing:.06em;text-transform:uppercase} .brand p{color:var(--muted);font-size:.92rem}
+    .nav-links{display:flex;flex-wrap:wrap;gap:12px} .nav-links a{padding:10px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted)} .nav-links a:hover{color:var(--text);border-color:rgba(255,255,255,.18)}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;padding:34px 0 24px} .hero-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .hero h2{font-size:clamp(2rem,3.6vw,4.1rem);line-height:1.05;margin:18px 0 12px;max-width:14ch} .hero p{margin:0;color:var(--muted);max-width:760px}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px} .stat{padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px} .stat strong{display:block;font-size:1.55rem} .stat span{color:var(--muted);font-size:.9rem}
+    .layout{display:grid;grid-template-columns:360px minmax(0,1fr) 320px;gap:20px;align-items:start}
+    .panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border-radius:var(--radius);box-shadow:var(--shadow)}
+    .sidebar{padding:18px;position:sticky;top:88px} .sidebar h3,.stack h3{margin:0 0 8px;font-size:1.05rem} .sidebar p,.stack p{margin:0;color:var(--muted)}
+    .scenario-list{display:grid;gap:10px;margin-top:16px} .scenario-btn{width:100%;text-align:left;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);color:var(--text);cursor:pointer} .scenario-btn:hover{border-color:rgba(255,255,255,.18)} .scenario-btn.active{border-color:rgba(158,255,198,.35);background:rgba(158,255,198,.08)}
+    .scenario-btn small{display:block;color:var(--muted);margin-top:4px}
+    .terminal-wrap{padding:18px} .terminal-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:14px} .terminal-head h3{margin:0;font-size:1.1rem} .terminal-head p{margin:6px 0 0;color:var(--muted)}
+    .terminal{background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.16)),var(--term-bg);border:1px solid var(--term-line);border-radius:22px;overflow:hidden}
+    .terminal-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--term-line);background:rgba(255,255,255,.04)} .dots{display:flex;gap:8px} .dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.24)} .terminal-title{font-family:var(--mono);color:var(--term-muted);font-size:.88rem}
+    .screen{padding:18px;min-height:470px;font-family:var(--mono);font-size:.95rem;color:var(--term-text)} .output-line{margin:0 0 10px;white-space:pre-wrap} .sys{color:var(--term-muted)} .ok{color:var(--term-good)} .warn{color:var(--term-warn)} .bad{color:var(--term-bad)} .prompt-line{display:flex;gap:12px;align-items:flex-start;margin-top:8px} .prompt-label{color:var(--term-good);white-space:nowrap} .cmd-input{width:100%;border:0;outline:0;background:transparent;color:var(--term-text);font:inherit}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;padding:16px 18px;border-top:1px solid var(--term-line);background:rgba(255,255,255,.04)} .toolbar button{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);padding:11px 14px;border-radius:14px;font-weight:700;cursor:pointer} .toolbar button.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#041018;border-color:transparent} .toolbar button:hover{filter:brightness(1.06)}
+    .stack{padding:18px;display:grid;gap:18px;position:sticky;top:88px} .box{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)} .list{display:grid;gap:10px;margin-top:14px} .step{padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)} .step.done{border-color:rgba(158,255,198,.35);background:rgba(158,255,198,.08)} .step strong{display:block;font-size:.96rem} .step span{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
+    .command-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px} .command-cloud span{padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-family:var(--mono);font-size:.82rem;color:#d9e5f5}
+    .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;color:var(--muted);font-size:.9rem} .legend span{display:inline-flex;align-items:center;gap:8px} .legend i{width:10px;height:10px;border-radius:50%;display:inline-block} 
+    @media (max-width:1200px){.layout{grid-template-columns:1fr} .sidebar,.stack{position:static} .hero{grid-template-columns:1fr} .stat-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">CLI</div>
+      <div>
+        <h1>Projects • Linux CLI</h1>
+        <p><a href="../../index.html">Projects Home</a> / <a href="../index.html">CLIs</a> / <a href="index.html">Linux CLI</a></p>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">All CLIs</a>
+      <a href="../../index.html">Projects Home</a>
+    </nav>
+  </div>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">Interactive terminal lab</span>
+      <h2>Linux terminal command scenarios in one page.</h2>
+      <p>A Linux-style terminal lab with eight scenario tracks and 56 distinct command names. It is built to echo the exam-style CLI experience you liked while staying fully self-contained for this standalone repo.</p>
+      <div class="stat-grid">
+        <div class="stat"><strong id="stat-scenarios"></strong><span>Scenario tracks</span></div>
+        <div class="stat"><strong>56</strong><span>Distinct Linux commands</span></div>
+        <div class="stat"><strong id="stat-progress">0%</strong><span>Lab completion</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3 style="margin:0 0 10px;font-size:1.1rem">How it works</h3>
+      <p>Pick a scenario, read the target, and type the exact command in the terminal. Use Hint for a small nudge or Reveal if you want to see the expected command and move on. Every page is self-contained, so it can live in GitHub Pages without extra assets.</p>
+      <div class="legend">
+        <span><i style="background:var(--term-good)"></i>Correct command accepted</span>
+        <span><i style="background:var(--term-warn)"></i>Hint or reveal available</span>
+        <span><i style="background:var(--term-bad)"></i>Try again if syntax is off</span>
+      </div>
+    </div>
+  </section>
+  <section class="layout" id="app">
+    <aside class="panel sidebar">
+      <h3>Scenario tracks</h3>
+      <p>Each track focuses on a practical workflow rather than isolated memorization.</p>
+      <div class="scenario-list" id="scenarioList"></div>
+    </aside>
+    <section class="panel terminal-wrap">
+      <div class="terminal-head">
+        <div>
+          <h3 id="scenarioTitle">Loading...</h3>
+          <p id="scenarioDesc"></p>
+        </div>
+        <div class="box" style="min-width:220px;padding:14px 16px">
+          <strong id="scenarioCounter">Step 0 / 0</strong>
+          <p id="scenarioGoal" style="margin:6px 0 0;color:var(--muted)"></p>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-top">
+          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="terminal-title">Linux terminal • live practice shell</div>
+        </div>
+        <div class="screen" id="screen"></div>
+        <div class="toolbar">
+          <button class="primary" id="runBtn">Run command</button>
+          <button id="hintBtn">Hint</button>
+          <button id="revealBtn">Reveal</button>
+          <button id="resetScenarioBtn">Reset scenario</button>
+          <button id="resetAllBtn">Reset all</button>
+        </div>
+      </div>
+    </section>
+    <aside class="panel stack">
+      <div class="box">
+        <h3>Current checklist</h3>
+        <p>Complete each command to clear the active scenario.</p>
+        <div class="list" id="stepList"></div>
+      </div>
+      <div class="box">
+        <h3>Command coverage</h3>
+        <p>This page touches the commands below.</p>
+        <div class="command-cloud" id="commandCloud"></div>
+      </div>
+    </aside>
+  </section>
+</main>
+<script>
+const labData = {"systemName": "Linux terminal", "prompt": "student@lab:~$", "scenarios": [{"title": "Scenario 1 • File and directory setup", "summary": "Stand up a project workspace and move starter files into place.", "description": "This track focuses on fast filesystem work: checking your location, listing files, creating folders, and managing starter artifacts.", "steps": [{"commandName": "pwd", "target": "Display the current working directory.", "expected": "pwd", "hint": "print the present working directory", "output": "/home/student"}, {"commandName": "ls", "target": "List the files in the current directory.", "expected": "ls", "hint": "basic directory listing", "output": "Documents  Downloads  lab  scripts"}, {"commandName": "cd", "target": "Change into the lab workspace.", "expected": "cd lab", "hint": "switch into the lab folder", "output": "/home/student/lab"}, {"commandName": "mkdir", "target": "Create a new directory named reports.", "expected": "mkdir reports", "hint": "make a single directory", "output": "Created directory: reports"}, {"commandName": "touch", "target": "Create an empty file called inventory.txt.", "expected": "touch inventory.txt", "hint": "create an empty file", "output": "Created file: inventory.txt"}, {"commandName": "cp", "target": "Copy inventory.txt to inventory.bak.", "expected": "cp inventory.txt inventory.bak", "hint": "copy source to backup file", "output": "Copied inventory.txt to inventory.bak"}, {"commandName": "mv", "target": "Rename inventory.bak to inventory-archive.txt.", "expected": "mv inventory.bak inventory-archive.txt", "hint": "move or rename the backup file", "output": "Renamed inventory.bak to inventory-archive.txt"}]}, {"title": "Scenario 2 • Inspect and search text", "summary": "Read config data and locate the line you care about quickly.", "description": "Practice common text and search workflows that show up constantly in support, admin, and exam scenarios.", "steps": [{"commandName": "cat", "target": "Display the contents of inventory-archive.txt.", "expected": "cat inventory-archive.txt", "hint": "dump the file to stdout", "output": "inventory-archive.txt\n---\nweb01\ndb01\nbackup01"}, {"commandName": "head", "target": "Show the first five lines of /etc/passwd.", "expected": "head -n 5 /etc/passwd", "hint": "read only the first part of the file", "output": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\n..."}, {"commandName": "tail", "target": "Show the last 20 lines of /var/log/syslog.", "expected": "tail -n 20 /var/log/syslog", "hint": "read the end of the log", "output": "Apr 13 09:41:07 web01 sshd[4271]: Accepted publickey for analyst"}, {"commandName": "grep", "target": "Search /var/log/auth.log for SSH entries, case-insensitive.", "expected": "grep -i ssh /var/log/auth.log", "hint": "filter for a pattern in the auth log", "output": "Apr 13 09:45:01 web01 sshd[4290]: Connection closed"}, {"commandName": "find", "target": "Find every .conf file under /etc.", "expected": "find /etc -name \"*.conf\"", "hint": "search recursively by name", "output": "/etc/ssh/ssh_config\n/etc/sysctl.conf\n/etc/resolv.conf"}, {"commandName": "less", "target": "Open /etc/fstab in a pager.", "expected": "less /etc/fstab", "hint": "use a pager to scroll the file", "output": "Opened /etc/fstab in less"}, {"commandName": "man", "target": "Open the manual page for tar.", "expected": "man tar", "hint": "consult the built-in manual", "output": "Displayed manual page for tar"}]}, {"title": "Scenario 3 • Ownership and identity", "summary": "Lock down a file and prepare a new analyst account.", "description": "This scenario covers the permission and account commands you use when securing files and provisioning user access.", "steps": [{"commandName": "chmod", "target": "Set inventory-archive.txt to mode 640.", "expected": "chmod 640 inventory-archive.txt", "hint": "set rw-r----- permissions", "output": "Permissions set to 640 on inventory-archive.txt"}, {"commandName": "chown", "target": "Change the owner and group to root:root.", "expected": "chown root:root inventory-archive.txt", "hint": "owner colon group", "output": "Owner changed to root:root"}, {"commandName": "chgrp", "target": "Change the group to adm.", "expected": "chgrp adm inventory-archive.txt", "hint": "change only the group", "output": "Group changed to adm"}, {"commandName": "useradd", "target": "Create a local user named analyst.", "expected": "useradd analyst", "hint": "create a new local account", "output": "User analyst created"}, {"commandName": "passwd", "target": "Assign a password to analyst.", "expected": "passwd analyst", "hint": "set the user password", "output": "passwd: password updated successfully"}, {"commandName": "usermod", "target": "Add analyst to the sudo group.", "expected": "usermod -aG sudo analyst", "hint": "append the user to a supplemental group", "output": "analyst added to groups: analyst sudo"}, {"commandName": "id", "target": "Display the identity information for analyst.", "expected": "id analyst", "hint": "show UID, GID, and groups", "output": "uid=1002(analyst) gid=1002(analyst) groups=1002(analyst),27(sudo)"}]}, {"title": "Scenario 4 • Processes and services", "summary": "Inspect workloads, adjust priority, and verify a service restart.", "description": "This sequence mixes process inspection with systemd service control and log review.", "steps": [{"commandName": "ps", "target": "List running processes in a full-format view.", "expected": "ps aux", "hint": "classic process snapshot with all users", "output": "root      1  0.0  0.1  22500  9500 ?        Ss   08:00   0:02 /sbin/init"}, {"commandName": "top", "target": "Open a real-time process monitor.", "expected": "top", "hint": "interactive process monitor", "output": "top - 09:51:02 up 2 days,  3 users,  load average: 0.20, 0.18, 0.12"}, {"commandName": "kill", "target": "Terminate process ID 4242.", "expected": "kill 4242", "hint": "send the default TERM signal", "output": "Signal sent to PID 4242"}, {"commandName": "systemctl", "target": "Check the status of the ssh service.", "expected": "systemctl status ssh", "hint": "query a systemd unit", "output": "ssh.service - OpenBSD Secure Shell server\nActive: active (running)"}, {"commandName": "journalctl", "target": "Show the last 20 journal lines for ssh.", "expected": "journalctl -u ssh -n 20", "hint": "read service logs from the journal", "output": "Apr 13 09:52:10 web01 sshd[4301]: Server listening on 0.0.0.0 port 22."}, {"commandName": "history", "target": "Display your command history.", "expected": "history", "hint": "show the shell history list", "output": "101  pwd\n102  ls\n103  cd lab\n104  history"}, {"commandName": "nice", "target": "Start backup.sh with a niceness of 10.", "expected": "nice -n 10 ./backup.sh", "hint": "launch a process with lower priority", "output": "Started ./backup.sh with niceness 10"}]}, {"title": "Scenario 5 • Network diagnostics", "summary": "Verify interfaces, listeners, and outbound connectivity.", "description": "These commands cover baseline network checks for addressing, sockets, DNS path testing, and quick HTTP verification.", "steps": [{"commandName": "ip", "target": "Display IP address information for all interfaces.", "expected": "ip addr", "hint": "show interface addressing", "output": "2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500\n    inet 192.168.10.24/24"}, {"commandName": "ss", "target": "Show listening TCP and UDP sockets with process info.", "expected": "ss -tulpn", "hint": "socket statistics replacement for netstat", "output": "tcp LISTEN 0 128 0.0.0.0:22 0.0.0.0:* users:((\"sshd\",pid=912,fd=3))"}, {"commandName": "ping", "target": "Send four ICMP echo requests to 8.8.8.8.", "expected": "ping -c 4 8.8.8.8", "hint": "limit to four packets", "output": "4 packets transmitted, 4 received, 0% packet loss"}, {"commandName": "traceroute", "target": "Trace the route to example.com.", "expected": "traceroute example.com", "hint": "map the hop path", "output": "1  gateway (192.168.10.1)  1.103 ms\n2  10.1.0.1  4.281 ms\n..."}, {"commandName": "curl", "target": "Fetch only the HTTP headers for https://example.com.", "expected": "curl -I https://example.com", "hint": "issue a HEAD-style request", "output": "HTTP/2 200\ncontent-type: text/html; charset=UTF-8"}, {"commandName": "wget", "target": "Download https://example.com.", "expected": "wget https://example.com", "hint": "retrieve the remote page to a file", "output": "Saving to: index.html\nindex.html saved [1256/1256]"}, {"commandName": "hostnamectl", "target": "Show the host identity details.", "expected": "hostnamectl", "hint": "display hostname and OS metadata", "output": "Static hostname: web01\nOperating System: Ubuntu 24.04 LTS"}]}, {"title": "Scenario 6 • Storage and archive work", "summary": "Inventory disks, review usage, and package a log bundle.", "description": "Useful for maintenance windows, handoffs, and quick support artifacts when you need to package system data.", "steps": [{"commandName": "lsblk", "target": "List block devices and mount points.", "expected": "lsblk", "hint": "show disk and partition layout", "output": "sda      8:0    0  80G  0 disk\n├─sda1   8:1    0   1G  0 part /boot\n└─sda2   8:2    0  79G  0 part /"}, {"commandName": "fdisk", "target": "Print the partition table for all disks.", "expected": "fdisk -l", "hint": "lowercase ell option", "output": "Disk /dev/sda: 80 GiB, 85899345920 bytes, 167772160 sectors"}, {"commandName": "df", "target": "Display filesystem capacity in human-readable units.", "expected": "df -h", "hint": "disk free in human format", "output": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda2        79G   22G   54G  29% /"}, {"commandName": "du", "target": "Summarize the size of /var/log.", "expected": "du -sh /var/log", "hint": "single summary, human-readable", "output": "184M\t/var/log"}, {"commandName": "tar", "target": "Create a gzip tar archive named logs.tar.gz from /var/log.", "expected": "tar -czf logs.tar.gz /var/log", "hint": "create, gzip, file", "output": "Created archive logs.tar.gz"}, {"commandName": "zip", "target": "Create a zip archive named reports.zip from the reports directory.", "expected": "zip -r reports.zip reports", "hint": "recursive zip creation", "output": "adding: reports/ (stored 0%)"}, {"commandName": "unzip", "target": "Extract docs.zip into the current directory.", "expected": "unzip docs.zip", "hint": "expand a zip archive", "output": "Archive: docs.zip\n  inflating: README.txt"}]}, {"title": "Scenario 7 • Mounting and editor tasks", "summary": "Work with removable storage, scheduled jobs, and quick edits.", "description": "The exam often expects you to know the exact command to mount media, manage cron, and edit config files with common terminal editors.", "steps": [{"commandName": "mount", "target": "Mount /dev/sdb1 at /mnt/usb.", "expected": "mount /dev/sdb1 /mnt/usb", "hint": "device then mount point", "output": "Mounted /dev/sdb1 on /mnt/usb"}, {"commandName": "umount", "target": "Unmount /mnt/usb.", "expected": "umount /mnt/usb", "hint": "remove the filesystem from the mount table", "output": "Unmounted /mnt/usb"}, {"commandName": "crontab", "target": "Edit the current user crontab.", "expected": "crontab -e", "hint": "open the cron table in an editor", "output": "Opened user crontab for editing"}, {"commandName": "nano", "target": "Edit /etc/hosts with nano.", "expected": "nano /etc/hosts", "hint": "launch the simple terminal editor", "output": "Opened /etc/hosts in nano"}, {"commandName": "vi", "target": "Open /etc/fstab with vi.", "expected": "vi /etc/fstab", "hint": "classic modal editor", "output": "Opened /etc/fstab in vi"}, {"commandName": "locate", "target": "Locate the ssh_config file.", "expected": "locate ssh_config", "hint": "use the filename database", "output": "/etc/ssh/ssh_config\n/usr/share/man/man5/ssh_config.5.gz"}, {"commandName": "rsync", "target": "Synchronize /srv/www/ to /backup/www/.", "expected": "rsync -av /srv/www/ /backup/www/", "hint": "archive mode plus verbose", "output": "sending incremental file list\n./\nindex.html"}]}, {"title": "Scenario 8 • Shell and admin finishers", "summary": "Run a script, inspect memory and kernel details, and clean up old data.", "description": "Close out the lab with a few shell productivity and administrative commands that commonly show up in troubleshooting workflows.", "steps": [{"commandName": "bash", "target": "Run the script backup.sh with bash.", "expected": "bash backup.sh", "hint": "invoke the script with the bash shell", "output": "backup.sh: completed successfully"}, {"commandName": "alias", "target": "Create an alias named ll for ls -la.", "expected": "alias ll=\"ls -la\"", "hint": "quote the command string", "output": "Alias created: ll=ls -la"}, {"commandName": "free", "target": "Display memory usage in human-readable format.", "expected": "free -h", "hint": "show RAM and swap in human units", "output": "Mem: 7.7Gi total, 2.1Gi used, 4.8Gi free"}, {"commandName": "uname", "target": "Display the running kernel release.", "expected": "uname -r", "hint": "print only the release string", "output": "6.8.0-28-generic"}, {"commandName": "visudo", "target": "Safely edit the sudoers file.", "expected": "visudo", "hint": "use the dedicated sudoers editor", "output": "Opened sudoers file with syntax checking enabled"}, {"commandName": "rm", "target": "Recursively remove the old_backups directory.", "expected": "rm -r old_backups", "hint": "remove a directory tree", "output": "Removed old_backups/"}, {"commandName": "sed", "target": "Replace localhost with server1 in hosts.txt using sed in place.", "expected": "sed -i \"s/localhost/server1/\" hosts.txt", "hint": "use in-place substitution", "output": "Updated hosts.txt in place"}]}], "commandLabel": "Distinct Linux commands"};
+const screen = document.getElementById('screen');
+const scenarioList = document.getElementById('scenarioList');
+const stepList = document.getElementById('stepList');
+const commandCloud = document.getElementById('commandCloud');
+const scenarioTitle = document.getElementById('scenarioTitle');
+const scenarioDesc = document.getElementById('scenarioDesc');
+const scenarioCounter = document.getElementById('scenarioCounter');
+const scenarioGoal = document.getElementById('scenarioGoal');
+const statScenarios = document.getElementById('stat-scenarios');
+const statProgress = document.getElementById('stat-progress');
+const storageKey = `${location.pathname}::progress`;
+
+function defaultState(){
+  return { active: 0, progress: labData.scenarios.map(() => 0), complete: labData.scenarios.map(() => false) };
+}
+function loadState(){
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (!raw) return defaultState();
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed.progress) || parsed.progress.length !== labData.scenarios.length) return defaultState();
+    return parsed;
+  } catch (err) {
+    return defaultState();
+  }
+}
+let state = loadState();
+function saveState(){ localStorage.setItem(storageKey, JSON.stringify(state)); }
+function sanitize(value){ return value.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+function addLine(text, cls=''){
+  const p = document.createElement('p');
+  p.className = ('output-line ' + cls).trim();
+  p.innerHTML = text;
+  screen.appendChild(p);
+  screen.scrollTop = screen.scrollHeight;
+}
+function addPromptInput(){
+  const wrap = document.createElement('label');
+  wrap.className = 'prompt-line';
+  wrap.innerHTML = `<span class="prompt-label">${sanitize(labData.prompt)}</span><input class="cmd-input" id="cmdInput" autocomplete="off" spellcheck="false" placeholder="Type the next command here" />`;
+  screen.appendChild(wrap);
+  const input = document.getElementById('cmdInput');
+  input.focus();
+  input.addEventListener('keydown', (event) => { if (event.key === 'Enter') handleRun(); });
+  screen.scrollTop = screen.scrollHeight;
+}
+function renderScenarioList(){
+  scenarioList.innerHTML = '';
+  labData.scenarios.forEach((scenario, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'scenario-btn' + (index === state.active ? ' active' : '');
+    const done = state.complete[index] ? ' • Complete' : ' • ' + state.progress[index] + '/' + scenario.steps.length + ' steps';
+    btn.innerHTML = `<strong>${sanitize(scenario.title)}</strong><small>${sanitize(scenario.summary)}${done}</small>`;
+    btn.addEventListener('click', () => { state.active = index; saveState(); render(); });
+    scenarioList.appendChild(btn);
+  });
+}
+function renderSteps(scenario){
+  stepList.innerHTML = '';
+  scenario.steps.forEach((step, index) => {
+    const item = document.createElement('div');
+    item.className = 'step' + (index < state.progress[state.active] ? ' done' : '');
+    item.innerHTML = `<strong>${index + 1}. ${sanitize(step.target)}</strong><span>${sanitize(step.expected)}</span>`;
+    stepList.appendChild(item);
+  });
+}
+function renderCommands(){
+  const commands = [...new Set(labData.scenarios.flatMap(s => s.steps.map(step => step.commandName)))].sort();
+  commandCloud.innerHTML = commands.map(cmd => `<span>${sanitize(cmd)}</span>`).join('');
+}
+function renderStats(){
+  statScenarios.textContent = String(labData.scenarios.length);
+  const totalSteps = labData.scenarios.reduce((sum, scenario) => sum + scenario.steps.length, 0);
+  const cleared = state.progress.reduce((sum, value) => sum + value, 0);
+  const pct = Math.round((cleared / totalSteps) * 100);
+  statProgress.textContent = `${pct}%`;
+}
+function renderTerminal(scenario){
+  screen.innerHTML = '';
+  addLine(`${sanitize(labData.systemName)} readiness check complete.`, 'sys');
+  addLine(`Scenario: ${sanitize(scenario.title)}`, 'sys');
+  addLine(sanitize(scenario.summary), 'sys');
+  addLine('');
+  scenario.steps.forEach((step, index) => {
+    if (index < state.progress[state.active]) {
+      addLine(`${sanitize(labData.prompt)} ${sanitize(step.expected)}`, 'ok');
+      addLine(sanitize(step.output), 'sys');
+    }
+  });
+  const current = scenario.steps[state.progress[state.active]];
+  if (current) {
+    addLine(`Target: ${sanitize(current.target)}`, 'warn');
+    addPromptInput();
+  } else {
+    addLine('Scenario complete. Choose another track or reset to practice again.', 'ok');
+  }
+}
+function renderScenarioHeader(scenario){
+  scenarioTitle.textContent = scenario.title;
+  scenarioDesc.textContent = scenario.description;
+  scenarioCounter.textContent = `Step ${Math.min(state.progress[state.active] + 1, scenario.steps.length)} / ${scenario.steps.length}`;
+  const current = scenario.steps[state.progress[state.active]];
+  scenarioGoal.textContent = current ? current.target : 'Scenario finished.';
+}
+function render(){
+  const scenario = labData.scenarios[state.active];
+  renderScenarioList();
+  renderScenarioHeader(scenario);
+  renderSteps(scenario);
+  renderCommands();
+  renderStats();
+  renderTerminal(scenario);
+}
+function normalize(value){ return value.trim().replace(/\s+/g, ' '); }
+function completeCurrentStep(forceReveal=false){
+  const scenario = labData.scenarios[state.active];
+  const stepIndex = state.progress[state.active];
+  const step = scenario.steps[stepIndex];
+  if (!step) return;
+  if (forceReveal) addLine(`${sanitize(labData.prompt)} ${sanitize(step.expected)}`, 'warn');
+  addLine(sanitize(step.output), forceReveal ? 'warn' : 'sys');
+  state.progress[state.active] += 1;
+  if (state.progress[state.active] >= scenario.steps.length) state.complete[state.active] = true;
+  saveState();
+  render();
+}
+function handleRun(){
+  const input = document.getElementById('cmdInput');
+  if (!input) return;
+  const value = normalize(input.value || '');
+  if (!value) return;
+  const scenario = labData.scenarios[state.active];
+  const step = scenario.steps[state.progress[state.active]];
+  addLine(`${sanitize(labData.prompt)} ${sanitize(value)}`, 'ok');
+  if (value === normalize(step.expected)) {
+    completeCurrentStep(false);
+  } else {
+    addLine(`Not quite. Goal: ${sanitize(step.target)}`, 'bad');
+    addLine(`Try focusing on the ${sanitize(step.commandName)} command.`, 'bad');
+    input.value = '';
+    input.focus();
+  }
+}
+document.getElementById('runBtn').addEventListener('click', handleRun);
+document.getElementById('hintBtn').addEventListener('click', () => {
+  const scenario = labData.scenarios[state.active];
+  const step = scenario.steps[state.progress[state.active]];
+  if (!step) return;
+  addLine(`Hint: use ${sanitize(step.commandName)} — ${sanitize(step.hint)}`, 'warn');
+});
+document.getElementById('revealBtn').addEventListener('click', () => {
+  const scenario = labData.scenarios[state.active];
+  if (!scenario.steps[state.progress[state.active]]) return;
+  completeCurrentStep(true);
+});
+document.getElementById('resetScenarioBtn').addEventListener('click', () => {
+  state.progress[state.active] = 0;
+  state.complete[state.active] = false;
+  saveState();
+  render();
+});
+document.getElementById('resetAllBtn').addEventListener('click', () => {
+  state = defaultState();
+  saveState();
+  render();
+});
+render();
+</script>
+</body>
+</html>
