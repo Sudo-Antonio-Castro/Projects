@@ -22,8 +22,3 @@ A collection of interactive IT learning resources, command-line practice labs, c
 
 * **`IT-Knowledge-Base-Articles/` — Technical Reference Library**
   Step-by-step articles and notes covering IT tools and workflows, including Ollama installation and Wifite usage on Kali Linux.
-
-
-## Learning Roadmap design system
-
-All `index.html` pages use the shared Option 3 Learning Roadmap theme in `assets/roadmap-theme.css` and `assets/roadmap-theme.js`. New index pages should link those two files using the correct relative path and add `class="roadmap-theme"` to the `<body>`. Hub pages also use `rm-hub`; lesson/article pages use `rm-lesson`; quizzes use `rm-quiz`; and CLI labs use `rm-cli`. CLI pages additionally load `assets/cli-labs.css` and use `cli-ubuntu`, `cli-powershell`, or `cli-macos` for an operating-system-specific terminal. Landing pages intentionally keep introductions and navigation brief.
