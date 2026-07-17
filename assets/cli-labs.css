@@ -1,0 +1,340 @@
+/* Compact, platform-specific CLI labs */
+body.roadmap-theme.rm-cli{
+  --cli-panel:color-mix(in srgb,var(--rm-panel) 86%,#000);
+}
+body.roadmap-theme.rm-cli .cli-shell{
+  padding-top:24px !important;
+  padding-bottom:40px !important;
+}
+body.roadmap-theme.rm-cli .cli-workspace{
+  display:grid !important;
+  grid-template-columns:minmax(230px,280px) minmax(460px,1fr) minmax(250px,310px) !important;
+  gap:16px !important;
+  align-items:start;
+}
+body.roadmap-theme.rm-cli .panel{
+  background:color-mix(in srgb,var(--rm-panel) 90%,transparent) !important;
+  border:1px solid var(--rm-line) !important;
+  border-radius:14px !important;
+  box-shadow:none !important;
+}
+body.roadmap-theme.rm-cli .scenario-panel,
+body.roadmap-theme.rm-cli .task-panel{
+  position:sticky;
+  top:92px;
+  max-height:calc(100vh - 112px);
+  overflow:auto;
+  padding:16px !important;
+}
+body.roadmap-theme.rm-cli .scenario-panel h2,
+body.roadmap-theme.rm-cli .task-panel h2{
+  margin:0 !important;
+  font-size:1rem !important;
+  letter-spacing:.02em;
+}
+body.roadmap-theme.rm-cli .scenario-list{
+  display:grid;
+  gap:6px !important;
+  margin-top:12px;
+}
+body.roadmap-theme.rm-cli .scenario-btn{
+  width:100%;
+  padding:12px !important;
+  color:var(--rm-text) !important;
+  text-align:left;
+  cursor:pointer;
+  background:transparent !important;
+  border:1px solid transparent !important;
+  border-radius:9px !important;
+}
+body.roadmap-theme.rm-cli .scenario-btn:hover{
+  background:color-mix(in srgb,var(--rm-blue) 7%,transparent) !important;
+  border-color:var(--rm-line) !important;
+}
+body.roadmap-theme.rm-cli .scenario-btn.active{
+  background:color-mix(in srgb,var(--rm-blue) 12%,transparent) !important;
+  border-color:color-mix(in srgb,var(--rm-blue) 45%,var(--rm-line)) !important;
+}
+body.roadmap-theme.rm-cli .scenario-btn strong{
+  display:block;
+  font-size:.88rem;
+  line-height:1.35;
+}
+body.roadmap-theme.rm-cli .scenario-btn small{
+  display:block;
+  margin-top:4px;
+  color:var(--rm-muted);
+  font-size:.73rem;
+  line-height:1.35;
+}
+body.roadmap-theme.rm-cli .terminal-wrap{
+  min-width:0;
+  padding:16px !important;
+}
+body.roadmap-theme.rm-cli .terminal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:0 0 12px !important;
+  background:transparent !important;
+  border:0 !important;
+}
+body.roadmap-theme.rm-cli .platform-label{
+  display:block;
+  margin-bottom:2px;
+  color:var(--rm-muted);
+  font:800 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+body.roadmap-theme.rm-cli .terminal-head h2{
+  margin:0 !important;
+  font-size:1.08rem !important;
+  line-height:1.35 !important;
+}
+body.roadmap-theme.rm-cli .step-counter{
+  flex:none;
+  padding:6px 9px;
+  color:var(--rm-muted);
+  background:transparent;
+  border:1px solid var(--rm-line);
+  border-radius:7px;
+  font:700 .73rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body.roadmap-theme.rm-cli .current-task{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin:0 0 12px;
+  padding:10px 12px;
+  background:color-mix(in srgb,var(--rm-panel-2) 70%,transparent);
+  border-left:3px solid var(--rm-yellow);
+}
+body.roadmap-theme.rm-cli .current-task span{
+  flex:none;
+  color:var(--rm-yellow);
+  font:900 .66rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body.roadmap-theme.rm-cli .current-task p{
+  margin:0 !important;
+  color:var(--rm-text) !important;
+  font-size:.9rem !important;
+  line-height:1.4;
+}
+body.roadmap-theme.rm-cli .platform-terminal{
+  overflow:hidden;
+  border-radius:10px !important;
+  box-shadow:0 18px 44px rgba(0,0,0,.28) !important;
+}
+body.roadmap-theme.rm-cli .terminal-top{
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px !important;
+  border:0 !important;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  user-select:none;
+}
+body.roadmap-theme.rm-cli .screen{
+  min-height:430px;
+  max-height:58vh;
+  overflow:auto;
+  padding:18px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  font:400 .92rem/1.55 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace !important;
+}
+body.roadmap-theme.rm-cli .output-line{
+  margin:0 0 8px;
+  white-space:pre-wrap;
+}
+body.roadmap-theme.rm-cli .prompt-line{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  margin-top:4px;
+}
+body.roadmap-theme.rm-cli .prompt-label{white-space:nowrap;font-weight:700}
+body.roadmap-theme.rm-cli .cmd-input{
+  min-width:0;
+  width:100%;
+  padding:0;
+  color:inherit;
+  background:transparent;
+  border:0;
+  outline:0;
+  font:inherit;
+  caret-color:currentColor;
+}
+body.roadmap-theme.rm-cli .cmd-input::placeholder{color:rgba(255,255,255,.35)}
+body.roadmap-theme.rm-cli .toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  padding:10px !important;
+  border:0 !important;
+  border-top:1px solid rgba(255,255,255,.12) !important;
+}
+body.roadmap-theme.rm-cli .toolbar button{
+  padding:7px 10px !important;
+  color:#f7f7f7 !important;
+  background:rgba(255,255,255,.08) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:6px !important;
+  font-size:.76rem !important;
+  font-weight:750 !important;
+  cursor:pointer;
+}
+body.roadmap-theme.rm-cli .toolbar button:hover{background:rgba(255,255,255,.14) !important}
+body.roadmap-theme.rm-cli .toolbar button.primary{color:#111 !important;background:#f1f1f1 !important;border-color:#f1f1f1 !important}
+body.roadmap-theme.rm-cli .toolbar button.quiet{margin-left:auto;color:rgba(255,255,255,.68) !important;background:transparent !important}
+body.roadmap-theme.rm-cli .task-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--rm-line);
+}
+body.roadmap-theme.rm-cli .task-heading span{
+  color:var(--rm-muted);
+  font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body.roadmap-theme.rm-cli .task-panel .list{display:grid;gap:0 !important}
+body.roadmap-theme.rm-cli .step{
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:9px;
+  align-items:start;
+  padding:11px 0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-bottom:1px solid var(--rm-line) !important;
+  border-radius:0 !important;
+}
+body.roadmap-theme.rm-cli .step strong{
+  font-size:.82rem;
+  font-weight:650;
+  line-height:1.45;
+}
+body.roadmap-theme.rm-cli .task-marker{
+  display:grid;
+  place-items:center;
+  width:25px;
+  height:25px;
+  color:var(--rm-muted);
+  border:1px solid var(--rm-line);
+  border-radius:50%;
+  font:800 .64rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body.roadmap-theme.rm-cli .step.active .task-marker{color:#111;background:var(--rm-yellow);border-color:var(--rm-yellow)}
+body.roadmap-theme.rm-cli .step.done{opacity:.58}
+body.roadmap-theme.rm-cli .step.done .task-marker{color:#082317;background:var(--rm-mint);border-color:var(--rm-mint)}
+body.roadmap-theme.rm-cli .sys{opacity:.82}
+body.roadmap-theme.rm-cli .ok{color:#84f5ad}
+body.roadmap-theme.rm-cli .warn{color:#ffd866}
+body.roadmap-theme.rm-cli .bad{color:#ff8f8f}
+body.roadmap-theme.rm-cli .window-controls{display:flex;align-self:stretch;align-items:stretch;margin-right:-10px}
+body.roadmap-theme.rm-cli .window-controls span{display:grid;place-items:center;min-width:42px;font-size:.8rem}
+
+/* Ubuntu Terminal */
+body.roadmap-theme.cli-ubuntu .platform-terminal{border:1px solid #1e1e1e !important}
+body.roadmap-theme.cli-ubuntu .ubuntu-titlebar{color:#f2f2f2 !important;background:#2c2c2c !important}
+body.roadmap-theme.cli-ubuntu .ubuntu-tab{display:flex;align-items:center;gap:9px;font-size:.78rem;font-weight:650}
+body.roadmap-theme.cli-ubuntu .terminal-app-icon{display:grid;place-items:center;width:23px;height:23px;color:#fff;background:#e95420;border-radius:5px;font:800 .72rem/1 ui-monospace,monospace}
+body.roadmap-theme.cli-ubuntu .ubuntu-controls span:hover{background:rgba(255,255,255,.1)}
+body.roadmap-theme.cli-ubuntu .ubuntu-controls span:last-child:hover{background:#c42b1c}
+body.roadmap-theme.cli-ubuntu .screen{color:#f7f7f7 !important;background:#300a24 !important}
+body.roadmap-theme.cli-ubuntu .toolbar{background:#24101e !important}
+body.roadmap-theme.cli-ubuntu .prompt-label{color:#8ae234 !important}
+
+/* Windows Terminal / PowerShell */
+body.roadmap-theme.cli-powershell .platform-terminal{border:1px solid #363636 !important;border-radius:8px !important}
+body.roadmap-theme.cli-powershell .powershell-titlebar{height:42px;color:#f5f5f5 !important;background:#202020 !important;padding-left:7px !important}
+body.roadmap-theme.cli-powershell .windows-tabs{display:flex;align-items:stretch;height:100%}
+body.roadmap-theme.cli-powershell .powershell-tab{display:flex;align-items:center;gap:8px;padding:0 14px;background:#012456;border-top:3px solid #59a8ff;font-size:.75rem}
+body.roadmap-theme.cli-powershell .ps-icon{color:#59a8ff;font:900 .78rem/1 ui-monospace,monospace}
+body.roadmap-theme.cli-powershell .new-tab,
+body.roadmap-theme.cli-powershell .tab-menu{display:grid;place-items:center;width:34px;color:#ddd}
+body.roadmap-theme.cli-powershell .windows-controls span:hover{background:#383838}
+body.roadmap-theme.cli-powershell .windows-controls span:last-child:hover{background:#c42b1c}
+body.roadmap-theme.cli-powershell .screen{color:#f5f5f5 !important;background:#012456 !important;font-family:Cascadia Mono,Consolas,"Courier New",monospace !important}
+body.roadmap-theme.cli-powershell .toolbar{background:#0b1d38 !important}
+body.roadmap-theme.cli-powershell .prompt-label{color:#f5f5f5 !important}
+
+/* macOS Terminal */
+body.roadmap-theme.cli-macos .platform-terminal{border:1px solid #4a4a4d !important;border-radius:11px !important}
+body.roadmap-theme.cli-macos .macos-titlebar{position:relative;color:#d9d9dc !important;background:#2b2b2e !important}
+body.roadmap-theme.cli-macos .mac-traffic{display:flex;gap:8px;align-items:center}
+body.roadmap-theme.cli-macos .mac-traffic span{width:12px;height:12px;border-radius:50%}
+body.roadmap-theme.cli-macos .mac-close{background:#ff5f57}
+body.roadmap-theme.cli-macos .mac-minimize{background:#febc2e}
+body.roadmap-theme.cli-macos .mac-zoom{background:#28c840}
+body.roadmap-theme.cli-macos .mac-window-title{position:absolute;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:650;white-space:nowrap}
+body.roadmap-theme.cli-macos .mac-title-spacer{width:52px}
+body.roadmap-theme.cli-macos .screen{color:#f2f2f2 !important;background:#101010 !important;font-family:SFMono-Regular,Menlo,Monaco,Consolas,monospace !important}
+body.roadmap-theme.cli-macos .toolbar{background:#1c1c1e !important}
+body.roadmap-theme.cli-macos .prompt-label{color:#7dd3fc !important}
+
+@media(max-width:1120px){
+  body.roadmap-theme.rm-cli .cli-workspace{grid-template-columns:240px minmax(0,1fr) !important}
+  body.roadmap-theme.rm-cli .task-panel{grid-column:1 / -1;position:static;max-height:none}
+  body.roadmap-theme.rm-cli .task-panel .list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}
+}
+@media(max-width:780px){
+  body.roadmap-theme.rm-cli .cli-shell{padding-top:14px !important}
+  body.roadmap-theme.rm-cli .cli-workspace{grid-template-columns:1fr !important}
+  body.roadmap-theme.rm-cli .scenario-panel,
+  body.roadmap-theme.rm-cli .task-panel{position:static;max-height:none}
+  body.roadmap-theme.rm-cli .scenario-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.roadmap-theme.rm-cli .task-panel .list{grid-template-columns:1fr}
+  body.roadmap-theme.rm-cli .screen{min-height:360px;max-height:none}
+}
+@media(max-width:520px){
+  body.roadmap-theme.rm-cli .scenario-list{grid-template-columns:1fr}
+  body.roadmap-theme.rm-cli .terminal-head{align-items:flex-start}
+  body.roadmap-theme.rm-cli .current-task{display:block}
+  body.roadmap-theme.rm-cli .current-task span{display:block;margin-bottom:4px}
+  body.roadmap-theme.rm-cli .toolbar button.quiet{margin-left:0}
+  body.roadmap-theme.cli-powershell .powershell-tab{padding:0 9px}
+  body.roadmap-theme.rm-cli .window-controls span{min-width:32px}
+}
+
+/* CLI page header essentials (the former inline stylesheet is intentionally removed) */
+body.roadmap-theme.rm-cli header{position:sticky !important;top:4px !important}
+body.roadmap-theme.rm-cli .brand{display:flex;align-items:center;gap:14px;min-width:0}
+body.roadmap-theme.rm-cli .logo{display:grid;place-items:center;flex:none;width:42px;height:42px;font-size:.88rem;font-weight:900}
+body.roadmap-theme.rm-cli .brand h1,
+body.roadmap-theme.rm-cli .brand p{margin:0}
+body.roadmap-theme.rm-cli .brand h1{font-size:.92rem;line-height:1.25}
+body.roadmap-theme.rm-cli .brand p{margin-top:3px;color:var(--rm-muted);font-size:.73rem;line-height:1.3;letter-spacing:.04em}
+body.roadmap-theme.rm-cli .brand p a{text-decoration:none}
+@media(max-width:700px){
+  body.roadmap-theme.rm-cli .brand p{display:none}
+  body.roadmap-theme.rm-cli .brand h1{font-size:.8rem}
+}
+
+/* Direct terminal entry: click anywhere in the terminal to focus the command line. */
+body.roadmap-theme.rm-cli .platform-terminal{cursor:text}
+body.roadmap-theme.rm-cli .terminal-top,
+body.roadmap-theme.rm-cli .toolbar{cursor:default}
+body.roadmap-theme.rm-cli .command-line{color:inherit}
+body.roadmap-theme.rm-cli .cmd-input:focus{outline:none}
+
+/* Direct terminal entry: click anywhere in the terminal to focus the command line. */
+body.roadmap-theme.rm-cli .platform-terminal{cursor:text}
+body.roadmap-theme.rm-cli .terminal-top,
+body.roadmap-theme.rm-cli .toolbar{cursor:default}
+body.roadmap-theme.rm-cli .command-line{color:inherit}
+body.roadmap-theme.rm-cli .cmd-input:focus{outline:none}
+
+/* Direct terminal entry: click anywhere in the terminal to focus the command line. */
+body.roadmap-theme.rm-cli .platform-terminal{cursor:text}
+body.roadmap-theme.rm-cli .terminal-top,
+body.roadmap-theme.rm-cli .toolbar{cursor:default}
+body.roadmap-theme.rm-cli .command-line{color:inherit}
+body.roadmap-theme.rm-cli .cmd-input:focus{outline:none}
