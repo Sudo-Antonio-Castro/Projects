@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects • IT Knowledge Base Articles</title>
-  <meta name="description" content="Use this page to open your current knowledge-base articles and to make future article groups easier to discover." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Projects • IT Knowledge Base Articles</title>
+<meta content="Technical setup guides and IT reference articles." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
 :root{
   --bg:#0a0c10;
   --panel:#11151c;
@@ -46,46 +47,36 @@ header{position:sticky;top:0;z-index:10;background:rgba(10,12,16,.72);backdrop-f
 .footer{padding:34px 0 12px;color:var(--muted);font-size:.92rem}
 @media (max-width: 920px){.hero-grid{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start}.nav-links{width:100%}.hero h2{max-width:none}.stat-list{grid-template-columns:1fr}}
 </style>
+<meta content="#130e22" name="theme-color"/>
+<link data-roadmap-theme="option-3" href="../assets/roadmap-theme.css" rel="stylesheet"/>
+<script data-roadmap-theme="option-3" defer="" src="../assets/roadmap-theme.js"></script>
 </head>
-<body>
+<body class="roadmap-theme rm-hub" data-roadmap-theme="option-3">
 <header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo">P</div>
-      <div class="brand-copy">
-        <h1>Projects • IT Knowledge Base Articles</h1>
-        <p><a href="../index.html">Projects Home</a> / IT-Knowledge-Base-Articles</p>
-      </div>
-    </div>
-    <nav class="nav-links"></nav>
-  </div>
-</header>
-<main class="shell">
-  <section class="hero-grid">
-    <div class="hero-card">
-      <span class="eyebrow">Article launcher</span>
-      <h2>A simple launch page for article-style references.</h2>
-      <p>Use this page to open your current knowledge-base articles and to make future article groups easier to discover.</p>
-      <div class="stat-list"><div class="stat"><strong>2</strong><span>Current article groups</span></div><div class="stat"><strong>2</strong><span>HTML articles</span></div><div class="stat"><strong>Reference library</strong><span>Use case</span></div></div>
-    </div>
-    <div class="hero-card">
-      <div class="section">
-        <h3>What you can do here</h3>
-        <p>Use the cards below to jump directly into the areas you want to study, demo, or expand later. These pages are designed to be easy to grow as you add new folders.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="AI/Ollama.html">Open first option</a>
-          <a class="btn ghost" href="../index.html">Back to top level</a>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  <section class="section">
-    <h3>Available options</h3>
-    <p>Select a section below. Future folders can be added by dropping in a new card and pointing it to the new path.</p>
-    <div class="grid"><a class="card" href="AI/Ollama.html"><div class="card-kicker">AI</div><h4>Ollama setup article</h4><p>Open the existing knowledge-base article covering winget, PowerShell 7, Python, and Ollama setup.</p><div class="chip-row"><span class="chip">AI</span><span class="chip">KB article</span><span class="chip">Setup guide</span></div></a><a class="card" href="Kali-Linux/Wifite.html"><div class="card-kicker">Kali Linux</div><h4>Wifite article</h4><p>Open the current Kali Linux knowledge-base article in this repo.</p><div class="chip-row"><span class="chip">Kali Linux</span><span class="chip">KB article</span><span class="chip">Tooling</span></div></a></div>
-  </section>
+<div class="nav">
+<div class="brand">
+<div class="logo">P</div>
+<div class="brand-copy">
+<h1>Knowledge Base</h1>
+
+</div>
+</div>
+<nav class="nav-links"></nav>
+</div>
+<nav aria-label="Global project navigation" class="roadmap-global-nav"><a data-section="home" href="../index.html">Home</a><a data-section="comptia" href="../CompTIA/index.html">Tracks</a><a data-section="ec-council" href="../EC-Council/index.html">CEH</a><a data-section="clis" href="../CLIs/index.html">Labs</a><a data-section="it-knowledge-base-articles" href="index.html">Library</a><a data-section="apps" href="../Apps/index.html">Apps</a></nav></header>
+<main class="shell compact-hub">
+<section class="hero-grid">
+<div class="hero-card">
+<span class="eyebrow">Reference</span>
+<h2>Knowledge Base</h2>
+<p>Technical setup guides and reference articles.</p>
+</div>
+</section>
+<section class="section">
+<h3>Articles</h3>
+<div class="grid"><a class="card" href="AI/Ollama.html"><div class="card-kicker">AI</div><h4>Ollama Setup</h4><p>Install PowerShell, Python, and Ollama on Windows.</p></a><a class="card" href="Kali-Linux/Wifite.html"><div class="card-kicker">Kali Linux</div><h4>Wifite</h4><p>Wireless auditing reference for Kali Linux.</p></a></div>
+</section>
 </main>
-<footer class="shell footer">Built as a GitHub Pages friendly index with self-contained HTML files.</footer>
+
 </body>
 </html>

@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects • CLIs</title>
-  <meta name="description" content="Each page is standalone and styled to match the feel of the target shell so you can host them anywhere inside the repo." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Projects • CLIs</title>
+<meta content="Interactive command-line practice labs for Linux, Windows PowerShell, and macOS." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
 :root{
   --bg:#0a0c10;
   --panel:#11151c;
@@ -46,46 +47,36 @@ header{position:sticky;top:0;z-index:10;background:rgba(10,12,16,.72);backdrop-f
 .footer{padding:34px 0 12px;color:var(--muted);font-size:.92rem}
 @media (max-width: 920px){.hero-grid{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start}.nav-links{width:100%}.hero h2{max-width:none}.stat-list{grid-template-columns:1fr}}
 </style>
+<meta content="#130e22" name="theme-color"/>
+<link data-roadmap-theme="option-3" href="../assets/roadmap-theme.css" rel="stylesheet"/>
+<script data-roadmap-theme="option-3" defer="" src="../assets/roadmap-theme.js"></script>
 </head>
-<body>
+<body class="roadmap-theme rm-hub" data-roadmap-theme="option-3">
 <header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo">P</div>
-      <div class="brand-copy">
-        <h1>Projects • CLIs</h1>
-        <p><a href="../index.html">Projects Home</a> / CLIs</p>
-      </div>
-    </div>
-    <nav class="nav-links"></nav>
-  </div>
-</header>
-<main class="shell">
-  <section class="hero-grid">
-    <div class="hero-card">
-      <span class="eyebrow">CLI launcher</span>
-      <h2>Choose the terminal lab you want to practice.</h2>
-      <p>Each page is standalone and styled to match the feel of the target shell so you can host them anywhere inside the repo.</p>
-      <div class="stat-list"><div class="stat"><strong>3</strong><span>Terminal pages</span></div><div class="stat"><strong>56 commands</strong><span>Linux coverage</span></div><div class="stat"><strong>Self-contained HTML</strong><span>Style</span></div></div>
-    </div>
-    <div class="hero-card">
-      <div class="section">
-        <h3>What you can do here</h3>
-        <p>Use the cards below to jump directly into the areas you want to study, demo, or expand later. These pages are designed to be easy to grow as you add new folders.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="Linux/index.html">Open first option</a>
-          <a class="btn ghost" href="../index.html">Back to top level</a>
-        </div>
-      </div>
-      <div class="note">Linux has the deepest command coverage right now. Windows and macOS are structured to grow the same way as you add more scenarios.</div>
-    </div>
-  </section>
-  <section class="section">
-    <h3>Available options</h3>
-    <p>Select a section below. Future folders can be added by dropping in a new card and pointing it to the new path.</p>
-    <div class="grid"><a class="card" href="Linux/index.html"><div class="card-kicker">GNU/Linux</div><h4>Linux CLI</h4><p>A Linux terminal practice lab with eight scenarios and 56 distinct commands spanning files, services, networking, storage, and shell admin tasks.</p><div class="chip-row"><span class="chip">8 scenarios</span><span class="chip">56 commands</span><span class="chip">Terminal UI</span></div></a><a class="card" href="Windows/index.html"><div class="card-kicker">Windows 11</div><h4>Windows PowerShell CLI</h4><p>A PowerShell-focused practice page with Windows-style command scenarios for services, networking, archives, and admin routines.</p><div class="chip-row"><span class="chip">PowerShell</span><span class="chip">Windows 11</span><span class="chip">Pipeline practice</span></div></a><a class="card" href="MacOS/index.html"><div class="card-kicker">Apple</div><h4>MacOS Terminal CLI</h4><p>A macOS terminal page with zsh-style workflows, mac-specific commands, and Unix fundamentals adapted for Terminal.app users.</p><div class="chip-row"><span class="chip">macOS</span><span class="chip">zsh style</span><span class="chip">Terminal.app feel</span></div></a></div>
-  </section>
+<div class="nav">
+<div class="brand">
+<div class="logo">P</div>
+<div class="brand-copy">
+<h1>CLI Labs</h1>
+
+</div>
+</div>
+<nav class="nav-links"></nav>
+</div>
+<nav aria-label="Global project navigation" class="roadmap-global-nav"><a data-section="home" href="../index.html">Home</a><a data-section="comptia" href="../CompTIA/index.html">Tracks</a><a data-section="ec-council" href="../EC-Council/index.html">CEH</a><a data-section="clis" href="index.html">Labs</a><a data-section="it-knowledge-base-articles" href="../IT-Knowledge-Base-Articles/index.html">Library</a><a data-section="apps" href="../Apps/index.html">Apps</a></nav></header>
+<main class="shell compact-hub">
+<section class="hero-grid">
+<div class="hero-card">
+<span class="eyebrow">Interactive Labs</span>
+<h2>Command-Line Labs</h2>
+<p>Practice Linux, Windows PowerShell, and macOS terminal workflows.</p>
+</div>
+</section>
+<section class="section">
+<h3>Choose a Lab</h3>
+<div class="grid"><a class="card" href="Linux/index.html"><div class="card-kicker">Linux</div><h4>Linux CLI</h4><p>Files, services, networking, storage, and administration.</p></a><a class="card" href="Windows/index.html"><div class="card-kicker">Windows</div><h4>PowerShell CLI</h4><p>Windows administration and troubleshooting commands.</p></a><a class="card" href="MacOS/index.html"><div class="card-kicker">macOS</div><h4>macOS Terminal</h4><p>Unix fundamentals and macOS-specific workflows.</p></a></div>
+</section>
 </main>
-<footer class="shell footer">Built as a GitHub Pages friendly index with self-contained HTML files.</footer>
+
 </body>
 </html>
