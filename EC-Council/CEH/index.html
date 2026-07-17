@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EC-Council CEH — Study Hub</title>
+  <meta name="description" content="EC-Council CEH study modules, quizzes, midterm, and final exam." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+:root{--bg:#faf9f7;--surface:#ffffff;--surface-soft:#f6f3ee;--text:#1a1814;--muted:#7a756c;--border:#e8e4de;--accent:#1a1814;--good:#1f6d3a;--font-sans:'Inter',ui-sans-serif,system-ui,sans-serif;--font-serif:'Playfair Display',Georgia,serif;--max:1080px;--radius:4px}
+[data-theme="dark"]{--bg:#0f0e0c;--surface:#171612;--surface-soft:#1d1b16;--text:#f0ece4;--muted:#8a8578;--border:#2a2820;--accent:#f0ece4;--good:#7fd19c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}button{font:inherit}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 90%,transparent)}
+.topbar{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.controls{display:flex;gap:10px;align-items:center}
+.theme-toggle,.icon-btn{width:40px;height:40px;border:1px solid var(--border);background:var(--surface);border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--text)}
+.theme-toggle svg,.icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+main{padding:36px 24px 60px}
+.wrap{max-width:var(--max);margin:0 auto}
+.hero{padding:28px 0 18px}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h1,h2,h3{font-family:var(--font-serif);font-weight:700;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,5vw,4rem);max-width:10ch}
+.hero p{max-width:72ch;color:var(--muted);font-size:1.03rem;margin:16px 0 0}
+.section-label{display:flex;align-items:center;gap:14px;margin:28px 0 18px}
+.section-label span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.section-rule{height:1px;flex:1;background:var(--border)}
+.grid{display:grid;gap:18px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card,.panel{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:22px}
+.card h3{font-size:1.35rem;margin-bottom:10px}
+.card p,.panel p,.panel li{color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--surface-soft);border-radius:999px;padding:8px 12px;font-size:.92rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:12px 18px;font-weight:600}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.lesson{padding:22px;border:1px solid var(--border);border-radius:24px;background:var(--surface)}
+.lesson h3{font-size:1.5rem;margin-bottom:8px}
+.lesson h4{margin:18px 0 8px;font-size:1rem;letter-spacing:.02em}
+.lesson ul{margin:8px 0 0 18px;padding:0}
+.lesson .summary{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.sidebar-list{display:grid;gap:14px}
+.sidebar-item{padding:16px;border:1px solid var(--border);border-radius:18px;background:var(--surface-soft)}
+.home-table{display:grid;gap:14px}
+.module-row{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px;border:1px solid var(--border);border-radius:22px;background:var(--surface)}
+.module-row .roman{font-family:var(--font-serif);font-size:1.6rem;min-width:2ch}
+.module-row .title{font-weight:600}
+.module-row .desc{color:var(--muted);font-size:.96rem}
+footer{border-top:1px solid var(--border);padding:22px 24px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media (max-width:840px){.two-col{grid-template-columns:1fr}h1{max-width:none}.module-row{grid-template-columns:1fr}.module-row .roman{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">EC-Council CEH · Study Hub</div>
+    <div class="controls">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-10V2m0 20v-4M4.22 4.22l2.83 2.83m9.9 9.9 2.83 2.83M2 12h4m16 0h-4M4.22 19.78l2.83-2.83m9.9-9.9 2.83-2.83"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <div class="kicker">EC-Council CEH</div>
+      <h1>EC - CCEH.</h1>
+      <p>This study hub follows the CEH Ethical Hacker  course sequence. It includes XV study modules, XV module quizzes, a midterm, and a timed final.</p>
+      <div class="meta">
+        <div class="chip">XV Modules</div>
+        <div class="chip">90 Multiple-Choice Questions</div>
+        <div class="chip">Midterm + Timed Final</div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="./Midterm_Exam/">Start Midterm</a>
+        <a class="btn" href="./Final_Exam/">Open Final Exam</a>
+      </div>
+    </section>
+
+    <div class="section-label"><span>Modules</span><div class="section-rule"></div></div>
+    <section class="home-table">
+      
+    <div class="module-row">
+      <div class="roman">I</div>
+      <div>
+        <div class="title">Module I: Ethical Hacking Essentials</div>
+        <div class="desc">This opening module explains what ethical hacking is, how it differs from criminal hacking, and why structured methodology matters before touching any target.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Ethical_Hacking_Essentials/">Open Module</a>
+        <a class="btn" href="./Quiz_Ethical_Hacking_Essentials/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">II</div>
+      <div>
+        <div class="title">Module II: Penetration Testing Foundations</div>
+        <div class="desc">This module covers penetration-testing process models, common frameworks, and the difference between black-box, white-box, and gray-box engagements.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Penetration_Testing_Foundations/">Open Module</a>
+        <a class="btn" href="./Quiz_Penetration_Testing_Foundations/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">III</div>
+      <div>
+        <div class="title">Module III: Human Factors &amp; Physical Access</div>
+        <div class="desc">This module examines social engineering tactics, physical attacks, and the practical controls that reduce human and facility risk.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Human_Factors_and_Physical_Access/">Open Module</a>
+        <a class="btn" href="./Quiz_Human_Factors_and_Physical_Access/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">IV</div>
+      <div>
+        <div class="title">Module IV: Reconnaissance &amp; Footprinting</div>
+        <div class="desc">Reconnaissance builds the intelligence picture: employees, systems, domains, documents, exposures, and public-facing clues that shape later phases.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Reconnaissance_and_Footprinting/">Open Module</a>
+        <a class="btn" href="./Quiz_Reconnaissance_and_Footprinting/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">V</div>
+      <div>
+        <div class="title">Module V: Scanning &amp; Service Discovery</div>
+        <div class="desc">Scanning is the step where a tester actively probes systems to identify listening ports, exposed services, and higher-value targets for deeper analysis.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Scanning_and_Service_Discovery/">Open Module</a>
+        <a class="btn" href="./Quiz_Scanning_and_Service_Discovery/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">VI</div>
+      <div>
+        <div class="title">Module VI: Enumeration &amp; Target Profiling</div>
+        <div class="desc">Enumeration extracts practical details from accessible services and protocols, helping a tester understand accounts, systems, and network resources in usable detail.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Enumeration_and_Target_Profiling/">Open Module</a>
+        <a class="btn" href="./Quiz_Enumeration_and_Target_Profiling/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">VII</div>
+      <div>
+        <div class="title">Module VII: Vulnerability Analysis &amp; Prioritization</div>
+        <div class="desc">This module centers on vulnerability assessment workflows, scanner results, risk scoring, and the disciplined cycle of validating and remediating weaknesses.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Vulnerability_Analysis_and_Prioritization/">Open Module</a>
+        <a class="btn" href="./Quiz_Vulnerability_Analysis_and_Prioritization/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">VIII</div>
+      <div>
+        <div class="title">Module VIII: System Compromise &amp; Privilege Escalation</div>
+        <div class="desc">System hacking topics include credential attacks, privilege escalation, persistence, and the actions attackers take after gaining initial access.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./System_Compromise_and_Privilege_Escalation/">Open Module</a>
+        <a class="btn" href="./Quiz_System_Compromise_and_Privilege_Escalation/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">IX</div>
+      <div>
+        <div class="title">Module IX: Malware Techniques &amp; Countermeasures</div>
+        <div class="desc">Malware study in CEH blends offensive awareness with defensive recognition—covering malware types, signs of infection, and practical response controls.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Malware_Techniques_and_Countermeasures/">Open Module</a>
+        <a class="btn" href="./Quiz_Malware_Techniques_and_Countermeasures/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">X</div>
+      <div>
+        <div class="title">Module X: Sniffing, Hijacking &amp; Denial of Service</div>
+        <div class="desc">This module combines packet analysis, man-in-the-middle behavior, session hijacking tactics, and denial-of-service attack patterns with corresponding defenses.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Sniffing_Hijacking_and_Denial_of_Service/">Open Module</a>
+        <a class="btn" href="./Quiz_Sniffing_Hijacking_and_Denial_of_Service/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">XI</div>
+      <div>
+        <div class="title">Module XI: IDS, Firewalls &amp; Deception Systems</div>
+        <div class="desc">This module covers intrusion detection systems, firewall behavior and evasion, and honeypots used for controlled observation or decoy defense.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./IDS_Firewalls_and_Deception_Systems/">Open Module</a>
+        <a class="btn" href="./Quiz_IDS_Firewalls_and_Deception_Systems/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">XII</div>
+      <div>
+        <div class="title">Module XII: Web Servers, Web Apps &amp; SQL Injection</div>
+        <div class="desc">This module walks through web server weaknesses, common web application flaws, and SQL injection concepts that remain central to real-world compromise paths.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Web_Servers_Web_Apps_and_SQL_Injection/">Open Module</a>
+        <a class="btn" href="./Quiz_Web_Servers_Web_Apps_and_SQL_Injection/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">XIII</div>
+      <div>
+        <div class="title">Module XIII: Wireless, Bluetooth &amp; Mobile Security</div>
+        <div class="desc">Wireless and mobile topics include Wi-Fi discovery, encryption attacks, rogue infrastructure, Bluetooth abuse, and practical mobile-device hardening.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Wireless_Bluetooth_and_Mobile_Security/">Open Module</a>
+        <a class="btn" href="./Quiz_Wireless_Bluetooth_and_Mobile_Security/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">XIV</div>
+      <div>
+        <div class="title">Module XIV: Cloud &amp; IoT Attack Surface</div>
+        <div class="desc">This module covers cloud threat concepts, shared responsibility, common cloud attacks, and the expanding footprint created by IoT devices and protocols.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Cloud_and_IoT_Attack_Surface/">Open Module</a>
+        <a class="btn" href="./Quiz_Cloud_and_IoT_Attack_Surface/">Take Quiz</a>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="roman">XV</div>
+      <div>
+        <div class="title">Module XV: Cryptography &amp; Key Management</div>
+        <div class="desc">The final module covers core cryptographic concepts, public key infrastructure, practical encryption uses, and the weaknesses that appear when implementation or key handling fails.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="./Cryptography_and_Key_Management/">Open Module</a>
+        <a class="btn" href="./Quiz_Cryptography_and_Key_Management/">Take Quiz</a>
+      </div>
+    </div>
+    </section>
+
+    <div class="section-label"><span>Assessment path</span><div class="section-rule"></div></div>
+    <section class="grid cards">
+      <article class="card">
+        <h3>Module quizzes</h3>
+        <p>Use each 6-question quiz after you finish a module. They are untimed and meant for quick retention checks.</p>
+      </article>
+      <article class="card">
+        <h3>Midterm review</h3>
+        <p>The midterm pulls 45 questions from the first half of the study bank and works well as a checkpoint after Module VIII.</p>
+      </article>
+      <article class="card">
+        <h3>Final readiness</h3>
+        <p>The timed final covers the full question set and is designed as a full-length practice review across all XV modules.</p>
+      </article>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>EC-Council CEH · Study Hub</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script>
+  const savedTheme = localStorage.getItem('kb_theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.setAttribute('data-theme', savedTheme);
+  const btn = document.getElementById('themeBtn');
+  if (btn) btn.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('kb_theme', next);
+  });
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>

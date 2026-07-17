@@ -18,7 +18,7 @@ A collection of interactive IT learning resources, command-line practice labs, c
   Study guides, topic modules, quizzes, midterms, and final exams for CompTIA A+, Linux+, and Security+.
 
 * **`EC-Council/` — CEH Study Resources**
-  Certified Ethical Hacker study material covering subjects such as target profiling, cryptography, key management, and cloud and IoT attack surfaces.
+  Complete Certified Ethical Hacker material in `EC-Council/CEH/`, including 15 study modules, module quizzes, a midterm, and a final exam.
 
 * **`IT-Knowledge-Base-Articles/` — Technical Reference Library**
   Step-by-step articles and notes covering IT tools and workflows, including Ollama installation and Wifite usage on Kali Linux.
