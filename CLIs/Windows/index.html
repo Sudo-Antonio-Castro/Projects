@@ -86,7 +86,7 @@ const storageKey = `${location.pathname}::progress-v2`;
 
 function blankCommands(){ return labData.scenarios.map(() => []); }
 function defaultState(){
-  return { active: 0, progress: labData.scenarios.map(() => 0), complete: labData.scenarios.map(() => false), commands: blankCommands() };
+  return { active: 0, progress: labData.scenarios.map(() => 0), complete: labData.scenarios.map(() => false), commands: blankCommands(), outcomes: labData.scenarios.map(s => s.steps.map(() => null)), drafts: labData.scenarios.map(() => '') };
 }
 function loadState(){
   try {
@@ -98,13 +98,36 @@ function loadState(){
     parsed.complete = Array.isArray(parsed.complete) && parsed.complete.length === labData.scenarios.length ? parsed.complete : labData.scenarios.map(() => false);
     parsed.commands = Array.isArray(parsed.commands) && parsed.commands.length === labData.scenarios.length ? parsed.commands : blankCommands();
     parsed.commands = parsed.commands.map((items) => Array.isArray(items) ? items : []);
+    parsed.progress = parsed.progress.map((value, index) => Number.isInteger(value)
+      ? Math.max(0, Math.min(value, labData.scenarios[index].steps.length)) : 0);
+    // Old completed steps have unknown assistance history; never call them independent.
+    parsed.outcomes = labData.scenarios.map((scenario, index) => scenario.steps.map((_, step) => {
+      if (step >= parsed.progress[index]) return null;
+      const outcome = parsed.outcomes?.[index]?.[step];
+      return ['independent', 'assisted', 'legacy'].includes(outcome) ? outcome : 'legacy';
+    }));
+    parsed.drafts = labData.scenarios.map((_, index) => typeof parsed.drafts?.[index] === 'string' ? parsed.drafts[index] : '');
     return parsed;
   } catch (err) {
     return defaultState();
   }
 }
 let state = loadState();
-function saveState(){ localStorage.setItem(storageKey, JSON.stringify(state)); }
+function saveState(){
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+    const notice = document.getElementById('cliStorageNotice');
+    if (notice) notice.hidden = true;
+  } catch (error) {
+    let notice = document.getElementById('cliStorageNotice');
+    if (!notice) {
+      notice = document.createElement('p'); notice.id = 'cliStorageNotice';
+      notice.setAttribute('role', 'status'); document.getElementById('app').before(notice);
+    }
+    label(notice, 'Progress cannot be saved in this browser. Keep this page open; reloading may discard your attempt.');
+    notice.hidden = false;
+  }
+}
 function sanitize(value){ return String(value).replace(/[&<>\"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[ch])); }
 
   // Source keys survive language changes; display text never supplies identity.
@@ -145,6 +168,8 @@ function addPromptInput(scenario, stepIndex){
   wrap.innerHTML = `<span class="prompt-label">${sanitize(currentPrompt(scenario, stepIndex))}</span><input class="cmd-input" id="cmdInput" aria-label="Terminal command" autocomplete="off" autocapitalize="off" spellcheck="false" />`;
   screen.appendChild(wrap);
   const input = document.getElementById('cmdInput');
+  input.value = state.drafts[state.active];
+  input.addEventListener('input', () => { state.drafts[state.active] = input.value; saveState(); });
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && !event.isComposing) {
       event.preventDefault();
@@ -154,14 +179,32 @@ function addPromptInput(scenario, stepIndex){
   focusInput();
   screen.scrollTop = screen.scrollHeight;
 }
+function completionCounts(index){
+  return state.outcomes[index].reduce((counts, outcome) => {
+    if (outcome) counts[outcome] += 1;
+    return counts;
+  }, {independent: 0, assisted: 0, legacy: 0});
+}
+function completionSource(index){
+  const counts = completionCounts(index);
+  return counts.assisted ? 'Scenario complete with assistance.'
+    : counts.legacy ? 'Scenario complete; earlier assistance history is unknown.' : 'Scenario complete.';
+}
+function completionSummary(index){
+  const counts = completionCounts(index);
+  return localized('Completed: {independent} independent, {assisted} assisted.', counts)
+    + (counts.legacy ? ' ' + localized('{legacy} earlier steps have unknown assistance history.', counts) : '');
+}
+function confirmation(source){ return window.ProjectsLearningLocale?.message(source) ?? source; }
 function renderScenarioList(){
   scenarioList.innerHTML = '';
   labData.scenarios.forEach((scenario, index) => {
     const btn = document.createElement('button');
     btn.className = 'scenario-btn' + (index === state.active ? ' active' : '');
-    const done = state.complete[index] ? ' • ' + localized('Complete') : ' • ' + localized('{count}/{total} steps', {count: state.progress[index], total: scenario.steps.length});
-    btn.innerHTML = `<strong>${localized(scenario.title)}</strong><small>${localized(scenario.summary)}${done}</small>`;
-    btn.addEventListener('click', () => { state.active = index; saveState(); render(); });
+    const counts = completionCounts(index);
+    const done = state.complete[index] ? ' • ' + localized(counts.assisted ? 'Complete with assistance' : counts.legacy ? 'Complete; earlier assistance unknown' : 'Complete') : ' • ' + localized('{count}/{total} steps', {count: state.progress[index], total: scenario.steps.length});
+    btn.innerHTML = `<strong>${localized(scenario.title)}</strong><small>${localized(scenario.summary)}${done}${state.progress[index] ? '<br>' + completionSummary(index) : ''}</small>`;
+    btn.addEventListener('click', () => { state.active = index; saveState(); render(); if (mobileWorkspace.matches) scenarioGoal.scrollIntoView({block: 'center', behavior: 'instant'}); });
     scenarioList.appendChild(btn);
   });
 }
@@ -172,11 +215,20 @@ function renderSteps(scenario){
     const item = document.createElement('div');
     const status = index < currentIndex ? 'done' : index === currentIndex ? 'active' : '';
     item.className = ('step ' + status).trim();
-    const marker = index < currentIndex ? '✓' : String(index + 1).padStart(2, '0');
-    item.innerHTML = `<span class="task-marker">${marker}</span><strong>${localized(step.target)}</strong>`;
+    const outcome = state.outcomes[state.active][index];
+    if (outcome) item.classList.add(outcome);
+    const marker = outcome === 'assisted' ? '?' : outcome === 'legacy' ? '•' : index < currentIndex ? '✓' : String(index + 1).padStart(2, '0');
+    item.innerHTML = `<span class="task-marker">${marker}</span><strong>${localized(step.target)}</strong>${outcome ? `<span class="step-result">${localized(outcome === 'assisted' ? 'Assisted — revealed' : outcome === 'legacy' ? 'Completed — previous version' : 'Independent')}</span>` : ''}`;
     stepList.appendChild(item);
   });
   taskProgress.textContent = `${Math.min(currentIndex, scenario.steps.length)} / ${scenario.steps.length}`;
+  let summary = document.getElementById('completionSummary');
+  if (!summary) {
+    summary = document.createElement('p'); summary.id = 'completionSummary';
+    summary.className = 'completion-summary'; summary.setAttribute('role', 'status');
+    stepList.before(summary);
+  }
+  summary.innerHTML = completionSummary(state.active);
 }
 function renderTerminal(scenario){
   screen.innerHTML = '';
@@ -190,14 +242,14 @@ function renderTerminal(scenario){
   const currentIndex = state.progress[state.active];
   const current = scenario.steps[currentIndex];
   if (current) addPromptInput(scenario, currentIndex);
-  else addLine(localized('Scenario complete.'), 'ok');
+  else addLine(localized(completionSource(state.active)), completionCounts(state.active).assisted ? 'warn' : 'ok');
 }
 function renderScenarioHeader(scenario){
   label(scenarioTitle, scenario.title);
   const currentIndex = state.progress[state.active];
   label(scenarioCounter, currentIndex >= scenario.steps.length ? '{current} / {total}' : 'Step {current} / {total}', {current: Math.min(currentIndex + 1, scenario.steps.length), total: scenario.steps.length});
   const current = scenario.steps[currentIndex];
-  label(scenarioGoal, current ? current.target : 'Scenario complete.');
+  label(scenarioGoal, current ? current.target : completionSource(state.active));
 }
 function render(){
   const scenario = labData.scenarios[state.active];
@@ -234,6 +286,8 @@ function completeCurrentStep(command, forceReveal=false){
   const step = scenario.steps[stepIndex];
   if (!step) return;
   state.commands[state.active][stepIndex] = command || step.expected;
+  state.outcomes[state.active][stepIndex] = forceReveal ? 'assisted' : 'independent';
+  state.drafts[state.active] = '';
   state.progress[state.active] += 1;
   if (state.progress[state.active] >= scenario.steps.length) state.complete[state.active] = true;
   saveState();
@@ -283,20 +337,43 @@ document.getElementById('revealBtn').addEventListener('click', () => {
   completeCurrentStep(step.expected, true);
 });
 document.getElementById('resetScenarioBtn').addEventListener('click', () => {
+  if (!window.confirm(confirmation('Reset this scenario? Completed steps and unfinished command input will be cleared.'))) return;
   state.progress[state.active] = 0;
   state.complete[state.active] = false;
   state.commands[state.active] = [];
+  state.outcomes[state.active] = labData.scenarios[state.active].steps.map(() => null);
+  state.drafts[state.active] = '';
   saveState();
   render();
 });
 document.getElementById('resetAllBtn').addEventListener('click', () => {
+  if (!window.confirm(confirmation('Reset all scenarios? All completed steps and unfinished command input will be cleared.'))) return;
   state = defaultState();
   saveState();
   render();
 });
 window.addEventListener('projects:learning-language-ready', applyLocale);
-for (const [id, source] of Object.entries({hintBtn: 'Hint', revealBtn: 'Reveal', resetScenarioBtn: 'Reset scenario', resetAllBtn: 'Reset all'})) label(document.getElementById(id), source);
+for (const [id, source] of Object.entries({hintBtn: 'Hint', revealBtn: 'Reveal and advance (assisted)', resetScenarioBtn: 'Reset scenario', resetAllBtn: 'Reset all'})) label(document.getElementById(id), source);
 document.querySelectorAll('.current-task > span,.task-heading h2,.scenario-panel h2').forEach(element => label(element, element.textContent));
+// Move existing panels, not their contents, so visual and DOM reading order agree.
+const mobileWorkspace = window.matchMedia('(max-width: 780px)');
+function arrangeWorkspace(){
+  const app = document.getElementById('app');
+  const terminalPanel = app.querySelector('.terminal-wrap');
+  const scenarios = app.querySelector('.scenario-panel');
+  const tasks = app.querySelector('.task-panel');
+  const focused = document.activeElement;
+  const selection = focused === document.getElementById('cmdInput')
+    ? [focused.selectionStart, focused.selectionEnd] : null;
+  const order = mobileWorkspace.matches ? [terminalPanel, tasks, scenarios] : [scenarios, terminalPanel, tasks];
+  order.forEach((panel, index) => { if (app.children[index] !== panel) app.insertBefore(panel, app.children[index] || null); });
+  if (focused && app.contains(focused)) {
+    focused.focus({preventScroll: true});
+    if (selection) focused.setSelectionRange(...selection);
+  }
+}
+mobileWorkspace.addEventListener('change', arrangeWorkspace);
+arrangeWorkspace();
 render();
 </script>
 </body>

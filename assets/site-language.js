@@ -79,6 +79,24 @@
 
   // Learning renderers retain English source keys and stable IDs. Only display
   // strings change; translated DOM never becomes question data or scoring state.
+  function learningText(source, params = {}, paramSources = {}) {
+    const has = key => activeLanguage === 'es' && spanishCatalog &&
+      Object.prototype.hasOwnProperty.call(spanishCatalog, key);
+    const keys = [source, ...Object.values(paramSources)];
+    const available = keys.every(has);
+    if (activeLanguage === 'es' && spanishCatalog) {
+      keys.filter(key => !has(key)).forEach(key => missingSources.add(key));
+    }
+    const values = { ...params };
+    for (const [key, original] of Object.entries(paramSources)) {
+      values[key] = available ? spanishCatalog[original] : original;
+    }
+    return {
+      text: (available ? spanishCatalog[source] : source).replace(/\{(\w+)\}/g,
+        (match, key) => Object.prototype.hasOwnProperty.call(values, key) ? values[key] : match),
+      language: available ? 'es' : 'en'
+    };
+  }
   function learningStatus() {
     const learning = document.querySelector('[data-learning-source]');
     if (!learning) return;
@@ -106,13 +124,11 @@
     if (root.matches?.('[data-learning-source]')) nodes.unshift(root);
     nodes.forEach(node => {
       const source = node.dataset.learningSource;
-      const available = activeLanguage === 'es' && spanishCatalog &&
-        Object.prototype.hasOwnProperty.call(spanishCatalog, source);
-      if (activeLanguage === 'es' && spanishCatalog && !available) missingSources.add(source);
       const params = JSON.parse(node.dataset.learningParams || '{}');
-      node.textContent = (available ? spanishCatalog[source] : source)
-        .replace(/\{(\w+)\}/g, (match, key) => Object.prototype.hasOwnProperty.call(params, key) ? params[key] : match);
-      node.lang = available ? 'es' : 'en';
+      const paramSources = JSON.parse(node.dataset.learningParamSources || '{}');
+      const translated = learningText(source, params, paramSources);
+      node.textContent = translated.text;
+      node.lang = translated.language;
       node.classList.add('notranslate');
       node.setAttribute('translate', 'no');
     });
@@ -148,6 +164,11 @@
 
   window.ProjectsLearningLocale = {
     apply: applyLearningLanguage,
+    message(source, params = {}, paramSources = {}) {
+      const translated = learningText(source, params, paramSources);
+      learningStatus();
+      return translated.text;
+    },
     get language() { return activeLanguage; }
   };
 

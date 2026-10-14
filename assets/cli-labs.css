@@ -294,6 +294,18 @@ body.roadmap-theme.cli-macos .prompt-label{color:#7dd3fc !important}
   body.roadmap-theme.rm-cli .task-panel .list{grid-template-columns:1fr}
   body.roadmap-theme.rm-cli .screen{min-height:360px;max-height:none}
 }
+
+body.roadmap-theme.rm-cli .completion-summary {font-size:.78rem;color:var(--rm-muted);line-height:1.5}
+body.roadmap-theme.rm-cli .step-result {grid-column:2;font-size:.75rem;font-weight:700}
+body.roadmap-theme.rm-cli .step.assisted .task-marker,
+body.roadmap-theme.rm-cli .step.assisted .step-result {color:var(--rm-yellow)}
+body.roadmap-theme.rm-cli .step.assisted .task-marker {background:var(--rm-yellow);color:var(--rm-bg)}
+body.roadmap-theme.rm-cli .step.legacy .task-marker,
+body.roadmap-theme.rm-cli .step.legacy .step-result {color:var(--rm-muted)}
+body.roadmap-theme.rm-cli .step.legacy .task-marker {background:var(--rm-line)}
+body.roadmap-theme.rm-cli .toolbar button:focus-visible,
+body.roadmap-theme.rm-cli .scenario-btn:focus-visible,
+body.roadmap-theme.rm-cli .cmd-input:focus-visible {outline:3px solid var(--rm-blue);outline-offset:3px}
 @media(max-width:520px){
   body.roadmap-theme.rm-cli .scenario-list{grid-template-columns:1fr}
   body.roadmap-theme.rm-cli .terminal-head{align-items:flex-start}
@@ -323,18 +335,17 @@ body.roadmap-theme.rm-cli .platform-terminal{cursor:text}
 body.roadmap-theme.rm-cli .terminal-top,
 body.roadmap-theme.rm-cli .toolbar{cursor:default}
 body.roadmap-theme.rm-cli .command-line{color:inherit}
-body.roadmap-theme.rm-cli .cmd-input:focus{outline:none}
+
 
 /* Direct terminal entry: click anywhere in the terminal to focus the command line. */
 body.roadmap-theme.rm-cli .platform-terminal{cursor:text}
 body.roadmap-theme.rm-cli .terminal-top,
 body.roadmap-theme.rm-cli .toolbar{cursor:default}
 body.roadmap-theme.rm-cli .command-line{color:inherit}
-body.roadmap-theme.rm-cli .cmd-input:focus{outline:none}
+
 
 /* Direct terminal entry: click anywhere in the terminal to focus the command line. */
 body.roadmap-theme.rm-cli .platform-terminal{cursor:text}
 body.roadmap-theme.rm-cli .terminal-top,
 body.roadmap-theme.rm-cli .toolbar{cursor:default}
 body.roadmap-theme.rm-cli .command-line{color:inherit}
-body.roadmap-theme.rm-cli .cmd-input:focus{outline:none}

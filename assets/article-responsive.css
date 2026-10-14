@@ -1,0 +1,23 @@
+/* Constrain the article template itself; code blocks retain local scrolling. */
+.grid > *, .panel, .content, .brand, .brand > *, .controls, .search {
+  min-width: 0;
+}
+.logo { flex-shrink: 0; }
+.brand h1, .article-title, .title, .chip, th, td, .content a {
+  overflow-wrap: anywhere;
+}
+.chip { max-width: 100%; flex-wrap: wrap; }
+pre { min-width: 0; max-width: 100%; overflow: auto; }
+.content :not(pre) > code { overflow-wrap: anywhere; }
+table { table-layout: fixed; }
+@media (max-width: 980px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .topbar { flex-wrap: wrap; }
+  .brand { width: 100%; }
+  .controls { flex: 1 1 100%; flex-wrap: wrap; }
+  .search { flex: 1 1 100%; min-width: 0; max-width: none; }
+  .search input { min-width: 0; padding-right: 90px; }
+  .content { padding-inline: 14px; }
+}

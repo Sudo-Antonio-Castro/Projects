@@ -359,6 +359,12 @@
         min-height: 700px;
       }
     }
+    .port-card, .cable-card {color:inherit;font:inherit;text-align:left;width:100%;min-width:0;cursor:pointer}
+    .port-card:focus-visible, .cable-card:focus-visible, .scenario-btn:focus-visible, .lab-btn:focus-visible {
+      outline:3px solid #c4b5fd;outline-offset:4px;box-shadow:0 0 0 6px #0b1f38;
+    }
+    .cable-card.matched {pointer-events:auto}
+    .cable-card.matched:focus-visible {opacity:1}
   </style>
 <script defer src="../../../../assets/site-language.js" data-site-language="projects"></script>
 </head>
@@ -695,6 +701,21 @@
     scenarios: SCENARIOS.map(s => ({ matched: {}, completed: false }))
   };
 
+
+  function escape(value) { return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]); }
+  function label(element, source, params = {}, paramSources = {}) {
+    element.dataset.learningSource = source;
+    element.dataset.learningParams = JSON.stringify(params);
+    element.dataset.learningParamSources = JSON.stringify(paramSources);
+    element.classList.add('notranslate'); element.setAttribute('translate', 'no');
+    element.textContent = source.replace(/\{(\w+)\}/g, (match, key) => ({...params, ...paramSources})[key] ?? match);
+    window.ProjectsLearningLocale?.apply(element);
+  }
+  function localized(source, params = {}, paramSources = {}) {
+    return `<span class="notranslate" translate="no" data-learning-source="${escape(source)}" data-learning-params="${escape(JSON.stringify(params))}" data-learning-param-sources="${escape(JSON.stringify(paramSources))}">${escape(source.replace(/\{(\w+)\}/g, (match, key) => ({...params, ...paramSources})[key] ?? match))}</span>`;
+  }
+  function applyLocale() { window.ProjectsLearningLocale?.apply(); }
+
   function getPortSvg(type) {
     const svgs = {
       ethernet: `<svg viewBox="0 0 220 110" aria-hidden="true"><rect x="24" y="18" width="172" height="74" rx="12" fill="#d8dee8" opacity=".22"/><rect x="56" y="28" width="108" height="56" rx="8" fill="#0f172a" stroke="#9fb3cb" stroke-width="4"/><rect x="73" y="40" width="74" height="18" rx="4" fill="#1e293b"/><path d="M93 60h34v10H93z" fill="#334155"/><path d="M77 34h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6zm8 0h6v10h-6z" fill="#ffd166"/></svg>`,
@@ -737,11 +758,11 @@
     scenarioList.innerHTML = SCENARIOS.map((scenario, index) => {
       const progress = getScenarioProgress(index);
       const active = index === state.currentScenarioIndex ? "active" : "";
-      const doneText = progress.matched === progress.total ? "completed" : `${progress.matched}/${progress.total} matched`;
+      const doneText = progress.matched === progress.total ? localized('completed') : localized('{matched}/{total} matched', progress);
       return `
-        <button class="scenario-btn ${active}" type="button" data-index="${index}">
-          <span class="scenario-name">${scenario.title}</span>
-          <span class="scenario-meta">${scenario.blurb}<br>${doneText}</span>
+        <button class="scenario-btn ${active}" type="button" data-index="${index}" aria-current="${index === state.currentScenarioIndex ? 'step' : 'false'}">
+          <span class="scenario-name">${localized(scenario.title)}</span>
+          <span class="scenario-meta">${localized(scenario.blurb)}<br>${doneText}</span>
         </button>
       `;
     }).join("");
@@ -762,8 +783,8 @@
     if (!entries.length) {
       matchedDetails.innerHTML = `
         <div class="detail-card">
-          <div class="detail-title">No matches yet</div>
-          <div>Correct matches will appear here with quick reminders about what each connector is typically used for.</div>
+          <div class="detail-title">${localized("No matches yet")}</div>
+          <div>${localized("Correct matches will appear here with quick reminders about what each connector is typically used for.")}</div>
         </div>
       `;
       return;
@@ -774,14 +795,19 @@
       const cable = scenario.cables.find(c => c.id === cableId);
       return `
         <div class="detail-card">
-          <div class="detail-title">${cable.name} → ${port.name}</div>
-          <div>${port.note}</div>
+          <div class="detail-title">${localized(cable.name)} → ${localized(port.name)}</div>
+          <div>${localized(port.note)}</div>
         </div>
       `;
     }).join("");
   }
 
   function renderScenario() {
+    // Recreate the same keyed control, then restore focus without scrolling.
+    const active = document.activeElement;
+    const focusTarget = active?.matches('.cable-card') ? `.cable-card[data-cable-id="${active.dataset.cableId}"]`
+      : active?.matches('.port-card') ? `.port-card[data-port-id="${active.dataset.portId}"]`
+      : active?.matches('.scenario-btn') ? `.scenario-btn[data-index="${active.dataset.index}"]` : null;
     const scenario = getCurrentScenario();
     const progress = getScenarioProgress(state.currentScenarioIndex);
     const matched = state.scenarios[state.currentScenarioIndex].matched;
@@ -789,23 +815,23 @@
     renderScenarioButtons();
     updateOverallProgress();
 
-    scenarioKicker.textContent = `Scenario ${state.currentScenarioIndex + 1} of ${SCENARIOS.length}`;
-    scenarioQuestion.textContent = scenario.title;
-    scenarioHelper.textContent = scenario.helper;
-    scenarioStatus.textContent = `${progress.matched} of ${progress.total} matched`;
-    selectedCableStatus.textContent = state.selectedCableId ? `Selected: ${scenario.cables.find(c => c.id === state.selectedCableId)?.name || "cable"}` : "No cable selected";
+    label(scenarioKicker, 'Scenario {number} of {total}', {number: state.currentScenarioIndex + 1, total: SCENARIOS.length});
+    label(scenarioQuestion, scenario.title);
+    label(scenarioHelper, scenario.helper);
+    label(scenarioStatus, '{matched} of {total} matched', progress);
+    label(selectedCableStatus, state.selectedCableId ? 'Selected: {name}' : 'No cable selected', {}, state.selectedCableId ? {name: scenario.cables.find(c => c.id === state.selectedCableId).name} : {});
 
     portGrid.innerHTML = scenario.ports.map(port => {
       const isMatched = Boolean(matched[port.id]);
       const cable = isMatched ? scenario.cables.find(c => c.id === matched[port.id]) : null;
       return `
-        <div class="port-card ${isMatched ? "correct" : ""}" data-port-id="${port.id}">
-          <div class="port-sub">${port.sub}</div>
-          <div class="port-name">${port.name}</div>
-          <div class="port-graphic port-zone" data-port-id="${port.id}" data-selected="${state.selectedCableId ? "true" : "false"}">${getPortSvg(port.type)}</div>
-          <div class="port-desc">${port.desc}</div>
-          ${isMatched ? `<div class="matched-tag">Connected · ${cable.name}</div>` : ""}
-        </div>
+        <button type="button" class="port-card ${isMatched ? "correct" : ""}" data-port-id="${port.id}" aria-disabled="${isMatched}" aria-labelledby="${scenario.id}-${port.id}-name" aria-describedby="${scenario.id}-${port.id}-desc${isMatched ? ' ' + scenario.id + '-' + port.id + '-matched' : ''}">
+          <span class="port-sub">${localized(port.sub)}</span>
+          <span class="port-name" id="${scenario.id}-${port.id}-name">${localized(port.name)}</span>
+          <span class="port-graphic port-zone" data-selected="${state.selectedCableId ? "true" : "false"}">${getPortSvg(port.type)}</span>
+          <span class="port-desc" id="${scenario.id}-${port.id}-desc">${localized(port.desc)}</span>
+          ${isMatched ? `<span class="matched-tag" id="${scenario.id}-${port.id}-matched">${localized('Connected · {name}', {}, {name: cable.name})}</span>` : ""}
+        </button>
       `;
     }).join("");
 
@@ -813,11 +839,11 @@
       const isMatched = Object.values(matched).includes(cable.id);
       const selected = state.selectedCableId === cable.id;
       return `
-        <div class="cable-card ${isMatched ? "matched" : ""} ${selected ? "selected" : ""}" draggable="${!isMatched}" data-cable-id="${cable.id}">
-          <div class="cable-name">${cable.name}</div>
-          <div class="cable-graphic">${getCableSvg(cable.type)}</div>
-          <div class="cable-desc">${cable.desc}</div>
-        </div>
+        <button type="button" class="cable-card ${isMatched ? "matched" : ""} ${selected ? "selected" : ""}" draggable="${!isMatched}" data-cable-id="${cable.id}" aria-pressed="${selected}" aria-disabled="${isMatched}" aria-labelledby="${scenario.id}-${cable.id}-name" aria-describedby="${scenario.id}-${cable.id}-desc">
+          <span class="cable-name" id="${scenario.id}-${cable.id}-name">${localized(cable.name)}</span>
+          <span class="cable-graphic">${getCableSvg(cable.type)}</span>
+          <span class="cable-desc" id="${scenario.id}-${cable.id}-desc">${localized(cable.desc)}</span>
+        </button>
       `;
     }).join("");
 
@@ -826,9 +852,11 @@
     renderMatchedDetails();
 
     if (progress.matched === progress.total) {
-      statusMessage.textContent = `Scenario complete. All ${progress.total} connectors are matched correctly.`;
+      label(statusMessage, 'Scenario complete. All {total} connectors are matched correctly.', progress);
       state.scenarios[state.currentScenarioIndex].completed = true;
     }
+    applyLocale();
+    if (focusTarget) document.querySelector(focusTarget)?.focus({preventScroll: true});
   }
 
   function attachCableEvents() {
@@ -837,8 +865,8 @@
 
       card.addEventListener("click", () => {
         state.selectedCableId = card.dataset.cableId;
-        selectedCableStatus.textContent = `Selected: ${card.querySelector('.cable-name').textContent}`;
-        statusMessage.textContent = "Cable selected. Now click the matching port or drag the cable to it.";
+        label(selectedCableStatus, 'Selected: {name}', {}, {name: getCurrentScenario().cables.find(c => c.id === state.selectedCableId).name});
+        label(statusMessage, 'Cable selected. Activate the matching port or drag the cable to it.');
         renderScenario();
       });
 
@@ -846,6 +874,12 @@
         state.selectedCableId = card.dataset.cableId;
         event.dataTransfer.setData("text/plain", card.dataset.cableId);
         event.dataTransfer.effectAllowed = "move";
+        cableGrid.querySelectorAll('.cable-card').forEach(button => {
+          const selected = button.dataset.cableId === state.selectedCableId;
+          button.setAttribute('aria-pressed', String(selected));
+          button.classList.toggle('selected', selected);
+        });
+        label(selectedCableStatus, 'Selected: {name}', {}, {name: getCurrentScenario().cables.find(c => c.id === state.selectedCableId).name});
       });
     });
   }
@@ -866,8 +900,12 @@
         attemptMatch(cableId, portId);
       });
       card.addEventListener("click", () => {
+        if (state.scenarios[state.currentScenarioIndex].matched[portId]) {
+          label(statusMessage, '{name} is already connected.', {}, {name: getCurrentScenario().ports.find(port => port.id === portId).name});
+          return;
+        }
         if (!state.selectedCableId) {
-          statusMessage.textContent = "Select a cable first, then click the port you want to connect.";
+          label(statusMessage, 'Select a cable first, then activate the port you want to connect.');
           return;
         }
         attemptMatch(state.selectedCableId, portId);
@@ -890,22 +928,22 @@
 
     if (!cable || !port) return;
     if (scenarioState.matched[portId]) {
-      statusMessage.textContent = `${port.name} is already connected.`;
+      label(statusMessage, '{name} is already connected.', {}, {name: port.name});
       return;
     }
     if (Object.values(scenarioState.matched).includes(cableId)) {
-      statusMessage.textContent = `${cable.name} is already in use.`;
+      label(statusMessage, '{name} is already in use.', {}, {name: cable.name});
       return;
     }
 
     if (cable.type === port.type) {
       scenarioState.matched[portId] = cableId;
       state.selectedCableId = null;
-      statusMessage.textContent = `Correct. ${cable.name} fits ${port.name}.`;
+      label(statusMessage, 'Correct. {cable} fits {port}.', {}, {cable: cable.name, port: port.name});
       renderScenario();
     } else {
       flashPort(portId, "error");
-      statusMessage.textContent = `Not quite. ${cable.name} does not fit ${port.name}. Try a different shape.`;
+      label(statusMessage, 'Not quite. {cable} does not fit {port}. Try a different shape.', {}, {cable: cable.name, port: port.name});
     }
   }
 
@@ -914,18 +952,18 @@
     const matched = state.scenarios[state.currentScenarioIndex].matched;
     const unmatchedPort = scenario.ports.find(port => !matched[port.id]);
     if (!unmatchedPort) {
-      statusMessage.textContent = "This scenario is already complete.";
+      label(statusMessage, 'This scenario is already complete.');
       return;
     }
     const matchingCable = scenario.cables.find(cable => cable.type === unmatchedPort.type && !Object.values(matched).includes(cable.id));
-    statusMessage.textContent = `Hint: compare the physical shape of the open port with the plug end. ${matchingCable ? `A good next choice is ${matchingCable.name}.` : ""}`;
+    label(statusMessage, 'Hint: compare the shape of the open port with the plug end. A good next choice is {name}.', {}, {name: matchingCable.name});
   });
 
   resetBtn.addEventListener("click", () => {
     state.scenarios[state.currentScenarioIndex].matched = {};
     state.scenarios[state.currentScenarioIndex].completed = false;
     state.selectedCableId = null;
-    statusMessage.textContent = "Scenario reset. All connectors are available again.";
+    label(statusMessage, 'Scenario reset. All connectors are available again.');
     renderScenario();
   });
 
@@ -933,9 +971,19 @@
     state.currentScenarioIndex = (state.currentScenarioIndex + 1) % SCENARIOS.length;
     state.selectedCableId = null;
     renderScenario();
-    statusMessage.textContent = "Next scenario loaded.";
+    label(statusMessage, 'Next scenario loaded.');
   });
 
+  statusMessage.setAttribute('role', 'status');
+  statusMessage.setAttribute('aria-live', 'polite');
+  statusMessage.setAttribute('aria-atomic', 'true');
+  label(statusMessage, 'Select a cable, then activate its matching port.');
+  label(document.querySelector('.instructions-box'), 'Use Tab to reach a cable or port, then Enter or Space to activate it. You can also click, tap, or drag a cable onto a port.');
+  label(hintBtn, 'Show Hint'); label(resetBtn, 'Reset Scenario'); label(nextBtn, 'Next Scenario');
+  label(document.querySelector('.hero h1'), 'Connector Match Practice');
+  label(document.querySelector('.hero p'), 'Match cable ends to ports with the keyboard, mouse, touch, or drag and drop. Correct matches reveal identification notes.');
+  document.querySelectorAll('.sidebar-title,.section-mini,.status-label,.progress-top > span:first-child').forEach(element => label(element, element.textContent));
+  window.addEventListener('projects:learning-language-ready', applyLocale);
   renderScenario();
 </script>
 </body>
