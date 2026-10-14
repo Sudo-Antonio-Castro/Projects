@@ -1,1 +1,5 @@
-document.getElementById("year").textContent=new Date().getFullYear();const btn=document.getElementById("themeBtn");const saved=localStorage.getItem("kb_theme");if(saved==="light"||saved==="dark"){document.documentElement.setAttribute("data-theme",saved)}if(btn){btn.addEventListener("click",()=>{const cur=document.documentElement.getAttribute("data-theme")||"dark";const next=cur==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",next);localStorage.setItem("kb_theme",next);});}
+// Theme events are owned by assets/roadmap-theme.js.
+(() => {
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();

@@ -75,81 +75,34 @@
     const style = document.createElement('style');
     style.id = 'site-language-styles';
     style.textContent = `
+      .site-language-settings{
+        max-width:var(--rm-max,1200px);margin:0 auto;padding:6px 18px;
+        color:var(--rm-text,var(--text,#f5f7fb));font:inherit;
+      }
+      .site-language-settings summary{
+        cursor:pointer;width:fit-content;margin-inline-start:auto;
+        padding:6px 10px;border-radius:8px;font-size:13px;
+      }
       .site-language-control{
-        position:fixed;
-        right:18px;
-        bottom:18px;
-        z-index:2147483000;
-        display:flex;
-        align-items:center;
-        gap:10px;
-        min-width:210px;
-        padding:10px 12px;
-        border:1px solid rgba(255,255,255,.16);
-        border-radius:16px;
-        background:rgba(17,21,28,.94);
-        color:#f5f7fb;
-        box-shadow:0 16px 42px rgba(0,0,0,.38);
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
-        font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+        display:flex;align-items:center;gap:10px;max-width:320px;
+        margin:4px 0 8px auto;padding:12px;border:1px solid var(--rm-line,var(--border,#555));
+        border-radius:10px;background:var(--rm-panel,var(--panel,#11151c));
+        color:var(--rm-text,var(--text,#f5f7fb));box-sizing:border-box;
       }
-      .site-language-icon{
-        display:grid;
-        place-items:center;
-        width:34px;
-        height:34px;
-        flex:0 0 34px;
-        border-radius:11px;
-        background:linear-gradient(135deg,#7cc7ff,#9effc6);
-        color:#071018;
-        font-size:17px;
-      }
-      .site-language-copy{
-        display:flex;
-        flex-direction:column;
-        min-width:0;
-        flex:1;
-      }
-      .site-language-label{
-        margin:0 0 2px;
-        color:#aab3c5;
-        font-size:10px;
-        font-weight:700;
-        letter-spacing:.1em;
-        line-height:1.2;
-        text-transform:uppercase;
-      }
+      .site-language-icon{font-size:20px;flex:0 0 28px;text-align:center}
+      .site-language-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+      .site-language-label{font-size:12px;font-weight:700}
       .site-language-select{
-        width:100%;
-        min-width:130px;
-        margin:0;
-        padding:4px 24px 4px 0;
-        border:0;
-        outline:0;
-        background:transparent;
-        color:#f5f7fb;
-        font:inherit;
-        font-size:14px;
-        font-weight:700;
-        cursor:pointer;
+        width:100%;min-height:36px;margin:4px 0;padding:4px 8px;border-radius:6px;
+        border:1px solid var(--rm-line,var(--border,#555));
+        background:var(--rm-panel,var(--panel,#11151c));color:inherit;font:inherit;cursor:pointer;
       }
-      .site-language-select option{
-        background:#11151c;
-        color:#f5f7fb;
+      .site-language-select option{background:var(--rm-panel,var(--panel,#11151c));color:inherit}
+      .site-language-select:focus-visible,.site-language-settings summary:focus-visible{
+        outline:3px solid var(--rm-blue,#63c7ff);outline-offset:3px;
       }
-      .site-language-note{
-        display:block;
-        margin-top:1px;
-        color:#8f9aae;
-        font-size:10px;
-        line-height:1.2;
-      }
-      .site-language-rtl .site-language-control{
-        direction:rtl;
-        right:auto;
-        left:18px;
-      }
+      .site-language-note{font-size:12px;color:var(--rm-muted,var(--muted,#aab3c5));line-height:1.4}
+      .site-language-rtl .site-language-control{margin:4px auto 8px 0}
       code,pre,kbd,samp,.screen,.platform-terminal,.cmd-input,.prompt-line,.command-line,.output-line{
         direction:ltr!important;
         text-align:left!important;
@@ -174,19 +127,7 @@
       .goog-te-spinner-pos{display:none!important;visibility:hidden!important;height:0!important}
       html{margin-top:0!important;top:0!important}
       body{margin-top:0!important;top:0!important}
-      @media(max-width:640px){
-        .site-language-control{
-          right:10px;
-          bottom:10px;
-          min-width:178px;
-          padding:8px 10px;
-          border-radius:14px;
-        }
-        .site-language-rtl .site-language-control{left:10px;right:auto}
-        .site-language-icon{width:30px;height:30px;flex-basis:30px;font-size:15px}
-        .site-language-select{min-width:108px;font-size:13px}
-      }
-      @media print{.site-language-control,#google_translate_element{display:none!important}}
+      @media print{.site-language-settings,#google_translate_element{display:none!important}}
     `;
     document.head.appendChild(style);
   }
@@ -233,21 +174,18 @@
 
   function changeLanguage(language) {
     const normalized = normalizeLanguage(language);
-    saveLanguage(normalized);
-    setTranslationCookie(normalized);
-    applyDocumentDirection(normalized);
-
-    const control = document.querySelector('.site-language-control');
-    if (control) updateControlText(control, normalized);
-
-    if (!applyGoogleSelection(normalized)) {
-      window.location.reload();
+    const previous = getSavedLanguage();
+    if (normalized === previous) return;
+    // Assessment controllers checkpoint before any translation changes the DOM.
+    const checkpoint = new Event('projects:before-language-change', { cancelable: true });
+    if (!window.dispatchEvent(checkpoint) && !window.confirm('Your answers cannot be saved in this browser. Changing language will discard this attempt. Continue?')) {
+      document.getElementById('site-language-select').value = previous;
       return;
     }
-
-    // A reload gives Google Translate a clean source document and keeps the
-    // selected language consistent when moving between GitHub Pages routes.
-    window.setTimeout(() => window.location.reload(), 120);
+    saveLanguage(normalized);
+    setTranslationCookie(normalized);
+    // Reload from the original document; resume answers and the original deadline.
+    window.location.reload();
   }
 
   function createControl(language) {
@@ -274,7 +212,15 @@
     select.value = language;
     select.addEventListener('change', event => changeLanguage(event.target.value));
     updateControlText(control, language);
-    document.body.appendChild(control);
+    const settings = document.createElement('details');
+    settings.className = 'site-language-settings notranslate';
+    settings.setAttribute('translate', 'no');
+    const summary = document.createElement('summary');
+    summary.textContent = `${SUPPORTED_LANGUAGES[language].label}: ${SUPPORTED_LANGUAGES[language].nativeName}`;
+    settings.append(summary, control);
+    const header = document.querySelector('header');
+    if (header) header.after(settings);
+    else document.body.prepend(settings);
   }
 
   function loadGoogleTranslate(language) {
