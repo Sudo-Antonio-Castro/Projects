@@ -681,3 +681,71 @@ body.roadmap-theme.rm-hub .actions{margin-top:10px !important}
 body.roadmap-theme.rm-hub .actions .btn{padding:8px 12px !important;font-size:.83rem}
 .app-directory{padding-top:52px !important}
 .app-directory .directory-actions{margin-top:20px !important}
+
+/* Assessment recovery: explicit review states and compact working screens. */
+body.roadmap-theme .skip-link {
+  position:fixed;top:8px;left:8px;z-index:10000;
+  padding:12px 16px;background:var(--rm-panel);color:var(--rm-text);
+  border:2px solid var(--rm-blue);transform:translateY(-180%);
+}
+body.roadmap-theme .skip-link:focus {transform:none}
+body.roadmap-theme :is(select,summary,input[type="radio"]):focus-visible {
+  outline:3px solid var(--rm-blue);outline-offset:3px;
+}
+body.roadmap-theme.rm-quiz fieldset.question-card {
+  min-width:0;margin:0;padding:20px 0;border:0;border-bottom:1px solid var(--rm-line);
+}
+body.roadmap-theme.rm-quiz legend.question-text {float:left;width:100%;padding:0}
+body.roadmap-theme.rm-quiz legend .question-meta {display:block}
+body.roadmap-theme.rm-quiz .question-card .options {clear:both}
+body.roadmap-theme.rm-quiz :is(.question-card,.question,#results) {scroll-margin-top:calc(var(--projects-header-height,160px) + 16px)}
+body.roadmap-theme.rm-quiz :is(.choice,.option) {flex-wrap:wrap}
+body.roadmap-theme.rm-quiz :is(.choice > span:not(.answer-feedback),.option-label) {
+  flex:1;min-width:0;
+}
+body.roadmap-theme.rm-quiz :is(.choice,.option).correct-answer {
+  color:var(--rm-text)!important;
+  background:color-mix(in srgb,var(--rm-mint) 14%,transparent)!important;
+  border-left:4px solid var(--rm-mint)!important;
+}
+body.roadmap-theme.rm-quiz :is(.choice,.option).user-wrong {
+  color:var(--rm-text)!important;
+  background:color-mix(in srgb,var(--rm-pink) 14%,transparent)!important;
+  border-left:4px solid var(--rm-pink)!important;
+}
+body.roadmap-theme .answer-feedback {flex-basis:100%;font-size:.85rem;font-weight:750}
+body.roadmap-theme.rm-quiz .explanation {display:none}
+body.roadmap-theme.rm-quiz .reviewed .explanation {display:block;padding:12px 0;line-height:1.6}
+body.roadmap-theme.rm-quiz #results:empty {display:none}
+body.roadmap-theme.rm-quiz #results.show {display:block}
+body.roadmap-theme.rm-quiz .results-grid {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:16px 0;
+}
+body.roadmap-theme.rm-quiz .results-grid .stat {min-width:0;padding:12px;border:1px solid var(--rm-line)}
+body.roadmap-theme.rm-quiz .stat-value {font-size:1.5rem;font-weight:800}
+body.roadmap-theme.rm-quiz .stat-label {font-size:.85rem;color:var(--rm-muted)}
+body.roadmap-theme .assessment-actions {
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 16px;
+}
+body.roadmap-theme .assessment-progress {font-size:.9rem;font-weight:700;margin-inline-end:auto}
+body.roadmap-theme .attempt-storage-notice {padding:12px;border:1px solid var(--rm-yellow)}
+body.roadmap-theme .assessment-submit {border:2px solid var(--rm-blue)!important;font-weight:800!important}
+body.roadmap-theme button:disabled {cursor:default;opacity:.65}
+body.roadmap-theme :is(.assessment-intro,.assessment-picker) summary {cursor:pointer;padding:8px 0}
+body.roadmap-theme .assessment-picker {padding:12px 16px}
+body.roadmap-theme.rm-quiz .hero {padding-top:28px!important;padding-bottom:12px!important}
+body.roadmap-theme.rm-quiz .hero :is(h1,h2) {font-size:clamp(1.75rem,4vw,2.6rem)!important;overflow-wrap:anywhere}
+body.roadmap-theme.rm-quiz .wrap {padding-top:12px!important}
+body.roadmap-theme.rm-quiz .section-label {margin-bottom:12px}
+@media(max-width:600px) {
+  body.roadmap-theme.rm-quiz .hero :is(h1,h2) {font-size:1.8rem!important}
+  body.roadmap-theme .assessment-actions {padding:10px;gap:8px}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto!important}
+  body.roadmap-theme *,body.roadmap-theme *::before,body.roadmap-theme *::after {
+    scroll-behavior:auto!important;transition:none!important;animation:none!important;
+  }
+}
+
+body.roadmap-theme main {scroll-margin-top:calc(var(--projects-header-height,160px) + 16px)}
