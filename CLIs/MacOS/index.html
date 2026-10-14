@@ -107,6 +107,21 @@ function loadState(){
 let state = loadState();
 function saveState(){ localStorage.setItem(storageKey, JSON.stringify(state)); }
 function sanitize(value){ return String(value).replace(/[&<>\"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[ch])); }
+
+  // Source keys survive language changes; display text never supplies identity.
+  function label(element, source, params = {}) {
+    element.dataset.learningSource = source;
+    element.dataset.learningParams = JSON.stringify(params);
+    element.classList.add('notranslate');
+    element.setAttribute('translate', 'no');
+    element.textContent = source.replace(/\{(\w+)\}/g, (match, key) => params[key] ?? match);
+    window.ProjectsLearningLocale?.apply(element);
+  }
+  function localized(source, params = {}) {
+    return `<span class="notranslate" translate="no" data-learning-source="${sanitize(source)}" data-learning-params="${sanitize(JSON.stringify(params))}">${sanitize(source.replace(/\{(\w+)\}/g, (match, key) => params[key] ?? match))}</span>`;
+  }
+  function applyLocale() { window.ProjectsLearningLocale?.apply(); }
+
 function addLine(text, cls=''){
   const p = document.createElement('p');
   p.className = ('output-line ' + cls).trim();
@@ -145,8 +160,8 @@ function renderScenarioList(){
   labData.scenarios.forEach((scenario, index) => {
     const btn = document.createElement('button');
     btn.className = 'scenario-btn' + (index === state.active ? ' active' : '');
-    const done = state.complete[index] ? ' • Complete' : ' • ' + state.progress[index] + '/' + scenario.steps.length + ' steps';
-    btn.innerHTML = `<strong>${sanitize(scenario.title)}</strong><small>${sanitize(scenario.summary)}${done}</small>`;
+    const done = state.complete[index] ? ' • ' + localized('Complete') : ' • ' + localized('{count}/{total} steps', {count: state.progress[index], total: scenario.steps.length});
+    btn.innerHTML = `<strong>${localized(scenario.title)}</strong><small>${localized(scenario.summary)}${done}</small>`;
     btn.addEventListener('click', () => { state.active = index; saveState(); render(); });
     scenarioList.appendChild(btn);
   });
@@ -159,7 +174,7 @@ function renderSteps(scenario){
     const status = index < currentIndex ? 'done' : index === currentIndex ? 'active' : '';
     item.className = ('step ' + status).trim();
     const marker = index < currentIndex ? '✓' : String(index + 1).padStart(2, '0');
-    item.innerHTML = `<span class="task-marker">${marker}</span><strong>${sanitize(step.target)}</strong>`;
+    item.innerHTML = `<span class="task-marker">${marker}</span><strong>${localized(step.target)}</strong>`;
     stepList.appendChild(item);
   });
   taskProgress.textContent = `${Math.min(currentIndex, scenario.steps.length)} / ${scenario.steps.length}`;
@@ -176,14 +191,14 @@ function renderTerminal(scenario){
   const currentIndex = state.progress[state.active];
   const current = scenario.steps[currentIndex];
   if (current) addPromptInput(scenario, currentIndex);
-  else addLine('Scenario complete.', 'ok');
+  else addLine(localized('Scenario complete.'), 'ok');
 }
 function renderScenarioHeader(scenario){
-  scenarioTitle.textContent = scenario.title;
+  label(scenarioTitle, scenario.title);
   const currentIndex = state.progress[state.active];
-  scenarioCounter.textContent = currentIndex >= scenario.steps.length ? `${scenario.steps.length} / ${scenario.steps.length}` : `Step ${currentIndex + 1} / ${scenario.steps.length}`;
+  label(scenarioCounter, currentIndex >= scenario.steps.length ? '{current} / {total}' : 'Step {current} / {total}', {current: Math.min(currentIndex + 1, scenario.steps.length), total: scenario.steps.length});
   const current = scenario.steps[currentIndex];
-  scenarioGoal.textContent = current ? current.target : 'Scenario complete.';
+  label(scenarioGoal, current ? current.target : 'Scenario complete.');
 }
 function render(){
   const scenario = labData.scenarios[state.active];
@@ -191,6 +206,7 @@ function render(){
   renderScenarioHeader(scenario);
   renderSteps(scenario);
   renderTerminal(scenario);
+  applyLocale();
 }
 function normalize(value){
   let result = String(value || '')
@@ -240,7 +256,8 @@ function submitCommand(){
   const promptRow = input.closest('.prompt-line');
   if (promptRow) promptRow.remove();
   addLine(`${sanitize(currentPrompt(scenario, stepIndex))} ${sanitize(value)}`, 'command-line');
-  addLine('Command not accepted for this task. Check the task or use Hint.', 'bad');
+  addLine(localized('Command not accepted for this task. Check the task or use Hint.'), 'bad');
+  applyLocale();
   addPromptInput(scenario, stepIndex);
 }
 terminal.addEventListener('pointerdown', (event) => {
@@ -256,7 +273,8 @@ document.getElementById('hintBtn').addEventListener('click', () => {
   const scenario = labData.scenarios[state.active];
   const step = scenario.steps[state.progress[state.active]];
   if (!step) return;
-  addLine(`Hint: ${sanitize(step.hint)}`, 'warn');
+  addLine(`${localized('Hint:')} ${localized(step.hint)}`, 'warn');
+  applyLocale();
   focusInput();
 });
 document.getElementById('revealBtn').addEventListener('click', () => {
@@ -277,6 +295,9 @@ document.getElementById('resetAllBtn').addEventListener('click', () => {
   saveState();
   render();
 });
+window.addEventListener('projects:learning-language-ready', applyLocale);
+for (const [id, source] of Object.entries({hintBtn: 'Hint', revealBtn: 'Reveal', resetScenarioBtn: 'Reset scenario', resetAllBtn: 'Reset all'})) label(document.getElementById(id), source);
+document.querySelectorAll('.current-task > span,.task-heading h2,.scenario-panel h2').forEach(element => label(element, element.textContent));
 render();
 </script>
 </body>
