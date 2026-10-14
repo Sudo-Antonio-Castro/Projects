@@ -67,3 +67,30 @@ Learning text changes language in place; the general page translator remains an
 external service. Its status notice does not claim that every page sentence has
 been translated. Local learning translations currently cover English/Spanish;
 other selected languages receive an explicit English-learning fallback notice.
+
+## Mobile and accessibility interactions
+
+```sh
+python -X utf8 tests/mobile_accessibility.py
+```
+
+This uses real Chromium over local HTTP with external resources blocked and the
+production Spanish catalog. It completes a connector scenario using only Tab,
+Enter and Space, checks selected/disabled states, retained focus and live-region
+results, and exercises actual native dragging, mouse matching and wrong-match
+feedback. It checks CLI DOM/visual order at 320, 390, 768 and 1440 pixels, resize
+focus and input selection, independently entered versus revealed steps, localized
+reset confirmations, cancelled resets and accepted resets. Genuine reloads must
+restore progress, outcomes and unfinished command input.
+
+CLI storage retains the existing progress-v2 key. The added outcomes/drafts fields
+are optional when loading earlier saved data. Previously completed steps with no
+recorded assistance history are labeled as previous-version completions, not as
+independently completed steps. Reveal still advances the task, and is explicitly
+labeled as assisted completion. Responsive reordering moves existing panel nodes;
+it does not re-create terminal inputs or translate command/output strings.
+
+ARIA semantics and keyboard behavior are tested in Chromium; this does not replace
+an NVDA, VoiceOver or TalkBack session. Before/after layout captures and deployed
+language-release checks are recorded separately under test-results/mobile. They
+identify their origin and whether external translation resources were allowed.

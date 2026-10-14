@@ -16,11 +16,24 @@ for path in ROOT.rglob('quiz-data.js'):
 for path in ROOT.rglob('*.html'):
     if '.git' in path.parts or 'test-results' in path.parts:continue
     raw=path.read_text(encoding='utf-8')
+    if 'const labData = ' in raw or 'const SCENARIOS = ' in raw:
+        # Literal messages passed to the existing localization helpers.
+        sources.update(re.findall(r'(?:localized|confirmation)\([\"\']([^\"\'\n]+)[\"\']',raw))
+        sources.update(re.findall(r'label\([^,\n]+,\s*[\"\']([^\"\'\n]+)[\"\']',raw))
     sources.update(re.findall(r'"(?:passMessage|failMessage)"\s*:\s*"([^\"]+)"',raw))
     soup=BeautifulSoup(raw,'html.parser')
     if soup.select_one('[data-assessment]'):
         counts['linuxAssessments']+=1;sources.update(x.get_text() for x in soup.select('.question-title,.choice > span'))
     match=re.search(r'const labData = (.*);',raw)
+    if path.name == 'connector-match-lab.html' and 'const SCENARIOS = ' in raw:
+        extract='const fs=require("fs"),vm=require("vm");const s=fs.readFileSync(process.argv[1],"utf8");const m=s.match(/const SCENARIOS = (\\[[\\s\\S]*?\\n  \\]);/);const c={};vm.runInNewContext("data="+m[1],c);console.log(JSON.stringify(c.data))'
+        connector=json.loads(subprocess.check_output(['node','-e',extract,str(path)],text=True,encoding='utf-8'))
+        for scenario in connector:
+            sources.update(scenario[key] for key in ['title','blurb','helper'])
+            for port in scenario['ports']:sources.update(port[key] for key in ['name','sub','desc','note'])
+            for cable in scenario['cables']:sources.update(cable[key] for key in ['name','desc'])
+        counts['connectorScenarios']=len(connector)
+        counts['connectorPorts']=sum(len(s['ports']) for s in connector)
     if not match:continue
     for scenario in json.loads(match.group(1))['scenarios']:
         counts['cliScenarios']+=1;sources.update([scenario['title'],scenario['summary']])
@@ -31,6 +44,10 @@ for path in ROOT.rglob('*.html'):
             for literal in literals:
                 if literal not in CATALOG.get(step['target'],''):failures.append({'literalChanged':literal,'source':step['target']})
 sources.discard('')
+sources.update(['Complete with assistance','Complete; earlier assistance unknown','Assisted — revealed',
+    'Completed — previous version','Independent','Reveal and advance (assisted)',
+    'Scenario complete with assistance.','Scenario complete; earlier assistance history is unknown.',
+    'Selected: {name}','No cable selected','completed','{matched}/{total} matched'])
 for source in sorted(sources):
     if source not in CATALOG:failures.append({'missing':source})
 for source,value in CATALOG.items():
