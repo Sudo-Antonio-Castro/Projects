@@ -185,17 +185,18 @@ class Suite:
     def language(self):
         p=self.page(APLUS); inputs=p.locator('input[type=radio]'); inputs.nth(0).check();inputs.nth(4).check()
         p.locator('.site-language-settings summary').click()
+        p.select_option('#site-language-select','es')
+        q=p
         if self.offline:
-            p.select_option('#site-language-select','es')
-            assert p.evaluate('__fixtureReloadCount')==1
-            q=self.page(APLUS,session=self.state(p),local=self.state(p,'localStorage'))
+            assert p.evaluate('__fixtureReloadCount')==0
         else:
-            with p.expect_navigation(wait_until='domcontentloaded'): p.select_option('#site-language-select','es')
-            q=p
+            p.wait_for_function("document.getElementById('answerProgress').textContent === '2 / 10 respondidas'")
+            p.reload(wait_until='domcontentloaded')
+            p.wait_for_function("document.getElementById('answerProgress').textContent === '2 / 10 respondidas'")
         assert q.locator('input:checked').count()==2
         assert q.locator('html').get_attribute('lang')=='es'
         assert q.locator('.site-language-control').evaluate("e=>getComputedStyle(e).position")!='fixed'
-        return {'before':2,'after':2,'translationService':'not tested','reload':'simulated' if self.offline else 'real'}
+        return {'before':2,'after':2,'translationService':'not tested','languageSwitch':'in place','reload':'not tested' if self.offline else 'real','visibleSpanishProgress':'not tested' if self.offline else '2 / 10 respondidas'}
 
     def restart(self):
         p=self.page(APLUS);p.locator('input[type=radio]').first.check()

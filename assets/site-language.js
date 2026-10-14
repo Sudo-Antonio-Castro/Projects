@@ -4,11 +4,17 @@
   const STORAGE_KEY = 'projects-site-language';
   const COOKIE_NAME = 'googtrans';
   const BASE_LANGUAGE = 'en';
+  const assetBase = new URL('.', document.currentScript.src || new URL('assets/site-language.js', document.baseURI));
+  let spanishCatalog = null;
+  let catalogRequest = null;
+  let catalogFailed = false;
+  const missingSources = new Set();
   const SUPPORTED_LANGUAGES = {
     en: { nativeName: 'English', label: 'Language', note: 'Original content', dir: 'ltr' },
-    es: { nativeName: 'Español', label: 'Idioma', note: 'Traducción automática', dir: 'ltr' },
+    es: { nativeName: 'Español', label: 'Idioma', note: 'Traducción local de aprendizaje; resto automático solicitado', dir: 'ltr' },
     ar: { nativeName: 'العربية', label: 'اللغة', note: 'ترجمة آلية', dir: 'rtl' }
   };
+  let activeLanguage = getSavedLanguage();
 
   function normalizeLanguage(value) {
     const language = String(value || '').toLowerCase().split('-')[0];
@@ -63,11 +69,87 @@
       '.output-line'
     ].join(',');
 
-    root.querySelectorAll?.(selector).forEach(element => {
+    const elements = [...(root.querySelectorAll?.(selector) || [])];
+    if (root.matches?.(selector)) elements.push(root);
+    elements.forEach(element => {
       element.classList.add('notranslate');
       element.setAttribute('translate', 'no');
     });
   }
+
+  // Learning renderers retain English source keys and stable IDs. Only display
+  // strings change; translated DOM never becomes question data or scoring state.
+  function learningStatus() {
+    const learning = document.querySelector('[data-learning-source]');
+    if (!learning) return;
+    let notice = document.getElementById('learning-language-status');
+    if (!notice) {
+      notice = document.createElement('p');
+      notice.id = 'learning-language-status';
+      notice.className = 'notranslate';
+      notice.setAttribute('translate', 'no');
+      notice.setAttribute('role', 'status');
+      document.querySelector('.site-language-settings')?.after(notice);
+    }
+    notice.hidden = activeLanguage === 'en' ||
+      (activeLanguage === 'es' && spanishCatalog && !missingSources.size);
+    notice.lang = activeLanguage === 'es' ? 'es' : 'en';
+    notice.textContent = activeLanguage === 'es'
+      ? (!spanishCatalog && !catalogFailed
+        ? 'Cargando la traducción local. El contenido de aprendizaje se muestra en inglés mientras tanto.'
+        : 'La traducción local no está disponible para parte del contenido. Ese contenido se muestra en inglés; tu progreso se conserva.')
+      : 'Local learning translations are available in English and Spanish. Learning content is shown in English; your progress is preserved.';
+  }
+
+  function applyLearningLanguage(root = document) {
+    const nodes = [...root.querySelectorAll('[data-learning-source]')];
+    if (root.matches?.('[data-learning-source]')) nodes.unshift(root);
+    nodes.forEach(node => {
+      const source = node.dataset.learningSource;
+      const available = activeLanguage === 'es' && spanishCatalog &&
+        Object.prototype.hasOwnProperty.call(spanishCatalog, source);
+      if (activeLanguage === 'es' && spanishCatalog && !available) missingSources.add(source);
+      const params = JSON.parse(node.dataset.learningParams || '{}');
+      node.textContent = (available ? spanishCatalog[source] : source)
+        .replace(/\{(\w+)\}/g, (match, key) => Object.prototype.hasOwnProperty.call(params, key) ? params[key] : match);
+      node.lang = available ? 'es' : 'en';
+      node.classList.add('notranslate');
+      node.setAttribute('translate', 'no');
+    });
+    learningStatus();
+  }
+
+  function loadLearningLanguage() {
+    missingSources.clear();
+    applyLearningLanguage();
+    if (activeLanguage !== 'es' || spanishCatalog || catalogRequest) return;
+    catalogFailed = false;
+    const abort = new AbortController();
+    // A finite timeout only exposes failure. It is not a translation retry loop.
+    const timeout = setTimeout(() => abort.abort(), 8000);
+    catalogRequest = fetch(new URL('learning-es.json', assetBase), { signal: abort.signal })
+      .then(response => {
+        if (!response.ok) throw new Error('Spanish catalog unavailable');
+        return response.json();
+      }).then(catalog => {
+        if (!catalog || Array.isArray(catalog) || typeof catalog !== 'object' ||
+            Object.values(catalog).some(value => typeof value !== 'string' || !value.trim())) {
+          throw new Error('Invalid Spanish catalog');
+        }
+        spanishCatalog = catalog;
+      }).catch(() => { catalogFailed = true; })
+      .finally(() => {
+        clearTimeout(timeout);
+        missingSources.clear();
+        applyLearningLanguage();
+        window.dispatchEvent(new Event('projects:learning-language-ready'));
+      });
+  }
+
+  window.ProjectsLearningLocale = {
+    apply: applyLearningLanguage,
+    get language() { return activeLanguage; }
+  };
 
   function addStyles() {
     if (document.getElementById('site-language-styles')) return;
@@ -174,16 +256,36 @@
 
   function changeLanguage(language) {
     const normalized = normalizeLanguage(language);
-    const previous = getSavedLanguage();
+    const previous = activeLanguage;
     if (normalized === previous) return;
     // Assessment controllers checkpoint before any translation changes the DOM.
     const checkpoint = new Event('projects:before-language-change', { cancelable: true });
-    if (!window.dispatchEvent(checkpoint) && !window.confirm('Your answers cannot be saved in this browser. Changing language will discard this attempt. Continue?')) {
+    const learningPage = document.querySelector('[data-learning-source]');
+    const warning = learningPage
+      ? (previous === 'es'
+        ? 'No se puede guardar el progreso. Se conservará mientras mantengas esta página abierta. ¿Cambiar idioma?'
+        : 'Progress cannot be saved. It is preserved while this page stays open. Change language?')
+      : 'Your answers cannot be saved in this browser. Changing language will discard this attempt. Continue?';
+    if (!window.dispatchEvent(checkpoint) && !window.confirm(warning)) {
       document.getElementById('site-language-select').value = previous;
       return;
     }
     saveLanguage(normalized);
     setTranslationCookie(normalized);
+    if (learningPage) {
+      activeLanguage = normalized;
+      applyDocumentDirection(normalized);
+      updateControlText(document.querySelector('.site-language-control'), normalized);
+      document.querySelector('.site-language-settings summary').textContent =
+        `${SUPPORTED_LANGUAGES[normalized].label}: ${SUPPORTED_LANGUAGES[normalized].nativeName}`;
+      loadLearningLanguage();
+      // The local renderer owns learning text. A reload is unnecessary and
+      // would discard CLI input, scroll position and transient hints.
+      applyGoogleSelection(normalized);
+      loadGoogleTranslate(normalized);
+      window.dispatchEvent(new Event('projects:learning-language-ready'));
+      return;
+    }
     // Reload from the original document; resume answers and the original deadline.
     window.location.reload();
   }
@@ -224,7 +326,32 @@
   }
 
   function loadGoogleTranslate(language) {
-    if (language === BASE_LANGUAGE) return;
+    if (language === BASE_LANGUAGE) {
+      const status = document.getElementById('page-translation-status');
+      if (status) status.hidden = true;
+      return;
+    }
+    let status = document.getElementById('page-translation-status');
+    if (!status) {
+      status = document.createElement('p');
+      status.id = 'page-translation-status';
+      status.className = 'notranslate';
+      status.setAttribute('translate', 'no');
+      status.setAttribute('role', 'status');
+      document.querySelector('.site-language-settings').after(status);
+    }
+    status.lang = language;
+    status.hidden = false;
+    const unavailable = () => {
+      if (activeLanguage !== language) return;
+      status.textContent = language === 'es'
+        ? 'La traducción automática del resto de la página no está disponible o no se ha podido confirmar. Puede mostrarse texto en inglés. La traducción local del contenido de aprendizaje funciona por separado.'
+        : 'Automatic page translation is unavailable or unconfirmed. Page text may remain in English. Local learning translations work separately.';
+    };
+    status.textContent = language === 'es'
+      ? 'Traducción automática solicitada para el resto de la página; puede haber texto en inglés. El contenido de aprendizaje usa traducciones locales.'
+      : 'Automatic page translation requested; page text may remain in English. Learning content uses local translations.';
+    const startupTimeout = setTimeout(unavailable, 8000);
 
     if (!document.getElementById('google_translate_element')) {
       const mount = document.createElement('div');
@@ -245,7 +372,7 @@
 
       suppressGoogleTranslateBanner();
       window.setTimeout(() => {
-        applyGoogleSelection(language);
+        if (!applyGoogleSelection(activeLanguage)) unavailable();
         suppressGoogleTranslateBanner();
       }, 250);
       window.setTimeout(suppressGoogleTranslateBanner, 750);
@@ -258,19 +385,22 @@
       script.async = true;
       script.dataset.projectsGoogleTranslate = 'true';
       script.onerror = () => {
+        clearTimeout(startupTimeout);
+        unavailable();
         const note = document.querySelector('.site-language-note');
-        if (note) note.textContent = language === 'ar' ? 'تعذر تحميل الترجمة' : 'Translation unavailable';
+        if (note) note.textContent = language === 'ar' ? 'تعذر تحميل الترجمة' : 'Traducción automática no disponible';
       };
       document.head.appendChild(script);
     }
   }
 
   function initialize() {
-    const language = getSavedLanguage();
+    const language = activeLanguage;
     addStyles();
     applyDocumentDirection(language);
     protectTechnicalContent();
     createControl(language);
+    loadLearningLanguage();
     setTranslationCookie(language);
     loadGoogleTranslate(language);
     suppressGoogleTranslateBanner();
