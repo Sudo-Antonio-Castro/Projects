@@ -132,6 +132,12 @@
       node.classList.add('notranslate');
       node.setAttribute('translate', 'no');
     });
+    // Attribute-only labels must not replace navigation children with text.
+    const labels = [...root.querySelectorAll('[data-learning-aria-label]')];
+    if (root.matches?.('[data-learning-aria-label]')) labels.unshift(root);
+    labels.forEach(node => {
+      node.setAttribute('aria-label', learningText(node.dataset.learningAriaLabel).text);
+    });
     learningStatus();
   }
 

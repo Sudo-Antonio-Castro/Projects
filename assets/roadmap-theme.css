@@ -135,6 +135,7 @@ body.roadmap-theme .logo{
 .roadmap-global-nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;margin-left:auto}
 .roadmap-global-nav a{
   padding:8px 10px;
+  text-decoration:none;
   color:var(--rm-muted) !important;
   font-size:.8rem;
   font-weight:800;
@@ -541,7 +542,7 @@ body.roadmap-theme tr:hover td{background:color-mix(in srgb,var(--rm-blue) 7%,tr
 @media(max-width:760px){
   body.roadmap-theme .topbar,
   body.roadmap-theme .nav{align-items:flex-start !important;flex-wrap:wrap;padding-inline:18px !important}
-  .roadmap-global-nav{order:3;width:100%;justify-content:flex-start;overflow:auto;padding-bottom:4px}
+  .roadmap-global-nav{order:3;width:100%;justify-content:flex-start;flex-wrap:wrap;padding-bottom:4px}
   body.roadmap-theme .shell,
   body.roadmap-theme .wrap{padding-left:18px !important;padding-right:18px !important}
   body.roadmap-theme .hero h1,

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../assets/roadmap-theme.css" data-roadmap-theme="option-3">
   <script defer src="../../../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../../../assets/site-language.js" data-site-language="projects"></script>
+<link rel="stylesheet" href="../../../../assets/navigation.css">
 </head>
 <body class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
 <header>
@@ -27,9 +28,10 @@
     </div>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
   </div>
-<nav class="roadmap-global-nav" aria-label="Global project navigation"><a data-section="home" href="../../../../index.html">Home</a><a data-section="comptia" href="../../../index.html">Tracks</a><a data-section="ec-council" href="../../../../EC-Council/index.html">CEH</a><a data-section="clis" href="../../../../CLIs/index.html">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html">Library</a><a data-section="apps" href="../../../../Apps/index.html">Apps</a></nav></header>
+<nav class="roadmap-global-nav" aria-label="Global project navigation" data-learning-aria-label="Global project navigation"><a data-section="home" href="../../../../index.html" data-learning-source="Home">Home</a><a data-section="comptia" href="../../../index.html" data-learning-source="CompTIA" aria-current="page">CompTIA</a><a data-section="ec-council" href="../../../../EC-Council/index.html" data-learning-source="CEH">CEH</a><a data-section="clis" href="../../../../CLIs/index.html" data-learning-source="Labs">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html" data-learning-source="Library">Library</a><a data-section="apps" href="../../../../Apps/index.html" data-learning-source="Apps">Apps</a></nav></header>
 
 <main>
+<nav class="project-breadcrumb" aria-label="Breadcrumb" data-learning-aria-label="Breadcrumb"><ol><li><a href="../../../../index.html" data-learning-source="Home">Home</a></li><li><a href="../../../index.html" data-learning-source="CompTIA">CompTIA</a></li><li><a href="../../index.html" data-learning-source="Linux+">Linux+</a></li><li aria-current="page"><span data-learning-source="Bootloaders, Targets and Shutdown">Bootloaders, Targets and Shutdown</span></li></ol></nav>
   <section class="hero">
     <div class="hero-kicker">Module IV</div>
     <h2>Bootloaders, Targets and Shutdown</h2>
@@ -37,7 +39,7 @@
   </section>
   <div class="shell">
     <aside class="sidebar">
-      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../index.html">Home</a><a class="btn" href="../../quizzes/bootloaders-targets-and-shutdown-quiz/index.html">Quiz</a><a class="btn" href="../installation-planning-and-deployment/index.html">← Module III</a><a class="btn" href="../desktops-gui-access-and-usability/index.html">Module V →</a></div></div>
+      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../quizzes/bootloaders-targets-and-shutdown-quiz/index.html">Quiz</a><a class="btn" href="../installation-planning-and-deployment/index.html">← Module III</a><a class="btn" href="../desktops-gui-access-and-usability/index.html">Module V →</a></div></div>
       <div class="sidebar-section"><div class="sidebar-label">On this page</div><div class="section-nav"><a class="section-link" href="#s1">Boot sequence</a><a class="section-link" href="#s2">GRUB2 and recovery</a><a class="section-link" href="#s3">systemd startup</a></div></div>
     </aside>
     <section class="content-wrap"><div class="content"><h2>Bootloaders, Targets and Shutdown</h2><p>Grub2, boot troubleshooting, systemd ordering, and controlled shutdown.</p><section id="s1"><h3>Boot sequence</h3><ul><li>Firmware starts the machine, then the bootloader loads the kernel and initramfs.</li><li>The kernel initializes hardware and hands off to PID 1.</li><li>Knowing the sequence helps you isolate failures quickly.</li></ul></section><section id="s2"><h3>GRUB2 and recovery</h3><ul><li>GRUB2 selects kernels and passes startup parameters.</li><li>Installed kernel packages and the running kernel version help verify which boot image belongs in /boot.</li><li>Recovery options are often managed from the bootloader before userspace is available.</li></ul></section><section id="s3"><h3>systemd startup</h3><ul><li>Targets replace old runlevel thinking on modern distributions.</li><li>Unit ordering uses directives such as After= and Before=.</li><li>Graceful reboot and shutdown protect service state and reduce data loss risk.</li></ul></section><div class="summary"><div class="summary-label">Quick takeaway</div><p>Use this module to connect commands to operational intent. Linux+ rewards knowing which tool to reach for first and why.</p></div><div class="exam-tip"><div class="exam-tip-label">Exam note</div><p>Pair these notes with the module quiz, then revisit any weak areas before the cumulative midterm.</p></div></div></section>
