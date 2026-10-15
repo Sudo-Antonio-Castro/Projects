@@ -98,13 +98,14 @@
   }
   const submit = form.querySelector('[type="submit"]');
   submit.classList.add('assessment-submit');
-  label(submit, 'Submit assessment');
+  label(submit, 'Review and submit');
   const count = document.getElementById('questionCount');
   if (count) label(count, '{count} Questions', {count: questions.length});
   const helper = document.getElementById('helperText');
   if (helper) label(helper, 'Your attempt resumes after a reload. Use Start new attempt to clear it.');
   results.tabIndex = -1;
   results.setAttribute('role', 'region');
+  results.dataset.learningAriaLabel = 'Assessment result';
   results.setAttribute('aria-label', 'Assessment result');
   if (timer) { timer.setAttribute('role', 'timer'); timer.setAttribute('aria-live', 'off'); }
   if (timer && !config.timed) label(timer, 'Untimed');
@@ -114,11 +115,13 @@
   const signature = JSON.stringify([questions, config.timed, config.timeLimitMinutes,
     config.useScaledScore, config.passScore, config.passPercent]);
   const duration = (config.timeLimitMinutes || 0) * 60000;
-  let attempt = { signature, answers: {}, deadline: config.timed ? Date.now() + duration : null,
+  let attempt = { signature, answers: {}, deadline: null, started: !config.timed,
+    flags: [], lastQuestionId: null,
     submittedAt: null, expired: false, secondsLeft: Math.ceil(duration / 1000) };
   let submitted = false;
   let restarting = false;
   let interval = null;
+  let preserveInvalid = false;
   const notice = document.createElement('p');
   notice.className = 'attempt-storage-notice';
   notice.setAttribute('role', 'status');
@@ -128,25 +131,62 @@
     notice.hidden = false;
     label(notice, 'Progress cannot be saved in this browser. Keep this page open; reloading may discard your attempt.');
   }
-  try {
-    const saved = JSON.parse(sessionStorage.getItem(key) || 'null');
-    if (saved && saved.signature === signature && saved.answers && typeof saved.answers === 'object' &&
-        (config.timed ? Number.isFinite(saved.deadline) : saved.deadline === null) &&
-        (saved.submittedAt === null || Number.isFinite(saved.submittedAt)) &&
-        typeof saved.expired === 'boolean' && Number.isFinite(saved.secondsLeft)) attempt = saved;
-  } catch (error) { storageFailure(); }
-  form.querySelectorAll('input[type="radio"]').forEach(input => {
-    input.checked = attempt.answers[input.name] === input.value;
-  });
-  function save() {
-    if (restarting) return true;
+  const recovery = document.createElement('p');
+  recovery.className = 'attempt-recovery-notice';
+  recovery.setAttribute('role', 'status');
+  recovery.hidden = true;
+  form.before(recovery);
+  const validId = id => questions.some(q => String(q.id) === String(id));
+  function restoreAnswers() {
+    form.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.checked = attempt.answers[input.name] === input.value;
+    });
+  }
+  function captureAnswers() {
     attempt.answers = {};
     form.querySelectorAll('input[type="radio"]:checked').forEach(input => {
       attempt.answers[input.name] = input.value;
     });
+  }
+  try {
+    const raw = sessionStorage.getItem(key);
+    if (raw !== null) {
+      try {
+        const saved = JSON.parse(raw);
+        const validAnswers = saved && saved.answers && !Array.isArray(saved.answers) &&
+          typeof saved.answers === 'object' && Object.entries(saved.answers).every(([name, value]) =>
+            questions.some(q => name === `q${q.id}` && q.values.includes(value)));
+        const waiting = saved?.started === false && saved.deadline === null &&
+          saved.submittedAt === null && validAnswers && !Object.keys(saved.answers).length;
+        if (!saved || saved.signature !== signature || !validAnswers ||
+            !(config.timed ? (waiting || Number.isFinite(saved.deadline)) : saved.deadline === null) ||
+            !(saved.submittedAt === null || Number.isFinite(saved.submittedAt)) ||
+            typeof saved.expired !== 'boolean' || !Number.isFinite(saved.secondsLeft) || saved.secondsLeft < 0) {
+          throw new Error('Invalid saved attempt');
+        }
+        // UI metadata is optional. Old active/submitted attempts retain all core
+        // fields, the same content signature, storage key and original deadline.
+        attempt = { ...saved, started: !config.timed || !waiting,
+          flags: Array.isArray(saved.flags) ? [...new Set(saved.flags.filter(validId).map(String))] : [],
+          lastQuestionId: validId(saved.lastQuestionId) ? String(saved.lastQuestionId) : null };
+      } catch (error) {
+        preserveInvalid = true;
+        recovery.hidden = false;
+        label(recovery, 'Saved attempt data could not be restored. It is kept until you start or change this attempt.');
+      }
+    }
+  } catch (error) { storageFailure(); }
+  restoreAnswers();
+  function save() {
+    if (restarting) return true;
+    if (preserveInvalid) return true;
+    // A locked submission is a snapshot; pagehide/language changes cannot read
+    // modified DOM values back into it.
+    if (attempt.started && !submitted) captureAnswers();
     try {
       sessionStorage.setItem(key, JSON.stringify(attempt));
       notice.hidden = true;
+      recovery.hidden = true;
       return true;
     } catch (error) { storageFailure(); return false; }
   }
@@ -164,18 +204,168 @@
   actions.append(progress, review);
   form.before(actions);
   const selected = q => form.querySelector(`input[name="q${q.id}"]:checked`);
-  function updateProgress() {
+  const flaggedReview = document.createElement('button');
+  flaggedReview.type = 'button'; flaggedReview.className = 'btn';
+  label(flaggedReview, 'Review flagged');
+  actions.append(flaggedReview);
+
+  const overview = document.createElement('details');
+  overview.className = 'assessment-overview';
+  const overviewTitle = document.createElement('summary');
+  label(overviewTitle, 'Question overview');
+  overview.append(overviewTitle);
+  const filters = document.createElement('div');
+  filters.className = 'assessment-filters'; filters.setAttribute('role', 'group');
+  filters.dataset.learningAriaLabel = 'Filter question overview';
+  const filterButtons = new Map();
+  let filter = 'all';
+  ['all', 'unanswered', 'flagged'].forEach(mode => {
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'btn';
+    label(button, {all: 'All questions', unanswered: 'Unanswered questions', flagged: 'Flagged questions'}[mode]);
+    button.dataset.reviewFilter = mode;
+    button.addEventListener('click', () => { filter = mode; updateProgress(); });
+    filters.append(button); filterButtons.set(mode, button);
+  });
+  overview.append(filters);
+  const questionLinks = document.createElement('div'); questionLinks.className = 'assessment-question-links';
+  overview.append(questionLinks);
+  const emptyOverview = document.createElement('p'); label(emptyOverview, 'No questions match this filter.');
+  overview.append(emptyOverview);
+  actions.after(overview);
+  const entries = questions.map((q, index) => {
+    const card = document.getElementById(`question-${q.id}`);
+    card.tabIndex = -1;
+    const flag = document.createElement('button'); flag.type = 'button'; flag.className = 'btn assessment-flag';
+    flag.dataset.questionId = q.id;
+    flag.addEventListener('click', () => {
+      if (submitted || !attempt.started) return;
+      if (config.timed && Date.now() >= attempt.deadline) { grade(true); return; }
+      const id = String(q.id);
+      attempt.flags = attempt.flags.includes(id) ? attempt.flags.filter(value => value !== id) : [...attempt.flags, id];
+      preserveInvalid = false; updateProgress(); save();
+    });
+    card.querySelector('.question-text,.question-title').after(flag);
+    const link = document.createElement('button'); link.type = 'button';
+    link.className = 'btn assessment-question-link'; link.dataset.questionId = q.id;
+    link.setAttribute('aria-controls', card.id);
+    link.addEventListener('click', () => navigate(q));
+    questionLinks.append(link);
+    return {q, index, card, flag, link};
+  });
+  function counts() {
     const answered = questions.filter(q => selected(q)).length;
+    return {answered, unanswered: questions.length - answered, flagged: attempt.flags.length};
+  }
+  function updateProgress() {
+    const {answered, flagged} = counts();
     label(progress, '{answered} / {total} answered', {answered, total: questions.length});
-    review.disabled = submitted || answered === questions.length;
+    review.disabled = !attempt.started || answered === questions.length;
+    flaggedReview.disabled = !attempt.started || !flagged;
+    let visible = 0;
+    entries.forEach(({q, index, flag, link}) => {
+      const isFlagged = attempt.flags.includes(String(q.id));
+      const answered = Boolean(selected(q));
+      flag.disabled = submitted || !attempt.started;
+      flag.setAttribute('aria-pressed', String(isFlagged));
+      label(flag, isFlagged ? 'Unflag question {number}' : 'Flag question {number}', {number: index + 1});
+      label(link, isFlagged
+        ? (answered ? 'Question {number}: answered, flagged' : 'Question {number}: unanswered, flagged')
+        : (answered ? 'Question {number}: answered' : 'Question {number}: unanswered'), {number: index + 1});
+      link.hidden = filter === 'unanswered' ? answered : filter === 'flagged' ? !isFlagged : false;
+      if (!link.hidden) visible++;
+      if (attempt.lastQuestionId === String(q.id)) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    filterButtons.forEach((button, mode) => button.setAttribute('aria-pressed', String(mode === filter)));
+    emptyOverview.hidden = visible !== 0;
+  }
+  function navigate(q, remember = true) {
+    const card = document.getElementById(`question-${q.id}`);
+    if (remember) { positionPending = false; attempt.lastQuestionId = String(q.id); updateProgress(); save(); }
+    const header = document.querySelector('header');
+    if (header) document.documentElement.style.setProperty('--projects-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
+    const target = card.querySelector('input:not(:disabled)') || card;
+    target.focus({preventScroll: true});
+    card.scrollIntoView({block: 'start', behavior: 'instant'});
   }
   review.addEventListener('click', () => {
+    filter = 'unanswered'; overview.open = true; updateProgress();
     const first = questions.find(q => !selected(q));
-    if (!first) return;
-    const input = form.querySelector(`input[name="q${first.id}"]`);
-    input.focus({preventScroll: true});
-    document.getElementById(`question-${first.id}`).scrollIntoView({block: 'start'});
+    if (first) navigate(first);
   });
+  flaggedReview.addEventListener('click', () => {
+    filter = 'flagged'; overview.open = true; updateProgress();
+    const first = questions.find(q => attempt.flags.includes(String(q.id)));
+    if (first) navigate(first);
+  });
+
+  const startScreen = document.createElement('section');
+  startScreen.className = 'assessment-start'; startScreen.setAttribute('aria-labelledby', 'assessmentStartTitle');
+  startScreen.innerHTML = `<h2 id="assessmentStartTitle">${localized('Before you start')}</h2>
+    <p>${localized('{count} questions · {minutes} minutes', {count: questions.length, minutes: config.timeLimitMinutes || 0})}</p>
+    <p>${config.useScaledScore
+      ? localized('Practice scoring: 100–900; pass mark {target}.', {target: config.passScore || 750})
+      : localized('Pass mark: {target}%.', {target: config.passPercent || 80})}</p>
+    ${config.useScaledScore ? `<p>${localized('This is a practice scoring model, not an official exam score.')}</p>` : ''}
+    <p>${localized('The timer starts only when you select Start assessment. Once started, time continues while you are away, reloading, or reviewing submission.')}</p>
+    <p>${localized('When time expires, your answers are submitted automatically.')}</p>`;
+  if (config.timed) {
+    // Reuse locally translated course/page identity rather than synthesizing
+    // identity from translated question text or relying on the page translator.
+    const identity = document.createElement('p'); identity.className = 'assessment-name';
+    document.querySelectorAll('.project-breadcrumb li:not(:first-child) [data-learning-source]').forEach(source => {
+      if (identity.childNodes.length) identity.append(' / ');
+      const name = document.createElement('span');
+      ['learningSource', 'learningParams', 'learningParamSources'].forEach(key => {
+        if (source.dataset[key]) name.dataset[key] = source.dataset[key];
+      });
+      name.textContent = source.textContent; identity.append(name);
+    });
+    startScreen.querySelector('h2').after(identity);
+  }
+  const version = new URLSearchParams(location.search).get('version');
+  if (version && /^\d+$/.test(version)) {
+    const versionText = document.createElement('p'); label(versionText, 'Version {version}', {version});
+    startScreen.querySelector('h2').after(versionText);
+  }
+  const start = document.createElement('button'); start.type = 'button'; start.id = 'startAssessment'; start.className = 'btn assessment-submit';
+  label(start, 'Start assessment'); startScreen.append(start); form.before(startScreen);
+  function showAttempt() {
+    startScreen.hidden = !config.timed || attempt.started;
+    form.hidden = !attempt.started;
+    actions.hidden = !attempt.started;
+    overview.hidden = !attempt.started;
+    form.querySelectorAll('input[type="radio"]').forEach(input => { input.disabled = !attempt.started || submitted; });
+    if (timer && config.timed && !attempt.started) label(timer, 'Not started');
+  }
+  start.addEventListener('click', () => {
+    if (attempt.started || submitted) return;
+    attempt.started = true; attempt.deadline = Date.now() + duration;
+    start.disabled = true; preserveInvalid = false;
+    showAttempt(); save(); tick();
+    if (!submitted) { interval = setInterval(tick, 1000); navigate(questions[0]); }
+  });
+
+  const confirmation = document.createElement('dialog');
+  confirmation.className = 'assessment-confirmation'; confirmation.setAttribute('aria-labelledby', 'submissionReviewTitle');
+  confirmation.innerHTML = `<h2 id="submissionReviewTitle">${localized('Review before submitting')}</h2>`;
+  const confirmationCounts = document.createElement('p'); confirmationCounts.id = 'submissionCounts';
+  confirmation.append(confirmationCounts);
+  const confirmationTimer = document.createElement('p');
+  confirmationTimer.id = 'submissionTimer'; confirmationTimer.setAttribute('role', 'timer');
+  confirmationTimer.setAttribute('aria-live', 'off'); confirmationTimer.hidden = !config.timed;
+  confirmation.append(confirmationTimer);
+  if (config.timed) {
+    const timing = document.createElement('p');
+    label(timing, 'Time continues during this review. If it expires, your answers are submitted automatically.'); confirmation.append(timing);
+  }
+  const cancel = document.createElement('button'); cancel.type = 'button'; cancel.id = 'returnQuestions'; cancel.className = 'btn';
+  label(cancel, 'Return to questions');
+  cancel.addEventListener('click', () => confirmation.close());
+  const confirm = document.createElement('button'); confirm.type = 'button'; confirm.id = 'confirmSubmit'; confirm.className = 'btn assessment-submit';
+  label(confirm, 'Submit and lock answers');
+  confirm.addEventListener('click', () => grade(Boolean(config.timed && Date.now() >= attempt.deadline)));
+  confirmation.append(cancel, confirm); form.before(confirmation);
   function restart(event) {
     event.preventDefault();
     if (!window.confirm(window.ProjectsLearningLocale?.language === 'es' ? '¿Iniciar un nuevo intento? Se borrarán las respuestas y el resultado guardados de esta evaluación.' : 'Start a new attempt? Your saved answers and result for this assessment will be cleared.')) return;
@@ -210,8 +400,13 @@
     return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
   }
   function grade(fromTimer = false, restoring = false) {
-    if (submitted) return;
+    if (submitted || !attempt.started) return;
+    if (fromTimer) restoreAnswers();
+    else captureAnswers();
+    preserveInvalid = false;
     submitted = true;
+    confirm.disabled = true;
+    if (confirmation.open) confirmation.close();
     clearInterval(interval);
     if (!restoring) {
       attempt.submittedAt = Date.now();
@@ -271,14 +466,25 @@
     if (!restoring) { results.focus({preventScroll: true}); results.scrollIntoView({block: 'start'}); }
   }
   function tick() {
-    if (submitted || !config.timed) return;
+    if (submitted || !config.timed || !attempt.started) return;
     const seconds = Math.max(0, Math.ceil((attempt.deadline - Date.now()) / 1000));
     if (timer) label(timer, 'Time remaining: {time}', {time: formatTime(seconds)});
+    if (confirmation.open) label(confirmationTimer, 'Time remaining: {time}', {time: formatTime(seconds)});
     if (!seconds) grade(true);
   }
-  form.addEventListener('submit', event => { event.preventDefault(); grade(); });
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (submitted || !attempt.started) return;
+    if (config.timed && Date.now() >= attempt.deadline) { grade(true); return; }
+    if (confirmation.open) return;
+    save();
+    label(confirmationCounts, '{answered} answered, {unanswered} unanswered, {flagged} flagged for review.', counts());
+    confirmation.showModal();
+    tick();
+    if (confirmation.open) cancel.focus();
+  });
   form.addEventListener('change', () => {
-    if (submitted) return;
+    if (submitted || !attempt.started) { restoreAnswers(); return; }
     if (config.timed && Date.now() >= attempt.deadline) {
       form.querySelectorAll('input[type="radio"]').forEach(input => {
         input.checked = attempt.answers[input.name] === input.value;
@@ -286,15 +492,27 @@
       grade(true);
       return;
     }
+    preserveInvalid = false;
     updateProgress(); save();
   });
+  let positionPending = Boolean(attempt.started && attempt.lastQuestionId && !attempt.expired);
+  let pageShown = document.readyState === 'complete';
+  if (positionPending && 'scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function restorePosition() {
+    if (!positionPending || !pageShown || attempt.expired || !window.ProjectsLearningLocale?.ready) return;
+    positionPending = false;
+    const last = questions.find(q => String(q.id) === attempt.lastQuestionId);
+    if (last) navigate(last, false);
+  }
   window.addEventListener('pagehide', save);
-  window.addEventListener('pageshow', tick);
+  window.addEventListener('pageshow', () => { pageShown = true; tick(); restorePosition(); });
   document.addEventListener('visibilitychange', () => { tick(); if (document.hidden) save(); });
-  window.addEventListener('projects:before-language-change', event => { if (!save()) event.preventDefault(); });
-  window.addEventListener('projects:learning-language-ready', applyLocale);
+  window.addEventListener('projects:before-language-change', event => { positionPending = false; if (!save()) event.preventDefault(); });
+  window.addEventListener('projects:learning-language-ready', () => { applyLocale(); restorePosition(); });
+  showAttempt();
   applyLocale();
   updateProgress();
   if (attempt.submittedAt !== null) grade(attempt.expired, true);
-  else { save(); tick(); if (config.timed && !submitted) interval = setInterval(tick, 1000); }
+  else { save(); tick(); if (config.timed && attempt.started && !submitted) interval = setInterval(tick, 1000); }
+  restorePosition();
 })();

@@ -175,7 +175,8 @@
       learningStatus();
       return translated.text;
     },
-    get language() { return activeLanguage; }
+    get language() { return activeLanguage; },
+    get ready() { return activeLanguage !== 'es' || Boolean(spanishCatalog || catalogFailed); }
   };
 
   function addStyles() {

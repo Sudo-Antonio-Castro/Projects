@@ -25,12 +25,10 @@ handlers and markup, but is not evidence of actual navigation, translation,
 cookie behavior or cross-page persistence in a deployed browser. Clock advancement,
 storage-denial injection and programmatic answer population are test inputs.
 
-The recovery was validated in offline mode. There were 32 passing checks across
-a checkpointed run and a focused follow-up, plus successful syntax, local-file
-reference and source-integrity checks. A single uninterrupted live-server suite
-run has not been completed. Before merging, run the default browser suite and a
-manual smoke test on an authenticated preview or local deployment, including
-actual language switching with Google Translate available.
+The initial recovery was validated in offline mode. Subsequent UX changes use
+the default real local-HTTP suites and keep per-run results under test-results.
+Run the documented suites before merging each change. An external translation
+service smoke check must be reported separately from local-catalog validation.
 
 The suite records `regression-results.json`, incremental `checkpoint.json`, and
 mobile screenshots in the requested output directory. The incremental checkpoint
@@ -114,3 +112,46 @@ Before/after captures and the separate deployed-release smoke report are under
 `test-results/navigation/`. Directory status is based on the repository contents
 and GitHub releases inspected when the change was prepared; update those statuses
 when tools or releases are published.
+
+## Assessment-taking experience and timing policy
+
+```sh
+python -X utf8 tests/assessment_experience.py
+```
+
+New timed attempts show the existing assessment title/version, question count,
+configured duration, scoring model/pass mark and timing instructions before Start.
+Their deadline is null until the native Start assessment button is activated.
+After starting, wall-clock time continues during navigation away, reloads,
+language changes and submission review. Expiry automatically submits exactly once.
+Configured durations and scoring rules are unchanged. This policy and start screen
+do not establish accessibility compliance; timing accommodations require a
+separate assessment of the content, purpose and applicable accessibility needs.
+
+The full question list remains available, with a collapsible overview, answered
+status, independent review flags and filters. Overview navigation focuses the
+question's first enabled answer; locked reviews focus the question group. Only
+explicit question navigation updates the restored position. Language changes
+update text in place without moving focus. Manual submission opens a native modal
+dialog with counts and a running timer; Return or Escape cancels it. Answers lock
+after confirmation or expiry. Flags never affect scoring.
+
+Storage remains per-tab sessionStorage at the existing projects-assessment:v1
+key, isolated by path and version. The content/scoring signature is unchanged.
+The optional started, flags and lastQuestionId fields are UI metadata: old active
+records retain their original deadlines, old expired records auto-submit, and old
+submitted records reopen locked. Missing/invalid UI metadata is normalized without
+discarding valid answers. Malformed or incompatible core records produce a notice
+and remain stored until the user starts or changes the replacement attempt. A
+storage failure produces a separate warning; the open page can still be used in
+memory, but cannot promise reload persistence. There is no new account or sync.
+
+The assessment-experience suite uses real Chromium over local HTTP with external
+HTTPS blocked and the production Spanish catalog. Controlled-clock cases are
+labeled separately from ordinary-clock keyboard/layout checks. Legacy records,
+malformed data and storage denial are controlled inputs, not evidence of an actual
+browser storage-policy failure. The suite covers both A+ final versions, Core 2,
+Linux+, Security+, CEH and an untimed quiz. Keyboard-only screenshots cover widths
+320/390/768/1440, English/Spanish and light/dark themes. Deployed navigation smoke
+evidence is separate under test-results/assessment/release. No physical-device or
+screen-reader session is claimed, and no translation mock is used by this suite.
