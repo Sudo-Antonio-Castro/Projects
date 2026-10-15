@@ -63,6 +63,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <link rel="stylesheet" href="../../../assets/roadmap-theme.css" data-roadmap-theme="option-3">
   <script defer src="../../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../../assets/site-language.js" data-site-language="projects"></script>
+<link rel="stylesheet" href="../../../assets/navigation.css">
 </head>
 <body class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
 <header>
@@ -72,16 +73,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
       <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-10V2m0 20v-4M4.22 4.22l2.83 2.83m9.9 9.9 2.83 2.83M2 12h4m16 0h-4M4.22 19.78l2.83-2.83m9.9-9.9 2.83-2.83"/></svg></button>
     </div>
   </div>
-<nav class="roadmap-global-nav" aria-label="Global project navigation"><a data-section="home" href="../../../index.html">Home</a><a data-section="comptia" href="../../../CompTIA/index.html">Tracks</a><a data-section="ec-council" href="../../index.html">CEH</a><a data-section="clis" href="../../../CLIs/index.html">Labs</a><a data-section="it-knowledge-base-articles" href="../../../IT-Knowledge-Base-Articles/index.html">Library</a><a data-section="apps" href="../../../Apps/index.html">Apps</a></nav></header>
+<nav class="roadmap-global-nav" aria-label="Global project navigation" data-learning-aria-label="Global project navigation"><a data-section="home" href="../../../index.html" data-learning-source="Home">Home</a><a data-section="comptia" href="../../../CompTIA/index.html" data-learning-source="CompTIA">CompTIA</a><a data-section="ec-council" href="../../index.html" data-learning-source="CEH" aria-current="page">CEH</a><a data-section="clis" href="../../../CLIs/index.html" data-learning-source="Labs">Labs</a><a data-section="it-knowledge-base-articles" href="../../../IT-Knowledge-Base-Articles/index.html" data-learning-source="Library">Library</a><a data-section="apps" href="../../../Apps/index.html" data-learning-source="Apps">Apps</a></nav></header>
 
     <main>
+<nav class="project-breadcrumb" aria-label="Breadcrumb" data-learning-aria-label="Breadcrumb"><ol><li><a href="../../../index.html" data-learning-source="Home">Home</a></li><li><a href="../../index.html" data-learning-source="CEH">CEH</a></li><li aria-current="page"><span data-learning-source="Sniffing Hijacking and Denial of Service">Sniffing Hijacking and Denial of Service</span></li></ol></nav>
       <div class="wrap">
         <section class="hero">
           <div class="kicker">Module X</div>
           <h1>Sniffing, Hijacking &amp; Denial of Service</h1>
           <p>This module combines packet analysis, man-in-the-middle behavior, session hijacking tactics, and denial-of-service attack patterns with corresponding defenses.</p>
           <div class="actions">
-            <a class="btn" href="../index.html">Return Home</a>
+
             <a class="btn primary" href="../Quiz_Sniffing_Hijacking_and_Denial_of_Service/">Take Module Quiz</a>
           </div>
         </section>

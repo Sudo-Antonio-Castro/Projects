@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../assets/roadmap-theme.css" data-roadmap-theme="option-3">
   <script defer src="../../../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../../../assets/site-language.js" data-site-language="projects"></script>
+<link rel="stylesheet" href="../../../../assets/navigation.css">
 </head>
 <body class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
 <header>
@@ -27,9 +28,10 @@
     </div>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
   </div>
-<nav class="roadmap-global-nav" aria-label="Global project navigation"><a data-section="home" href="../../../../index.html">Home</a><a data-section="comptia" href="../../../index.html">Tracks</a><a data-section="ec-council" href="../../../../EC-Council/index.html">CEH</a><a data-section="clis" href="../../../../CLIs/index.html">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html">Library</a><a data-section="apps" href="../../../../Apps/index.html">Apps</a></nav></header>
+<nav class="roadmap-global-nav" aria-label="Global project navigation" data-learning-aria-label="Global project navigation"><a data-section="home" href="../../../../index.html" data-learning-source="Home">Home</a><a data-section="comptia" href="../../../index.html" data-learning-source="CompTIA" aria-current="page">CompTIA</a><a data-section="ec-council" href="../../../../EC-Council/index.html" data-learning-source="CEH">CEH</a><a data-section="clis" href="../../../../CLIs/index.html" data-learning-source="Labs">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html" data-learning-source="Library">Library</a><a data-section="apps" href="../../../../Apps/index.html" data-learning-source="Apps">Apps</a></nav></header>
 
 <main>
+<nav class="project-breadcrumb" aria-label="Breadcrumb" data-learning-aria-label="Breadcrumb"><ol><li><a href="../../../../index.html" data-learning-source="Home">Home</a></li><li><a href="../../../index.html" data-learning-source="CompTIA">CompTIA</a></li><li><a href="../../index.html" data-learning-source="Linux+">Linux+</a></li><li aria-current="page"><span data-learning-source="Linux Landscape and Server Roles">Linux Landscape and Server Roles</span></li></ol></nav>
   <section class="hero">
     <div class="hero-kicker">Module I</div>
     <h2>Linux Landscape and Server Roles</h2>
@@ -37,7 +39,7 @@
   </section>
   <div class="shell">
     <aside class="sidebar">
-      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../index.html">Home</a><a class="btn" href="../../quizzes/linux-landscape-and-server-roles-quiz/index.html">Quiz</a><a class="btn" href="../../index.html">← Study Hub</a><a class="btn" href="../shell-usage-and-text-editing/index.html">Module II →</a></div></div>
+      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../quizzes/linux-landscape-and-server-roles-quiz/index.html">Quiz</a><a class="btn" href="../shell-usage-and-text-editing/index.html">Module II →</a></div></div>
       <div class="sidebar-section"><div class="sidebar-label">On this page</div><div class="section-nav"><a class="section-link" href="#s1">Linux in context</a><a class="section-link" href="#s2">Distribution families</a><a class="section-link" href="#s3">Server roles</a></div></div>
     </aside>
     <section class="content-wrap"><div class="content"><h2>Linux Landscape and Server Roles</h2><p>Distributions, packages, support models, and where linux fits in production.</p><section id="s1"><h3>Linux in context</h3><ul><li>Linux combines the kernel with user-space tools, libraries, package managers, and services.</li><li>Different distributions package those components in different ways while keeping core Linux concepts consistent.</li><li>Production Linux planning starts with the workload, support expectations, and update model.</li></ul></section><section id="s2"><h3>Distribution families</h3><ul><li>Debian and Ubuntu commonly use APT-based workflows.</li><li>Red Hat style distributions commonly use RPM packages with DNF-based management.</li><li>Choosing the right family affects repositories, automation, and long-term maintenance.</li></ul></section><section id="s3"><h3>Server roles</h3><ul><li>Linux commonly supports web, database, DNS, file, application, and container workloads.</li><li>One system can host multiple roles when capacity and security are planned well.</li><li>Role-based design helps determine packages, services, and hardening steps.</li></ul></section><div class="summary"><div class="summary-label">Quick takeaway</div><p>Use this module to connect commands to operational intent. Linux+ rewards knowing which tool to reach for first and why.</p></div><div class="exam-tip"><div class="exam-tip-label">Exam note</div><p>Pair these notes with the module quiz, then revisit any weak areas before the cumulative midterm.</p></div></div></section>

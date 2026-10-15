@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../assets/roadmap-theme.css" data-roadmap-theme="option-3">
   <script defer src="../../../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../../../assets/site-language.js" data-site-language="projects"></script>
+<link rel="stylesheet" href="../../../../assets/navigation.css">
 </head>
 <body class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
 <header>
@@ -27,9 +28,10 @@
     </div>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
   </div>
-<nav class="roadmap-global-nav" aria-label="Global project navigation"><a data-section="home" href="../../../../index.html">Home</a><a data-section="comptia" href="../../../index.html">Tracks</a><a data-section="ec-council" href="../../../../EC-Council/index.html">CEH</a><a data-section="clis" href="../../../../CLIs/index.html">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html">Library</a><a data-section="apps" href="../../../../Apps/index.html">Apps</a></nav></header>
+<nav class="roadmap-global-nav" aria-label="Global project navigation" data-learning-aria-label="Global project navigation"><a data-section="home" href="../../../../index.html" data-learning-source="Home">Home</a><a data-section="comptia" href="../../../index.html" data-learning-source="CompTIA" aria-current="page">CompTIA</a><a data-section="ec-council" href="../../../../EC-Council/index.html" data-learning-source="CEH">CEH</a><a data-section="clis" href="../../../../CLIs/index.html" data-learning-source="Labs">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html" data-learning-source="Library">Library</a><a data-section="apps" href="../../../../Apps/index.html" data-learning-source="Apps">Apps</a></nav></header>
 
 <main>
+<nav class="project-breadcrumb" aria-label="Breadcrumb" data-learning-aria-label="Breadcrumb"><ol><li><a href="../../../../index.html" data-learning-source="Home">Home</a></li><li><a href="../../../index.html" data-learning-source="CompTIA">CompTIA</a></li><li><a href="../../index.html" data-learning-source="Linux+">Linux+</a></li><li aria-current="page"><span data-learning-source="Processes, Services and Job Scheduling">Processes, Services and Job Scheduling</span></li></ol></nav>
   <section class="hero">
     <div class="hero-kicker">Module X</div>
     <h2>Processes, Services and Job Scheduling</h2>
@@ -37,7 +39,7 @@
   </section>
   <div class="shell">
     <aside class="sidebar">
-      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../index.html">Home</a><a class="btn" href="../../quizzes/processes-services-and-job-scheduling-quiz/index.html">Quiz</a><a class="btn" href="../hardware-drivers-and-kernel-views/index.html">← Module IX</a><a class="btn" href="../logging-monitoring-and-performance/index.html">Module XI →</a></div></div>
+      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../quizzes/processes-services-and-job-scheduling-quiz/index.html">Quiz</a><a class="btn" href="../hardware-drivers-and-kernel-views/index.html">← Module IX</a><a class="btn" href="../logging-monitoring-and-performance/index.html">Module XI →</a></div></div>
       <div class="sidebar-section"><div class="sidebar-label">On this page</div><div class="section-nav"><a class="section-link" href="#s1">Process control</a><a class="section-link" href="#s2">Services and units</a><a class="section-link" href="#s3">Task scheduling</a></div></div>
     </aside>
     <section class="content-wrap"><div class="content"><h2>Processes, Services and Job Scheduling</h2><p>Process inspection, priorities, cron, at, and service behavior.</p><section id="s1"><h3>Process control</h3><ul><li>Use ps, top, pgrep, and related tools to inspect process state.</li><li>Job control matters for foreground and background shell work.</li><li>Signals provide orderly or forceful process termination.</li></ul></section><section id="s2"><h3>Services and units</h3><ul><li>systemd service files define how processes are started and managed.</li><li>Directives such as User= help prevent services from running with unnecessary privileges.</li><li>Service ordering and startup behavior should match operational requirements.</li></ul></section><section id="s3"><h3>Task scheduling</h3><ul><li>cron manages recurring jobs, while at handles one-time execution.</li><li>anacron helps systems that are not always running.</li><li>Accurate system time is essential for logs, automation, and scheduled work.</li></ul></section><div class="summary"><div class="summary-label">Quick takeaway</div><p>Use this module to connect commands to operational intent. Linux+ rewards knowing which tool to reach for first and why.</p></div><div class="exam-tip"><div class="exam-tip-label">Exam note</div><p>Pair these notes with the module quiz, then revisit any weak areas before the cumulative midterm.</p></div></div></section>

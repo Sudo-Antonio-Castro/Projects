@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../assets/roadmap-theme.css" data-roadmap-theme="option-3">
   <script defer src="../../../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../../../assets/site-language.js" data-site-language="projects"></script>
+<link rel="stylesheet" href="../../../../assets/navigation.css">
 </head>
 <body class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
 <header>
@@ -27,9 +28,10 @@
     </div>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">◐</button>
   </div>
-<nav class="roadmap-global-nav" aria-label="Global project navigation"><a data-section="home" href="../../../../index.html">Home</a><a data-section="comptia" href="../../../index.html">Tracks</a><a data-section="ec-council" href="../../../../EC-Council/index.html">CEH</a><a data-section="clis" href="../../../../CLIs/index.html">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html">Library</a><a data-section="apps" href="../../../../Apps/index.html">Apps</a></nav></header>
+<nav class="roadmap-global-nav" aria-label="Global project navigation" data-learning-aria-label="Global project navigation"><a data-section="home" href="../../../../index.html" data-learning-source="Home">Home</a><a data-section="comptia" href="../../../index.html" data-learning-source="CompTIA" aria-current="page">CompTIA</a><a data-section="ec-council" href="../../../../EC-Council/index.html" data-learning-source="CEH">CEH</a><a data-section="clis" href="../../../../CLIs/index.html" data-learning-source="Labs">Labs</a><a data-section="it-knowledge-base-articles" href="../../../../IT-Knowledge-Base-Articles/index.html" data-learning-source="Library">Library</a><a data-section="apps" href="../../../../Apps/index.html" data-learning-source="Apps">Apps</a></nav></header>
 
 <main>
+<nav class="project-breadcrumb" aria-label="Breadcrumb" data-learning-aria-label="Breadcrumb"><ol><li><a href="../../../../index.html" data-learning-source="Home">Home</a></li><li><a href="../../../index.html" data-learning-source="CompTIA">CompTIA</a></li><li><a href="../../index.html" data-learning-source="Linux+">Linux+</a></li><li aria-current="page"><span data-learning-source="SSH, Access Control and Hardening">SSH, Access Control and Hardening</span></li></ol></nav>
   <section class="hero">
     <div class="hero-kicker">Module XV</div>
     <h2>SSH, Access Control and Hardening</h2>
@@ -37,7 +39,7 @@
   </section>
   <div class="shell">
     <aside class="sidebar">
-      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../index.html">Home</a><a class="btn" href="../../quizzes/ssh-access-control-and-hardening-quiz/index.html">Quiz</a><a class="btn" href="../bash-scripting-git-and-automation/index.html">← Module XIV</a><a class="btn" href="../../final/index.html">Final →</a></div></div>
+      <div class="sidebar-section"><div class="sidebar-label">Actions</div><div class="side-actions"><a class="btn" href="../../quizzes/ssh-access-control-and-hardening-quiz/index.html">Quiz</a><a class="btn" href="../bash-scripting-git-and-automation/index.html">← Module XIV</a><a class="btn" href="../../final/index.html">Final →</a></div></div>
       <div class="sidebar-section"><div class="sidebar-label">On this page</div><div class="section-nav"><a class="section-link" href="#s1">Privilege and remote access</a><a class="section-link" href="#s2">Hardening controls</a><a class="section-link" href="#s3">Secure service exposure</a></div></div>
     </aside>
     <section class="content-wrap"><div class="content"><h2>SSH, Access Control and Hardening</h2><p>Sudo, mac controls, keys, tunnels, and secure service exposure.</p><section id="s1"><h3>Privilege and remote access</h3><ul><li>sudo supports least privilege and auditing better than full-time root use.</li><li>SSH is central to secure remote administration on Linux.</li><li>Key-based authentication can be safer and more convenient than passwords alone.</li></ul></section><section id="s2"><h3>Hardening controls</h3><ul><li>SELinux and AppArmor provide additional confinement controls on many systems.</li><li>Unused services and accounts should be removed or disabled.</li><li>Secure defaults reduce attack surface before incidents happen.</li></ul></section><section id="s3"><h3>Secure service exposure</h3><ul><li>SSHD configuration controls remote access behavior such as port settings and auth options.</li><li>SSH tunneling forwards traffic securely through an encrypted session.</li><li>Hardening is ongoing, not a one-time event.</li></ul></section><div class="summary"><div class="summary-label">Quick takeaway</div><p>Use this module to connect commands to operational intent. Linux+ rewards knowing which tool to reach for first and why.</p></div><div class="exam-tip"><div class="exam-tip-label">Exam note</div><p>Pair these notes with the module quiz, then revisit any weak areas before the cumulative midterm.</p></div></div></section>

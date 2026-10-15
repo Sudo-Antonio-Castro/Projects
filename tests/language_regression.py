@@ -37,10 +37,11 @@ def main():
             except Exception:results.append({'test':name,'status':'FAIL','mode':mode,'error':traceback.format_exc()});print('FAIL',name,results[-1]['error'][-500:],flush=True)
             (args.output/'checkpoint.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
         def visible(p):
-            rows=p.locator('[data-learning-source]:visible').evaluate_all("nodes=>nodes.map(n=>({source:n.dataset.learningSource,params:JSON.parse(n.dataset.learningParams||'{}'),text:n.textContent,lang:n.lang}))")
+            rows=p.locator('[data-learning-source]:visible').evaluate_all("nodes=>nodes.map(n=>({source:n.dataset.learningSource,params:JSON.parse(n.dataset.learningParams||'{}'),paramSources:JSON.parse(n.dataset.learningParamSources||'{}'),text:n.textContent,lang:n.lang}))")
             for row in rows:
                 assert row['source'] in CATALOG, row
-                expected=re.sub(r'\{(\w+)\}',lambda m:str(row['params'].get(m.group(1),m.group(0))),CATALOG[row['source']])
+                values={**row['params'],**{key:CATALOG[source] for key,source in row['paramSources'].items()}}
+                expected=re.sub(r'\{(\w+)\}',lambda m:str(values.get(m.group(1),m.group(0))),CATALOG[row['source']])
                 assert row['text']==expected and row['lang']=='es',row
             assert p.locator('#learning-language-status').is_hidden()
             return len(rows)

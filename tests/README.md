@@ -94,3 +94,23 @@ ARIA semantics and keyboard behavior are tested in Chromium; this does not repla
 an NVDA, VoiceOver or TalkBack session. Before/after layout captures and deployed
 language-release checks are recorded separately under test-results/mobile. They
 identify their origin and whether external translation resources were allowed.
+
+## Navigation and application directories
+
+```sh
+python -X utf8 tests/navigation_directory.py
+```
+
+This checks static global and breadcrumb destinations across the published HTML
+pages, consistent labels/order and local Spanish coverage.
+Real Chromium over local HTTP checks root/index homepage aliases,
+nested active sections, visible English/Spanish text, exam-version query links,
+JavaScript-disabled navigation, empty directory availability, and keyboard focus
+at 320, 390, 768 and 1440 pixels in both themes. External HTTPS is blocked;
+these checks use the actual local catalog, not a mocked translator. Archived
+`Old*` pages are excluded from the navigation scope.
+
+Before/after captures and the separate deployed-release smoke report are under
+`test-results/navigation/`. Directory status is based on the repository contents
+and GitHub releases inspected when the change was prepared; update those statuses
+when tools or releases are published.

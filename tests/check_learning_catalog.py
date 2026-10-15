@@ -22,6 +22,9 @@ for path in ROOT.rglob('*.html'):
         sources.update(re.findall(r'label\([^,\n]+,\s*[\"\']([^\"\'\n]+)[\"\']',raw))
     sources.update(re.findall(r'"(?:passMessage|failMessage)"\s*:\s*"([^\"]+)"',raw))
     soup=BeautifulSoup(raw,'html.parser')
+    for node in soup.select('[data-learning-source],[data-learning-aria-label]'):
+        sources.update(node.get(key) for key in ['data-learning-source','data-learning-aria-label'] if node.has_attr(key))
+        sources.update(json.loads(node.get('data-learning-param-sources','{}')).values())
     if soup.select_one('[data-assessment]'):
         counts['linuxAssessments']+=1;sources.update(x.get_text() for x in soup.select('.question-title,.choice > span'))
     match=re.search(r'const labData = (.*);',raw)
