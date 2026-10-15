@@ -120,8 +120,15 @@ class Suite:
                 })();'''.replace('SESSION',json.dumps(session or {})).replace('LOCAL',json.dumps(local or {})).replace('DENIED',json.dumps(denied)))
             page.goto(self.base_url + quote(relative,safe='/+') + search,wait_until='domcontentloaded')
         page.wait_for_timeout(20)
+        if page.locator('#quizForm').count():
+            page.wait_for_function("document.querySelector('#quizForm').dataset.initialized === 'true'")
+            if page.locator('#startAssessment').is_visible():page.locator('#startAssessment').click()
         assert not errors, {'page':relative,'errors':errors}
         return page
+
+    def submit(self,page):
+        page.locator('button[type=submit]').click()
+        page.locator('#confirmSubmit').click()
 
     def state(self,page,storage='sessionStorage'):
         return page.evaluate('s=>{const x=window[s];return Object.fromEntries(Array.from({length:x.length},(_,i)=>x.key(i)).map(k=>[k,x.getItem(k)]))}',storage)
@@ -148,7 +155,7 @@ class Suite:
     def linux(self,relative):
         p=self.page(relative); meta=json.loads(p.locator('script[data-assessment]').get_attribute('data-assessment'))
         n=len(meta['answers']); first=next(iter(meta['answers'])); p.locator(f'input[name="q{first}"][value="{meta["answers"][first]}"]').check()
-        p.locator('button[type=submit]').click()
+        self.submit(p)
         assert p.locator('input[type=radio]:not(:disabled)').count()==0
         assert p.locator('button[type=submit]').is_disabled()
         text=p.locator('#results').inner_text();assert f'1/{n}' in text,text
@@ -166,8 +173,15 @@ class Suite:
         q=self.page(LINUX,session=self.state(p),seconds=15)
         assert q.locator('input:checked').count()==2
         assert self.attempt(q)[1]['deadline']==state['deadline']
-        assert '11:45' in q.locator('#timer').inner_text()
-        q.locator('button[type=submit]').click();result=q.locator('#results').inner_text()
+        # Start is now explicit, so its timestamp can follow the initial load.
+        # Freeze at a known elapsed instant and verify against the SAME deadline.
+        q.clock.pause_at(EPOCH + timedelta(seconds=20))
+        q.evaluate("window.dispatchEvent(new Event('pageshow'))")
+        remaining=q.evaluate('deadline=>Math.max(0,Math.ceil((deadline-Date.now())/1000))',state['deadline'])
+        actual=q.locator('#timer').inner_text()
+        expected=f'Time remaining: {remaining//60}:{remaining%60:02d}'
+        assert actual.casefold()==expected.casefold(),(actual,expected)
+        self.submit(q);result=q.locator('#results').inner_text()
         r=self.page(LINUX,session=self.state(q),seconds=25)
         assert r.locator('#results').inner_text()==result
         assert r.locator('input[type=radio]:not(:disabled)').count()==0
@@ -221,7 +235,7 @@ class Suite:
         assert p.locator('#site-language-select').input_value()=='en'
         assert p.locator('input:checked').count()==1
         if self.offline:assert p.evaluate('__fixtureReloadCount')==0
-        p.locator('button[type=submit]').click();assert p.locator('button[type=submit]').is_disabled()
+        self.submit(p);assert p.locator('button[type=submit]').is_disabled()
         return {'warningShown':True,'languageChangeCanBeCancelled':True,'gradingWorksWithoutStorage':True}
 
     def bank(self,relative,search=''):
@@ -235,7 +249,7 @@ class Suite:
         answers=p.evaluate("() => {const c=window.QUIZ_CONFIG||{},b=window.QUIZ_BANK;return (c.questionIds?.length?c.questionIds.map(id=>b.find(q=>q.id===id)).filter(Boolean):b.filter(q=>!c.module||q.module===c.module)).map(q=>({id:q.id,answer:q.answer}))}")
         # Exercise DOM answer changes for all questions without waiting on repeated scrolling.
         p.evaluate("a=>{for(const q of a){const i=document.querySelector(`input[name=q${q.id}][value='${q.answer}']`);i.checked=true;i.dispatchEvent(new Event('change',{bubbles:true}))}}",answers)
-        p.locator('button[type=submit]').click();text=p.locator('#results').inner_text();assert f'{count}/{count}' in text,text
+        self.submit(p);text=p.locator('#results').inner_text();assert f'{count}/{count}' in text,text
         assert p.locator('input[type=radio]:not(:disabled)').count()==0
         return {'questions':count,'allCorrectScored':True,'singleThemeClickWorks':True}
 
@@ -270,7 +284,7 @@ class Suite:
         return rows
 
     def feedback(self):
-        p=self.page(LINUX);p.locator('input[name=q1][value="1"]').check();p.locator('button[type=submit]').click()
+        p=self.page(LINUX);p.locator('input[name=q1][value="1"]').check();self.submit(p)
         assert p.locator('#label_1_1').inner_text().endswith('Your answer - incorrect')
         assert p.locator('#label_1_2').inner_text().endswith('Correct answer')
         colors=p.evaluate("[...document.querySelectorAll('#label_1_1,#label_1_2,#label_1_3')].map(e=>({bg:getComputedStyle(e).backgroundColor,border:getComputedStyle(e).borderLeftColor}))")

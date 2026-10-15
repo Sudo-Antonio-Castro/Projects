@@ -89,6 +89,7 @@ def main():
         for platform in ['Linux','Windows','MacOS']:check('Spanish CLI transitions, hints and completion: '+platform,lambda x=platform:cli(x))
         def quiz(path):
             c=context();p=open_page(c,path);p.wait_for_function("document.getElementById('answerProgress')?.lang==='es'")
+            if p.locator('#startAssessment').is_visible():p.locator('#startAssessment').click()
             visible(p);before= p.locator('.question-title,.question-text').all_inner_texts()[:3]
             first=p.locator('input[type=radio]').first;first.check()
             for _ in range(3):
@@ -105,7 +106,7 @@ def main():
             restored=json.loads(p.evaluate("Object.entries(sessionStorage).find(([k])=>k.startsWith('projects-assessment:'))")[1]);old=json.loads(attempt[1])
             assert restored['deadline']==old['deadline'];assert restored['signature']==old['signature'];assert restored['answers']==old['answers']
             assert p.locator('input[type=radio]').evaluate_all('nodes=>nodes.map(n=>[n.name,n.value])')==ids
-            p.locator('button[type=submit]').click();visible(p)
+            p.locator('button[type=submit]').click();p.locator('#confirmSubmit').click();visible(p)
             assert p.locator('input[type=radio]:not(:disabled)').count()==0
             result=p.locator('#results').inner_text();explanation=p.locator('.explanation').first.inner_text()
             assert 'Tu evaluación se ha calificado y bloqueado.' in result

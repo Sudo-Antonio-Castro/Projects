@@ -47,6 +47,13 @@ for path in ROOT.rglob('*.html'):
             for literal in literals:
                 if literal not in CATALOG.get(step['target'],''):failures.append({'literalChanged':literal,'source':step['target']})
 sources.discard('')
+controller=(ROOT/'CompTIA/A+/1201/assets/quiz-app.js').read_text(encoding='utf-8')
+sources.update(re.findall(r'localized\(\s*[\"\']([^\"\'\n]+)[\"\']',controller))
+sources.update(re.findall(r'label\([^,\n]+,\s*[\"\']([^\"\'\n]+)[\"\']',controller))
+sources.update(re.findall(r'learningAriaLabel\s*=\s*[\"\']([^\"\'\n]+)[\"\']',controller))
+sources.update(['All questions','Unanswered questions','Flagged questions','Flag question {number}',
+    'Unflag question {number}','Question {number}: answered','Question {number}: unanswered',
+    'Question {number}: answered, flagged','Question {number}: unanswered, flagged','Not started'])
 sources.update(['Complete with assistance','Complete; earlier assistance unknown','Assisted — revealed',
     'Completed — previous version','Independent','Reveal and advance (assisted)',
     'Scenario complete with assistance.','Scenario complete; earlier assistance history is unknown.',
