@@ -121,7 +121,9 @@ class Suite:
             page.goto(self.base_url + quote(relative,safe='/+') + search,wait_until='domcontentloaded')
         page.wait_for_timeout(20)
         if page.locator('#quizForm').count():
-            page.wait_for_function("document.querySelector('#quizForm').dataset.initialized === 'true'")
+            # Check DOM readiness directly, as in assessment_experience.py. A
+            # requestAnimationFrame poll can stall under the controlled clock.
+            page.locator('#quizForm[data-initialized="true"]').wait_for(state='attached')
             if page.locator('#startAssessment').is_visible():page.locator('#startAssessment').click()
         assert not errors, {'page':relative,'errors':errors}
         return page

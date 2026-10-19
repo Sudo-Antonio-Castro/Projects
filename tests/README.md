@@ -1,5 +1,70 @@
 # UX recovery checks
 
+## Local learning progress and resume
+
+```sh
+python -X utf8 tests/build_progress_catalog.py --check
+python -X utf8 tests/progress_resume.py
+```
+
+The progress suite uses real Chromium/local HTTP and the production Spanish
+catalog with external HTTPS blocked. It tests new browsers, pre-start/active/
+expired/submitted assessments, flags and partial answers, query versions,
+independent/revealed CLI steps, drafts, reload and cross-tab boundaries, legacy
+storage, malformed/future metadata, deterministic ordering, coordinated clearing,
+and 320/390/768/1440 layouts in English/Spanish and light/dark themes. Keyboard
+resume and visible focus are checked; CSS-disabled progress remains readable.
+Controlled clock/storage fixtures are labeled in results and are separate from
+ordinary interaction checks. This is not a screen-reader or physical-device test.
+
+Results and matrix screenshots: `test-results/progress/`. The independent deployed
+smoke script, `tests/progress_release_smoke.py`, uses the deployed Pages URL, an
+ordinary clock, external resources allowed, and no injected state or translator.
+It is not proof that the feature branch has deployed. External general-page
+translation-service tests remain separate from local Spanish-catalog coverage.
+
+`assets/learning-activities.js` is generated from actual assessment entry points
+(including the two Core 1 final versions) and the three CLI labs. Regenerate with
+`python tests/build_progress_catalog.py` when adding/removing activities.
+Track denominators count assessments, not certification completion; CLI scenario
+counts are separate from the count of full platform labs.
+
+`projects-learning-progress` in localStorage has `{version:1, activities:{...}}`.
+Stable repository path/version IDs key small entries containing started/completed/
+expired flags, counts, the most recent raw correct/total result, and one last
+meaningful-interaction timestamp. Reload, timer ticks and language changes do not
+advance recency. Counts/locations are read from authoritative state whenever it
+is available. No answers, deadlines, question banks, terminal histories, tracking
+IDs or translated identity text are copied into the summary.
+
+Existing assessment sessionStorage and CLI progress-v2 localStorage formats and
+keys remain authoritative. Old records need no eager rewrite: hubs read existing
+state with deterministic ID ordering until a meaningful interaction records
+recency. Missing/bad summary entries normalize safely; unknown summary versions
+are preserved without writes. CLI legacy assistance remains unknown. The
+connector lab has no saved activity state and gets no invented completion.
+
+Assessments can resume/review only when the current tab has their existing
+session record. Other tabs can see a local summary/result with an original-tab
+notice; they cannot reconstruct answers or start a replacement deadline from it.
+An expired dashboard link opens the existing controller to grade; the dashboard
+does not grade or write the deadline. Closing a tab may remove its locked review.
+There is no account, cloud synchronization, progress transmission or analytics.
+
+The dedicated `/progress/` surface confirms clearing one/all activities and
+removes summary plus underlying CLI/current-tab assessment state. An origin-local
+storage notification asks other open activity tabs to clear their own assessment
+records and reload without checkpoint resurrection. Language/theme preferences
+are kept. Clear failures show a status; a storage-policy failure can prevent
+complete clearing. View-only dismissal of the homepage card deletes no progress.
+
+`projects-learning-reset-revisions` is a separate version-1 localStorage map of
+assessment IDs to integer reset revisions. Only explicit destructive clearing
+advances a revision; it stores no timestamps. The controller's optional
+`progressRevision` field prevents a retained pre-clear session from returning
+after a tab navigates back. Reading pages also receive the local clear signal.
+Malformed/unknown revision metadata is ignored rather than invalidating answers.
+
 The website remains a static site. Test dependencies are development-only.
 
 ```sh

@@ -115,10 +115,12 @@
   const signature = JSON.stringify([questions, config.timed, config.timeLimitMinutes,
     config.useScaledScore, config.passScore, config.passPercent]);
   const duration = (config.timeLimitMinutes || 0) * 60000;
-  let attempt = { signature, answers: {}, deadline: null, started: !config.timed,
+  const progressRevision = window.ProjectsProgress?.assessmentRevision(key);
+  let attempt = { progressRevision: progressRevision ?? 0, signature, answers: {}, deadline: null, started: !config.timed,
     flags: [], lastQuestionId: null,
     submittedAt: null, expired: false, secondsLeft: Math.ceil(duration / 1000) };
   let submitted = false;
+  let progressResult = null;
   let restarting = false;
   let interval = null;
   let preserveInvalid = false;
@@ -149,7 +151,10 @@
     });
   }
   try {
-    const raw = sessionStorage.getItem(key);
+    let raw = sessionStorage.getItem(key);
+    if (window.ProjectsProgress?.isCleared(key, raw)) {
+      sessionStorage.removeItem(key); raw = null;
+    }
     if (raw !== null) {
       try {
         const saved = JSON.parse(raw);
@@ -166,7 +171,7 @@
         }
         // UI metadata is optional. Old active/submitted attempts retain all core
         // fields, the same content signature, storage key and original deadline.
-        attempt = { ...saved, started: !config.timed || !waiting,
+        attempt = { ...saved, progressRevision: progressRevision ?? saved.progressRevision ?? 0, started: !config.timed || !waiting,
           flags: Array.isArray(saved.flags) ? [...new Set(saved.flags.filter(validId).map(String))] : [],
           lastQuestionId: validId(saved.lastQuestionId) ? String(saved.lastQuestionId) : null };
       } catch (error) {
@@ -177,14 +182,20 @@
     }
   } catch (error) { storageFailure(); }
   restoreAnswers();
-  function save() {
+  function save(meaningful = false) {
     if (restarting) return true;
+    if (window.ProjectsProgress?.isCleared(key, attempt)) {
+      restarting = true;
+      try { sessionStorage.removeItem(key); } catch (_) { storageFailure(); }
+      return true;
+    }
     if (preserveInvalid) return true;
     // A locked submission is a snapshot; pagehide/language changes cannot read
     // modified DOM values back into it.
     if (attempt.started && !submitted) captureAnswers();
     try {
       sessionStorage.setItem(key, JSON.stringify(attempt));
+      window.ProjectsProgress?.assessment(key, attempt, {total: questions.length, result: progressResult}, meaningful === true);
       notice.hidden = true;
       recovery.hidden = true;
       return true;
@@ -242,7 +253,7 @@
       if (config.timed && Date.now() >= attempt.deadline) { grade(true); return; }
       const id = String(q.id);
       attempt.flags = attempt.flags.includes(id) ? attempt.flags.filter(value => value !== id) : [...attempt.flags, id];
-      preserveInvalid = false; updateProgress(); save();
+      preserveInvalid = false; updateProgress(); save(true);
     });
     card.querySelector('.question-text,.question-title').after(flag);
     const link = document.createElement('button'); link.type = 'button';
@@ -281,7 +292,7 @@
   }
   function navigate(q, remember = true) {
     const card = document.getElementById(`question-${q.id}`);
-    if (remember) { positionPending = false; attempt.lastQuestionId = String(q.id); updateProgress(); save(); }
+    if (remember) { positionPending = false; attempt.lastQuestionId = String(q.id); updateProgress(); save(true); }
     const header = document.querySelector('header');
     if (header) document.documentElement.style.setProperty('--projects-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
     const target = card.querySelector('input:not(:disabled)') || card;
@@ -342,7 +353,7 @@
     if (attempt.started || submitted) return;
     attempt.started = true; attempt.deadline = Date.now() + duration;
     start.disabled = true; preserveInvalid = false;
-    showAttempt(); save(); tick();
+    showAttempt(); save(true); tick();
     if (!submitted) { interval = setInterval(tick, 1000); navigate(questions[0]); }
   });
 
@@ -369,7 +380,7 @@
   function restart(event) {
     event.preventDefault();
     if (!window.confirm(window.ProjectsLearningLocale?.language === 'es' ? '¿Iniciar un nuevo intento? Se borrarán las respuestas y el resultado guardados de esta evaluación.' : 'Start a new attempt? Your saved answers and result for this assessment will be cleared.')) return;
-    try { sessionStorage.removeItem(key); } catch (error) {
+    try { sessionStorage.removeItem(key); window.ProjectsProgress?.forgetAssessment(key); } catch (error) {
       storageFailure();
       label(notice, 'The saved attempt could not be cleared. Enable browser storage before starting a new attempt.');
       return;
@@ -461,8 +472,9 @@
     submit.disabled = true;
     form.querySelectorAll('input[type="radio"]').forEach(input => { input.disabled = true; });
     if (timer && config.timed) label(timer, attempt.expired ? 'Time expired - submitted' : 'Submitted with {time} remaining', {time: formatTime(attempt.secondsLeft)});
+    progressResult = {correct, total};
     updateProgress();
-    save();
+    save(!restoring);
     if (!restoring) { results.focus({preventScroll: true}); results.scrollIntoView({block: 'start'}); }
   }
   function tick() {
@@ -493,7 +505,7 @@
       return;
     }
     preserveInvalid = false;
-    updateProgress(); save();
+    updateProgress(); save(true);
   });
   let positionPending = Boolean(attempt.started && attempt.lastQuestionId && !attempt.expired);
   let pageShown = document.readyState === 'complete';
@@ -504,7 +516,11 @@
     const last = questions.find(q => String(q.id) === attempt.lastQuestionId);
     if (last) navigate(last, false);
   }
-  window.addEventListener('pagehide', save);
+  window.addEventListener('projects:progress-cleared', event => {
+    if (!event.detail.assessmentKeys.includes(key)) return;
+    restarting = true; location.reload();
+  });
+  window.addEventListener('pagehide', () => save());
   window.addEventListener('pageshow', () => { pageShown = true; tick(); restorePosition(); });
   document.addEventListener('visibilitychange', () => { tick(); if (document.hidden) save(); });
   window.addEventListener('projects:before-language-change', event => { positionPending = false; if (!save()) event.preventDefault(); });

@@ -1,0 +1,50 @@
+{
+  "baseMain": "610647682e8b047ff0ee6e8258c04b5445fd528f",
+  "suites": [
+    {
+      "suite": "check_source",
+      "exitCode": 0,
+      "passed": "static integrity checks"
+    },
+    {
+      "suite": "ux_regression",
+      "exitCode": 0,
+      "passed": 32
+    },
+    {
+      "suite": "check_learning_catalog",
+      "exitCode": 0,
+      "passed": "static integrity checks"
+    },
+    {
+      "suite": "language_regression",
+      "exitCode": 0,
+      "passed": 12
+    },
+    {
+      "suite": "mobile_accessibility",
+      "exitCode": 0,
+      "passed": 14
+    },
+    {
+      "suite": "navigation_directory",
+      "exitCode": 0,
+      "passed": 7
+    },
+    {
+      "suite": "assessment_experience",
+      "exitCode": 0,
+      "passed": 21
+    }
+  ],
+  "activities": {
+    "assessments": 78,
+    "cliLabs": 3,
+    "cliScenarios": 18
+  },
+  "integrity": {
+    "questionBanksUnchanged": true,
+    "cliCommandDataUnchanged": true,
+    "whitespace": "PASS"
+  }
+}

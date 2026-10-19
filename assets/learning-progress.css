@@ -1,0 +1,12 @@
+.learning-progress {margin-block:1rem; padding:1rem; border:1px solid var(--line, #8775a6); border-radius:14px; color:var(--text); background:var(--panel); font-size:.94rem}
+.learning-progress[hidden] {display:none}
+.learning-progress h2 {font-size:1.15rem; margin:0 0 .7rem}
+.learning-progress p {margin:.35rem 0}
+.learning-activity {padding:.6rem 0; overflow-wrap:anywhere}
+.learning-activity + .learning-activity {border-top:1px solid var(--line, #8775a6)}
+.learning-progress a {text-decoration:underline; text-underline-offset:3px; display:inline-block; padding:.5rem .15rem; margin-right:1rem}
+.learning-progress button {font:inherit; color:inherit; background:transparent; border:1px solid var(--line, #8775a6); border-radius:8px; padding:.6rem; margin:.4rem .8rem .4rem 0; cursor:pointer; min-height:44px}
+.learning-progress :is(a,button):focus-visible {outline:3px solid #a88bfa; outline-offset:3px}
+.learning-progress > a {font-size:.9rem}
+@media(min-width:768px) {.learning-progress .learning-activity {display:flex; align-items:center; flex-wrap:wrap; gap:.35rem 1rem}.learning-progress .learning-activity > strong {flex-basis:100%}}
+@media(max-width:480px) {.learning-progress {padding:.8rem; font-size:.88rem}.learning-progress .learning-activity {padding:.3rem 0}}

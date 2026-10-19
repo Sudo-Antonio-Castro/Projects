@@ -1,0 +1,303 @@
+{
+  "environment": "Real Chromium / local HTTP / external HTTPS blocked / production Spanish catalog / no translator mock",
+  "checks": [
+    {
+      "test": "Brand-new browser and hub inventory",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": "Discovery remains primary; six hubs expose real activity denominators."
+    },
+    {
+      "test": "Untimed quiz and hide/resume",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": "Untimed answer, reload, same-tab resume and view-only dismissal preserve authoritative state."
+    },
+    {
+      "test": "Timed pre-start, active, flags, submission, tabs and language",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "deadline": 1792425174782,
+        "flags": [
+          "1"
+        ],
+        "crossTab": "Reference only; answers/deadline never copied."
+      }
+    },
+    {
+      "test": "Version query retained when resuming",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": "Core 1 version=2 retained in URL and storage key."
+    },
+    {
+      "test": "Expired attempt resumes through controller",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / controlled browser clock",
+      "details": "Expired deadline restored and graded only by assessment controller."
+    },
+    {
+      "test": "CLI independent, assisted, partial scenario, draft and new tab",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "independentSteps": 7,
+        "assistedSteps": 7,
+        "draftAndScenarioRestored": true
+      }
+    },
+    {
+      "test": "CLI completed state and reset",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / controlled CLI completion fixture",
+      "details": "All-scenario assisted fixture shows completed review; reset leaves no stale continue card."
+    },
+    {
+      "test": "Legacy CLI state without summary or assistance history",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / controlled old-storage fixture",
+      "details": "Earlier progress without outcomes remains legacy; it is never labeled independent."
+    },
+    {
+      "test": "Old storage, malformed metadata and future schema",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / controlled metadata fixtures",
+      "details": "Legacy authoritative state is read lazily; malformed metadata cannot change deadlines; unknown schemas preserved."
+    },
+    {
+      "test": "Clear one, cancel and confirm clear-all with authoritative state",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": "Cancel leaves storage unchanged; one clear preserves other activity; all clear resets open CLI and assessment authority, preserving preferences."
+    },
+    {
+      "test": "Cross-tab clearing prevents assessment resurrection",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": "Original assessment tab clears its own session record and suppresses pagehide checkpoint resurrection."
+    },
+    {
+      "test": "Reading tabs and retained sessions honor coordinated clear",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / actual clear plus controlled retained-session fixture",
+      "details": "Reading tab receives clear; controlled retained-session fixture cannot resurrect; a new attempt still reloads normally."
+    },
+    {
+      "test": "Malformed reset metadata preserves assessment authority",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / controlled reset-metadata fixtures",
+      "details": "Malformed/future reset metadata cannot discard answers, extend deadlines or lose the known reset revision."
+    },
+    {
+      "test": "Deterministic recency ordering",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary interaction plus controlled timestamp tie",
+      "details": {
+        "tieBreak": "Stable activity ID",
+        "activities": [
+          "CompTIA/A+/1201/Quiz_System_Devices/?version=",
+          "CLIs/Linux/"
+        ]
+      }
+    },
+    {
+      "test": "Connector nonpersistent activity boundary",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": "Connector lab stores theme only; no persistent progress or completion is claimed."
+    },
+    {
+      "test": "Layout/keyboard 320 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 320 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 320 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 320 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    }
+  ]
+}
