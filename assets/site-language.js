@@ -5,6 +5,22 @@
   const COOKIE_NAME = 'googtrans';
   const BASE_LANGUAGE = 'en';
   const assetBase = new URL('.', document.currentScript.src || new URL('assets/site-language.js', document.baseURI));
+  // Reading pages can retain assessment session records from earlier navigation.
+  // Coordinate an explicit reset even when this page has no progress widgets.
+  window.addEventListener('storage', event => {
+    if (event.key !== 'projects-learning-clear' || !event.newValue || window.ProjectsProgress) return;
+    try {
+      const base = new URL('../', assetBase);
+      const ids = JSON.parse(event.newValue).ids;
+      if (!Array.isArray(ids)) return;
+      for (const id of ids) {
+        if (typeof id !== 'string' || !/^(CompTIA|EC-Council)\//.test(id)) continue;
+        const url = new URL(id, base);
+        if (url.origin !== base.origin || !url.pathname.startsWith(base.pathname)) continue;
+        sessionStorage.removeItem('projects-assessment:v1:' + url.pathname + url.search);
+      }
+    } catch (_) { /* A storage-policy failure must not interrupt a reading page. */ }
+  });
   let spanishCatalog = null;
   let catalogRequest = null;
   let catalogFailed = false;

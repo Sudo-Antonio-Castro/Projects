@@ -15,6 +15,9 @@
   <script defer src="../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../assets/site-language.js" data-site-language="projects"></script>
 <link rel="stylesheet" href="../../assets/navigation.css">
+<link rel="stylesheet" href="../../assets/learning-progress.css">
+<script src="../../assets/learning-activities.js"></script>
+<script src="../../assets/learning-progress.js"></script>
 </head>
 <body class="roadmap-theme rm-cli cli-powershell" data-roadmap-theme="option-3">
 <header>
@@ -115,9 +118,13 @@ function loadState(){
   }
 }
 let state = loadState();
+window.addEventListener('projects:progress-cleared', event => {
+  if (event.detail.ids.includes(`CLIs/Windows/`)) location.reload();
+});
 function saveState(){
   try {
     localStorage.setItem(storageKey, JSON.stringify(state));
+    window.ProjectsProgress?.cli(storageKey, state);
     const notice = document.getElementById('cliStorageNotice');
     if (notice) notice.hidden = true;
   } catch (error) {

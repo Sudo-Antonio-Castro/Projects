@@ -1,0 +1,197 @@
+{
+  "environment": "Real Chromium / local HTTP / external HTTPS blocked / production Spanish catalog / no translator mock",
+  "checks": [
+    {
+      "test": "Layout/keyboard 320 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 320 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 320 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 320 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 320,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 390 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 390,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 768 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 768,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 en light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "en",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 en dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "en",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 es light",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "es",
+        "theme": "light",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    },
+    {
+      "test": "Layout/keyboard 1440 es dark",
+      "status": "PASS",
+      "mode": "LOCAL HTTP / ordinary clock / actual UI",
+      "details": {
+        "width": 1440,
+        "language": "es",
+        "theme": "dark",
+        "keyboardResume": true,
+        "cssDisabled": true
+      }
+    }
+  ]
+}
