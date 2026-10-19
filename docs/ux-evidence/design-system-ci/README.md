@@ -147,6 +147,13 @@ seven days. There are no release, Pages, deployment, secret or write-permission
 steps. GitHub's actual post-push status is reported in the draft PR and handoff,
 not assumed from local passes.
 
+The first hosted static run caught host-dependent `Path` sorting in the existing
+activity-inventory generator. Windows and Linux compared mixed-case names
+differently. The generator now uses an explicit case-folded relative-path key;
+the checked-in activity catalog remains byte-identical and its strict check is
+retained. This fixes portability rather than changing activity identity or
+regenerating a different inventory merely to pass CI.
+
 The matching d8c66910 Pages build/deployment was verified successful before the
 ordinary-clock deployed assessment smoke. That smoke passed; it checks the merged
 learning-progress release, not this refactor. [Separate deployed record](deployed-smoke.json).

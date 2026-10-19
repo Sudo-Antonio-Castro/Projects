@@ -10,7 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def catalog():
     activities = []
-    for path in sorted([*ROOT.glob('CompTIA/**/*.html'), *ROOT.glob('EC-Council/**/*.html')]):
+    # Path comparison follows the host filesystem's case rules. Keep the
+    # existing inventory order identical on Windows and Linux CI.
+    paths=[*ROOT.glob('CompTIA/**/*.html'), *ROOT.glob('EC-Council/**/*.html')]
+    for path in sorted(paths,key=lambda p:p.relative_to(ROOT).as_posix().casefold()):
         if path.name.startswith('Old'): continue
         text = path.read_text(encoding='utf8')
         soup = BeautifulSoup(text, 'html.parser')
