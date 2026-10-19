@@ -47,7 +47,7 @@ def main():
             p.assessment_errors = errors
             p.assessment_network = []
             p.on('requestfailed', lambda request: p.assessment_network.append({'url': request.url, 'failure': request.failure}) if 'quiz-' in request.url else None)
-            p.on('response', lambda response: p.assessment_network.append({'url': response.url, 'status': response.status}) if 'quiz-app.js' in response.url else None)
+            p.on('response', lambda response: p.assessment_network.append({'url': response.url, 'status': response.status}) if 'assessment-controller.js' in response.url else None)
             p.on('console', lambda message: p.assessment_network.append({'console': message.text}) if message.type == 'error' else None)
             if clock: p.clock.install(time=datetime(2026, 10, 15, 18, 0, tzinfo=timezone.utc))
             assert p.goto(base + route, wait_until='networkidle').ok

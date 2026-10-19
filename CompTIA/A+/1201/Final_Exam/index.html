@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/quiz.css" />
+  <link rel="stylesheet" href="../../../../assets/assessment-bank.css" />
   <style>
     .exam-picker {
       padding: 24px;
@@ -337,12 +337,12 @@
     };
 
     await loadScript("../assets/quiz-data.js");
-    await loadScript("../assets/quiz-app.js");
+    await loadScript("../../../../assets/assessment-controller.js");
   }
 
   if (selectedExam) {
     loadExam(selectedExam).catch(() => {
-      document.getElementById("results").innerHTML = '<div class="info-box">There was a problem loading the exam files. Make sure <strong>../assets/quiz-data.js</strong> and <strong>../assets/quiz-app.js</strong> exist and that Version II question IDs are present in your question bank.</div>';
+      document.getElementById("results").innerHTML = '<div class="info-box">There was a problem loading the exam files. Make sure <strong>../assets/quiz-data.js</strong> and <strong>../../../../assets/assessment-controller.js</strong> exist and that Version II question IDs are present in your question bank.</div>';
     });
   }
 </script>

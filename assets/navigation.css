@@ -1,5 +1,5 @@
 /* Static navigation and breadcrumbs shared by roadmap and standalone pages. */
-.project-breadcrumb { max-width:1240px; margin:0 auto 18px; padding:12px 0; font-size:.86rem; line-height:1.6; }
+.project-breadcrumb { max-width:var(--rm-max,1240px); margin:0 auto 18px; padding:12px 0; font-size:.86rem; line-height:1.6; }
 .project-breadcrumb ol { display:flex; flex-wrap:wrap; gap:4px 10px; padding:0; margin:0; list-style:none; }
 .project-breadcrumb li { min-width:0; overflow-wrap:anywhere; }
 .project-breadcrumb li + li::before { content:"/"; margin-inline-end:10px; opacity:.55; }
@@ -13,13 +13,11 @@ body:not(.roadmap-theme) .roadmap-global-nav a { padding:5px; color:inherit; tex
 body:not(.roadmap-theme) .roadmap-global-nav [aria-current] { text-decoration:underline; text-underline-offset:5px; }
 body:not(.roadmap-theme) .project-breadcrumb { padding-inline:18px; }
 /* These are independent directories, not numbered course sequences. */
-body.roadmap-theme.rm-hub.directory-hub :is(.grid,.card-grid,.home-table) { margin-inline-start:0 !important; padding-inline-start:0 !important; }
 body.roadmap-theme.rm-hub.directory-hub :is(.grid,.card-grid,.home-table,.card,.module-row)::before { display:none; }
-body.roadmap-theme.rm-hub.directory-hub :is(.card,.module-row) { padding-inline-start:8px !important; }
 .directory-status { font-weight:700; color:var(--rm-muted); }
 .directory-hub a.card { text-decoration:none; }
 .directory-link { display:inline-block; margin-top:8px; color:var(--rm-blue); text-decoration:underline; text-underline-offset:3px; font-size:.88rem; }
-body.directory-hub > :is(#page-translation-status,#learning-language-status) { max-width:1240px; margin:8px auto; padding:0 18px; font-size:.8rem; line-height:1.5; }
+body.directory-hub > :is(#page-translation-status,#learning-language-status) { max-width:var(--rm-max,1240px); margin:8px auto; padding:0 18px; font-size:.8rem; line-height:1.5; }
 .app-directory h1 { font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; letter-spacing:-.035em; max-width:24ch; overflow-wrap:anywhere; }
 @media(max-width:600px) {
   body.rm-home.directory-hub > main.shell { padding-top:20px !important; }

@@ -1,0 +1,22 @@
+[
+  {
+    "suite": "check_source",
+    "exitCode": 0,
+    "seconds": 21.2
+  },
+  {
+    "suite": "mobile_accessibility",
+    "exitCode": 0,
+    "seconds": 54.6
+  },
+  {
+    "suite": "assessment_experience",
+    "exitCode": 0,
+    "seconds": 300.8
+  },
+  {
+    "suite": "progress_resume",
+    "exitCode": 0,
+    "seconds": 185.8
+  }
+]

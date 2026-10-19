@@ -1,0 +1,21 @@
+{
+  "verifiedMain": "d8c66910a057f3831c7be16de1e64f49193d07e5",
+  "pagesBuild": 1297430676,
+  "pagesDeployment": 7178603248,
+  "deploymentState": "success",
+  "scope": "Matching main deployment verified before ordinary-clock deployed smoke; feature branch was not deployed",
+  "smoke": {
+    "origin": "https://sudo-antonio-castro.github.io/Projects/CompTIA/Linux+/quizzes/linux-landscape-and-server-roles-quiz/index.html",
+    "mode": "DEPLOYED / real Chromium / ordinary clock / external resources allowed / no fixtures",
+    "status": "PASS",
+    "checks": [
+      "pre-start reload has no deadline",
+      "start creates one deadline",
+      "flags and question navigation",
+      "reload preserves active attempt",
+      "English-Spanish-English preserves state",
+      "cancel and confirm manual submission",
+      "submitted reload locks answers"
+    ]
+  }
+}

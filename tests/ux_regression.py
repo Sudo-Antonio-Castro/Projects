@@ -33,6 +33,10 @@ def transformed(code):
                   'window.__fixtureReload()', code)
 
 
+def inline_css(path):
+    return re.sub(r'@import url\("([^"\n]+)"\);', lambda m:inline_css(path.parent / m[1]), path.read_text())
+
+
 def fixture(relative, session=None, local=None, search='', denied=False):
     """Load exact local assets into an explicitly simulated browser fixture."""
     p = ROOT / relative
@@ -42,7 +46,7 @@ def fixture(relative, session=None, local=None, search='', denied=False):
         href = tag.get('href', '')
         if tag.get('rel') == ['stylesheet'] and not urlparse(href).netloc:
             css = (p.parent / unquote(href)).resolve()
-            style = soup.new_tag('style'); style.string = css.read_text()
+            style = soup.new_tag('style'); style.string = inline_css(css)
             tag.replace_with(style)
         else:
             tag.decompose()
@@ -59,8 +63,8 @@ def fixture(relative, session=None, local=None, search='', denied=False):
             deferred.append(replacement); tag.decompose()
         else: tag.replace_with(replacement)
     dynamic = {}
-    for name in ['quiz-data.js', 'quiz-app.js']:
-        candidate = p.parent / '../assets' / name
+    for name in ['quiz-data.js', 'assessment-controller.js']:
+        candidate = ROOT / 'assets' / name if name == 'assessment-controller.js' else p.parent / '../assets' / name
         if candidate.exists():
             dynamic['https://fixture.invalid/Projects/' + candidate.resolve().relative_to(ROOT).as_posix()] = transformed(candidate.read_text())
     boot = soup.new_tag('script')
@@ -106,6 +110,8 @@ class Suite:
         context.route('https://**/*', lambda route: route.abort())
         self.contexts.append(context)
         page=context.new_page(); page.set_default_timeout(5000); errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+        failed_requests=[]
+        page.on('requestfailed',lambda r:failed_requests.append({'url':r.url,'failure':r.failure}) if not r.url.startswith('https://') else None)
         page.clock.install(time=EPOCH + timedelta(seconds=seconds))
         if self.offline:
             page.set_content(fixture(relative,session,local,search,denied),wait_until='domcontentloaded')
@@ -123,7 +129,10 @@ class Suite:
         if page.locator('#quizForm').count():
             # Check DOM readiness directly, as in assessment_experience.py. A
             # requestAnimationFrame poll can stall under the controlled clock.
-            page.locator('#quizForm[data-initialized="true"]').wait_for(state='attached')
+            try:page.locator('#quizForm[data-initialized="true"]').wait_for(state='attached')
+            except Exception as error:
+                raise AssertionError({'page':relative,'pageErrors':errors,'failedLocalRequests':failed_requests,
+                    'startup':page.evaluate('({ready:document.readyState,initialized:document.querySelector("#quizForm")?.dataset.initialized,scripts:[...document.scripts].map(s=>s.src)})')}) from error
             if page.locator('#startAssessment').is_visible():page.locator('#startAssessment').click()
         assert not errors, {'page':relative,'errors':errors}
         return page

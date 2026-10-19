@@ -207,7 +207,9 @@ def main():
             assert other.locator('#cmdInput').input_value()==''
             language(p,'es');local_text(p)
             p.once('dialog',lambda d:(None if '¿Borrar todo' in d.message else (_ for _ in ()).throw(AssertionError(d.message)),d.accept()))
-            p.locator('[data-clear-all-progress]').click();other.wait_for_function('state.progress.every(n=>n===0)')
+            # The storage event reloads the other tab; its CLI globals do not
+            # exist until that new document's inline application has initialized.
+            p.locator('[data-clear-all-progress]').click();other.wait_for_function('typeof state !== "undefined" && state.progress.every(n=>n===0)')
             assert p.locator('[data-activity-id]').count()==0
             assert p.evaluate("localStorage.getItem('projects-site-language')")=='es'
             visit(p,'index.html');assert recent(p).is_hidden()

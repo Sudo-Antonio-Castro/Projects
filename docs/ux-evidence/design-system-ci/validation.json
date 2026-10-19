@@ -1,0 +1,71 @@
+{
+  "controllerBodyHash": "276f4f43ac23a4561a22d6a13bbd09f11bb2f4aa2d3629bc9bd0e491b7c4390d",
+  "controllerBodyUnchangedExceptHeaderComment": true,
+  "questionBanksUnchanged": true,
+  "cliCommandDataUnchanged": true,
+  "embeddedAssessmentConfigurationsUnchanged": 17,
+  "activityInventory": "byte-identical generated catalog; build_progress_catalog --check passes",
+  "workflow": "actionlint 1.7.12 / check_ci PASS / contents read / no deployment / pinned official actions",
+  "localSuites": [
+    {
+      "suite": "check_source",
+      "status": "PASS",
+      "passed": "static integrity checks",
+      "initialSeconds": 25.8
+    },
+    {
+      "suite": "check_learning_catalog",
+      "status": "PASS",
+      "passed": "static integrity checks",
+      "initialSeconds": 1.8
+    },
+    {
+      "suite": "check_design_system",
+      "status": "PASS",
+      "passed": 1,
+      "initialSeconds": 1.3
+    },
+    {
+      "suite": "check_ci",
+      "status": "PASS",
+      "passed": 1,
+      "initialSeconds": 0.3
+    },
+    {
+      "suite": "ux_regression",
+      "status": "PASS",
+      "passed": 32,
+      "initialSeconds": 105.6
+    },
+    {
+      "suite": "language_regression",
+      "status": "PASS",
+      "passed": 12,
+      "initialSeconds": 68.4
+    },
+    {
+      "suite": "mobile_accessibility",
+      "status": "PASS",
+      "passed": 14,
+      "initialSeconds": 49.3
+    },
+    {
+      "suite": "navigation_directory",
+      "status": "PASS",
+      "passed": 7,
+      "initialSeconds": 155.1
+    },
+    {
+      "suite": "assessment_experience",
+      "status": "PASS",
+      "passed": 21,
+      "initialSeconds": 258.1
+    },
+    {
+      "suite": "progress_resume",
+      "status": "PASS",
+      "passed": 31,
+      "initialSeconds": 171.2
+    }
+  ]
+}

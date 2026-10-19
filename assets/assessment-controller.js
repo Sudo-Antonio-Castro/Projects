@@ -1,4 +1,4 @@
-/* Assessment controller. Keep the five track copies identical. */
+/* Canonical assessment controller for bank-rendered and embedded Linux assessments. */
 (function () {
   'use strict';
   const embedded = document.currentScript && document.currentScript.dataset.assessment;
