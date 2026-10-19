@@ -1,5 +1,30 @@
 # UX recovery checks
 
+## Design-system and CI checks
+
+The complete local commands, component contract, compatibility boundaries and
+non-deploying workflow are in [the design-system guide](../docs/DESIGN_SYSTEM.md).
+Static CI installs `tests/requirements-static.txt`; browser/visual CI installs
+`tests/requirements.txt` and Chromium. It runs all six existing browser suites,
+five static/catalog/contract checks and a same-runner merge-base/head visual suite.
+
+```sh
+python -X utf8 tests/check_design_system.py
+python -X utf8 tests/check_ci.py
+python -X utf8 tests/design_inventory.py --output test-results/inventory.json
+python -X utf8 tests/design_visual.py --output test-results/visual-before
+# After editing, on the same browser/OS/font environment:
+python -X utf8 tests/design_visual.py --output test-results/visual-after --baseline test-results/visual-before
+```
+
+`--site-root PATH` can capture an isolated base checkout. Visual evidence uses
+fixed Date fixtures and real `/Projects/` local HTTP, checks overflow, and retains
+raw pixel differences. Only the measured one-level RGB rounding in at most 15
+pixels/frame is accepted; dimensions and larger changes fail. No screenshot
+region is masked. Screenshots are not portable goldens across OS/browser changes.
+CI uploads test JSON/PNG/logs on failure for seven days; it does not deploy or run
+external translation checks. See the evidence report for baseline runtimes.
+
 ## Local learning progress and resume
 
 ```sh

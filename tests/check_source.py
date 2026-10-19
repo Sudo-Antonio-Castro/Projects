@@ -29,7 +29,7 @@ for path in html_files:
         result=subprocess.run(['node','--check'],input=tag.get_text(),capture_output=True,text=True)
         scripts+=1
         if result.returncode:failures.append({'file':str(path.relative_to(ROOT)),'inlineSyntax':result.stderr})
-engines=list(ROOT.rglob('quiz-app.js'))
-if len({p.read_bytes() for p in engines})!=1:failures.append({'controllers':'Copies differ'})
-print(json.dumps({'htmlPages':len(html_files),'javascriptBlocksChecked':scripts,'localFileReferences':references,'matchingControllerCopies':len(engines),'failures':failures},indent=2))
+engines=list(ROOT.glob('assets/assessment-controller.js'))
+if len(engines)!=1 or list(ROOT.rglob('quiz-app.js')):failures.append({'controllers':'Expected one canonical assessment controller and no copies'})
+print(json.dumps({'htmlPages':len(html_files),'javascriptBlocksChecked':scripts,'localFileReferences':references,'canonicalAssessmentControllers':len(engines),'failures':failures},indent=2))
 sys.exit(bool(failures))

@@ -10,11 +10,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def catalog():
     activities = []
-    for path in sorted([*ROOT.glob('CompTIA/**/*.html'), *ROOT.glob('EC-Council/**/*.html')]):
+    # Path comparison follows the host filesystem's case rules. Keep the
+    # existing inventory order identical on Windows and Linux CI.
+    paths=[*ROOT.glob('CompTIA/**/*.html'), *ROOT.glob('EC-Council/**/*.html')]
+    for path in sorted(paths,key=lambda p:p.relative_to(ROOT).as_posix().casefold()):
         if path.name.startswith('Old'): continue
         text = path.read_text(encoding='utf8')
         soup = BeautifulSoup(text, 'html.parser')
-        if not soup.select_one('#quizForm') or 'quiz-app.js' not in text: continue
+        if not soup.select_one('#quizForm') or 'assessment-controller.js' not in text: continue
         route = path.relative_to(ROOT).as_posix()
         track = 'a' if '/A+/' in route else 'linux' if '/Linux+/' in route else 'security' if '/Security+/' in route else 'ceh'
         title = soup.title.get_text().split(' • ')[0].split(' | ')[0].strip()

@@ -1,0 +1,49 @@
+/* Existing Projects palette; aliases in roadmap-theme.css bridge legacy skins. */
+:root,
+html[data-theme="dark"]{
+  --rm-bg:#130e22;
+  --rm-bg-deep:#0d0918;
+  --rm-panel:#1c1530;
+  --rm-panel-2:#241a3c;
+  --rm-text:#fff8ff;
+  --rm-muted:#b8accb;
+  --rm-pink:#ff5aa9;
+  --rm-blue:#63c7ff;
+  --rm-yellow:#ffe66d;
+  --rm-mint:#64f3b4;
+  --rm-line:#3b2e58;
+  --rm-line-soft:rgba(184,172,203,.2);
+  --rm-shadow:0 24px 70px rgba(5,2,12,.36);
+  --rm-max:1240px;
+}
+html[data-theme="light"]{
+  --rm-bg:#f8f3ff;
+  --rm-bg-deep:#eee5fb;
+  --rm-panel:#ffffff;
+  --rm-panel-2:#f3ebff;
+  --rm-text:#21152f;
+  --rm-muted:#6f627f;
+  --rm-pink:#cc257c;
+  --rm-blue:#087daf;
+  --rm-yellow:#9c6500;
+  --rm-mint:#08784d;
+  --rm-line:#d9cbea;
+  --rm-line-soft:rgba(59,46,88,.15);
+  --rm-shadow:0 22px 60px rgba(51,31,82,.13);
+}
+:root {
+  --rm-space-1:4px; --rm-space-2:8px; --rm-space-3:12px;
+  --rm-space-4:16px; --rm-space-inset:18px; --rm-space-5:20px;
+  --rm-space-6:24px; --rm-space-7:28px; --rm-space-8:32px;
+  --rm-space-10:40px; --rm-space-12:48px;
+  --rm-radius-small:4px; --rm-radius-panel:10px; --rm-radius-control:12px;
+  --rm-radius-card:14px; --rm-radius-pill:999px;
+  --rm-focus:color-mix(in srgb,var(--rm-blue) 75%,transparent);
+  --rm-focus-strong:var(--rm-blue); --rm-focus-progress:#a88bfa;
+  --rm-font-body:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --rm-font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --rm-reading-width:72ch; --rm-hero-width:920px; --rm-dialog-width:620px;
+  --rm-body-background:radial-gradient(circle at 82% -8%,rgba(99,199,255,.17),transparent 31rem),radial-gradient(circle at 13% 18%,rgba(255,90,169,.13),transparent 27rem),var(--rm-bg);
+}
+/* Media conditions remain literal CSS: 480/600/760px; CLI also uses 520/780/1120px,
+   navigation 1000px. Custom properties cannot be substituted into media queries. */

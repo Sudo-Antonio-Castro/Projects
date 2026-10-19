@@ -1,5 +1,5 @@
 /* Assessment-only controls; the full question list remains the working view. */
-.assessment-start, .assessment-overview { padding:16px; margin:12px 0; border:1px solid var(--rm-line); border-radius:12px; }
+.assessment-start, .assessment-overview { padding:16px; margin:12px 0; border:1px solid var(--rm-line); border-radius:var(--rm-radius-control); }
 .assessment-start h2 { margin:0 0 12px; font-size:1.5rem; }
 .assessment-start p { max-width:70ch; line-height:1.6; }
 .assessment-start .assessment-name { font-weight:750; }
@@ -10,7 +10,7 @@
 .assessment-question-link[aria-current] { outline:2px solid var(--rm-blue); outline-offset:1px; }
 .assessment-flag { clear:both; margin:10px 0; max-width:100%; white-space:normal; }
 .attempt-recovery-notice { padding:12px; border:1px solid var(--rm-yellow); }
-.assessment-confirmation { box-sizing:border-box; width:min(620px,calc(100% - 32px)); max-height:calc(100dvh - 32px); overflow:auto; padding:24px; border:2px solid var(--rm-blue); border-radius:14px; background:var(--rm-panel); color:var(--rm-text); font:inherit; }
+.assessment-confirmation { box-sizing:border-box; width:min(var(--rm-dialog-width),calc(100% - 32px)); max-height:calc(100dvh - 32px); overflow:auto; padding:24px; border:2px solid var(--rm-blue); border-radius:var(--rm-radius-card); background:var(--rm-panel); color:var(--rm-text); font:inherit; }
 .assessment-confirmation::backdrop { background:rgb(0 0 0 / .7); }
 .assessment-confirmation h2 { margin-top:0; font-size:1.5rem; }
 .assessment-confirmation .btn { margin:6px 8px 6px 0; white-space:normal; }

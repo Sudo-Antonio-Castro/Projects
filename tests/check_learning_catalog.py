@@ -47,7 +47,7 @@ for path in ROOT.rglob('*.html'):
             for literal in literals:
                 if literal not in CATALOG.get(step['target'],''):failures.append({'literalChanged':literal,'source':step['target']})
 sources.discard('')
-controller=(ROOT/'CompTIA/A+/1201/assets/quiz-app.js').read_text(encoding='utf-8')
+controller=(ROOT/'assets/assessment-controller.js').read_text(encoding='utf-8')
 sources.update(re.findall(r'localized\(\s*[\"\']([^\"\'\n]+)[\"\']',controller))
 sources.update(re.findall(r'label\([^,\n]+,\s*[\"\']([^\"\'\n]+)[\"\']',controller))
 sources.update(re.findall(r'learningAriaLabel\s*=\s*[\"\']([^\"\'\n]+)[\"\']',controller))

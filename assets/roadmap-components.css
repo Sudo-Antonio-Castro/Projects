@@ -1,0 +1,4 @@
+/* Modern directory contract. Layout ownership is explicit; no compatibility priority. */
+:where(.ds-hub) .ds-directory-list {margin:6px 0 30px; padding-inline-start:0; counter-reset:none}
+:where(.ds-hub) .ds-directory-row {padding:15px 48px 15px 8px}
+.roadmap-spacer {height:34px}
