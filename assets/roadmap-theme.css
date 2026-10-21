@@ -2,6 +2,7 @@
 @import url("design-tokens.css");
 @import url("roadmap-components.css");
 @import url("legacy-hub-compat.css");
+@import url("noir-theme.css");
 :root {
   --bg:var(--rm-bg) !important;
   --surface:var(--rm-panel) !important;

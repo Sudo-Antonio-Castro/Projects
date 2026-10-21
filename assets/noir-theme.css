@@ -1,0 +1,170 @@
+/* Optional noir skin. Every rule is scoped; light/dark retain their base skins.
+   Imported by roadmap-theme.css; standalone articles/labs load this file directly. */
+html[data-theme="noir"] {
+  color-scheme:dark;
+  --noir-bg:#090908;
+  --noir-bg-deep:#050505;
+  --noir-surface:#141310;
+  --noir-surface-raised:#1b1915;
+  --noir-cream:#eee3ca;
+  --noir-parchment:#d9c9a8;
+  --noir-muted:#aaa08e;
+  --noir-brass:#b28b52;
+  --noir-brass-soft:#7e633e;
+  --noir-oxblood:#4a2024;
+  --noir-border:#4b3b27;
+  --rm-bg:var(--noir-bg);
+  --rm-bg-deep:var(--noir-bg-deep);
+  --rm-panel:var(--noir-surface);
+  --rm-panel-2:var(--noir-surface-raised);
+  --rm-text:var(--noir-cream);
+  --rm-muted:var(--noir-muted);
+  --rm-pink:var(--noir-brass);
+  --rm-blue:var(--noir-brass);
+  --rm-yellow:var(--noir-parchment);
+  --rm-mint:#b4c1a0;
+  --rm-line:var(--noir-border);
+  --rm-line-soft:rgb(178 139 82 / .22);
+  --rm-focus:var(--noir-brass);
+  --rm-focus-strong:var(--noir-brass);
+  --rm-focus-progress:var(--noir-brass);
+  --rm-shadow:0 16px 40px rgb(0 0 0 / .22);
+  --rm-body-background:var(--noir-bg);
+  --rm-font-body:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --rm-font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  /* Standalone skins don't import the roadmap token aliases. */
+  --bg:var(--rm-bg); --surface:var(--rm-panel); --surface-soft:var(--rm-panel-2);
+  --panel:var(--rm-panel); --panel-2:var(--rm-panel-2);
+  --text:var(--rm-text); --muted:var(--rm-muted);
+  --border:var(--rm-line); --line:var(--rm-line);
+  --accent:var(--rm-blue); --accent-2:var(--rm-blue); --link:var(--rm-blue);
+  --good:var(--rm-mint); --bad:#e0b6b5;
+  --good-bg:#20251b; --bad-bg:var(--noir-oxblood);
+  --font-serif:Georgia,"Times New Roman",serif;
+  --lab-bg:var(--noir-surface); --lab-bg-soft:var(--noir-surface-raised);
+  --lab-panel:var(--noir-surface); --lab-line:var(--noir-border);
+  --lab-green:var(--rm-mint); --lab-blue:var(--noir-brass);
+  --lab-red:#e0b6b5; --lab-yellow:var(--noir-parchment); --lab-amber:var(--noir-brass);
+  background:var(--noir-bg-deep);
+}
+html[data-theme="noir"] body {
+  color:var(--rm-text); background:var(--noir-bg);
+  font-family:var(--rm-font-body);
+}
+html[data-theme="noir"] body.roadmap-theme::before {
+  height:3px; background:var(--noir-brass-soft);
+}
+html[data-theme="noir"] body :is(h1,h2,h3,h4),
+html[data-theme="noir"] body.roadmap-theme :is(.hero,.hero-card) :is(h1,h2) {
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-weight:700 !important; letter-spacing:-.02em !important; line-height:1.15 !important;
+}
+html[data-theme="noir"] body header {
+  background:var(--noir-bg) !important; border-color:var(--noir-border);
+}
+html[data-theme="noir"] body :is(.logo,.btn.primary,button.primary,#submitBtn,#runBtn) {
+  color:var(--noir-bg) !important; background:var(--noir-brass) !important;
+  box-shadow:none !important;
+}
+html[data-theme="noir"] body.roadmap-theme.rm-hub :is(.grid,.card-grid,.home-table)::before {
+  background:var(--noir-brass-soft);
+}
+html[data-theme="noir"] body .roadmap-global-nav a[aria-current],
+html[data-theme="noir"] body .project-breadcrumb a { color:var(--rm-blue) !important; }
+html[data-theme="noir"] body :is(.learning-progress,.assessment-start,.assessment-overview,.directory-status) {
+  border-color:var(--rm-line); border-top-style:double; border-top-width:3px;
+}
+html[data-theme="noir"] body :is(.card,.panel,.learning-progress) { box-shadow:none !important; }
+/* Local paper tokens propagate through all children, including legacy aliases.
+   Never apply these to CLI panels or terminal descendants. */
+html[data-theme="noir"] body :is(.lesson,.lesson-panel,.assessment-start,.assessment-confirmation),
+html[data-theme="noir"] body.rm-quiz :is(.panel,.quizbox),
+html[data-theme="noir"] body.noir-article .panel {
+  color-scheme:light;
+  --rm-panel:#eee3ca; --rm-panel-2:#e2d4b8;
+  --rm-text:#25211a; --rm-muted:#5e5342;
+  --rm-line:#9a825e; --rm-line-soft:rgb(75 59 39 / .22);
+  --rm-pink:#72532b; --rm-blue:#72532b; --rm-yellow:#654b27; --rm-mint:#3e5132;
+  --rm-focus:#72532b; --rm-focus-strong:#72532b; --rm-focus-progress:#72532b;
+  --text:var(--rm-text); --muted:var(--rm-muted);
+  --panel:var(--rm-panel); --panel-2:var(--rm-panel-2);
+  --surface:var(--rm-panel); --surface-soft:var(--rm-panel-2);
+  --border:var(--rm-line); --line:var(--rm-line);
+  --accent:var(--rm-blue); --link:var(--rm-blue);
+  --good:#3e5132; --bad:#4a2024; --good-bg:#d6ddc5; --bad-bg:#e4cdbe;
+  color:var(--rm-text) !important; background:var(--rm-panel) !important;
+  border-color:var(--rm-line) !important;
+}
+html[data-theme="noir"] body :is(.assessment-start,.assessment-confirmation) :is(h1,h2,h3),
+html[data-theme="noir"] body.noir-article .panel :is(h1,h2,h3,h4) { color:var(--rm-text); }
+html[data-theme="noir"] body.rm-quiz :is(.question,.question-card) {
+  color:var(--rm-text); background:var(--rm-panel) !important;
+}
+html[data-theme="noir"] body.rm-quiz .question { padding-inline:12px !important; }
+html[data-theme="noir"] body :is(.choice,.option):has(input:checked) {
+  color:var(--rm-text) !important;
+  background:var(--rm-panel-2) !important; border-inline-start:4px solid var(--rm-blue) !important;
+}
+html[data-theme="noir"] body.rm-quiz :is(.choice,.option).correct-answer {
+  color:var(--rm-text) !important; background:#d6ddc5 !important;
+  border-inline-start:4px solid #3e5132 !important;
+}
+html[data-theme="noir"] body.rm-quiz :is(.choice,.option).user-wrong {
+  color:var(--rm-text) !important; background:#e4cdbe !important;
+  border-inline-start:4px solid var(--noir-oxblood) !important;
+}
+html[data-theme="noir"] body :is(.callout.bad,.port-card.error) {
+  border-color:var(--noir-oxblood) !important;
+}
+html[data-theme="noir"] body :is(.btn,button,input,select,textarea) { font-family:inherit; }
+html[data-theme="noir"] body :is(select,textarea,input:not([type="radio"]):not([type="checkbox"]):not(.cmd-input)) {
+  color:var(--rm-text); background:var(--rm-panel); border:1px solid var(--rm-line);
+}
+html[data-theme="noir"] body :is(select,textarea,input)::placeholder { color:var(--rm-muted); opacity:1; }
+html[data-theme="noir"] body input:is([type="radio"],[type="checkbox"]) { accent-color:var(--rm-blue); }
+html[data-theme="noir"] body :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline:3px solid var(--rm-focus-strong) !important; outline-offset:3px;
+}
+html[data-theme="noir"] body :is(.note,.callout,.instructions-box) { border-color:var(--rm-line); }
+html[data-theme="noir"] body :is(.content,.lesson,.bd) a:not(.btn) {
+  color:var(--rm-blue); text-decoration:underline; text-underline-offset:3px;
+}
+html[data-theme="noir"] body :is(pre,code,kbd,samp,.code) {
+  color:#e6e6e6 !important; background:#141310 !important;
+  font-family:var(--rm-font-mono);
+}
+html[data-theme="noir"] body th { color:var(--rm-text) !important; }
+html[data-theme="noir"] body mark { background:var(--noir-brass); color:var(--noir-bg); }
+/* Preserve the platform terminal toolbar's existing neutral primary action. */
+html[data-theme="noir"] body.roadmap-theme.rm-cli .platform-terminal .toolbar :is(button.primary,#runBtn) {
+  color:#111 !important; background:#f1f1f1 !important; border-color:#f1f1f1 !important;
+}
+/* Connector shapes and matching state stay intact; only the surrounding skin changes. */
+html[data-theme="noir"] body .lab-window {
+  color:var(--noir-cream); background:var(--noir-surface);
+}
+html[data-theme="noir"] body :is(.lab-titlebar,.scenario-header,.panel-shell,.status-box,.detail-card) {
+  background:var(--noir-surface-raised); border-color:var(--noir-border);
+}
+html[data-theme="noir"] body :is(.port-card,.cable-card) {
+  color:var(--noir-cream); background:var(--noir-surface-raised); border-color:var(--noir-brass-soft);
+}
+html[data-theme="noir"] body :is(.port-card.correct,.cable-card.selected,.port-card.drop-hover) {
+  border-color:var(--noir-brass); box-shadow:inset 0 0 0 1px var(--noir-brass);
+}
+html[data-theme="noir"] body .port-card.error { background:var(--noir-oxblood); }
+html[data-theme="noir"] body .matched-tag {
+  color:var(--noir-cream); border-color:var(--noir-brass-soft); background:var(--noir-surface);
+}
+html[data-theme="noir"] body .port-zone[data-selected="true"] { outline-color:var(--noir-brass); }
+/* Sparse cat identity: only the small existing theme control, no content overlay. */
+html[data-theme="noir"] body :is(#themeBtn,.theme-toggle) {
+  position:relative; color:var(--noir-brass) !important;
+}
+html[data-theme="noir"] body :is(#themeBtn,.theme-toggle)::after {
+  content:""; position:absolute; right:1px; bottom:1px; width:9px; height:9px;
+  background:currentColor; clip-path:polygon(0 0,32% 19%,68% 19%,100% 0,92% 65%,72% 92%,28% 92%,8% 65%);
+}
+@media print {
+  html[data-theme="noir"] body { background:white !important; color:#111 !important; }
+}

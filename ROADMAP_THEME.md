@@ -56,3 +56,12 @@ CLI lab pages load `assets/cli-labs.css` after the main theme and use one platfo
 - `cli-macos`
 
 The CLI task list intentionally displays task prompts without the expected command. Answers remain in the page data so command checking, Hint, and Reveal continue to work.
+
+## Optional noir palette
+
+The shared button now cycles light → dark → noir → light. Noir is opt-in and
+persists through the existing `projects-roadmap-theme` / `kb_theme` keys.
+`assets/noir-theme.css` scopes charcoal, parchment and brass styling to
+`html[data-theme="noir"]`. Existing light/dark skin declarations are unchanged.
+Standalone articles and labs load that scoped skin and the same theme control.
+See [implementation and validation limits](docs/ux-evidence/noir-theme.md).

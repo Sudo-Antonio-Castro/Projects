@@ -312,6 +312,8 @@
 <script defer src="../../../../assets/site-language.js" data-site-language="projects"></script>
 <link rel="stylesheet" href="../../../../assets/navigation.css">
 <script defer src="../../../../assets/navigation.js"></script>
+<link rel="stylesheet" href="../../../../assets/noir-theme.css">
+<script defer src="../../../../assets/roadmap-theme.js"></script>
 </head>
 <body>
 <header>
@@ -408,7 +410,7 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 
   const btn = document.getElementById("themeBtn");
-  const saved = localStorage.getItem("kb_theme");
+  const saved = (() => { try { return localStorage.getItem('kb_theme'); } catch (error) { return null; } })();
   if (saved === "light" || saved === "dark") {
     document.documentElement.setAttribute("data-theme", saved);
   }

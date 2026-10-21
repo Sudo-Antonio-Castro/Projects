@@ -1,5 +1,14 @@
 # UX recovery checks
 
+## Structured study layout
+
+`python -X utf8 tests/study_layout.py --output docs/ux-evidence/study-layout/after`
+checks five representative study families at six viewport/language/theme states,
+then sweeps all 67 migrated modules. It exercises lesson navigation, fragment
+targets, place restoration, focus and overflow using real Chromium/local HTTP.
+Use `--before` for baseline captures and `--case ceh` to isolate one family.
+See [scope, screenshots and limits](../docs/ux-evidence/study-layout/README.md).
+
 ## Design-system and CI checks
 
 The complete local commands, component contract, compatibility boundaries and
@@ -245,3 +254,30 @@ Linux+, Security+, CEH and an untimed quiz. Keyboard-only screenshots cover widt
 320/390/768/1440, English/Spanish and light/dark themes. Deployed navigation smoke
 evidence is separate under test-results/assessment/release. No physical-device or
 screen-reader session is claimed, and no translation mock is used by this suite.
+
+## Optional noir theme
+
+Run alongside every existing suite listed above:
+
+```sh
+node tests/noir_theme_unit.mjs
+python -X utf8 tests/noir_theme.py --output test-results/noir/browser
+```
+
+The unit checks run the production shared script against a minimal DOM to check
+preference restoration, cycling, denied storage, malformed values and localized
+action labels. They do not establish browser behavior or visual correctness.
+
+The browser suite serves the real repository at /Projects/, blocks external HTTPS
+and uses the actual Spanish catalog. It covers keyboard selection, navigation and
+reload persistence, old saved preferences, storage-denial fixtures, language changes,
+CLI draft retention and unchanged terminal colors, assessment flags/submission/
+locked review, connector focus/matching, and overflow at 320/390/768/1440.
+Its screenshots capture both languages and all three themes for the existing
+visual cases plus bank assessments and the confirmation dialog. No standalone
+search page exists; existing article search controls receive the noir form skin.
+Screenshots require human visual review, including comparison to pre-change
+light/dark captures on the same machine. Passing a browser suite would not imply
+screen-reader or physical-device testing.
+
+See [current noir evidence and blocked checks](../docs/ux-evidence/noir-theme.md).

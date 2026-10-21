@@ -259,7 +259,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <p class="learning-progress"><a href="../../progress/index.html" data-learning-source="Manage learning progress">Manage learning progress</a></p>
 </main>
 <script>
-  const savedTheme = localStorage.getItem('kb_theme');
+  const savedTheme = (() => { try { return localStorage.getItem('kb_theme'); } catch (error) { return null; } })();
   if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.setAttribute('data-theme', savedTheme);
   const btn = document.getElementById('themeBtn');
   if (btn) btn.addEventListener('click', () => {

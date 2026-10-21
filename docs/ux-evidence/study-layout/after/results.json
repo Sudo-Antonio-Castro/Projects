@@ -1,0 +1,242 @@
+[
+  {
+    "case": "a-core1",
+    "width": 1672,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "a-core1-1672-en-light.png"
+  },
+  {
+    "case": "a-core1",
+    "width": 1440,
+    "language": "en",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "a-core1-1440-en-dark.png"
+  },
+  {
+    "case": "a-core1",
+    "width": 1440,
+    "language": "en",
+    "theme": "noir",
+    "status": "PASS",
+    "screenshot": "a-core1-1440-en-noir.png"
+  },
+  {
+    "case": "a-core1",
+    "width": 768,
+    "language": "es",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "a-core1-768-es-light.png"
+  },
+  {
+    "case": "a-core1",
+    "width": 390,
+    "language": "es",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "a-core1-390-es-dark.png"
+  },
+  {
+    "case": "a-core1",
+    "width": 320,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "a-core1-320-en-light.png"
+  },
+  {
+    "case": "a-core2",
+    "width": 1672,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "a-core2-1672-en-light.png"
+  },
+  {
+    "case": "a-core2",
+    "width": 1440,
+    "language": "en",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "a-core2-1440-en-dark.png"
+  },
+  {
+    "case": "a-core2",
+    "width": 1440,
+    "language": "en",
+    "theme": "noir",
+    "status": "PASS",
+    "screenshot": "a-core2-1440-en-noir.png"
+  },
+  {
+    "case": "a-core2",
+    "width": 768,
+    "language": "es",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "a-core2-768-es-light.png"
+  },
+  {
+    "case": "a-core2",
+    "width": 390,
+    "language": "es",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "a-core2-390-es-dark.png"
+  },
+  {
+    "case": "a-core2",
+    "width": 320,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "a-core2-320-en-light.png"
+  },
+  {
+    "case": "security",
+    "width": 1672,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "security-1672-en-light.png"
+  },
+  {
+    "case": "security",
+    "width": 1440,
+    "language": "en",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "security-1440-en-dark.png"
+  },
+  {
+    "case": "security",
+    "width": 1440,
+    "language": "en",
+    "theme": "noir",
+    "status": "PASS",
+    "screenshot": "security-1440-en-noir.png"
+  },
+  {
+    "case": "security",
+    "width": 768,
+    "language": "es",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "security-768-es-light.png"
+  },
+  {
+    "case": "security",
+    "width": 390,
+    "language": "es",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "security-390-es-dark.png"
+  },
+  {
+    "case": "security",
+    "width": 320,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "security-320-en-light.png"
+  },
+  {
+    "case": "ceh",
+    "width": 1672,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "ceh-1672-en-light.png"
+  },
+  {
+    "case": "ceh",
+    "width": 1440,
+    "language": "en",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "ceh-1440-en-dark.png"
+  },
+  {
+    "case": "ceh",
+    "width": 1440,
+    "language": "en",
+    "theme": "noir",
+    "status": "PASS",
+    "screenshot": "ceh-1440-en-noir.png"
+  },
+  {
+    "case": "ceh",
+    "width": 768,
+    "language": "es",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "ceh-768-es-light.png"
+  },
+  {
+    "case": "ceh",
+    "width": 390,
+    "language": "es",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "ceh-390-es-dark.png"
+  },
+  {
+    "case": "ceh",
+    "width": 320,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "ceh-320-en-light.png"
+  },
+  {
+    "case": "linux",
+    "width": 1672,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "linux-1672-en-light.png"
+  },
+  {
+    "case": "linux",
+    "width": 1440,
+    "language": "en",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "linux-1440-en-dark.png"
+  },
+  {
+    "case": "linux",
+    "width": 1440,
+    "language": "en",
+    "theme": "noir",
+    "status": "PASS",
+    "screenshot": "linux-1440-en-noir.png"
+  },
+  {
+    "case": "linux",
+    "width": 768,
+    "language": "es",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "linux-768-es-light.png"
+  },
+  {
+    "case": "linux",
+    "width": 390,
+    "language": "es",
+    "theme": "dark",
+    "status": "PASS",
+    "screenshot": "linux-390-es-dark.png"
+  },
+  {
+    "case": "linux",
+    "width": 320,
+    "language": "en",
+    "theme": "light",
+    "status": "PASS",
+    "screenshot": "linux-320-en-light.png"
+  }
+]

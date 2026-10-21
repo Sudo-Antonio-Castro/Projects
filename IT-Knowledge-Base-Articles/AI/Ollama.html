@@ -417,9 +417,11 @@
 <script defer src="../../assets/site-language.js" data-site-language="projects"></script>
 <link rel="stylesheet" href="../../assets/navigation.css">
 <script defer src="../../assets/navigation.js"></script>
+<link rel="stylesheet" href="../../assets/noir-theme.css">
+<script defer src="../../assets/roadmap-theme.js"></script>
 </head>
 
-<body>
+<body class="noir-article">
 <header>
   <div class="topbar">
     <div class="brand" aria-label="Knowledge base header">
@@ -590,7 +592,7 @@
   // Theme toggle (persist)
   const themeBtn = $("#themeBtn");
   const themeLabel = $("#themeLabel");
-  const savedTheme = localStorage.getItem("kb_theme");
+  const savedTheme = (() => { try { return localStorage.getItem('kb_theme'); } catch (error) { return null; } })();
   if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
   updateThemeLabel();
 
