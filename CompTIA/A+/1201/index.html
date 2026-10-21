@@ -125,7 +125,7 @@
 <script>
   
   const btn = document.getElementById('themeBtn');
-  const saved = localStorage.getItem('kb_theme');
+  const saved = (() => { try { return localStorage.getItem('kb_theme'); } catch (error) { return null; } })();
   if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
   btn.addEventListener('click', () => {
     const cur = document.documentElement.getAttribute('data-theme') || 'dark';

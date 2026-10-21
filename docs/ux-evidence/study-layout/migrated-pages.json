@@ -1,0 +1,337 @@
+[
+  {
+    "path": "CompTIA/A+/1201/Local_Networking_Hardware/index.html",
+    "lessons": 4,
+    "quiz": "../Quiz_Local_Networking_Hardware/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Motherboard_and_Connectors/index.html",
+    "lessons": 21,
+    "quiz": "../Quiz_Motherboard_and_Connectors/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Network_Addressing_and_Internet_Connections/index.html",
+    "lessons": 4,
+    "quiz": "../Quiz_Network_Addressing_and_Internet_Connections/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Supporting_Mobile_Devices/index.html",
+    "lessons": 4,
+    "quiz": "../Quiz_Supporting_Mobile_Devices/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Supporting_Network_Services/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Supporting_Network_Services/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Supporting_Print_Devices/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Supporting_Print_Devices/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/System_Devices/index.html",
+    "lessons": 4,
+    "quiz": "../Quiz_System_Devices/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Troubleshooting_PC_Hardware/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Troubleshooting_PC_Hardware/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1201/Virtualization_and_Cloud_Concepts/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Virtualization_and_Cloud_Concepts/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Backups_Data_Handling_and_AI/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Backups_Data_Handling_and_AI/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Endpoint_and_Browser_Security/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Endpoint_and_Browser_Security/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Linux_and_macOS_Support/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Linux_and_macOS_Support/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Mobile_Software_and_Security/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Mobile_Software_and_Security/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Operations_Safety_and_Scripting/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Operations_Safety_and_Scripting/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/OS_Installation_and_Upgrades/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_OS_Installation_and_Upgrades/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/SOHO_Security_and_Threats/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_SOHO_Security_and_Threats/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Support_Procedures_and_Communication/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Support_Procedures_and_Communication/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Windows_Security_and_Sharing/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Windows_Security_and_Sharing/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Windows_Setup_and_Configuration/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Windows_Setup_and_Configuration/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Windows_Support_and_Troubleshooting/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Windows_Support_and_Troubleshooting/index.html"
+  },
+  {
+    "path": "CompTIA/A+/1202/Windows_Tools_and_Management/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Windows_Tools_and_Management/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/bash-scripting-git-and-automation/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/bash-scripting-git-and-automation-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/bootloaders-targets-and-shutdown/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/bootloaders-targets-and-shutdown-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/cloud-containers-and-virtual-machines/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/cloud-containers-and-virtual-machines-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/desktops-gui-access-and-usability/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/desktops-gui-access-and-usability-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/hardware-drivers-and-kernel-views/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/hardware-drivers-and-kernel-views-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/installation-planning-and-deployment/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/installation-planning-and-deployment-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/linux-landscape-and-server-roles/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/linux-landscape-and-server-roles-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/logging-monitoring-and-performance/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/logging-monitoring-and-performance-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/networking-routing-and-firewall-rules/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/networking-routing-and-firewall-rules-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/package-management-and-software-sources/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/package-management-and-software-sources-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/processes-services-and-job-scheduling/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/processes-services-and-job-scheduling-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/shell-usage-and-text-editing/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/shell-usage-and-text-editing-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/ssh-access-control-and-hardening/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/ssh-access-control-and-hardening-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/storage-filesystems-and-permissions/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/storage-filesystems-and-permissions-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Linux+/modules/users-groups-and-account-security/index.html",
+    "lessons": 3,
+    "quiz": "../../quizzes/users-groups-and-account-security-quiz/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Application_Web_and_Email_Security/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Application_Web_and_Email_Security/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Cloud_Security_and_Zero_Trust/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Cloud_Security_and_Zero_Trust/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Data_Protection_Compliance_and_People/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Data_Protection_Compliance_and_People/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Encryption_PKI_and_Secure_Cryptography/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Encryption_PKI_and_Secure_Cryptography/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Endpoint_Protection_and_Device_Hardening/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Endpoint_Protection_and_Device_Hardening/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Enterprise_Network_Defense_Architecture/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Enterprise_Network_Defense_Architecture/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Governance_Policy_and_Security_Operations/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Governance_Policy_and_Security_Operations/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Identity_Authentication_and_Access/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Identity_Authentication_and_Access/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Incident_Response_and_Security_Monitoring/index.html",
+    "lessons": 4,
+    "quiz": "../Quiz_Incident_Response_and_Security_Monitoring/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Indicators_of_Compromise_and_Malicious_Activity/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Indicators_of_Compromise_and_Malicious_Activity/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Network_Security_Baselines_and_Hardening/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Network_Security_Baselines_and_Hardening/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Resilience_Redundancy_and_Physical_Protection/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Resilience_Redundancy_and_Physical_Protection/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Risk_Third_Parties_and_Assessments/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Risk_Third_Parties_and_Assessments/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Security_Foundations_and_Control_Models/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Security_Foundations_and_Control_Models/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Threat_Actors_and_Attack_Paths/index.html",
+    "lessons": 3,
+    "quiz": "../Quiz_Threat_Actors_and_Attack_Paths/index.html"
+  },
+  {
+    "path": "CompTIA/Security+/Vulnerability_Management_and_Remediation/index.html",
+    "lessons": 4,
+    "quiz": "../Quiz_Vulnerability_Management_and_Remediation/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Cloud_and_IoT_Attack_Surface/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Cloud_and_IoT_Attack_Surface/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Cryptography_and_Key_Management/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Cryptography_and_Key_Management/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Enumeration_and_Target_Profiling/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Enumeration_and_Target_Profiling/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Ethical_Hacking_Essentials/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Ethical_Hacking_Essentials/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Human_Factors_and_Physical_Access/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Human_Factors_and_Physical_Access/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/IDS_Firewalls_and_Deception_Systems/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_IDS_Firewalls_and_Deception_Systems/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Malware_Techniques_and_Countermeasures/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Malware_Techniques_and_Countermeasures/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Penetration_Testing_Foundations/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Penetration_Testing_Foundations/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Reconnaissance_and_Footprinting/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Reconnaissance_and_Footprinting/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Scanning_and_Service_Discovery/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Scanning_and_Service_Discovery/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Sniffing_Hijacking_and_Denial_of_Service/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Sniffing_Hijacking_and_Denial_of_Service/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/System_Compromise_and_Privilege_Escalation/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_System_Compromise_and_Privilege_Escalation/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Vulnerability_Analysis_and_Prioritization/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Vulnerability_Analysis_and_Prioritization/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Web_Servers_Web_Apps_and_SQL_Injection/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Web_Servers_Web_Apps_and_SQL_Injection/index.html"
+  },
+  {
+    "path": "EC-Council/CEH/Wireless_Bluetooth_and_Mobile_Security/index.html",
+    "lessons": 2,
+    "quiz": "../Quiz_Wireless_Bluetooth_and_Mobile_Security/index.html"
+  }
+]

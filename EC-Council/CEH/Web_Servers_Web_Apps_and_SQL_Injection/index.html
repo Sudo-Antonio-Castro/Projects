@@ -64,8 +64,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <script defer src="../../../assets/roadmap-theme.js" data-roadmap-theme="option-3"></script>
 <script defer src="../../../assets/site-language.js" data-site-language="projects"></script>
 <link rel="stylesheet" href="../../../assets/navigation.css">
+<link rel="stylesheet" href="../../../assets/study-layout.css">
+<script defer src="../../../assets/study-layout.js"></script>
 </head>
-<body class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
+<body data-study-course="../index.html" data-study-quiz="../Quiz_Web_Servers_Web_Apps_and_SQL_Injection/index.html" class="roadmap-theme rm-lesson" data-roadmap-theme="option-3">
 <header>
   <div class="topbar">
     <div class="brand">EC-Council CEH · Study Hub</div>
@@ -136,7 +138,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 </footer>
 
 <script>
-  const savedTheme = localStorage.getItem('kb_theme');
+  const savedTheme = (() => { try { return localStorage.getItem('kb_theme'); } catch (error) { return null; } })();
   if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.setAttribute('data-theme', savedTheme);
   const btn = document.getElementById('themeBtn');
   if (btn) btn.addEventListener('click', () => {

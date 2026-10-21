@@ -1,7 +1,15 @@
 # Working with the Projects visual system
 
-The site stays static and uses its existing purple palette. This is an incremental
-component contract, not a requirement to rewrite every article or terminal skin.
+Study modules now opt into `assets/study-layout.css` and `assets/study-layout.js`
+after shared theme/navigation assets. The reusable three-column shell, supported
+templates, responsive contract, reading-place memory and migration manifest are
+documented in [the study-layout report](ux-evidence/study-layout/README.md).
+Assessments, CLI workspaces, hubs, references and utilities retain their own
+layouts. Use `tests/build_study_layout.py` for supported study-template opt-in.
+
+The site stays static. Light and dark retain their existing purple palette; noir
+is an optional third theme. This is an incremental component contract, not a
+requirement to rewrite every article or terminal skin.
 
 ## Tokens and stylesheet order
 
@@ -24,7 +32,8 @@ legacy roadmap spacing bridge. Keep these local relative URLs valid at `/Project
 Dark/light token values are copied from the established theme. Foreground/muted
 text against the page/panel colors is checked for a minimum 4.5:1 ratio. This is
 not a blanket accessibility certification. Existing terminal palettes remain
-platform-specific. No new colors were introduced.
+platform-specific. Noir adds a separately scoped charcoal/parchment/brass palette;
+see [the noir implementation notes](ux-evidence/noir-theme.md).
 
 Breakpoints remain literal media conditions: 480px for compact rows, 600px for
 assessment controls, 760px for navigation, 1000px for the wide header; CLI retains
@@ -150,3 +159,24 @@ CI does not test Google translation availability, public Pages deployment, real
 user profiles, physical devices, or a screen reader. Controlled clock/storage
 fixtures are labeled, not presented as ordinary deployed use. External release
 smoke checks remain separate and are not required PR checks.
+
+## Optional noir theme
+
+`assets/noir-theme.css` is imported by the roadmap theme. The four standalone
+article/lab pages load it directly and use the shared theme script. All its
+rules require `html[data-theme="noir"]`; no default changes to noir.
+The existing native theme button cycles light → dark → noir → light, with a
+localized next-action label. Both existing preference keys accept all three values.
+Invalid current preferences fall back to a valid legacy preference, then the page
+default; denied storage leaves theme selection usable in the current page.
+
+Reading/assessment surfaces use local paper tokens and local legacy aliases,
+while the surrounding page uses dark tokens. Technical code remains on dark
+surfaces. CLI terminal interiors keep their platform skins. The only cat motif
+is a tiny CSS silhouette on the noir theme button. Specific scoped important
+rules reconcile existing important skin overrides; do not broaden them to light
+or dark. No question banks, scoring, timing, CLI matching or storage schemas change.
+
+Run `node tests/noir_theme_unit.mjs` and `python -X utf8 tests/noir_theme.py`
+in addition to the existing suites. Review all three themes on the same browser/OS;
+the new screenshot matrix is review evidence, not an automatic golden update.

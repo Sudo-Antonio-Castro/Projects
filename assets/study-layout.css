@@ -1,0 +1,99 @@
+/* Shared study canvas. Theme colors remain owned by the existing tokens. */
+body.study-page { --study-accent:#7443db; background:var(--rm-bg) !important; }
+html[data-theme="dark"] body.study-page { --study-accent:#b59aff; }
+html[data-theme="noir"] body.study-page { --study-accent:var(--rm-yellow); }
+body.study-page main { max-width:1800px !important; width:100%; margin:auto; padding:20px 28px 48px !important; }
+body.study-page .study-layout { display:grid; grid-template-columns:290px minmax(0,1fr) 280px; gap:24px; align-items:start; }
+body.study-page .study-canvas { grid-column:2; grid-row:1; min-width:0; scroll-margin-top:calc(var(--projects-header-height,120px) + 24px); }
+body.study-page .study-navigation { grid-column:1; grid-row:1; }
+body.study-page .study-helper { grid-column:3; grid-row:1; }
+body.study-page .study-rail { position:sticky; top:calc(var(--projects-header-height,120px) + 20px); min-width:0; max-height:calc(100dvh - var(--projects-header-height,120px) - 40px); overflow:auto; scrollbar-width:thin; }
+body.study-page .study-navigation, body.study-page .study-helper-card { border:1px solid var(--rm-line); border-radius:12px; background:var(--rm-panel); }
+body.study-page .study-navigation > summary { display:none; }
+body.study-page .study-rail-body { padding:20px 16px; }
+body.study-page .study-course-link { font-size:12px; color:var(--study-accent); margin-bottom:16px; display:block; text-decoration:underline; text-underline-offset:3px; }
+body.study-page .study-eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--rm-muted); margin:0 0 8px; }
+body.study-page .study-module-title { font-family:var(--rm-font-body); font-size:20px; line-height:1.3; margin:0 0 18px; letter-spacing:-.02em; }
+body.study-page .study-position, body.study-page .study-helper-position { margin:0; font-size:13px; font-weight:700; }
+body.study-page .study-caption { font-size:12px; color:var(--rm-muted); margin:4px 0 16px; }
+body.study-page .study-meter { accent-color:var(--study-accent); width:100%; height:8px; display:block; margin:8px 0; }
+body.study-page .study-overview { font-size:13px; border-block:1px solid var(--rm-line); padding:12px 0; margin-bottom:12px; }
+body.study-page summary { cursor:pointer; color:var(--rm-text); }
+body.study-page .study-overview .hero { padding:12px 0 !important; margin:0 !important; border:0 !important; background:none !important; }
+body.study-page .study-overview .hero h2 { font:600 16px/1.5 var(--rm-font-body) !important; }
+body.study-page .study-overview .hero p { font-size:13px !important; }
+body.study-page .study-lessons { display:flex; flex-direction:column; gap:4px; }
+body.study-page .study-lesson { display:flex; align-items:center; gap:10px; text-align:start; width:100%; padding:10px 8px; border:1px solid transparent !important; border-radius:9px !important; background:transparent !important; color:var(--rm-muted) !important; font:500 13px/1.4 var(--rm-font-body) !important; cursor:pointer; }
+body.study-page .study-lesson:hover { background:var(--rm-panel-2); color:var(--rm-text); }
+body.study-page .study-lesson[aria-current] { background:color-mix(in srgb,var(--study-accent) 13%,var(--rm-panel)) !important; color:var(--rm-text) !important; border-inline-start:3px solid var(--study-accent) !important; font-weight:700 !important; }
+body.study-page .study-lesson-number { display:grid; place-items:center; min-width:28px; height:28px; border-radius:8px; background:var(--rm-panel-2); color:var(--rm-text); }
+body.study-page .study-lesson[aria-current] .study-lesson-number { outline:1px solid var(--study-accent); }
+body.study-page .study-controls { display:flex; gap:8px; border-top:1px solid var(--rm-line); padding-top:16px; margin-top:16px; }
+body.study-page .study-controls .btn { flex:1; min-width:0; padding:10px 6px !important; font-size:12px !important; }
+body.study-page .study-controls button:disabled { opacity:.45; cursor:default; }
+body.study-page .study-helper-card { padding:18px; margin-bottom:12px; }
+body.study-page .study-helper-card h2 { font:700 14px/1.4 var(--rm-font-body); margin:0 0 14px; }
+body.study-page .study-toc { display:flex; flex-direction:column; gap:4px; border-inline-start:1px solid var(--rm-line); }
+body.study-page .study-toc a { font-size:12px; padding:8px 10px; text-decoration:none; color:var(--rm-muted); border-inline-start:2px solid transparent; }
+body.study-page .study-toc a[aria-current] { color:var(--study-accent); background:color-mix(in srgb,var(--study-accent) 10%,var(--rm-panel)); border-color:var(--study-accent); }
+body.study-page .study-facts { padding-inline-start:18px; margin:0; font-size:12px; line-height:1.65; color:var(--rm-muted); }
+body.study-page .study-facts li + li { margin-top:12px; }
+body.study-page .study-tool { display:block; border:1px solid var(--rm-line); border-radius:9px; padding:10px 12px; margin-top:8px; font-size:12px; font-weight:600; text-decoration:none; }
+body.study-page .study-tool-primary { background:var(--study-accent); color:var(--rm-bg-deep); }
+html[data-theme="light"] body.study-page .study-tool-primary { color:white; }
+body.study-page .study-canvas > .panel { border:0 !important; background:transparent !important; box-shadow:none !important; padding:0 !important; border-radius:0 !important; overflow:visible; }
+body.study-page .study-canvas .bar, body.study-page .study-canvas .module-tabs, body.study-page .study-canvas .section-tabs, body.study-page .study-canvas .lesson-tabs { display:none !important; }
+body.study-page .study-canvas .content { padding:12px 0 0 !important; max-width:none !important; }
+body.study-page .study-canvas .lesson-panel { display:none; padding:0 !important; border:0 !important; background:transparent !important; border-radius:0 !important; box-shadow:none !important; }
+body.study-page .study-canvas .lesson-panel.active { display:block; }
+/* Noir's existing lesson-local paper tokens require their matching paper surface. */
+html[data-theme="noir"] body.study-page .study-canvas .lesson-panel { background:var(--rm-panel) !important; padding:24px !important; border-radius:12px !important; }
+body.study-page .study-canvas .lesson-panel .kicker { display:none; }
+body.study-page .study-title { font-family:Georgia,'Times New Roman',serif !important; font-size:clamp(30px,3vw,46px) !important; line-height:1.12 !important; letter-spacing:-.025em; margin:10px 0 14px !important; }
+body.study-page .study-title + p { color:var(--rm-muted); font-size:16px !important; line-height:1.65; margin-bottom:24px !important; }
+body.study-page .study-content-card { padding:20px !important; margin:12px 0 !important; border:1px solid var(--rm-line) !important; border-radius:12px !important; background:var(--rm-panel) !important; box-shadow:none !important; }
+body.study-page .study-content-card h3 { margin:0 0 12px !important; font:700 18px/1.4 var(--rm-font-body) !important; color:var(--rm-text) !important; text-transform:none !important; letter-spacing:0 !important; }
+body.study-page .study-content-card ul { margin:8px 0 !important; padding-inline-start:20px; }
+body.study-page .study-content-card p, body.study-page .study-content-card li { font-size:14px; line-height:1.65; }
+body.study-page .study-content-card :is(p,ul,ol) { max-width:78ch; }
+body.study-page .study-title + p { max-width:78ch; }
+body.study-page .study-card-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+body.study-page .study-card-pair > .study-content-card:first-child { background:color-mix(in srgb,var(--rm-blue) 6%,var(--rm-panel)) !important; }
+body.study-page .study-card-pair > .study-content-card:last-child { background:color-mix(in srgb,var(--rm-mint) 6%,var(--rm-panel)) !important; }
+body.study-page .study-content-card.exam-tip { border-inline-start:4px solid var(--rm-yellow) !important; background:color-mix(in srgb,var(--rm-yellow) 7%,var(--rm-panel)) !important; }
+body.study-page .study-table { max-width:100%; overflow:auto; }
+body.study-page .content table { width:100%; font-size:13px; }
+body.study-page .content [id] { scroll-margin-top:calc(var(--projects-header-height,120px) + 24px); }
+body.study-page :is(a,button,summary,[tabindex]):focus-visible { outline:3px solid var(--rm-blue); outline-offset:3px; }
+@media(min-width:1100px) {
+  body.study-page .study-rail-body { display:flex; flex-direction:column; max-height:calc(100dvh - var(--projects-header-height,120px) - 92px); }
+  body.study-page .study-lessons { min-height:80px; overflow:auto; scrollbar-width:thin; }
+  body.study-page .study-rail-body > :not(.study-lessons) { flex-shrink:0; }
+}
+@media(min-width:1100px) and (max-width:1350px) {
+  body.study-page .study-layout { grid-template-columns:230px minmax(0,1fr) 230px; gap:18px; }
+  body.study-page main { padding-inline:18px !important; }
+}
+@media(max-width:1099px) {
+  body.study-page .study-card-pair { grid-template-columns:1fr; gap:0; }
+  body.study-page .study-layout { grid-template-columns:minmax(0,1fr) 240px; }
+  body.study-page .study-canvas { grid-column:1; }
+  body.study-page .study-helper { grid-column:2; position:static; max-height:none; }
+  body.study-page .study-navigation { grid-column:1 / -1; grid-row:2; position:static; max-height:none; }
+  body.study-page .study-navigation > summary { display:list-item; padding:16px 20px; font-weight:600; }
+  body.study-page .study-lessons { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:760px) {
+  body.study-page main { padding:12px 16px 32px !important; }
+  body.study-page .study-layout { display:flex; flex-direction:column; gap:16px; }
+  body.study-page .study-canvas, body.study-page .study-rail { width:100%; }
+  body.study-page .study-rail { position:static; max-height:none; }
+  body.study-page .study-content-card { padding:16px !important; }
+  body.study-page .study-lessons { grid-template-columns:1fr; }
+}
+@media(prefers-reduced-motion:reduce) { body.study-page { scroll-behavior:auto; } }
+@media print {
+  body.study-page .study-layout { display:block; }
+  body.study-page .study-rail { display:none; }
+  body.study-page .study-content-card { break-inside:avoid; }
+}
