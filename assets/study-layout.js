@@ -1,3 +1,39 @@
+// The tabs template previously repeated this exact controller in 28 pages.
+// Keep globals for native onclick controls and the original no-enhancement view.
+(() => {
+  if (document.documentElement.dataset.studyTemplate !== 'tabs') return;
+  let lessonIndex = 0;
+  const panels = Array.from(document.querySelectorAll('.lesson-panel'));
+  const tabs = Array.from(document.querySelectorAll('.lesson-tab'));
+  function switchLesson(index, button) {
+    lessonIndex = index;
+    panels.forEach(panel => panel.classList.remove('active'));
+    tabs.forEach(tab => tab.classList.remove('active'));
+    panels[index].classList.add('active');
+    button.classList.add('active');
+    updateCounter();
+  }
+  function goToLesson(index) {
+    if (index < 0 || index >= panels.length) return;
+    switchLesson(index, tabs[index]);
+  }
+  function nextLesson() { goToLesson(lessonIndex + 1); }
+  function prevLesson() { goToLesson(lessonIndex - 1); }
+  function updateCounter() {
+    document.getElementById('counter').textContent = `${lessonIndex + 1} / ${panels.length}`;
+    document.getElementById('prevBtn').disabled = lessonIndex === 0;
+    document.getElementById('nextBtn').disabled = lessonIndex === panels.length - 1;
+  }
+  function goHome() { window.location.href = '../index.html'; }
+  document.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') nextLesson();
+    if (event.key === 'ArrowLeft') prevLesson();
+    if (event.key === 'Home') goToLesson(0);
+  });
+  updateCounter();
+  Object.assign(window, {switchLesson, goToLesson, nextLesson, prevLesson, updateCounter, goHome});
+})();
+
 /* Progressive enhancement of existing lesson controllers; no assessment state ownership. */
 (() => {
   'use strict';

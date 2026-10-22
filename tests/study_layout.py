@@ -74,6 +74,20 @@ def main():
                     assert not page.locator('#nextBtn').is_disabled()
                     page.locator('.study-lessons button').first.click()
                     assert page.locator('#prevBtn').is_disabled()
+                    # Shared controller keeps shortcuts, while focused native
+                    # controls retain their own keyboard behavior.
+                    if width < 1100 and not page.locator('.study-navigation').evaluate('(e)=>e.open'): page.locator('.study-navigation > summary').click()
+                    page.locator('.study-lessons button').first.focus()
+                    assert page.locator('.study-lessons button').first.evaluate('e => e === document.activeElement')
+                    page.keyboard.press('ArrowRight')
+                    assert page.locator('.study-lessons button').first.get_attribute('aria-current') == 'step'
+                    # Static CEH/Linux adapters never owned reading shortcuts.
+                    if name in ['a-core1','a-core2','security']:
+                        page.locator('.study-title:visible').focus()
+                        page.keyboard.press('ArrowRight')
+                        page.wait_for_function("document.querySelector('.study-position').textContent.startsWith('2 /')")
+                        page.keyboard.press('Home')
+                        page.wait_for_function("document.querySelector('.study-position').textContent.startsWith('1 /')")
                     page.locator('.study-toc a').first.focus()
                     assert page.evaluate("document.activeElement.matches('.study-toc a')")
                     if width < 1100 and page.locator('.study-navigation').evaluate('(e)=>e.open'): page.locator('.study-navigation > summary').click()

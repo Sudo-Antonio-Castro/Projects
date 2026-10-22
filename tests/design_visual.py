@@ -46,7 +46,11 @@ def main():
         def copyfile(self,*a):
             try:super().copyfile(*a)
             except (BrokenPipeError,ConnectionResetError,ConnectionAbortedError):pass
-    server=ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/Projects/'
+    class Server(ThreadingHTTPServer):
+        # Browsers request many local assets together; avoid connection refusal
+        # from the small socketserver backlog on Windows under test load.
+        request_queue_size=128
+    server=Server(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/Projects/'
     rows=[];started=time.monotonic()
     with sync_playwright() as pw:
         browser=pw.chromium.launch()
@@ -67,6 +71,10 @@ def main():
                     if name=='assessment-result':p.locator('button[type=submit]').click();p.locator('#confirmSubmit').click()
                 if name=='cli':p.locator('#cmdInput').fill('pwd');p.locator('#cmdInput').press('Enter');p.locator('#cmdInput').fill('ls -')
                 p.wait_for_function('window.ProjectsLearningLocale?.ready === true')
+                # An empty progress container is not a valid baseline. Its
+                # script can finish after locale startup on a busy runner.
+                p.wait_for_function("[...document.querySelectorAll('[data-progress-track],#progress-list')].every(n => n.childElementCount > 0)")
+                if name=='home':p.locator('#continue-learning .learning-activity').wait_for()
                 p.evaluate('document.fonts.ready');p.wait_for_timeout(150)
                 assert not errors,(name,errors)
                 assert p.evaluate('document.documentElement.scrollWidth<=innerWidth'),(name,width)

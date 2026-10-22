@@ -1,0 +1,91 @@
+{
+  "ux_regression": {
+    "passed": 32,
+    "total": 32,
+    "failed": []
+  },
+  "language_regression": {
+    "passed": 12,
+    "total": 12,
+    "failed": []
+  },
+  "mobile_accessibility": {
+    "passed": 14,
+    "total": 14,
+    "failed": []
+  },
+  "navigation_directory": {
+    "passed": 7,
+    "total": 7,
+    "failed": []
+  },
+  "assessment-isolated": {
+    "passed": 21,
+    "total": 21,
+    "failed": []
+  },
+  "progress_resume": {
+    "passed": 31,
+    "total": 31,
+    "failed": []
+  },
+  "noir": {
+    "passed": 387,
+    "total": 387,
+    "failed": []
+  },
+  "design_visual": {
+    "passed": 48,
+    "total": 48,
+    "failures": [],
+    "changedPixels": 0,
+    "note": "Final study-only CSS placement; same original main baseline and unchanged comparator."
+  },
+  "study_cleanup": {
+    "passed": 126,
+    "total": 126,
+    "changedPixels": 0
+  },
+  "study_layout": {
+    "states": 30,
+    "status": "PASS",
+    "modules": 67,
+    "lessons": 200
+  },
+  "static": {
+    "status": "PASS",
+    "htmlPages": 171,
+    "javascriptBlocks": 144,
+    "localReferences": 3220,
+    "catalogEntries": 3937,
+    "modernDirectories": 8,
+    "canonicalStaticControllerReferences": 76,
+    "checks": [
+      "check_source",
+      "check_learning_catalog",
+      "build_progress_catalog --check",
+      "check_design_system",
+      "check_ci",
+      "check_study_cleanup",
+      "noir_theme_unit.mjs",
+      "Python test syntax",
+      "git diff --check"
+    ]
+  },
+  "review": {
+    "semanticBodiesUnchanged": 67,
+    "onlyManifestedHTMLChanged": true,
+    "originalStudyEnhancerUnchanged": true,
+    "assessmentCLIAndBanksUnchanged": true,
+    "base": "5eab04996f4210728e03827012b0ccfc5261379d",
+    "globalThemeMatchesMainExactly": true
+  },
+  "attempts": [
+    "Initial parallel assessment run encountered local connection refusals; complete isolated rerun passed 21/21.",
+    "Original visual baseline included an empty async progress widget. Added a populated-widget readiness assertion and increased the local HTTP accept queue; recaptured both checkouts.",
+    "Earlier captures also showed bounded one-level raster differences in other non-study frames. Raw logs/results are retained under test-results/study-cleanup. Software raster experiment did not resolve the remaining corner rounding and was reverted.",
+    "New keyboard tests were corrected to open mobile lesson navigation before focus and assert reading shortcuts only on families that originally supported them.",
+    "Initial global-file CSS placement triggered 20 one-level local corner deltas and 17 hosted CLI pixels (one two-level delta), repeated on hosted retry. Moved the compatibility section into study-layout.css; global roadmap-theme.css now matches main exactly. Final original-baseline comparisons pass 126/126 study and 48/48 site states without tolerance or assertion changes.",
+    "The old temporary environment lost package source files. Recreated exact package versions in a fresh environment with the same Chromium 1248 build; no baseline/browser upgrade. Increased the new study capture server accept queue to avoid refused local asset requests."
+  ]
+}

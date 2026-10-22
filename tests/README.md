@@ -1,5 +1,25 @@
 # UX recovery checks
 
+## Study layout cleanup
+
+`python -X utf8 tests/check_study_cleanup.py` guards shared study assets, template
+opt-ins, the unique content exception, malformed declarations and copied chrome
+or controllers. It uses only static requirements.
+
+```sh
+python -X utf8 tests/study_cleanup.py --output test-results/study-cleanup/before
+# After editing on the same machine/browser:
+python -X utf8 tests/study_cleanup.py --output test-results/study-cleanup/after --baseline test-results/study-cleanup/before
+```
+
+`--site-root PATH` supports an isolated base checkout. `--inventory-only` records
+source metrics without a browser. Bytes use UTF-8/LF across checkouts. The 126
+visual states cover six representatives, all themes and 320/390/768/1024/1440, plus
+desktop/mobile no-JS fallbacks. The existing pixel comparator is unchanged.
+Body fingerprints guard lesson text, markup, links, headings, IDs and handlers,
+ignoring scripts and whitespace-only nodes. Script extraction is reviewed
+separately. See [cleanup evidence](../docs/ux-evidence/study-layout-cleanup/README.md).
+
 ## Structured study layout
 
 `python -X utf8 tests/study_layout.py --output docs/ux-evidence/study-layout/after`
