@@ -600,6 +600,126 @@
     "significantPixels": 0
   },
   {
+    "file": "a-core1-tabs-320-light-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-320-dark-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-320-noir-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-390-light-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-390-dark-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-390-noir-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-768-light-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-768-dark-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-768-noir-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-1024-light-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-1024-dark-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-1024-noir-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-1440-light-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-1440-dark-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
+    "file": "a-core1-tabs-1440-noir-js.png",
+    "status": "PASS",
+    "sameDimensions": true,
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "significantPixels": 0
+  },
+  {
     "file": "a-core1-390-light-nojs.png",
     "status": "PASS",
     "sameDimensions": true,
@@ -833,126 +953,6 @@
   },
   {
     "file": "linux-1440-noir-nojs.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-320-light-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-320-dark-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-320-noir-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-390-light-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-390-dark-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-390-noir-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-768-light-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-768-dark-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-768-noir-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-1024-light-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-1024-dark-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-1024-noir-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-1440-light-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-1440-dark-js.png",
-    "status": "PASS",
-    "sameDimensions": true,
-    "changedPixels": 0,
-    "maxChannelDelta": 0,
-    "significantPixels": 0
-  },
-  {
-    "file": "a-core1-tabs-1440-noir-js.png",
     "status": "PASS",
     "sameDimensions": true,
     "changedPixels": 0,

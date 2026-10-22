@@ -9,7 +9,7 @@ layouts. Use `tests/build_study_layout.py` for supported study-template opt-in.
 
 The [study cleanup inventory](ux-evidence/study-layout-cleanup/README.md) covers
 all 67 modules. Eight ordinary Core 1, all 12 Core 2, 16 Security+ and 15 CEH
-modules now use template bases in `roadmap-theme.css`. All 15 Linux+ modules
+modules now use template bases in `study-layout.css`. All 15 Linux+ modules
 retain their external base. These 66 pages have no embedded CSS. The motherboard
 module retains its distinct nested-lesson/content skin and two content spacing
 attributes; do not copy its legacy layout rules into new modules.
@@ -18,7 +18,9 @@ Add enhanced shell/rail/card rules to `study-layout.css`, common skin rules to
 `roadmap-theme.css`, palette values to `design-tokens.css`, and noir-only treatment
 to `noir-theme.css`. `data-study-template="tabs|core1|articles"` on `html` selects
 compatibility geometry through zero-specificity gates. Keep these bases before
-the common theme skin: they also support the original no-JS view. Genuinely
+the enhanced study rules and preserve the existing stylesheet order. The common
+theme's existing specificity retains theme ownership; these bases also support
+the original no-JS view. Genuinely
 unique content styling can stay in a small documented page block; it must not
 redefine the common header, theme, shell or rails. Document new exceptions and
 review them in `tests/check_study_cleanup.py`.

@@ -82,7 +82,9 @@ def main():
         def __init__(self, *a, **kw): super().__init__(*a, directory=str(args.site_root), **kw)
         def translate_path(self, path): return super().translate_path(path.removeprefix('/Projects'))
         def log_message(self, *a): pass
-    server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+    class Server(ThreadingHTTPServer):
+        request_queue_size = 128
+    server = Server(('127.0.0.1', 0), Handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     results = []
     with sync_playwright() as pw:

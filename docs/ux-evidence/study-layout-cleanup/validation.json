@@ -35,24 +35,11 @@
     "failed": []
   },
   "design_visual": {
-    "passed": 47,
+    "passed": 48,
     "total": 48,
-    "failures": [
-      {
-        "case": "progress",
-        "width": 768,
-        "language": "es",
-        "theme": "light",
-        "file": "progress-768-es-light.png",
-        "overflow": false,
-        "status": "FAIL",
-        "sameDimensions": true,
-        "changedPixels": 20,
-        "maxChannelDelta": 1,
-        "significantPixels": 0
-      }
-    ],
-    "note": "Strict comparator retained. One non-study progress/768/es/light frame has 20 one-level RGB corner-antialiasing differences, identical dimensions, no significant pixels. Other states pass. No masks or tolerance increase."
+    "failures": [],
+    "changedPixels": 0,
+    "note": "Final study-only CSS placement; same original main baseline and unchanged comparator."
   },
   "study_cleanup": {
     "passed": 126,
@@ -90,12 +77,15 @@
     "onlyManifestedHTMLChanged": true,
     "originalStudyEnhancerUnchanged": true,
     "assessmentCLIAndBanksUnchanged": true,
-    "base": "5eab04996f4210728e03827012b0ccfc5261379d"
+    "base": "5eab04996f4210728e03827012b0ccfc5261379d",
+    "globalThemeMatchesMainExactly": true
   },
   "attempts": [
     "Initial parallel assessment run encountered local connection refusals; complete isolated rerun passed 21/21.",
     "Original visual baseline included an empty async progress widget. Added a populated-widget readiness assertion and increased the local HTTP accept queue; recaptured both checkouts.",
     "Earlier captures also showed bounded one-level raster differences in other non-study frames. Raw logs/results are retained under test-results/study-cleanup. Software raster experiment did not resolve the remaining corner rounding and was reverted.",
-    "New keyboard tests were corrected to open mobile lesson navigation before focus and assert reading shortcuts only on families that originally supported them."
+    "New keyboard tests were corrected to open mobile lesson navigation before focus and assert reading shortcuts only on families that originally supported them.",
+    "Initial global-file CSS placement triggered 20 one-level local corner deltas and 17 hosted CLI pixels (one two-level delta), repeated on hosted retry. Moved the compatibility section into study-layout.css; global roadmap-theme.css now matches main exactly. Final original-baseline comparisons pass 126/126 study and 48/48 site states without tolerance or assertion changes.",
+    "The old temporary environment lost package source files. Recreated exact package versions in a fresh environment with the same Chromium 1248 build; no baseline/browser upgrade. Increased the new study capture server accept queue to avoid refused local asset requests."
   ]
 }

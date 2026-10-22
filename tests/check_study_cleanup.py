@@ -7,6 +7,10 @@ report = inventory(ROOT)
 unique = 'CompTIA/A+/1201/Motherboard_and_Connectors/index.html'
 required = ['roadmap-theme.css','navigation.css','study-layout.css']
 scripts = ['roadmap-theme.js','site-language.js','study-layout.js']
+layout_css = (ROOT/'assets/study-layout.css').read_text(encoding='utf8')
+for template in ['tabs','core1','articles']:
+    assert f'html[data-study-template="{template}"]' in layout_css, template
+assert 'data-study-template' not in (ROOT/'assets/roadmap-theme.css').read_text(encoding='utf8'), 'Study template bases belong in the study asset'
 assert not report['malformedCSS'], report['malformedCSS']
 for row in report['rows']:
     path = ROOT/row['path']

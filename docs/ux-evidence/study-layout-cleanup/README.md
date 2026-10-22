@@ -19,19 +19,22 @@ body fingerprints, repeated declarations and CSS errors:
 | Inline style attributes | 2 | 2 |
 | Pages without embedded CSS | 15 | 66 |
 | Malformed embedded declarations | 1 | 0 |
-| `roadmap-theme.css` bytes | 27,701 | 52,602 |
+| `study-layout.css` bytes | 10,175 | 35,088 |
 | `study-layout.js` bytes | 15,468 | 17,074 |
 
-Other shared CSS/JS files are unchanged. Embedded CSS fell by 262,210 bytes
+Other shared CSS/JS files, including `roadmap-theme.css`, are unchanged from
+main. Embedded CSS fell by 262,210 bytes
 (95.8%); the larger shared assets are explicitly counted above.
 
 Three exact repeated skins accounted for 51 blocks: eight ordinary Core 1
 modules (6,765 bytes each), 28 Core 2/Security+ modules (5,208 each), and 15 CEH
 modules (4,151 each). They repeated aliases, resets, header/hero/wrap/panel
 geometry, lesson tabs, typography, summaries, exam tips, controls, footer, print
-and responsive rules. These now live in the existing `roadmap-theme.css` before
-its common skin, selected by `html[data-study-template]` with zero-specificity
-`:where()` gates. Original specificity and template variations remain. No new
+and responsive rules. These now live at the start of the existing
+`study-layout.css`, before its enhanced shell/card rules, selected by
+`html[data-study-template]` with zero-specificity `:where()` gates. The study
+asset stays after the theme/navigation links; existing theme specificity retains
+theme ownership. Original selector specificity and template variations remain. No new
 stylesheet or global overflow suppression was added.
 
 The 15 Linux+ modules already use `CompTIA/Linux+/assets/styles.css`; they were
@@ -124,13 +127,20 @@ passed UX 32/32, language 12/12, mobile/accessibility 14/14, navigation 7/7,
 assessment 21/21, progress/resume 31/31, noir 387/387, study 30/30 plus the
 67-module/200-lesson sweep, and cleanup visuals 126/126.
 
-The separate existing site-wide visual suite is **47/48 strict local passes**:
-[raw comparison](site-visual-results.json). The progress dashboard at 768/es/light
-has 20 pixels differing by one RGB level at rounded card corners, identical
-dimensions, and zero pixels with a larger difference. The unchanged allowance
-is only 15 pixels, so this remains explicitly reported as a strict failure.
-An experimental software raster path did not remove it and was reverted. All
-study comparison pixels match. Hosted CI is reported separately in the handoff.
+The separate existing site-wide visual suite is **48/48 strict local passes**
+with **zero changed pixels**: [raw comparison](site-visual-results.json). The
+final 126-state study comparison also has zero changed pixels. Both use the
+original main captures and the unchanged comparator. Hosted CI is reported
+separately in the handoff.
+
+Initial placement of the template bases in the global theme produced tiny
+antialiasing differences on unrelated dashboard/CLI frames: 20 one-level local
+pixels and 17 hosted pixels (one two-level delta), rejected by the original
+tolerance. A hosted retry repeated the CLI result. The final implementation
+moves those bases to the study-only asset and restores `roadmap-theme.css`
+exactly to main; all final local frames match. The guard enforces this ownership.
+An experimental software raster path did not resolve the earlier result and
+was reverted. No masks or tolerance changes were made to obtain the final pass.
 
 An earlier baseline captured an empty asynchronous progress widget. The visual
 harness now requires populated widgets and uses a larger local HTTP accept queue

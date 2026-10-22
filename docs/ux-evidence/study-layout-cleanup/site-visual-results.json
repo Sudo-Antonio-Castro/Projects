@@ -1,6 +1,6 @@
 {
   "mode": "Real Chromium / local HTTP mounted at /Projects/ / external HTTPS blocked / fixed Date fixture / actual local catalog / exact dimensions, no masks, <=15 pixels with <=1 RGB-level rounding calibrated on unmodified main",
-  "seconds": 100.1,
+  "seconds": 102.9,
   "checks": [
     {
       "case": "home",
@@ -102,8 +102,8 @@
       "overflow": false,
       "status": "PASS",
       "sameDimensions": true,
-      "changedPixels": 15,
-      "maxChannelDelta": 1,
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
       "significantPixels": 0
     },
     {
@@ -438,10 +438,10 @@
       "theme": "light",
       "file": "progress-768-es-light.png",
       "overflow": false,
-      "status": "FAIL",
+      "status": "PASS",
       "sameDimensions": true,
-      "changedPixels": 20,
-      "maxChannelDelta": 1,
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
       "significantPixels": 0
     },
     {
