@@ -3,6 +3,227 @@
 @import url("roadmap-components.css");
 @import url("legacy-hub-compat.css");
 @import url("noir-theme.css");
+/* Study template compatibility bases: exact legacy geometry, scoped without
+   extra specificity. Keep before the common theme skin; enhanced rails and cards
+   belong in study-layout.css. Unique motherboard content styles stay local. */
+
+/* articles template */
+:root:where(html[data-study-template="articles"]) {--bg:#faf9f7;--surface:#ffffff;--surface-soft:#f6f3ee;--text:#1a1814;--muted:#7a756c;--border:#e8e4de;--accent:#1a1814;--good:#1f6d3a;--font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;--font-serif:"Playfair Display",Georgia,serif;--max:1080px;--radius:4px}
+:where(html[data-study-template="articles"])[data-theme="dark"] {--bg:#0f0e0c;--surface:#171612;--surface-soft:#1d1b16;--text:#f0ece4;--muted:#8a8578;--border:#2a2820;--accent:#f0ece4;--good:#7fd19c}
+:where(html[data-study-template="articles"]), :where(html[data-study-template="articles"]) * {box-sizing:border-box}
+html:where(html[data-study-template="articles"]) {scroll-behavior:smooth}
+:where(html[data-study-template="articles"]) body {margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+:where(html[data-study-template="articles"]) a {color:inherit;text-decoration:none}
+:where(html[data-study-template="articles"]) button {font:inherit}
+:where(html[data-study-template="articles"]) header {position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 90%,transparent)}
+:where(html[data-study-template="articles"]) .topbar {max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+:where(html[data-study-template="articles"]) .brand {font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+:where(html[data-study-template="articles"]) .controls {display:flex;gap:10px;align-items:center}
+:where(html[data-study-template="articles"]) .theme-toggle, :where(html[data-study-template="articles"]) .icon-btn {width:40px;height:40px;border:1px solid var(--border);background:var(--surface);border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--text)}
+:where(html[data-study-template="articles"]) .theme-toggle svg, :where(html[data-study-template="articles"]) .icon-btn svg {width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+:where(html[data-study-template="articles"]) main {padding:36px 24px 60px}
+:where(html[data-study-template="articles"]) .wrap {max-width:var(--max);margin:0 auto}
+:where(html[data-study-template="articles"]) .hero {padding:28px 0 18px}
+:where(html[data-study-template="articles"]) .kicker {font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+:where(html[data-study-template="articles"]) h1, :where(html[data-study-template="articles"]) h2, :where(html[data-study-template="articles"]) h3 {font-family:var(--font-serif);font-weight:700;line-height:1.1;margin:0}
+:where(html[data-study-template="articles"]) h1 {font-size:clamp(2.2rem,5vw,4rem);max-width:10ch}
+:where(html[data-study-template="articles"]) .hero p {max-width:72ch;color:var(--muted);font-size:1.03rem;margin:16px 0 0}
+:where(html[data-study-template="articles"]) .section-label {display:flex;align-items:center;gap:14px;margin:28px 0 18px}
+:where(html[data-study-template="articles"]) .section-label span {font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+:where(html[data-study-template="articles"]) .section-rule {height:1px;flex:1;background:var(--border)}
+:where(html[data-study-template="articles"]) .grid {display:grid;gap:18px}
+:where(html[data-study-template="articles"]) .cards {grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+:where(html[data-study-template="articles"]) .card, :where(html[data-study-template="articles"]) .panel {background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:22px}
+:where(html[data-study-template="articles"]) .card h3 {font-size:1.35rem;margin-bottom:10px}
+:where(html[data-study-template="articles"]) .card p, :where(html[data-study-template="articles"]) .panel p, :where(html[data-study-template="articles"]) .panel li {color:var(--muted)}
+:where(html[data-study-template="articles"]) .meta {display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+:where(html[data-study-template="articles"]) .chip {display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--surface-soft);border-radius:999px;padding:8px 12px;font-size:.92rem}
+:where(html[data-study-template="articles"]) .actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+:where(html[data-study-template="articles"]) .btn {display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:12px 18px;font-weight:600}
+:where(html[data-study-template="articles"]) .btn.primary {background:var(--text);color:var(--bg);border-color:var(--text)}
+:where(html[data-study-template="articles"]) .two-col {display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+:where(html[data-study-template="articles"]) .lesson {padding:22px;border:1px solid var(--border);border-radius:24px;background:var(--surface)}
+:where(html[data-study-template="articles"]) .lesson h3 {font-size:1.5rem;margin-bottom:8px}
+:where(html[data-study-template="articles"]) .lesson h4 {margin:18px 0 8px;font-size:1rem;letter-spacing:.02em}
+:where(html[data-study-template="articles"]) .lesson ul {margin:8px 0 0 18px;padding:0}
+:where(html[data-study-template="articles"]) .lesson .summary {margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+:where(html[data-study-template="articles"]) .sidebar-list {display:grid;gap:14px}
+:where(html[data-study-template="articles"]) .sidebar-item {padding:16px;border:1px solid var(--border);border-radius:18px;background:var(--surface-soft)}
+:where(html[data-study-template="articles"]) .home-table {display:grid;gap:14px}
+:where(html[data-study-template="articles"]) .module-row {display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px;border:1px solid var(--border);border-radius:22px;background:var(--surface)}
+:where(html[data-study-template="articles"]) .module-row .roman {font-family:var(--font-serif);font-size:1.6rem;min-width:2ch}
+:where(html[data-study-template="articles"]) .module-row .title {font-weight:600}
+:where(html[data-study-template="articles"]) .module-row .desc {color:var(--muted);font-size:.96rem}
+:where(html[data-study-template="articles"]) footer {border-top:1px solid var(--border);padding:22px 24px;color:var(--muted)}
+:where(html[data-study-template="articles"]) footer .wrap {display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media (max-width:840px) {
+:where(html[data-study-template="articles"]) .two-col {grid-template-columns:1fr}
+:where(html[data-study-template="articles"]) h1 {max-width:none}
+:where(html[data-study-template="articles"]) .module-row {grid-template-columns:1fr}
+:where(html[data-study-template="articles"]) .module-row .roman {font-size:1.2rem}
+}
+
+/* core1 template */
+:root:where(html[data-study-template="core1"]) {--bg:#faf9f7;
+      --surface:#ffffff;
+      --surface-soft:#f6f3ee;
+      --text:#1a1814;
+      --muted:#7a756c;
+      --border:#e8e4de;
+      --accent:#1a1814;
+      --accent-soft:#f0ece6;
+      --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+      --font-serif:"Playfair Display",Georgia,serif;
+      --max:960px;
+      --radius:4px;
+      --shadow:none;}
+:where(html[data-study-template="core1"])[data-theme="dark"] {--bg:#0f0e0c;
+      --surface:#171612;
+      --surface-soft:#1d1b16;
+      --text:#f0ece4;
+      --muted:#8a8578;
+      --border:#2a2820;
+      --accent:#f0ece4;
+      --accent-soft:#222018;
+      --shadow:none;}
+:where(html[data-study-template="core1"]), :where(html[data-study-template="core1"]) * {box-sizing:border-box;}
+html:where(html[data-study-template="core1"]) {scroll-behavior:smooth;}
+:where(html[data-study-template="core1"]) body {margin:0;
+      font-family:var(--font-sans);
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+      min-height:100vh;}
+:where(html[data-study-template="core1"]) a {color:inherit;text-decoration:none;}
+:where(html[data-study-template="core1"]) button {font:inherit;}
+:where(html[data-study-template="core1"]) :focus-visible {outline:2px solid color-mix(in oklab,var(--accent) 55%,transparent);outline-offset:2px;}
+:where(html[data-study-template="core1"]) header {position:sticky;top:0;z-index:50;border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(16px);}
+:where(html[data-study-template="core1"]) .topbar {max-width:var(--max);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+:where(html[data-study-template="core1"]) .brand {display:flex;align-items:center;gap:14px;min-width:0;}
+:where(html[data-study-template="core1"]) .logo {width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--muted);flex:0 0 auto;}
+:where(html[data-study-template="core1"]) .logo svg {width:14px;height:14px;fill:currentColor;}
+:where(html[data-study-template="core1"]) .brand-copy {min-width:0;}
+:where(html[data-study-template="core1"]) .brand h1 {margin:0;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text);opacity:.9;}
+:where(html[data-study-template="core1"]) .sub {font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+:where(html[data-study-template="core1"]) .controls {display:flex;align-items:center;gap:8px;flex:0 0 auto;}
+:where(html[data-study-template="core1"]) .theme-toggle, :where(html[data-study-template="core1"]) .icon-btn {background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;transition:border-color .2s,color .2s;}
+:where(html[data-study-template="core1"]) .theme-toggle:hover, :where(html[data-study-template="core1"]) .icon-btn:hover {border-color:var(--accent);color:var(--text);}
+:where(html[data-study-template="core1"]) .theme-toggle svg, :where(html[data-study-template="core1"]) .icon-btn svg {width:14px;height:14px;fill:currentColor;}
+:where(html[data-study-template="core1"]) .hero {max-width:var(--max);margin:0 auto;padding:72px 32px 56px;border-bottom:1px solid var(--border);}
+:where(html[data-study-template="core1"]) .hero-kicker {font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+:where(html[data-study-template="core1"]) .hero-kicker::before {content:"";display:block;width:24px;height:1px;background:var(--muted);}
+:where(html[data-study-template="core1"]) .hero h2 {margin:0 0 18px;font-family:var(--font-serif);font-size:clamp(34px,5.2vw,58px);font-weight:700;line-height:1.06;letter-spacing:-.01em;color:var(--text);max-width:760px;}
+:where(html[data-study-template="core1"]) .hero p {margin:0;max-width:640px;font-size:16px;color:var(--muted);line-height:1.75;}
+:where(html[data-study-template="core1"]) .wrap {max-width:var(--max);margin:0 auto;padding:44px 32px 64px;display:flex;flex-direction:column;gap:26px;}
+:where(html[data-study-template="core1"]) .panel {background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);}
+:where(html[data-study-template="core1"]) .section-label {display:flex;align-items:center;gap:16px;padding:0 0 24px;}
+:where(html[data-study-template="core1"]) .section-label span {font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+:where(html[data-study-template="core1"]) .section-rule {flex:1;height:1px;background:var(--border);}
+:where(html[data-study-template="core1"]) .bar {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;padding:18px 20px;border-bottom:1px solid var(--border);}
+:where(html[data-study-template="core1"]) .group {display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+:where(html[data-study-template="core1"]) .btn {border:1px solid var(--border);background:none;color:var(--muted);border-radius:999px;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;transition:border-color .18s,color .18s;}
+:where(html[data-study-template="core1"]) .btn:hover {border-color:var(--accent);color:var(--text);}
+:where(html[data-study-template="core1"]) .btn svg {width:14px;height:14px;fill:currentColor;}
+:where(html[data-study-template="core1"]) .btn:disabled {opacity:.4;cursor:not-allowed;}
+:where(html[data-study-template="core1"]) #counter {font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 4px;}
+:where(html[data-study-template="core1"]) .lesson-tabs {display:flex;flex-wrap:wrap;gap:10px 16px;padding:18px 24px;border-bottom:1px solid var(--border);}
+:where(html[data-study-template="core1"]) .lesson-tab {appearance:none;border:none;background:none;padding:0;color:var(--muted);cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.01em;transition:color .18s;position:relative;}
+:where(html[data-study-template="core1"]) .lesson-tab:hover {color:var(--text);}
+:where(html[data-study-template="core1"]) .lesson-tab.active {color:var(--text);}
+:where(html[data-study-template="core1"]) .lesson-tab.active::after {content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--accent);}
+:where(html[data-study-template="core1"]) .lesson-panel {display:none;}
+:where(html[data-study-template="core1"]) .lesson-panel.active {display:block;}
+:where(html[data-study-template="core1"]) .content {padding:30px 24px 32px;}
+:where(html[data-study-template="core1"]) .content h2 {margin:0 0 16px;font-family:var(--font-serif);font-size:clamp(28px,4vw,40px);line-height:1.08;letter-spacing:-.015em;font-weight:700;color:var(--text);max-width:760px;}
+:where(html[data-study-template="core1"]) .content h3 {margin:28px 0 10px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+:where(html[data-study-template="core1"]) .content p {margin:0 0 14px;color:color-mix(in oklab,var(--text) 86%,var(--muted));font-size:15px;line-height:1.8;max-width:760px;}
+:where(html[data-study-template="core1"]) .content ul {margin:10px 0 16px 20px;padding:0;color:color-mix(in oklab,var(--text) 86%,var(--muted));font-size:15px;line-height:1.8;max-width:780px;}
+:where(html[data-study-template="core1"]) .content li {margin-bottom:8px;}
+:where(html[data-study-template="core1"]) .summary, :where(html[data-study-template="core1"]) .exam-tip {margin-top:18px;padding:16px 18px;border:1px solid var(--border);border-radius:var(--radius);background:transparent;}
+:where(html[data-study-template="core1"]) .summary-label, :where(html[data-study-template="core1"]) .exam-tip-label {font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+:where(html[data-study-template="core1"]) .summary p, :where(html[data-study-template="core1"]) .exam-tip p {margin:0;font-size:14px;line-height:1.75;color:color-mix(in oklab,var(--text) 84%,var(--muted));max-width:none;}
+:where(html[data-study-template="core1"]) footer {max-width:var(--max);margin:0 auto;padding:24px 32px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted);letter-spacing:.04em;}
+@media (max-width:720px) {
+:where(html[data-study-template="core1"]) .topbar {padding:0 20px;}
+:where(html[data-study-template="core1"]) .hero {padding:48px 20px 40px;}
+:where(html[data-study-template="core1"]) .wrap {padding:36px 20px 52px;}
+:where(html[data-study-template="core1"]) .content {padding:24px 20px 26px;}
+:where(html[data-study-template="core1"]) .lesson-tabs {padding:16px 20px;}
+:where(html[data-study-template="core1"]) .bar {padding:16px;}
+:where(html[data-study-template="core1"]) footer {padding:20px;}
+:where(html[data-study-template="core1"]) .brand h1 {font-size:11px;}
+:where(html[data-study-template="core1"]) .sub {max-width:150px;}
+}
+@media print {
+:where(html[data-study-template="core1"]) header, :where(html[data-study-template="core1"]) .bar, :where(html[data-study-template="core1"]) footer {display:none !important;}
+:where(html[data-study-template="core1"]) body {background:#fff;color:#000;}
+:where(html[data-study-template="core1"]) .panel {border:1px solid #ddd;}
+}
+
+/* tabs template */
+:root:where(html[data-study-template="tabs"]) {--bg:#faf9f7;--surface:#ffffff;--surface-soft:#f6f3ee;--text:#1a1814;--muted:#7a756c;--border:#e8e4de;--accent:#1a1814;--font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;--font-serif:"Playfair Display",Georgia,serif;--max:960px;--radius:4px;}
+:where(html[data-study-template="tabs"])[data-theme="dark"] {--bg:#0f0e0c;--surface:#171612;--surface-soft:#1d1b16;--text:#f0ece4;--muted:#8a8578;--border:#2a2820;--accent:#f0ece4;}
+:where(html[data-study-template="tabs"]), :where(html[data-study-template="tabs"]) * {box-sizing:border-box}
+html:where(html[data-study-template="tabs"]) {scroll-behavior:smooth}
+:where(html[data-study-template="tabs"]) body {margin:0;font-family:var(--font-sans);color:var(--text);background:var(--bg);line-height:1.6;min-height:100vh}
+:where(html[data-study-template="tabs"]) a {color:inherit;text-decoration:none}
+:where(html[data-study-template="tabs"]) button {font:inherit}
+:where(html[data-study-template="tabs"]) header {position:sticky;top:0;z-index:50;border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(16px)}
+:where(html[data-study-template="tabs"]) .topbar {max-width:var(--max);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+:where(html[data-study-template="tabs"]) .brand {display:flex;align-items:center;gap:14px;min-width:0}
+:where(html[data-study-template="tabs"]) .logo {width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--muted);flex:0 0 auto}
+:where(html[data-study-template="tabs"]) .logo svg {width:14px;height:14px;fill:currentColor}
+:where(html[data-study-template="tabs"]) .brand-copy h1 {margin:0;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+:where(html[data-study-template="tabs"]) .sub {font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+:where(html[data-study-template="tabs"]) .controls {display:flex;align-items:center;gap:8px}
+:where(html[data-study-template="tabs"]) .theme-toggle, :where(html[data-study-template="tabs"]) .icon-btn {background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer;width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+:where(html[data-study-template="tabs"]) .theme-toggle svg, :where(html[data-study-template="tabs"]) .icon-btn svg {width:14px;height:14px;fill:currentColor}
+:where(html[data-study-template="tabs"]) .hero {max-width:var(--max);margin:0 auto;padding:72px 32px 56px;border-bottom:1px solid var(--border)}
+:where(html[data-study-template="tabs"]) .hero-kicker {font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+:where(html[data-study-template="tabs"]) .hero-kicker::before {content:"";display:block;width:24px;height:1px;background:var(--muted)}
+:where(html[data-study-template="tabs"]) .hero h2 {margin:0 0 18px;font-family:var(--font-serif);font-size:clamp(34px,5.2vw,58px);line-height:1.06;letter-spacing:-.01em;max-width:760px}
+:where(html[data-study-template="tabs"]) .hero p {margin:0;max-width:640px;font-size:16px;color:var(--muted);line-height:1.75}
+:where(html[data-study-template="tabs"]) .wrap {max-width:var(--max);margin:0 auto;padding:44px 32px 64px;display:flex;flex-direction:column;gap:26px}
+:where(html[data-study-template="tabs"]) .panel {background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+:where(html[data-study-template="tabs"]) .section-label {display:flex;align-items:center;gap:16px;padding:0 0 24px}
+:where(html[data-study-template="tabs"]) .section-label span {font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+:where(html[data-study-template="tabs"]) .section-rule {flex:1;height:1px;background:var(--border)}
+:where(html[data-study-template="tabs"]) .bar {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;padding:18px 20px;border-bottom:1px solid var(--border)}
+:where(html[data-study-template="tabs"]) .group {display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+:where(html[data-study-template="tabs"]) .btn {border:1px solid var(--border);background:none;color:var(--muted);border-radius:999px;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500}
+:where(html[data-study-template="tabs"]) .btn svg {width:14px;height:14px;fill:currentColor}
+:where(html[data-study-template="tabs"]) .btn:disabled {opacity:.4;cursor:not-allowed}
+:where(html[data-study-template="tabs"]) #counter {font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+:where(html[data-study-template="tabs"]) .lesson-tabs {display:flex;flex-wrap:wrap;gap:10px 16px;padding:18px 24px;border-bottom:1px solid var(--border)}
+:where(html[data-study-template="tabs"]) .lesson-tab {appearance:none;border:none;background:none;padding:0;color:var(--muted);cursor:pointer;font-size:12px;position:relative}
+:where(html[data-study-template="tabs"]) .lesson-tab.active {color:var(--text)}
+:where(html[data-study-template="tabs"]) .lesson-tab.active::after {content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--accent)}
+:where(html[data-study-template="tabs"]) .lesson-panel {display:none}
+:where(html[data-study-template="tabs"]) .lesson-panel.active {display:block}
+:where(html[data-study-template="tabs"]) .content {padding:30px 24px 32px}
+:where(html[data-study-template="tabs"]) .content h2 {margin:0 0 16px;font-family:var(--font-serif);font-size:clamp(28px,4vw,40px);line-height:1.08}
+:where(html[data-study-template="tabs"]) .content h3 {margin:28px 0 10px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:where(html[data-study-template="tabs"]) .content p {margin:0 0 14px;color:color-mix(in oklab,var(--text) 86%,var(--muted));font-size:15px;line-height:1.8;max-width:760px}
+:where(html[data-study-template="tabs"]) .content ul {margin:10px 0 16px 20px;padding:0;color:color-mix(in oklab,var(--text) 86%,var(--muted));font-size:15px;line-height:1.8;max-width:780px}
+:where(html[data-study-template="tabs"]) .summary, :where(html[data-study-template="tabs"]) .exam-tip {margin-top:18px;padding:16px 18px;border:1px solid var(--border);border-radius:var(--radius)}
+:where(html[data-study-template="tabs"]) .summary-label, :where(html[data-study-template="tabs"]) .exam-tip-label {font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+:where(html[data-study-template="tabs"]) .summary p, :where(html[data-study-template="tabs"]) .exam-tip p {margin:0;font-size:14px;line-height:1.75;max-width:none}
+:where(html[data-study-template="tabs"]) footer {max-width:var(--max);margin:0 auto;padding:24px 32px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+@media (max-width:720px) {
+:where(html[data-study-template="tabs"]) .topbar {padding:0 20px}
+:where(html[data-study-template="tabs"]) .hero {padding:48px 20px 40px}
+:where(html[data-study-template="tabs"]) .wrap {padding:36px 20px 52px}
+:where(html[data-study-template="tabs"]) .content {padding:24px 20px 26px}
+:where(html[data-study-template="tabs"]) .lesson-tabs {padding:16px 20px}
+:where(html[data-study-template="tabs"]) .bar {padding:16px}
+:where(html[data-study-template="tabs"]) footer {padding:20px}
+}
+@media print {
+:where(html[data-study-template="tabs"]) header, :where(html[data-study-template="tabs"]) .bar, :where(html[data-study-template="tabs"]) footer {display:none!important}
+:where(html[data-study-template="tabs"]) body {background:#fff;color:#000}
+:where(html[data-study-template="tabs"]) .panel {border:1px solid #ddd}
+}
+
 :root {
   --bg:var(--rm-bg) !important;
   --surface:var(--rm-panel) !important;

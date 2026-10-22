@@ -41,6 +41,7 @@ jobs:
           python -X utf8 tests/check_learning_catalog.py | tee test-results/static/catalog.log
           python -X utf8 tests/build_progress_catalog.py --check
           python -X utf8 tests/check_design_system.py
+          python -X utf8 tests/check_study_cleanup.py
           python -X utf8 tests/check_ci.py
           git diff --check "$(git merge-base HEAD origin/main)" HEAD
       - name: Static failure evidence
@@ -118,6 +119,9 @@ jobs:
           git worktree add --detach "$RUNNER_TEMP/design-before" "$(git merge-base HEAD origin/main)"
           python -X utf8 tests/design_visual.py --site-root "$RUNNER_TEMP/design-before" --output test-results/visual/before 2>&1 | tee test-results/visual/before.log
           python -X utf8 tests/design_visual.py --output test-results/visual/after --baseline test-results/visual/before 2>&1 | tee test-results/visual/after.log
+          python -X utf8 tests/study_cleanup.py --site-root "$RUNNER_TEMP/design-before" --output test-results/visual/study-before 2>&1 | tee test-results/visual/study-before.log
+          python -X utf8 tests/study_cleanup.py --output test-results/visual/study-after --baseline test-results/visual/study-before 2>&1 | tee test-results/visual/study-after.log
+          python -X utf8 tests/study_layout.py --output test-results/visual/study-interactions 2>&1 | tee test-results/visual/study-interactions.log
       - name: Visual failure evidence
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

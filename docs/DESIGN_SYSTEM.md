@@ -7,6 +7,27 @@ documented in [the study-layout report](ux-evidence/study-layout/README.md).
 Assessments, CLI workspaces, hubs, references and utilities retain their own
 layouts. Use `tests/build_study_layout.py` for supported study-template opt-in.
 
+The [study cleanup inventory](ux-evidence/study-layout-cleanup/README.md) covers
+all 67 modules. Eight ordinary Core 1, all 12 Core 2, 16 Security+ and 15 CEH
+modules now use template bases in `roadmap-theme.css`. All 15 Linux+ modules
+retain their external base. These 66 pages have no embedded CSS. The motherboard
+module retains its distinct nested-lesson/content skin and two content spacing
+attributes; do not copy its legacy layout rules into new modules.
+
+Add enhanced shell/rail/card rules to `study-layout.css`, common skin rules to
+`roadmap-theme.css`, palette values to `design-tokens.css`, and noir-only treatment
+to `noir-theme.css`. `data-study-template="tabs|core1|articles"` on `html` selects
+compatibility geometry through zero-specificity gates. Keep these bases before
+the common theme skin: they also support the original no-JS view. Genuinely
+unique content styling can stay in a small documented page block; it must not
+redefine the common header, theme, shell or rails. Document new exceptions and
+review them in `tests/check_study_cleanup.py`.
+
+The tabs template uses the controller at the start of `study-layout.js`. Keep
+native source controls and semantic lesson HTML. The shared enhancer already
+owns rails, progress, helper headings and on-this-page links; do not paste them
+into modules or move lesson prose into JavaScript.
+
 The site stays static. Light and dark retain their existing purple palette; noir
 is an optional third theme. This is an incremental component contract, not a
 requirement to rewrite every article or terminal skin.

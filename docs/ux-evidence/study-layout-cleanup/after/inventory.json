@@ -1,0 +1,2364 @@
+{
+  "pages": 67,
+  "styleBlocks": 1,
+  "cssBytes": 11556,
+  "styleAttributes": 2,
+  "pagesWithoutEmbeddedCSS": 66,
+  "cssGroups": {
+    "54155439b75b544e190358aed82cde37b50c91e2c1e62c248fb63772b751b8b0": [
+      "CompTIA/A+/1201/Motherboard_and_Connectors/index.html"
+    ]
+  },
+  "repeatedDeclarations": [
+    [
+      "color:var(--muted)",
+      16
+    ],
+    [
+      "color:var(--text)",
+      12
+    ],
+    [
+      "display:flex",
+      12
+    ],
+    [
+      "align-items:center",
+      9
+    ],
+    [
+      "font-weight:600",
+      9
+    ],
+    [
+      "text-transform:uppercase",
+      9
+    ],
+    [
+      "border-bottom:1px solid var(--border)",
+      8
+    ],
+    [
+      "font-size:11px",
+      8
+    ],
+    [
+      "border:1px solid var(--border)",
+      6
+    ],
+    [
+      "flex-wrap:wrap",
+      5
+    ],
+    [
+      "margin:0",
+      4
+    ],
+    [
+      "max-width:var(--max)",
+      4
+    ],
+    [
+      "margin:0 auto",
+      4
+    ],
+    [
+      "gap:16px",
+      4
+    ],
+    [
+      "font-size:12px",
+      4
+    ],
+    [
+      "white-space:nowrap",
+      4
+    ],
+    [
+      "gap:8px",
+      4
+    ],
+    [
+      "background:none",
+      4
+    ],
+    [
+      "cursor:pointer",
+      4
+    ],
+    [
+      "justify-content:space-between",
+      3
+    ],
+    [
+      "display:grid",
+      3
+    ],
+    [
+      "width:14px",
+      3
+    ],
+    [
+      "height:14px",
+      3
+    ],
+    [
+      "fill:currentColor",
+      3
+    ],
+    [
+      "letter-spacing:.14em",
+      3
+    ]
+  ],
+  "malformedCSS": [],
+  "assetBytes": {
+    "assets/article-responsive.css": 842,
+    "assets/assessment-bank.css": 6713,
+    "assets/assessment-ceh-layout.css": 2308,
+    "assets/assessment-controller.js": 29415,
+    "assets/assessment-security-layout.css": 2574,
+    "assets/assessment-taking.css": 2452,
+    "assets/cli-labs.css": 14776,
+    "assets/design-tokens.css": 1877,
+    "assets/directory-base.css": 4415,
+    "assets/directory-stacked-base.css": 4445,
+    "assets/learning-activities.js": 22300,
+    "assets/learning-progress.css": 1313,
+    "assets/learning-progress.js": 16984,
+    "assets/legacy-hub-compat.css": 494,
+    "assets/navigation.css": 2780,
+    "assets/navigation.js": 726,
+    "assets/noir-theme.css": 8863,
+    "assets/roadmap-components.css": 282,
+    "assets/roadmap-theme.css": 52602,
+    "assets/roadmap-theme.js": 4424,
+    "assets/site-language.js": 20249,
+    "assets/study-layout.css": 10175,
+    "assets/study-layout.js": 17074
+  },
+  "rows": [
+    {
+      "path": "CompTIA/A+/1201/Local_Networking_Hardware/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "3b5c956d452849865b0fe5c267cc8b34d1d9d93a347e9a0874e8d4cb4001faed",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "5c41fd932562f866e0e1053e57e24b0d1e627fa1dcd5020436f8ae6e1d5dcdb6"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Motherboard_and_Connectors/index.html",
+      "styleBlocks": 1,
+      "cssBytes": 11556,
+      "styleAttributes": 2,
+      "bodyFingerprint": "d73cfa9ea8077065ef4998298d2e0e9ad260412b0a4346caaea98fe8d06ab06d",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "168f4623dab9e7a3fd34c15bd6660a6efc62488ab111d574dddf92207ba3f623"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 0,
+        ".module-tabs": 1,
+        ".section-tabs": 3
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Network_Addressing_and_Internet_Connections/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "5baded9bd2d7961f3b549a4e9852eb05b962900f91a9237476fa89d3be9ecfe4",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "6d325a9536a8068f193511a7b6858f3b0d92eea62cf4fd5351f767069108141d"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Mobile_Devices/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "9a1094581c56c3b0958c5a936eef790a1ebf4d8d99b89d5647ac57224e52fe3a",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "498c8577003dab45e529c80b15f6ee48b0a6cc9d9cf29b210d7e9444bd838c73"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Network_Services/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "cd5ed555232bb56599fafa0d1de8c022d815cef3f62e3509a46030bce27cacc6",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "a2ee8c738dc6f6319a90c46b8238cc3550f37ced930028fb2e10f5e668caeac9"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Print_Devices/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "c13a5f38dcc173b338defa114d6b114abc47cec89ef254d7a1dbca771d215042",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "731f694e75b67b501b552806266452df774c269f53aaaf656718f039c564029d"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/System_Devices/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "d0e3e35bed35a93d41e6406f71fc68e0a510a3e5e032cc9225b51f6f15bdf5a8",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "817000cd102975bb1a74f0c616bb779e2b0649e2bf58dc78754165eee60760f1"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Troubleshooting_PC_Hardware/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "c2c0a8520a1c769d90e93edf2d93b156c71f720bf04ca037e7930c298bcd3b51",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "c9e2c3f0578734f349edbb08baed3dabe31ff3a73ce231bf35ad0e06534d70df"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1201/Virtualization_and_Cloud_Concepts/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "31ea577e3d26ca1e7b14e4a74ece09658831481c8018d99415f5a7b185b554c6",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "750f52f926cdf879325a5ec1e7c8968d501d0dc8be1641658e7b3af1c71ef674"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Backups_Data_Handling_and_AI/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "8e16778fabe0d9984e4d928b26f1ba9d2932937371156f688547d7367487f011",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Endpoint_and_Browser_Security/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "cce8f21c459bc43ae906bae709edfa1e20986739d4f27128159a00a8eb87cf66",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Linux_and_macOS_Support/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "88ce5b45d694237a99f445aae4b23f175d106befc2c0d468d0b3971512b5154d",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Mobile_Software_and_Security/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "490b92c5589bacb4c812b9ddccb6797517b00bb89eb05d3ccac5a1e53a7dca94",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Operations_Safety_and_Scripting/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "916ba22040c840d8a8c9c08aa52f6650bb04b7f8bb6c1c0eda54d125946781a3",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/OS_Installation_and_Upgrades/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "16809e6a8dafca5552a803dfc9476c8840d17eacc17ee90d7dc374f84f898555",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/SOHO_Security_and_Threats/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "c8431f3ca765fc5ac579fc9bbd9068917d518760cd7c1b9bcf84e692ec19661c",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Support_Procedures_and_Communication/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "a2401aea2a65e0b38a8b0ada09b727da8c21be41b2f68e33240f7e788bec5f56",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Security_and_Sharing/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "dfb99563232c3496f7f76b006202b962f811b949384b627dd9a70364a8d047c7",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Setup_and_Configuration/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "77a6329ecde64f0ad4d7b8c1a4f1411e0b0f199d8c00876318f9d9b1175636c6",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Support_and_Troubleshooting/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "ba6a55ce2b9904693e50715f6af02610b4be9c7c4434e76fb7a301dbcaaaef52",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Tools_and_Management/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "26f7b18e741d813d22dbc76fa4c4bde0b4142bd21804c4531a8694b77117c93f",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/bash-scripting-git-and-automation/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "20c21c8931eefbaf3b1a086c05d9bc075d81513505548867b16901740aa3567a",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/bootloaders-targets-and-shutdown/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "be1e042aee4fb05881805b9d3689aca2b7a3c23d515ed6c80f9992b53d2edecb",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/cloud-containers-and-virtual-machines/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "9f73f370948c5d497e50daba32c94668822d9f615a85263ec358e87c19561964",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/desktops-gui-access-and-usability/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "6410d41fd78a20c79505633e7854a09c30020d1a2c47584fcc8b2f5964374eaf",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/hardware-drivers-and-kernel-views/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "312556e29802e14054ecbe62e84bbb2e3256b36a75853b13fb6b2d41d1830fbe",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/installation-planning-and-deployment/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "083d859eda8914a85ebdfd9266c725e16ce5187099976ad59c98e11b3dafd19f",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/linux-landscape-and-server-roles/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "44e33db60fbd67d8fe3f9d291870a4271ccc06e2591a448c0b8c2d055452907c",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/logging-monitoring-and-performance/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "6b89cc26fa3e0522f5a791cb852126eb274d36c3f6dd7364bfbb0bae857dac01",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/networking-routing-and-firewall-rules/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "9ea53422d4f9a602fe74eb0f770c7ecf1a0240dec62bb1ab450c8e75bb7ea8f0",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/package-management-and-software-sources/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "a0b28e48fb12256c96f4a166887f0f2e65be8079c06eeb5e93c51a6e39964ba9",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/processes-services-and-job-scheduling/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "e200c361d0b147793bb87e5c79c7d20d3d0d96b217fc863c2770795227803362",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/shell-usage-and-text-editing/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "d54f4ab18e37ba4f9163e4187be2c1b8eae3a2564f267ea0bdb678922b643bc7",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/ssh-access-control-and-hardening/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "d62435b8d5eb32630935e2149632444a54840a0624ac22924c46743a823e8012",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/storage-filesystems-and-permissions/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "7b69be325786c1836b5c1263d2797de66e08977c13c8daca540298727eb23b19",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Linux+/modules/users-groups-and-account-security/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "a5ad116726c870575e51c9e0bde3c4c3048c0aa5eb5bad6f10610da978a477cd",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../assets/styles.css",
+        "../../../../assets/roadmap-theme.css",
+        "../../../../assets/navigation.css",
+        "../../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../../assets/roadmap-theme.js",
+        "../../../../assets/site-language.js",
+        "../../../../assets/study-layout.js",
+        "../../assets/theme.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Application_Web_and_Email_Security/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "b3b8a0223d516493ab077c6bf4c2d2441245ebc510a605887dfb73ec6ec7c86e",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Cloud_Security_and_Zero_Trust/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "f788a6a02baae1ce2e7a9e7116dc77d6be3466a8a80c03ea79bc733c1181cd27",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Data_Protection_Compliance_and_People/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "8323fbcff8e31f15a98f68028f14205e6524db0ac03340309471e5d58cd79bbd",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Encryption_PKI_and_Secure_Cryptography/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "bf14435cebf056672587c876460cf8318795dcd8eb5c56232c2a68a517f65f64",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Endpoint_Protection_and_Device_Hardening/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "5dc33fc47cb103f19cac7695dc4ff21ca539b24a0ec09396a30ed8ad98770ebf",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Enterprise_Network_Defense_Architecture/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "d22568b43b9bed0732de4f43ed1ed93b97703ef9be6f7e49c9617be2bdd40af2",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Governance_Policy_and_Security_Operations/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "ad5f33446496f5a274ba12a0703bf01d9a87225b40d28e729c136ed2eb065540",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Identity_Authentication_and_Access/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "d29e442ab751e07f33791985c20223705e8ed42de90278ad82178e8980f1c7ae",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Incident_Response_and_Security_Monitoring/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "800fe20942699cb94087d4b5bda74a9a5c77a2aca2b5adf40028dc3c38d45507",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Indicators_of_Compromise_and_Malicious_Activity/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "58ae22dff6efa24c77ab9dd5388be8edddea2b6c3eb5563b548fa1a64b8499d5",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Network_Security_Baselines_and_Hardening/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "5bb1abca3f1d1deb6bc613a78387d5f85665769dedd038e1b24131db33500d1c",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Resilience_Redundancy_and_Physical_Protection/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "48618d0b62caf4293b47b9d51ba99fec3e308fbfdc34e3167303e1b8596086b3",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Risk_Third_Parties_and_Assessments/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "1d5287d61bfd2b657d772374f8480ce2ca49e88c6c8ccb9b3299362fe41f9b85",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Security_Foundations_and_Control_Models/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "370a235082c779e51e21d788e4ddce4bb0e666c3402a882b16c203d75bbbf1d4",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Threat_Actors_and_Attack_Paths/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "1c6f1456e256a95264b233d72ec37b357c8ed3a1c86d06bde02c798a0407027c",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "CompTIA/Security+/Vulnerability_Management_and_Remediation/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "fc2e16e3f60d5c9eaf574880be6c0bdbb694d9b8a96ed40d52e892c6795be655",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 1,
+        "#prevBtn": 1,
+        "#nextBtn": 1,
+        ".lesson-tabs": 1,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Cloud_and_IoT_Attack_Surface/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "429f22ed404a09f36f00b35f0446af93509585f3bf17465f24db9114a88264db",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Cryptography_and_Key_Management/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "54f58966268c518a0cd9e2642289adf66008ffd6eadba17c84d1206f303a788e",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Enumeration_and_Target_Profiling/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "b90f00fc73a5e036837792fc420bf999cadfc28d9cabcf2e765d69cb2d430db4",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Ethical_Hacking_Essentials/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "ec848595f2a25508b5d64fc4acadda73b5e0ba40bb9573c0c2d8917089e4a4f7",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Human_Factors_and_Physical_Access/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "7d3eeefc79bbfd5b30e56d4cc258309403450b01882b9a1f9fd38dc25fecc8a3",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/IDS_Firewalls_and_Deception_Systems/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "987cf2be06f7ec5651d73c82474a14170a811ff7a9bf1439d3ea0385e4a31fb6",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Malware_Techniques_and_Countermeasures/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "e93a0628aafa77222e767bd0de0ab364193049a2e2dba5044e847d9580d1a514",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Penetration_Testing_Foundations/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "3d4776f86b4994e2ef0197de83ae96e696274f3d9d9455314326b6cda9bc3e68",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Reconnaissance_and_Footprinting/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "10d4da520a6de5fe75f9e5187db997ed6acac4d2749c8a2a371a473bd2d4f1be",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Scanning_and_Service_Discovery/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "ba90a00ca3ec7e64cd1c9648d652aefba7643326db8cdd67dbc66110429db8cb",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Sniffing_Hijacking_and_Denial_of_Service/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "d3433f85ef5f6a8e220bf2aeee364b0d2deef6960c4e6530de211c62d1fdc765",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/System_Compromise_and_Privilege_Escalation/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "043be2c2e3f99f80e1e9e7ad02f91e08a339e3dadf904235ee83d3d2e9243328",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Vulnerability_Analysis_and_Prioritization/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "3a9f4a3b22da219a0175c1bd2683a5584c10450b9b2470634a6139b5873418f7",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Web_Servers_Web_Apps_and_SQL_Injection/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "a83844103191f815ed84e8464e873539560fd0d502746e6b24f7ce178ea1a85f",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    },
+    {
+      "path": "EC-Council/CEH/Wireless_Bluetooth_and_Mobile_Security/index.html",
+      "styleBlocks": 0,
+      "cssBytes": 0,
+      "styleAttributes": 0,
+      "bodyFingerprint": "04e7c5ec4658d0de7edcfa7c63bab42ceaaafe86e97b8d69e802f15cbb8fe23d",
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap",
+        "../../../assets/roadmap-theme.css",
+        "../../../assets/navigation.css",
+        "../../../assets/study-layout.css"
+      ],
+      "scripts": [
+        "../../../assets/roadmap-theme.js",
+        "../../../assets/site-language.js",
+        "../../../assets/study-layout.js"
+      ],
+      "inlineScriptHashes": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ],
+      "structure": {
+        ".study-layout": 0,
+        ".study-navigation": 0,
+        ".study-helper": 0,
+        ".study-meter": 0,
+        ".study-toc": 0,
+        ".bar": 0,
+        "#prevBtn": 0,
+        "#nextBtn": 0,
+        ".lesson-tabs": 0,
+        ".module-tabs": 0,
+        ".section-tabs": 0
+      }
+    }
+  ]
+}
