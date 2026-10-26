@@ -1210,14 +1210,14 @@
       ],
       "afterSize": [
         390,
-        1394
+        1395
       ],
-      "changedPixelsInCommonArea": 195700,
+      "changedPixelsInCommonArea": 195994,
       "changedBounds": [
         0,
-        15,
+        14,
         390,
-        1368
+        1369
       ],
       "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
     },
@@ -1229,14 +1229,14 @@
       ],
       "afterSize": [
         390,
-        1394
+        1395
       ],
-      "changedPixelsInCommonArea": 195815,
+      "changedPixelsInCommonArea": 196098,
       "changedBounds": [
         0,
-        15,
+        14,
         390,
-        1368
+        1369
       ],
       "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
     },
@@ -1250,12 +1250,12 @@
         390,
         1475
       ],
-      "changedPixelsInCommonArea": 195451,
+      "changedPixelsInCommonArea": 196183,
       "changedBounds": [
         0,
-        16,
+        14,
         390,
-        1448
+        1449
       ],
       "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
     },
@@ -1269,7 +1269,7 @@
         1440,
         1003
       ],
-      "changedPixelsInCommonArea": 236641,
+      "changedPixelsInCommonArea": 236788,
       "changedBounds": [
         0,
         16,
@@ -1288,7 +1288,7 @@
         1440,
         1003
       ],
-      "changedPixelsInCommonArea": 236766,
+      "changedPixelsInCommonArea": 236905,
       "changedBounds": [
         0,
         16,
@@ -1307,10 +1307,10 @@
         1440,
         989
       ],
-      "changedPixelsInCommonArea": 241283,
+      "changedPixelsInCommonArea": 241470,
       "changedBounds": [
         0,
-        20,
+        17,
         1440,
         960
       ],
@@ -2114,5 +2114,6 @@
       ],
       "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
     }
-  ]
+  ],
+  "themeControlRetest": "Linux native theme button restored; all 30 Linux states, keyboard theme cycling, and all-family mobile keyboard checks passed."
 }

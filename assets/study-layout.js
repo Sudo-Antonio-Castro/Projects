@@ -186,7 +186,12 @@
     const brand = make('a','study-brand','Projects'); brand.href = siteRoot.href;
     bar.append(brand);
     const nav = header.querySelector('.roadmap-global-nav');
-    const controls = header.querySelector('.controls');
+    const controls = header.querySelector('.controls') || make('div','controls');
+    // Linux templates place the theme button directly in the header.
+    // Keep native controls even when a legacy wrapper is absent.
+    header.querySelectorAll('#themeBtn,.theme-toggle,#printBtn').forEach(control=>{
+      if (!controls.contains(control)) controls.append(control);
+    });
     const language = document.querySelector('.site-language-settings');
     [nav,controls,language].filter(Boolean).forEach(el=>bar.append(el));
     header.replaceChildren(bar);

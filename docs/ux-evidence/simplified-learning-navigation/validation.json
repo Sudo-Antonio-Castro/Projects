@@ -1126,7 +1126,7 @@
     },
     "assets/study-layout.js": {
       "beforeBytes": 17074,
-      "afterBytes": 20278
+      "afterBytes": 20597
     },
     "assets/learning-es.json": {
       "beforeBytes": 416569,
@@ -1174,5 +1174,18 @@
   "themeUnitChecks": {
     "passed": 11,
     "failed": 0
+  },
+  "themeControlRetest": {
+    "linuxStates": 30,
+    "representativeKeyboardStates": 10,
+    "visibleControlsSwept": 67,
+    "status": "PASS"
+  },
+  "ciCoverage": {
+    "browserSuites": 7,
+    "visualPairs": 72,
+    "unchangedVisualStates": 40,
+    "jobLimitMinutes": 20,
+    "assertionTimeoutsUnchanged": true
   }
 }

@@ -27,6 +27,9 @@ tools and adds collapsible links to real course modules and the library.
 Desktop uses three columns; mobile order is context, lesson, native collapsible
 lesson navigation, then helpers. Existing theme and language controls are moved
 into the compact header without replacing their event handlers.
+Both wrapped controls and Linux's direct header theme button are retained. The
+67-module sweep asserts that the theme button is visible, and navigation checks
+operate it by keyboard through all three themes without changing lesson or URL.
 
 `navigation.js` owns course selection and course-card resume. `study-layout.js`
 continues to enhance the original lesson controllers. A lesson change adds a
@@ -106,3 +109,12 @@ An earlier local run also reported Chromium `ERR_NETWORK_IO_SUSPENDED` during a
 deep-link load, which passed on rerun. Assertions and default CI coverage remain
 unchanged: CI runs all 150 states without retrying them. The recorded local
 results distinguish the full run and the affected-family rerun.
+The restored Linux theme control was rechecked across all 30 Linux states and
+the complete 67-module study sweep. The visual job installs only the headless
+shell used by its three suites; it retains system dependencies and the same
+browser executable. The general browser matrix keeps its existing installation.
+CI runs all 150 interactions in a dedicated seventh browser-matrix entry; the
+visual job separately compares the 72 pairs and original lesson source with
+`--capture-only`, then runs the study sweep. Both jobs remain bounded at 20
+minutes. This separates tests after an observed 10-minute dependency setup left
+the original combined job short of time; assertions and coverage are retained.

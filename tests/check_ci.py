@@ -10,7 +10,7 @@ assert set(data['on'])=={'push','pull_request'}
 assert data['on']['push']['branches-ignore']==['main']
 assert data['on']['pull_request']['branches']==['main']
 assert set(data['jobs'])=={'static','browser','visual'}
-expected={'ux_regression','language_regression','mobile_accessibility','navigation_directory','assessment_experience','progress_resume'}
+expected={'ux_regression','language_regression','mobile_accessibility','navigation_directory','assessment_experience','progress_resume','learning_navigation'}
 assert set(data['jobs']['browser']['strategy']['matrix']['suite'])==expected
 assert all((ROOT/'tests'/f'{name}.py').is_file() for name in expected)
 allowed={'actions/checkout','actions/setup-python','actions/setup-node','actions/upload-artifact'}
@@ -33,6 +33,6 @@ assert 'tests/design_visual.py --site-root' in raw and '--baseline test-results/
 assert raw.count('--exclude-case linux-hub --exclude-case ceh-hub') == 2
 assert raw.count('--exclude-case') == 4, 'Do not exclude additional visual coverage'
 assert 'tests/learning_navigation.py --before --site-root' in raw
-assert 'tests/learning_navigation.py --output' in raw and '--baseline test-results/visual/study-before' in raw
+assert 'tests/learning_navigation.py --capture-only --output' in raw and '--baseline test-results/visual/study-before' in raw
 assert 'tests/build_study_navigation.py --check' in raw
-print('PASS workflow YAML, read-only permission, pinned official actions, all six browser suites, local visual comparison, bounded failure evidence, no deployment or external-service smoke')
+print('PASS workflow YAML, read-only permission, pinned official actions, all seven browser suites, local visual comparison, bounded failure evidence, no deployment or external-service smoke')

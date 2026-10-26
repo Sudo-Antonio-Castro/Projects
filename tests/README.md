@@ -12,6 +12,10 @@ five course hubs as well. Use `--before --site-root BASE --output BEFORE`, then
 inline controllers unchanged. Navigation visuals intentionally change; 40
 unaffected site states retain strict pixel comparison. See the
 [evidence report](../docs/ux-evidence/simplified-learning-navigation/README.md).
+CI runs the full interaction matrix as its seventh browser suite. The separate
+visual job uses `--capture-only` with a base checkout for the 72 screenshot pairs
+and unchanged-lesson proof, then runs the study sweep. Coverage is retained while
+avoiding one long job exhausting its budget after slow dependency installation.
 
 ## Study layout cleanup
 

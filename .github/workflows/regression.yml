@@ -57,12 +57,12 @@ jobs:
   browser:
     name: Browser / ${{ matrix.suite }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       max-parallel: 2
       matrix:
-        suite: [ux_regression, language_regression, mobile_accessibility, navigation_directory, assessment_experience, progress_resume]
+        suite: [ux_regression, language_regression, mobile_accessibility, navigation_directory, assessment_experience, progress_resume, learning_navigation]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -111,7 +111,8 @@ jobs:
             tests/requirements.txt
             tests/requirements-static.txt
       - run: python -m pip install -r tests/requirements.txt
-      - run: python -m playwright install --with-deps chromium
+      # These visual suites use Playwright's default headless-shell executable.
+      - run: python -m playwright install --with-deps --only-shell chromium
       - name: Compare unchanged site visuals and validate simplified learning navigation
         shell: bash
         run: |
@@ -121,7 +122,7 @@ jobs:
           python -X utf8 tests/design_visual.py --site-root "$RUNNER_TEMP/design-before" --exclude-case linux-hub --exclude-case ceh-hub --output test-results/visual/before 2>&1 | tee test-results/visual/before.log
           python -X utf8 tests/design_visual.py --exclude-case linux-hub --exclude-case ceh-hub --output test-results/visual/after --baseline test-results/visual/before 2>&1 | tee test-results/visual/after.log
           python -X utf8 tests/learning_navigation.py --before --site-root "$RUNNER_TEMP/design-before" --output test-results/visual/study-before 2>&1 | tee test-results/visual/study-before.log
-          python -X utf8 tests/learning_navigation.py --output test-results/visual/study-after --baseline test-results/visual/study-before 2>&1 | tee test-results/visual/study-after.log
+          python -X utf8 tests/learning_navigation.py --capture-only --output test-results/visual/study-after --baseline test-results/visual/study-before 2>&1 | tee test-results/visual/study-after.log
           python -X utf8 tests/study_layout.py --output test-results/visual/study-interactions 2>&1 | tee test-results/visual/study-interactions.log
       - name: Visual failure evidence
         if: failure()

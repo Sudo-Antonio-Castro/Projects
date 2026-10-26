@@ -83,6 +83,8 @@ def main():
                         p.locator('.study-navigation').evaluate('(el)=>el.open=true')
                     if not args.before:
                         assert p.locator('.study-course-select').count() == 1
+                        if name in CASES or name == 'module-overview':
+                            assert p.locator('#themeBtn').is_visible(),(name,width,theme,'theme control')
                         values = p.locator('.study-course-select option').evaluate_all('(els)=>els.map(e=>new URL(e.value,location).pathname)')
                         assert values == ['/Projects/'+x for x in HUBS], values
                         assert p.evaluate('document.documentElement.scrollWidth <= innerWidth'), (name,width,theme)
@@ -125,6 +127,15 @@ def main():
                         buttons = p.locator('.study-lessons button'); buttons.nth(1).click()
                         assert buttons.nth(1).get_attribute('aria-current') == 'step'
                         assert p.url.endswith('#study-2-lesson')
+                        theme_button = p.locator('#themeBtn')
+                        assert theme_button.is_visible(),(name,width,theme,'theme control')
+                        for _ in range(3):
+                            previous_theme = p.locator('html').get_attribute('data-theme')
+                            theme_button.focus(); theme_button.press('Enter')
+                            assert p.locator('html').get_attribute('data-theme') != previous_theme
+                            assert buttons.nth(1).get_attribute('aria-current') == 'step'
+                            assert p.url.endswith('#study-2-lesson')
+                        assert p.locator('html').get_attribute('data-theme') == theme
                         title = p.locator('.study-title:visible').inner_text()
                         p.go_back(); assert buttons.nth(0).get_attribute('aria-current') == 'step'
                         p.go_forward(); assert buttons.nth(1).get_attribute('aria-current') == 'step'
