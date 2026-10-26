@@ -27,3 +27,14 @@ body.directory-hub > :is(#page-translation-status,#learning-language-status) { m
   .project-breadcrumb { margin-bottom:8px; font-size:.8rem; }
   main:not(.shell):not(.app-directory) > .project-breadcrumb { padding-inline:18px; }
 }
+.study-context { min-width:0; }
+.study-context ol { align-items:center; }
+.study-context li { min-width:0; }
+.study-course-picker { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.study-course-label { font-size:12px; color:var(--rm-muted); }
+.study-course-select { max-width:100%; min-width:0; padding:9px 28px 9px 12px; border:1px solid var(--rm-line); border-radius:8px; color:var(--rm-text); background:var(--rm-panel); font:600 14px/1.4 var(--rm-font-body); cursor:pointer; }
+.study-course-select:focus-visible { outline:3px solid var(--rm-blue); outline-offset:3px; }
+.study-resume-info { display:block; margin-top:12px; padding-top:10px; border-top:1px solid var(--rm-line); font-size:13px; color:var(--rm-muted); }
+.study-resume-position { display:block; font-weight:700; color:var(--rm-text); }
+.study-resume-action { display:block; margin-top:8px; font-weight:700; color:var(--rm-blue); text-decoration:underline; text-underline-offset:3px; }
+.module-row > .study-resume-info { grid-column:1 / -1; }

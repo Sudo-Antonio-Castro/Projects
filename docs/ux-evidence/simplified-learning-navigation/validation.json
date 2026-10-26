@@ -1,0 +1,1178 @@
+{
+  "base": "251aaa4b06df5ed040a41f3e04216c2a519d83f4",
+  "checks": {
+    "language_regression": {
+      "passed": 12,
+      "failed": 0
+    },
+    "mobile_accessibility": {
+      "passed": 14,
+      "failed": 0
+    },
+    "navigation-final": {
+      "passed": 7,
+      "failed": 0
+    },
+    "assessment_experience": {
+      "passed": 21,
+      "failed": 0
+    },
+    "progress_resume": {
+      "passed": 31,
+      "failed": 0
+    },
+    "noir_theme": {
+      "passed": 387,
+      "failed": 0
+    },
+    "ux_regression": {
+      "passed": 32,
+      "failed": 0
+    }
+  },
+  "navigationStates": 150,
+  "navigationStateResults": [
+    {
+      "family": "a-core1",
+      "width": 320,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 320,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 320,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 320,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 320,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 320,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 390,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 390,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 390,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 390,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 390,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 390,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 768,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 768,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 768,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 768,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 768,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 768,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1024,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1024,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1024,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1024,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1024,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1024,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1440,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1440,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1440,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1440,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1440,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core1",
+      "width": 1440,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 320,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 320,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 320,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 320,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 320,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 320,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 390,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 390,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 390,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 390,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 390,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 390,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 768,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 768,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 768,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 768,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 768,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 768,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1024,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1024,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1024,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1024,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1024,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1024,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1440,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1440,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1440,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1440,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1440,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "a-core2",
+      "width": 1440,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 320,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 320,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 320,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 320,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 320,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 320,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 390,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 390,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 390,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 390,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 390,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 390,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 768,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 768,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 768,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 768,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 768,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 768,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1024,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1024,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1024,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1024,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1024,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1024,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1440,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1440,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1440,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1440,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1440,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "ceh",
+      "width": 1440,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 320,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 320,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 320,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 320,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 320,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 320,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 390,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 390,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 390,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 390,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 390,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 390,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 768,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 768,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 768,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 768,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 768,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 768,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1024,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1024,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1024,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1024,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1024,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1024,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1440,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1440,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1440,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1440,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1440,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "linux",
+      "width": 1440,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 320,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 320,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 320,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 320,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 320,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 320,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 390,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 390,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 390,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 390,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 390,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 390,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 768,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 768,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 768,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 768,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 768,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 768,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1024,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1024,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1024,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1024,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1024,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1024,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1440,
+      "theme": "dark",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1440,
+      "theme": "dark",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1440,
+      "theme": "light",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1440,
+      "theme": "light",
+      "language": "es",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1440,
+      "theme": "noir",
+      "language": "en",
+      "status": "PASS"
+    },
+    {
+      "family": "security",
+      "width": 1440,
+      "theme": "noir",
+      "language": "es",
+      "status": "PASS"
+    }
+  ],
+  "sourceReview": {
+    "htmlFiles": 72,
+    "status": "PASS",
+    "breadcrumbItemCounts": {
+      "before": {
+        "5": 21,
+        "4": 31,
+        "3": 15
+      },
+      "after": {
+        "2": 67
+      }
+    }
+  },
+  "screenshots": {
+    "pairs": 72,
+    "themes": [
+      "light",
+      "dark",
+      "noir"
+    ],
+    "widths": [
+      390,
+      1440
+    ]
+  },
+  "unchangedSiteVisualStates": 40,
+  "unchangedSiteChangedPixels": 0,
+  "assets": {
+    "assets/navigation.css": {
+      "beforeBytes": 2780,
+      "afterBytes": 3803
+    },
+    "assets/navigation.js": {
+      "beforeBytes": 726,
+      "afterBytes": 5283
+    },
+    "assets/study-layout.css": {
+      "beforeBytes": 35088,
+      "afterBytes": 36569
+    },
+    "assets/study-layout.js": {
+      "beforeBytes": 17074,
+      "afterBytes": 20278
+    },
+    "assets/learning-es.json": {
+      "beforeBytes": 416569,
+      "afterBytes": 430165
+    },
+    "assets/study-navigation.json": {
+      "beforeBytes": 0,
+      "afterBytes": 22209
+    }
+  },
+  "localRunNote": "The full run passed 120 family states. Linux was retested in isolation after a local resume-request stall; all 30 Linux states and all five original deep-link families passed. Existing navigation was rerun after the resource-intensive theme suite; all seven checks passed. Default CI still runs all 150 states without retries.",
+  "staticChecks": [
+    {
+      "suite": "check_source",
+      "exit": 0,
+      "seconds": 12.4
+    },
+    {
+      "suite": "check_learning_catalog",
+      "exit": 0,
+      "seconds": 1.2
+    },
+    {
+      "suite": "check_design_system",
+      "exit": 0,
+      "seconds": 1.1
+    },
+    {
+      "suite": "check_study_cleanup",
+      "exit": 0,
+      "seconds": 1.3
+    },
+    {
+      "suite": "check_ci",
+      "exit": 0,
+      "seconds": 0.2
+    }
+  ],
+  "studyLayout": {
+    "states": 30,
+    "modules": 67,
+    "lessons": 200,
+    "status": "PASS"
+  },
+  "themeUnitChecks": {
+    "passed": 11,
+    "failed": 0
+  }
+}

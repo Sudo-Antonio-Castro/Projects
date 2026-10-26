@@ -1,0 +1,2118 @@
+{
+  "content": [
+    {
+      "path": "CompTIA/A+/1201/Local_Networking_Hardware/index.html",
+      "lessons": [
+        "da7f870e7a24a74b9471deb40deea0d0ca36adc9c89bef71b46e22bd48eea96e",
+        "9cd1329c5ca987b9abfc0e3e354b73343e4655c16b315ea21c987e000d33d371",
+        "9b6c844c3582df101b5688dc578067c122c6e20373c556ec74e0beee3b164e89",
+        "8511651e82bc262cdbaf5beebdb6743477b7d26c015dcc9d41391fc043a7d682"
+      ],
+      "scripts": [
+        "5c41fd932562f866e0e1053e57e24b0d1e627fa1dcd5020436f8ae6e1d5dcdb6"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Motherboard_and_Connectors/index.html",
+      "lessons": [
+        "3db703e4a0acd0917da645b53b842f25143ae64ead97618ecdb37dd6de815e49",
+        "3bad7a028799b109bad01402cec3e2ef299d9511c23020babc90d891947d0e17",
+        "52fa9a35c6604409af5ef323380d054a0b48c8977ad64ba300c0fe40e21db4e4",
+        "5d0a619e8d7df560d21254a1a174ca36683d37cf87eb4e1306d8739760c74265",
+        "ff5f78464ffaa619deb34b0fe12076d5d162360d6d4e6bf6a3ba3392a717f694",
+        "dd0a85771e9561ed315fdc1fca559129800837d1cc60f2c52cd91da979791db9",
+        "9abf63ff55b5fe22b47521050fde0c635342a42ff19d4f4e4d52c69f0bb531e0",
+        "a7b036ed790d367f10db5987d4fbac97a7ee35664de15dc9f5e226e8870b4bef",
+        "80d3fb85046bc68c800df934224d89ba2132592974a87586b08aa54753db0162",
+        "d51cc00022b7cc18369da6918b02fe5200329c4e300c12424a869c01abb722d1",
+        "b8d8b6ca9d1f15fa7a23b24b1f650801be613cf7c77a98bf84201bd6aa81228c",
+        "de3de60e4ad7fb7b4cb1fde3c2e48a90bc570d33292cccc8e465adaf2d8da65a",
+        "8ba29d00046bac9b79fb522d64b198e1c18db5ca43a92ba8e87778f7fbaaab63",
+        "eec3e011859b69aeea344f0986a822b4d1536f61447c136aea1a573aee9dd50d",
+        "a287a34584207cd2be826b3ef25aef9a2048d9f6310c01c857c24ee6b0a95778",
+        "c4dbe4516c9fdf924ad171c71bdd72f8d3690a3f866722b22e436ec62ece190d",
+        "d23a10bec7e6af14dcf3ae8cda0e971621455c162f5e6551cf4a447e32bc1fea",
+        "9d803eca2629ece3deb23283821027886d82e10292aa2dcb80ec737f76324826",
+        "f2d269d6876c5b5bd42d066fc5be67f3bf5ebeecc82de21f51595184d207afe6",
+        "8772e8629bb0a7fe4889613f9bf17bcbca8cc10ecdf66524d3087b9752b813a5",
+        "856d5bcce1cafd8fadd12c3746b8b2219445794f6fdcd256d2e8f4336de5f0ac"
+      ],
+      "scripts": [
+        "168f4623dab9e7a3fd34c15bd6660a6efc62488ab111d574dddf92207ba3f623"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Network_Addressing_and_Internet_Connections/index.html",
+      "lessons": [
+        "08009bd0e54f856de798e747cd9ae0b2d318fcce626bf27717e01c58a536e2dc",
+        "a4ab8d3e97ec34c6174c8e6a99ce5cc258b94f931bb0049282a2190d95051bf9",
+        "a7e19cc7946a0ae114d8f2b4045a8313f0a8a67cde229af7be9f9666b19776a3",
+        "fb1053f363b2ae4b0ec06bfcbecb4b8d17255a4028a0c828b09b91126f666786"
+      ],
+      "scripts": [
+        "6d325a9536a8068f193511a7b6858f3b0d92eea62cf4fd5351f767069108141d"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Mobile_Devices/index.html",
+      "lessons": [
+        "945f5696a61ae79007086e136be208b6f00948d0ceb7ca53d9df7eb58a3a0b6e",
+        "01db88e3098e17209d4452cea5f584248995c27d63adcca5ccf02115a8c1a174",
+        "e3a92469230d1fb3ff874a556826281d0e69a379b8cd3bdba8941e07ca364b93",
+        "f408aaf06b0492178a6e3ad103f212db1c80214fdb482f9b0e99d3a79d3f521b"
+      ],
+      "scripts": [
+        "498c8577003dab45e529c80b15f6ee48b0a6cc9d9cf29b210d7e9444bd838c73"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Network_Services/index.html",
+      "lessons": [
+        "25a94afc96ea465e628b105ad82d2bf6f658f3cfdcf9e579c264415d89cc44b9",
+        "b5ee9437152994c4a33d8f9e7e13958362656c00d2e8468e752d41d8f2134302",
+        "954c7f94ec81e00d034266bb7c9d00ceb19a33dfb2a16b63fb38998129ea3e6f"
+      ],
+      "scripts": [
+        "a2ee8c738dc6f6319a90c46b8238cc3550f37ced930028fb2e10f5e668caeac9"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Print_Devices/index.html",
+      "lessons": [
+        "c284793e89525f8dc64b694b920c64ffc9e3bf3191c5d73f799d892bac375e09",
+        "1a8d3d3321ef5ff7104316add4287a5188812bdbb169d5d02b5848b490fc1f67",
+        "c8d4839cac47065d3197bad6dbbeda65430f6da4d616c6cc6f4f0963e9e0b35b"
+      ],
+      "scripts": [
+        "731f694e75b67b501b552806266452df774c269f53aaaf656718f039c564029d"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/System_Devices/index.html",
+      "lessons": [
+        "6d235fc3820598a1d0dbd4707c9c12175a179d7cb900f1b928bb523e05174204",
+        "162d754ae07af760e0cbaf5075dd9e925d5a76bbc1fb7f60a42e486f9e3ed4ce",
+        "6610982b19e6e55c9a960049dbf12e4ac072e984f0846275af1a2ddbde9dccec",
+        "442bdd6cf67e3d95a18f5dcd3bfba75863e8ab5ba0f38d5b7a9b7f19115912a6"
+      ],
+      "scripts": [
+        "817000cd102975bb1a74f0c616bb779e2b0649e2bf58dc78754165eee60760f1"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Troubleshooting_PC_Hardware/index.html",
+      "lessons": [
+        "9f427a5faa306d728b28c73d31b20cdaf637f2b6f6a919bff513ef65ea3e63f4",
+        "3e270449bf3ace23d45ef5bb3dd821cc16cc4af169b5043335391b50406c7f48",
+        "f333bc55ce5e2689f7d982dd334e97d6fff4cf32c9ad8b6e71c0c3f7f999a19e"
+      ],
+      "scripts": [
+        "c9e2c3f0578734f349edbb08baed3dabe31ff3a73ce231bf35ad0e06534d70df"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Virtualization_and_Cloud_Concepts/index.html",
+      "lessons": [
+        "1a46d61785f8faff6bc1b76716168a62c11d5adf664309850fbbf13a963b961c",
+        "663448b78bad4ca87531ba95163a19ff6f26a020371c501c6a421c4e5e5d4a9f"
+      ],
+      "scripts": [
+        "750f52f926cdf879325a5ec1e7c8968d501d0dc8be1641658e7b3af1c71ef674"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Backups_Data_Handling_and_AI/index.html",
+      "lessons": [
+        "d8801f7211efe8cfa567f30111e444dcbd20b4e649bc5104bc87aa8765592d49",
+        "13f7881ea5c0e53a199362fdab18dd8e7b76ed5492d8ae91cb1d6da879e68e2d",
+        "fb955566e033584830a7edb302000a08bc257b44b9eb8594b4ed1f2564d72a43"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Endpoint_and_Browser_Security/index.html",
+      "lessons": [
+        "efa36d7cb881dbaa8812d07b9114851b181553828166394c50fbe19ddd4666bc",
+        "57e6adcc86b79e683903208fa6694618192fb4afe65325047d9a2c668a157f85",
+        "1fd620230e9cdf8b9b055dd09356522c8f834468467cfdcfa5fc1896556be77d"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Linux_and_macOS_Support/index.html",
+      "lessons": [
+        "860b0c4b30d6d6a11c34be0d425859d797a99a7ec319d406044b3e63dd00812f",
+        "0fa84a5651ca9e88ceeb87ca5179306a3633b3f57a66b543949110b2d7f7aff4",
+        "2d1aed94b914d6afe0cdcb6ee810f975cdcd5761bd08a36aca837f52f592d42a"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Mobile_Software_and_Security/index.html",
+      "lessons": [
+        "547bbffcdb8824f23c808fd516b6f5e86b6891dcfa37c7ef574d1b198b715beb",
+        "c0667203a0a4dba75c90bc29b4620684625a2f03d3d3e3fccd8be5559f909e06"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Operations_Safety_and_Scripting/index.html",
+      "lessons": [
+        "0500c91c3d6b25883fae6deb56540732d60a5994254a08a5833359ab8c89042d",
+        "f97bcf95f1fe68cb9243d3368a671270763ba466e2434c9e225cfb1e0bdc1879"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/OS_Installation_and_Upgrades/index.html",
+      "lessons": [
+        "380456689b6ed77de1f4223d5164c809f7b073bc24f2d79681046252914cd2dd",
+        "f1acb19951cba5088e384106a5950aa63225d9b64d177b1f1b7b41b28d931572"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/SOHO_Security_and_Threats/index.html",
+      "lessons": [
+        "7aa23c56b4d630ba765fe57c7265108c38e82fa453adf8dba12c132c485c100d",
+        "22f176fb60561d0028b62024ab2c0de5b6dd1d11290f9f8c10e18572c7af8ffa",
+        "fd433930e3e993a8aef2619cad09b27cafd528a4724a4c3dc3652bd148e8fe89"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Support_Procedures_and_Communication/index.html",
+      "lessons": [
+        "82710cf113715e2aaba161de1d3ef130326badfbba53fa215aefb93c256832da",
+        "cbfad3ebe94aad219762e893e4671e7366cdfd9c3c2c9865433a915b7424664e",
+        "d909f7979a008a823195c17ef1c27e893e1c6fc087a93e1e7c51e579de042994"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Security_and_Sharing/index.html",
+      "lessons": [
+        "1330dae52aea101afc5c3b9cab5e6e1b8ebfa34155bde7659f6d9d8784ba0a2b",
+        "77e0f33ced3a960d0ff3d9ad56ebbaa18f5ea7459900e1f7fe255d6267fc6757",
+        "8fbfb8a088f53e5e46a0fca7bf50be8c8b1ca7d511393aebf9eb0def150c99db"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Setup_and_Configuration/index.html",
+      "lessons": [
+        "ffb8bc3e1ee5e8c144082cffafc24fbc55c07fa15eab77f91afe77e2ad50682d",
+        "7f82c47999889671634ce68ffd03e68936d233c235beacfe172e8d6a03444b80",
+        "4fe5b140708614479b420f38cc6d561401e061650522bd68c77f54a7ab3d92a9"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Support_and_Troubleshooting/index.html",
+      "lessons": [
+        "296264aaa3881afde83222403e083b467b72006786c121ca33a042a871d9dbab",
+        "23bce4127dd368e1323170cb89da8de3ebc7c48a41c23496b5afbabb38b1b0da",
+        "7733b0ccc2b41b4608a865163feec0a4c4b409e7872d6fdb2382b5d73a826569"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Tools_and_Management/index.html",
+      "lessons": [
+        "5f732a2b04410dde7caecfd7a7a6afa2341a59ca29ba47addfb96171e282872c",
+        "9f869e3768f7895d5e9f5e9cb98f5d03f7729c00ca46b05809d1d4acf13e528a",
+        "d794be3b0ccdb76d2f259477db49d095739724cf5b3f0423c91d5a6640101a21"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/bash-scripting-git-and-automation/index.html",
+      "lessons": [
+        "73c939d1ee035674fa10462ce08f06f9ed1072896895b6168d3fba035c3d9055",
+        "a1c12c164ec7aaebef701612ac15ba06b7f36e350722d27e3877827dfa3e224d",
+        "833cba1d772b780f5cef8f314311bdb289125adb3b8bf2b759e04c20b8a57230"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/bootloaders-targets-and-shutdown/index.html",
+      "lessons": [
+        "f5b7acd5b8a6b24f4d71f1b7a16a5f3fe4be59bfbbf485e8dab9c1334169f364",
+        "2b1bc64c631e30748f2098a6a25991fda8b5b77605497fc4b896bd761cffdb8b",
+        "31ed51c8405a08d95b786aa8e0565f0ce8451a1eb6fe6921fdd7f89c29b3e399"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/cloud-containers-and-virtual-machines/index.html",
+      "lessons": [
+        "39b363e8e4876068226cf95113d685553ebc22bed27b5445761c594ce0311fe5",
+        "84464066914294e84ce3d8f4b03db2c8cf22c6492af13148a828eb086b072f6a",
+        "2f0f1d3c3cc944d293b2c957458c862a76df07d5819a32247e811d876847913d"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/desktops-gui-access-and-usability/index.html",
+      "lessons": [
+        "f6771f702f645377d5b595c49caa8bb68ae2438843e9192684724c37f4cdc19d",
+        "c187280f07399c12a32eb1fd7d6d4935bd2b046ae4d5f9a8652a3ed3acf902fd",
+        "bfa58101908f35dac5885ef7cdc4a5d6e9a51dbdb0b30f6d9b07020b93cd9f40"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/hardware-drivers-and-kernel-views/index.html",
+      "lessons": [
+        "cfefcf41180af1330aa13df1d2364c15b681904120656b3f0cb37100a44cab71",
+        "3f413fb0cc4a57a843b3fb21213939a581e01226551d6c621d61928697821145",
+        "0a86f1eb06710fa1813a546ec6fc34bfcc05d27f6f3b71c235f68878abf3fb49"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/installation-planning-and-deployment/index.html",
+      "lessons": [
+        "98852a1e8dc9b24ff8c8fefc1ddd9a4f0f6f7ee358407937f235fa37dbe549f4",
+        "f2a130d4f6ba9a955e04d9fc4a49bbd0aa8d405624f4194221c65087d3e68656",
+        "2c790c9868369c12cebb3bd0e918e6333364f68693cd21a7570ae898c2a7cf23"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/linux-landscape-and-server-roles/index.html",
+      "lessons": [
+        "8a77b174f3ed8628990f08bcdbd78eeee46b04618b0d16ffbe62b38e3ee511a0",
+        "729e64225f086666085037cef7c2a1ca5003223ddb906aebd680570bb781a084",
+        "de250e93827a63f0c0398ad44294f359236e630ad5ff30f4a031e71321391fe4"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/logging-monitoring-and-performance/index.html",
+      "lessons": [
+        "a9543ed22d85774855fdf1835906ce66f42037448d6e29d5f190c0ca1a196acd",
+        "218982ef8c59bc1d66b0385379ea2d764269a64d485a4a79b76e2126a534a396",
+        "c340e5c42e07236452e648b2dd014d2d0931c7ef5d7dab37cc3e1509aeb3bb4a"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/networking-routing-and-firewall-rules/index.html",
+      "lessons": [
+        "d13bc4c0e992139b26d9bbc910025aa9f239f21d522d9ed87fb4f4adf34b11e3",
+        "e5d38cf685a1eff97a7de6e5504d49f7841c3a256cb8ad8f9737d7af3fa31358",
+        "975b8501935cd38319c4c6ad97ffc9f966571ae026fc3526c13c5fa5210e8697"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/package-management-and-software-sources/index.html",
+      "lessons": [
+        "621acea76f421d55539172f6af0d02a24a6b2946aa7eb1a6df3ace3f1a7cc01d",
+        "a4dc1d573c6dd711dc84105d71ce7a0ec9519399e3a38b4fefd4ac6a60190c64",
+        "c26063a17aa4d03601df1ecbf007821891e7c6ff9f5b237443c29a3444ab30ec"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/processes-services-and-job-scheduling/index.html",
+      "lessons": [
+        "9a682d92f24564d5a84c00c751b0decb232e6c3d3973386336aa055bdff9af22",
+        "69a96ab276e797ffd0186198c527650de126ece344b45cb617c3fe2a109e3f60",
+        "ac7f15370f94ac0e3cea627b8aaaf65bcc44127f2e66e288f83407c84582c5c6"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/shell-usage-and-text-editing/index.html",
+      "lessons": [
+        "712c8f9dc8709242c2ce7ea708ae1a77f98eb23ef804200b3fff5dbe452eb50b",
+        "5c3653c96d53ebefae79b2bd3a48037c5719e1c90f3a602999bf4966d5b65f35",
+        "eb30853e3e1b92baf7475add71f6c6afd99d1e0adeb513dfa4e259806c9a5b81"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/ssh-access-control-and-hardening/index.html",
+      "lessons": [
+        "8c4ca0ae94b47e1e69b5bb392babc98baa411c84aed35a1f574dd611d3f03795",
+        "ad5d127319959ae7f541bbfb66c770c526912cf7ef30037f20737692ad44202d",
+        "aab28c2efeb389aaf64ef4da8f45a9bc79481d77b41592e59e8e143f8920dfc8"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/storage-filesystems-and-permissions/index.html",
+      "lessons": [
+        "d9b883c83f1e499a5937e65e65da6eb6279d18c45ec3ca91d54c3b64ce2b29ab",
+        "e29dd224a4d72567c7722dea215b730cea4f23925629b9bfcfc709d13c09e1c4",
+        "8e3aea745b3557f815bacdd0de00c1374e6144d7a1764f08c63d2ce87de35742"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Linux+/modules/users-groups-and-account-security/index.html",
+      "lessons": [
+        "385b6be1b33ef30b4f582c21a5b36034c2cf57e2604cdf6cd5a2c173db85c985",
+        "420004ac1acc49d25cef9185590b5883fe7e78066a9502c2f206ce36858e7721",
+        "bbe11bab0a62a1a2b713bfc7c3623ded7e356705d98de432118d16d5bbb74c25"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Application_Web_and_Email_Security/index.html",
+      "lessons": [
+        "c13c86c6c75144f068f5e4f6ab6f910e0f547f1d62633e01bd18953a145305c9",
+        "525174166d10031aa5e312eaab90b7084ce53586171988ec64deffb579418dc3"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Cloud_Security_and_Zero_Trust/index.html",
+      "lessons": [
+        "99bcbeba95a6990dc0c0ba0eb184eb01a4dc27f0a34a418dc9d3bf73960200d3",
+        "40cfd1454d5b5ab9049b20c1cd300fa1bc7a6c6d5f03478909c7d163357c0b52"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Data_Protection_Compliance_and_People/index.html",
+      "lessons": [
+        "ad5272badbdba5a069262cfa7d6532dcbdf38b5a7b807df5c8c5064fb34a3ef9",
+        "f4d2ad0ac63dab9af354f10ec094cbfdde91fdcebd95e61ce5e49479c319086d"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Encryption_PKI_and_Secure_Cryptography/index.html",
+      "lessons": [
+        "3945cd6a58983b3d82dc982555e3f711c4855ad00c0c9f2174183b3334920fd7",
+        "ad92a145719ba00b3aa8271f55612c227c69cdcda32b49bba9c7bd1f79ff63e7",
+        "cdc90ad79055a8fd667f155230fe96eedd7af72753a5ff084bfad31d657a8e13"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Endpoint_Protection_and_Device_Hardening/index.html",
+      "lessons": [
+        "0bc4049761ef90c4e8f6ba90093b64ee7c9bae099816fc666f70de677db734d6",
+        "af420c07f1e1aed37069912053a4ee281ce19a1449e43645574c0268430e4eb2"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Enterprise_Network_Defense_Architecture/index.html",
+      "lessons": [
+        "1a8ccdac80e6e732911f4350c149cbb599fa5b276fad558eacfb861a84242117",
+        "261ae7f8899a47287e954bca75af59e284c0f5bc6ff6ed57db102b8ca10510f5",
+        "64a99bb13ec5e3f545152ed3018509cf2e11970b98236632c9391f6a3c1c9515"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Governance_Policy_and_Security_Operations/index.html",
+      "lessons": [
+        "920dcfc52c476eb3ecc909f3cf84d07c8d03b0c8884c371a059c14d39c699a93",
+        "ea042c088b04a9bdadbb336988bc06764d0933e12719418bb812045cb20f83a2",
+        "8af8544d6946a1fb8167711348f0fdf174a60fc548355b758624833120ef63bb"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Identity_Authentication_and_Access/index.html",
+      "lessons": [
+        "4efc4f9f5cf23e0660f5ebfe97640255f2e70dd23a12e823b23db09d5bf36e24",
+        "80ce37da53522fe779c01546ab4da705ee68eb86666d29b11c183b1bc5f2c8e4",
+        "b91a7723d80b75f115b21f19329903e3a03531c71b420c40241ffa84c42a06ce"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Incident_Response_and_Security_Monitoring/index.html",
+      "lessons": [
+        "12824ba8690de2fbca8a4f54155ba6c7122a6e5c664d752d25dfd7db4824f42b",
+        "cf6ef0c17c17ac985c09b75f9ca47b1b5d524b18234df4eab490fdc08e2d20e7",
+        "186c703b022555c8debe8e0fce5a7361d5dc502d592b805f8775cd190a2bd26e",
+        "ea385c08ccf431c17c72429a0dd914f16dd1656a17fe112965d0069867bf01bd"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Indicators_of_Compromise_and_Malicious_Activity/index.html",
+      "lessons": [
+        "00b89bdecfc46a5f537d2b96ab6f9a53973c0377bf773032d8af584d4a4dfad2",
+        "9defb8faca4e0023c0671d090fa2354cb1971e0b64f87abcd0f5ab5c832ee8fb",
+        "26223ca29bece34758e4a1312487d18684f9952439007c51903649974b82776b"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Network_Security_Baselines_and_Hardening/index.html",
+      "lessons": [
+        "9de4109a41b46ed734a9d699c3b7ab9f9525404eda0f03f9e30e45845abb9dda",
+        "31514f1da8fca1cbfedce84b63816dc273973f228022de9c53d10ef9706a54d1"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Resilience_Redundancy_and_Physical_Protection/index.html",
+      "lessons": [
+        "b0eebaf0a14e3b8c19b421775e76d32b3ece1a86b00019054793103489d1c5dd",
+        "2c00db31e879e137309e8d7caca6a517efaa74031ed7463c01537d0b54877eac",
+        "2ef8d8b02287e819572e2e32329207d2a3d45c7b62baf9105d8e7c6f9836b208"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Risk_Third_Parties_and_Assessments/index.html",
+      "lessons": [
+        "99f9428ea528bd9517cfe24f7bbd664d50751e1c0239d2960f1330b9cb0fcccb",
+        "8ce34db170604f8b5b910ed226b43b545e7cffef72a95f2a449b746411063035",
+        "2d8c86a8d3173ae26cff31b3d79dc029a91e5e171064da56fea59cd2fa43ae4d"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Security_Foundations_and_Control_Models/index.html",
+      "lessons": [
+        "d5821232506fe77f6dc4b4e4c776c71a24b95b71ca87ab61bfa2f0e8ab42fa93",
+        "ceee5da9b1a91a5450924dafb29ec1d8323c455a8db448a525569dbde710a698"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Threat_Actors_and_Attack_Paths/index.html",
+      "lessons": [
+        "a01ce59c1101eb9f0bedc8e2964aaa92245b9bb559e8454517d872085dcf8e79",
+        "0b2c25c6631fcee2941b891274f14422f20f23a82e6d8d3c2ffa63dbdd607a08",
+        "a28f5ae27749b5b83b9194d391d31c8a837c001584b0964b00eb9e378592959f"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "CompTIA/Security+/Vulnerability_Management_and_Remediation/index.html",
+      "lessons": [
+        "1a09349fda196e0bb332056722b402d2ced53a4a814fc8eb3c5a510d81121089",
+        "6fd13a8d2094c2e33ffc4be9ecfbb1ebed2dd84984a9c555869cab9a98da740b",
+        "e1baa56de13d4ae111362f4c441ad63f4834e63a4c50ce5ea314ab3590084dae",
+        "955eb30796e4f64584b4ae650551ae282ce86ff9f21b38e7cb8104f511b0b256"
+      ],
+      "scripts": []
+    },
+    {
+      "path": "EC-Council/CEH/Cloud_and_IoT_Attack_Surface/index.html",
+      "lessons": [
+        "b83f60b060f1e6b72b2af7a7c42a71abe5c5f3588e171799b381a1b131c2dbdf",
+        "625582f135822867e83110a5f507133ebbaeec440d86552b5b9594e43c95eb51"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Cryptography_and_Key_Management/index.html",
+      "lessons": [
+        "2907a468de60b5cd51acb8218732c9e46c1e301f057827c94c5c8b32902991a8",
+        "dc64e36826bf0a5584c967fc9d940ab832d02839a36b9508cef4d869f9b94f6a"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Enumeration_and_Target_Profiling/index.html",
+      "lessons": [
+        "7e5e78f491c8d6e73dafb0e162e61349b2517d22ddfce244efc88ed3d8cc239c",
+        "eb53078dbdf7ec049e2237936943344fe96fede32ddce8cd35997514e2b32435"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Ethical_Hacking_Essentials/index.html",
+      "lessons": [
+        "d741fde24b063446d51fb9469866ca115d683299167b4498bee41c432605cfd8",
+        "3016e0b9213965b1c4ec91444e80cb53375e37d1df0474f37c44cb7b4baad8f0"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Human_Factors_and_Physical_Access/index.html",
+      "lessons": [
+        "14ac531fe1992f955a187d920447fbb978eb8061fd20432b146b0c25cdc20467",
+        "4307a0a511786d66fde8282e7397517698ea94cc88bf5da2d0e6e52ea8c7ef3b"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/IDS_Firewalls_and_Deception_Systems/index.html",
+      "lessons": [
+        "5617885aee6b66266f65f4ccd5836752e2290924e5d81d0dd06ef7041781b905",
+        "a42fde7e088030267eacaf189659ccf9d53dbf9817d5894cebc5f227d1df7611"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Malware_Techniques_and_Countermeasures/index.html",
+      "lessons": [
+        "7c4e0c57d2200e4ebd4eb6e5ab105a15363e6858a6a8cb502de586820361de15",
+        "0eef112bb20a02c25b490f3db788fdd382909fd0bc3daeb045efa8d64f2bba71"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Penetration_Testing_Foundations/index.html",
+      "lessons": [
+        "a73e1ce66140ce7ca6968b6ab146834480ef4e15affc2442926a1f207ff138ea",
+        "568390800009a97a68d72f346a672e756e9b8725cf9934383918664e8725b7ba"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Reconnaissance_and_Footprinting/index.html",
+      "lessons": [
+        "7da4d3aaaa7fa6936c505f18a7f1ea5b2a506b951f2df95891133ecf23e77d60",
+        "fe8ea84e5aaf0d7a1b739347b6be135e08aa612d155472dfe534260cd3acb432"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Scanning_and_Service_Discovery/index.html",
+      "lessons": [
+        "3d1bc0ca41f219c7df39d413dea8907045fabdcf1fb2923b881119382e792f43",
+        "bedbb1716654ae9d8fd6a399e942c8c9e6cdbb15817884eb5db8888c78dfc2e1"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Sniffing_Hijacking_and_Denial_of_Service/index.html",
+      "lessons": [
+        "cf5d49b46ce5fe8d2826dc7745cf17114a7a7a031f43e7e0e602b530b8eb47aa",
+        "6163d33957f7d73f149932950fdc6bac8bcbfaba873221065fefcf89fb75703a"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/System_Compromise_and_Privilege_Escalation/index.html",
+      "lessons": [
+        "f995c605be1a0d59c5a1e402608b50764d27fad1f44978627b1c5a8cb1588c2a",
+        "02e5481e2d01e5eceb5b499e431efed17a23d493c7f3dcd30a067ddc3194e3a0"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Vulnerability_Analysis_and_Prioritization/index.html",
+      "lessons": [
+        "e94fc9a491ba6afd52ec749f54bc7a64ce73f44a208a024e1282f47706dd721e",
+        "50eca6763a522f173240f4bdaa461f558b440b2d1e060bc8ada580eb554a625d"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Web_Servers_Web_Apps_and_SQL_Injection/index.html",
+      "lessons": [
+        "c6871bb4ba88853bd7167950300a81a3032aef55b374b9b53f62275664353509",
+        "0c50c327745ab2dea515215142551609404948da967bc3040ef90e14273d4e81"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Wireless_Bluetooth_and_Mobile_Security/index.html",
+      "lessons": [
+        "bb9e12c5c08d772e7716d0a4e5f83464c70e0c268b75efb035cc9051b70477ef",
+        "b6072eb7780928c4147050bd20db6f0f37ca0accc55d719e23d42f656d400ce4"
+      ],
+      "scripts": [
+        "698a37e1c4986a800dc4f1b3b3575669aca9b4c6af5e44346aad434787c435a5"
+      ]
+    }
+  ],
+  "checks": [
+    "67 modules: lesson source and inline-controller fingerprints recorded",
+    "All 67 source breadcrumbs have course/module context and real fallback links",
+    "a-core1 screenshot matrix",
+    "a-core2 screenshot matrix",
+    "security screenshot matrix",
+    "ceh screenshot matrix",
+    "linux screenshot matrix",
+    "course-hub screenshot matrix",
+    "core2-hub screenshot matrix",
+    "security-hub screenshot matrix",
+    "linux-hub screenshot matrix",
+    "ceh-hub screenshot matrix",
+    "module-overview screenshot matrix",
+    "course-resume screenshot matrix",
+    "a-core1 widths / all themes / both languages / history / prev-next / saved-place resume",
+    "a-core2 widths / all themes / both languages / history / prev-next / saved-place resume",
+    "security widths / all themes / both languages / history / prev-next / saved-place resume",
+    "ceh widths / all themes / both languages / history / prev-next / saved-place resume"
+  ],
+  "screenshots": [
+    "a-core1-390-light.png",
+    "a-core1-390-dark.png",
+    "a-core1-390-noir.png",
+    "a-core1-1440-light.png",
+    "a-core1-1440-dark.png",
+    "a-core1-1440-noir.png",
+    "a-core2-390-light.png",
+    "a-core2-390-dark.png",
+    "a-core2-390-noir.png",
+    "a-core2-1440-light.png",
+    "a-core2-1440-dark.png",
+    "a-core2-1440-noir.png",
+    "security-390-light.png",
+    "security-390-dark.png",
+    "security-390-noir.png",
+    "security-1440-light.png",
+    "security-1440-dark.png",
+    "security-1440-noir.png",
+    "ceh-390-light.png",
+    "ceh-390-dark.png",
+    "ceh-390-noir.png",
+    "ceh-1440-light.png",
+    "ceh-1440-dark.png",
+    "ceh-1440-noir.png",
+    "linux-390-light.png",
+    "linux-390-dark.png",
+    "linux-390-noir.png",
+    "linux-1440-light.png",
+    "linux-1440-dark.png",
+    "linux-1440-noir.png",
+    "course-hub-390-light.png",
+    "course-hub-390-dark.png",
+    "course-hub-390-noir.png",
+    "course-hub-1440-light.png",
+    "course-hub-1440-dark.png",
+    "course-hub-1440-noir.png",
+    "core2-hub-390-light.png",
+    "core2-hub-390-dark.png",
+    "core2-hub-390-noir.png",
+    "core2-hub-1440-light.png",
+    "core2-hub-1440-dark.png",
+    "core2-hub-1440-noir.png",
+    "security-hub-390-light.png",
+    "security-hub-390-dark.png",
+    "security-hub-390-noir.png",
+    "security-hub-1440-light.png",
+    "security-hub-1440-dark.png",
+    "security-hub-1440-noir.png",
+    "linux-hub-390-light.png",
+    "linux-hub-390-dark.png",
+    "linux-hub-390-noir.png",
+    "linux-hub-1440-light.png",
+    "linux-hub-1440-dark.png",
+    "linux-hub-1440-noir.png",
+    "ceh-hub-390-light.png",
+    "ceh-hub-390-dark.png",
+    "ceh-hub-390-noir.png",
+    "ceh-hub-1440-light.png",
+    "ceh-hub-1440-dark.png",
+    "ceh-hub-1440-noir.png",
+    "module-overview-390-light.png",
+    "module-overview-390-dark.png",
+    "module-overview-390-noir.png",
+    "module-overview-1440-light.png",
+    "module-overview-1440-dark.png",
+    "module-overview-1440-noir.png",
+    "course-resume-390-light.png",
+    "course-resume-390-dark.png",
+    "course-resume-390-noir.png",
+    "course-resume-1440-light.png",
+    "course-resume-1440-dark.png",
+    "course-resume-1440-noir.png"
+  ],
+  "visualChanges": [
+    {
+      "file": "a-core1-390-light.png",
+      "beforeSize": [
+        390,
+        2651
+      ],
+      "afterSize": [
+        390,
+        2673
+      ],
+      "changedPixelsInCommonArea": 368744,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2651
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core1-390-dark.png",
+      "beforeSize": [
+        390,
+        2651
+      ],
+      "afterSize": [
+        390,
+        2673
+      ],
+      "changedPixelsInCommonArea": 369221,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2651
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core1-390-noir.png",
+      "beforeSize": [
+        390,
+        2637
+      ],
+      "afterSize": [
+        390,
+        2659
+      ],
+      "changedPixelsInCommonArea": 362225,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2637
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core1-1440-light.png",
+      "beforeSize": [
+        1440,
+        1271
+      ],
+      "afterSize": [
+        1440,
+        1216
+      ],
+      "changedPixelsInCommonArea": 443979,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1198
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core1-1440-dark.png",
+      "beforeSize": [
+        1440,
+        1271
+      ],
+      "afterSize": [
+        1440,
+        1216
+      ],
+      "changedPixelsInCommonArea": 444429,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1198
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core1-1440-noir.png",
+      "beforeSize": [
+        1440,
+        1271
+      ],
+      "afterSize": [
+        1440,
+        1216
+      ],
+      "changedPixelsInCommonArea": 436685,
+      "changedBounds": [
+        0,
+        17,
+        1440,
+        1198
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core2-390-light.png",
+      "beforeSize": [
+        390,
+        2140
+      ],
+      "afterSize": [
+        390,
+        2162
+      ],
+      "changedPixelsInCommonArea": 313449,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2139
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core2-390-dark.png",
+      "beforeSize": [
+        390,
+        2140
+      ],
+      "afterSize": [
+        390,
+        2162
+      ],
+      "changedPixelsInCommonArea": 313598,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2139
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core2-390-noir.png",
+      "beforeSize": [
+        390,
+        2208
+      ],
+      "afterSize": [
+        390,
+        2230
+      ],
+      "changedPixelsInCommonArea": 306996,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2207
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core2-1440-light.png",
+      "beforeSize": [
+        1440,
+        1082
+      ],
+      "afterSize": [
+        1440,
+        1121
+      ],
+      "changedPixelsInCommonArea": 382532,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1082
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core2-1440-dark.png",
+      "beforeSize": [
+        1440,
+        1082
+      ],
+      "afterSize": [
+        1440,
+        1121
+      ],
+      "changedPixelsInCommonArea": 382679,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1082
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "a-core2-1440-noir.png",
+      "beforeSize": [
+        1440,
+        1068
+      ],
+      "afterSize": [
+        1440,
+        1121
+      ],
+      "changedPixelsInCommonArea": 404695,
+      "changedBounds": [
+        0,
+        17,
+        1440,
+        1047
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-390-light.png",
+      "beforeSize": [
+        390,
+        2074
+      ],
+      "afterSize": [
+        390,
+        2096
+      ],
+      "changedPixelsInCommonArea": 313991,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2073
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-390-dark.png",
+      "beforeSize": [
+        390,
+        2074
+      ],
+      "afterSize": [
+        390,
+        2096
+      ],
+      "changedPixelsInCommonArea": 314123,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2073
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-390-noir.png",
+      "beforeSize": [
+        390,
+        2177
+      ],
+      "afterSize": [
+        390,
+        2199
+      ],
+      "changedPixelsInCommonArea": 308836,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2177
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-1440-light.png",
+      "beforeSize": [
+        1440,
+        1102
+      ],
+      "afterSize": [
+        1440,
+        1121
+      ],
+      "changedPixelsInCommonArea": 377136,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1086
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-1440-dark.png",
+      "beforeSize": [
+        1440,
+        1102
+      ],
+      "afterSize": [
+        1440,
+        1121
+      ],
+      "changedPixelsInCommonArea": 377263,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1086
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-1440-noir.png",
+      "beforeSize": [
+        1440,
+        1088
+      ],
+      "afterSize": [
+        1440,
+        1121
+      ],
+      "changedPixelsInCommonArea": 400199,
+      "changedBounds": [
+        0,
+        17,
+        1440,
+        1086
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-390-light.png",
+      "beforeSize": [
+        390,
+        1894
+      ],
+      "afterSize": [
+        390,
+        1949
+      ],
+      "changedPixelsInCommonArea": 212676,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        1879
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-390-dark.png",
+      "beforeSize": [
+        390,
+        1894
+      ],
+      "afterSize": [
+        390,
+        1949
+      ],
+      "changedPixelsInCommonArea": 212876,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        1879
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-390-noir.png",
+      "beforeSize": [
+        390,
+        2031
+      ],
+      "afterSize": [
+        390,
+        2086
+      ],
+      "changedPixelsInCommonArea": 201949,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        2016
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-1440-light.png",
+      "beforeSize": [
+        1440,
+        1007
+      ],
+      "afterSize": [
+        1440,
+        1089
+      ],
+      "changedPixelsInCommonArea": 289522,
+      "changedBounds": [
+        0,
+        14,
+        1440,
+        982
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-1440-dark.png",
+      "beforeSize": [
+        1440,
+        1007
+      ],
+      "afterSize": [
+        1440,
+        1089
+      ],
+      "changedPixelsInCommonArea": 289705,
+      "changedBounds": [
+        0,
+        14,
+        1440,
+        982
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-1440-noir.png",
+      "beforeSize": [
+        1440,
+        993
+      ],
+      "afterSize": [
+        1440,
+        1075
+      ],
+      "changedPixelsInCommonArea": 277347,
+      "changedBounds": [
+        0,
+        14,
+        1440,
+        968
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-390-light.png",
+      "beforeSize": [
+        390,
+        1373
+      ],
+      "afterSize": [
+        390,
+        1394
+      ],
+      "changedPixelsInCommonArea": 195700,
+      "changedBounds": [
+        0,
+        15,
+        390,
+        1368
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-390-dark.png",
+      "beforeSize": [
+        390,
+        1373
+      ],
+      "afterSize": [
+        390,
+        1394
+      ],
+      "changedPixelsInCommonArea": 195815,
+      "changedBounds": [
+        0,
+        15,
+        390,
+        1368
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-390-noir.png",
+      "beforeSize": [
+        390,
+        1453
+      ],
+      "afterSize": [
+        390,
+        1475
+      ],
+      "changedPixelsInCommonArea": 195451,
+      "changedBounds": [
+        0,
+        16,
+        390,
+        1448
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-1440-light.png",
+      "beforeSize": [
+        1440,
+        960
+      ],
+      "afterSize": [
+        1440,
+        1003
+      ],
+      "changedPixelsInCommonArea": 236641,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        938
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-1440-dark.png",
+      "beforeSize": [
+        1440,
+        960
+      ],
+      "afterSize": [
+        1440,
+        1003
+      ],
+      "changedPixelsInCommonArea": 236766,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        938
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-1440-noir.png",
+      "beforeSize": [
+        1440,
+        960
+      ],
+      "afterSize": [
+        1440,
+        989
+      ],
+      "changedPixelsInCommonArea": 241283,
+      "changedBounds": [
+        0,
+        20,
+        1440,
+        960
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-hub-390-light.png",
+      "beforeSize": [
+        390,
+        5112
+      ],
+      "afterSize": [
+        390,
+        5133
+      ],
+      "changedPixelsInCommonArea": 476276,
+      "changedBounds": [
+        0,
+        4,
+        390,
+        5021
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-hub-390-dark.png",
+      "beforeSize": [
+        390,
+        5112
+      ],
+      "afterSize": [
+        390,
+        5133
+      ],
+      "changedPixelsInCommonArea": 487888,
+      "changedBounds": [
+        0,
+        4,
+        390,
+        5021
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-hub-390-noir.png",
+      "beforeSize": [
+        390,
+        5117
+      ],
+      "afterSize": [
+        390,
+        5138
+      ],
+      "changedPixelsInCommonArea": 320936,
+      "changedBounds": [
+        17,
+        171,
+        372,
+        5026
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-hub-1440-light.png",
+      "beforeSize": [
+        1440,
+        4009
+      ],
+      "afterSize": [
+        1440,
+        4028
+      ],
+      "changedPixelsInCommonArea": 470555,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3900
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-hub-1440-dark.png",
+      "beforeSize": [
+        1440,
+        4009
+      ],
+      "afterSize": [
+        1440,
+        4028
+      ],
+      "changedPixelsInCommonArea": 521386,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3900
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-hub-1440-noir.png",
+      "beforeSize": [
+        1440,
+        4018
+      ],
+      "afterSize": [
+        1440,
+        4037
+      ],
+      "changedPixelsInCommonArea": 391097,
+      "changedBounds": [
+        123,
+        122,
+        1316,
+        3909
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "core2-hub-390-light.png",
+      "beforeSize": [
+        390,
+        4671
+      ],
+      "afterSize": [
+        390,
+        4691
+      ],
+      "changedPixelsInCommonArea": 501956,
+      "changedBounds": [
+        0,
+        4,
+        390,
+        4663
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "core2-hub-390-dark.png",
+      "beforeSize": [
+        390,
+        4671
+      ],
+      "afterSize": [
+        390,
+        4691
+      ],
+      "changedPixelsInCommonArea": 514488,
+      "changedBounds": [
+        0,
+        4,
+        390,
+        4663
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "core2-hub-390-noir.png",
+      "beforeSize": [
+        390,
+        4675
+      ],
+      "afterSize": [
+        390,
+        4696
+      ],
+      "changedPixelsInCommonArea": 351451,
+      "changedBounds": [
+        0,
+        166,
+        390,
+        4668
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "core2-hub-1440-light.png",
+      "beforeSize": [
+        1440,
+        3479
+      ],
+      "afterSize": [
+        1440,
+        3498
+      ],
+      "changedPixelsInCommonArea": 523761,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3470
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "core2-hub-1440-dark.png",
+      "beforeSize": [
+        1440,
+        3479
+      ],
+      "afterSize": [
+        1440,
+        3498
+      ],
+      "changedPixelsInCommonArea": 575456,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3470
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "core2-hub-1440-noir.png",
+      "beforeSize": [
+        1440,
+        3488
+      ],
+      "afterSize": [
+        1440,
+        3507
+      ],
+      "changedPixelsInCommonArea": 448113,
+      "changedBounds": [
+        0,
+        122,
+        1440,
+        3479
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-hub-390-light.png",
+      "beforeSize": [
+        390,
+        8589
+      ],
+      "afterSize": [
+        390,
+        8609
+      ],
+      "changedPixelsInCommonArea": 771950,
+      "changedBounds": [
+        0,
+        171,
+        390,
+        8589
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-hub-390-dark.png",
+      "beforeSize": [
+        390,
+        8589
+      ],
+      "afterSize": [
+        390,
+        8609
+      ],
+      "changedPixelsInCommonArea": 784560,
+      "changedBounds": [
+        0,
+        171,
+        390,
+        8589
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-hub-390-noir.png",
+      "beforeSize": [
+        390,
+        8597
+      ],
+      "afterSize": [
+        390,
+        8618
+      ],
+      "changedPixelsInCommonArea": 608033,
+      "changedBounds": [
+        0,
+        171,
+        390,
+        8597
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-hub-1440-light.png",
+      "beforeSize": [
+        1440,
+        6201
+      ],
+      "afterSize": [
+        1440,
+        6220
+      ],
+      "changedPixelsInCommonArea": 873668,
+      "changedBounds": [
+        0,
+        38,
+        1440,
+        6201
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-hub-1440-dark.png",
+      "beforeSize": [
+        1440,
+        6201
+      ],
+      "afterSize": [
+        1440,
+        6220
+      ],
+      "changedPixelsInCommonArea": 917646,
+      "changedBounds": [
+        0,
+        30,
+        1440,
+        6201
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "security-hub-1440-noir.png",
+      "beforeSize": [
+        1440,
+        6214
+      ],
+      "afterSize": [
+        1440,
+        6233
+      ],
+      "changedPixelsInCommonArea": 797854,
+      "changedBounds": [
+        0,
+        122,
+        1440,
+        6214
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-hub-390-light.png",
+      "beforeSize": [
+        390,
+        6052
+      ],
+      "afterSize": [
+        390,
+        6073
+      ],
+      "changedPixelsInCommonArea": 573276,
+      "changedBounds": [
+        0,
+        171,
+        390,
+        6052
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-hub-390-dark.png",
+      "beforeSize": [
+        390,
+        6052
+      ],
+      "afterSize": [
+        390,
+        6073
+      ],
+      "changedPixelsInCommonArea": 586222,
+      "changedBounds": [
+        0,
+        171,
+        390,
+        6052
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-hub-390-noir.png",
+      "beforeSize": [
+        390,
+        6061
+      ],
+      "afterSize": [
+        390,
+        6082
+      ],
+      "changedPixelsInCommonArea": 425805,
+      "changedBounds": [
+        0,
+        171,
+        390,
+        6061
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-hub-1440-light.png",
+      "beforeSize": [
+        1440,
+        4617
+      ],
+      "afterSize": [
+        1440,
+        4636
+      ],
+      "changedPixelsInCommonArea": 654961,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        4617
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-hub-1440-dark.png",
+      "beforeSize": [
+        1440,
+        4617
+      ],
+      "afterSize": [
+        1440,
+        4636
+      ],
+      "changedPixelsInCommonArea": 700106,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        4617
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "linux-hub-1440-noir.png",
+      "beforeSize": [
+        1440,
+        4630
+      ],
+      "afterSize": [
+        1440,
+        4649
+      ],
+      "changedPixelsInCommonArea": 585311,
+      "changedBounds": [
+        0,
+        122,
+        1440,
+        4630
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-hub-390-light.png",
+      "beforeSize": [
+        390,
+        6503
+      ],
+      "afterSize": [
+        390,
+        6523
+      ],
+      "changedPixelsInCommonArea": 551977,
+      "changedBounds": [
+        0,
+        207,
+        390,
+        6447
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-hub-390-dark.png",
+      "beforeSize": [
+        390,
+        6503
+      ],
+      "afterSize": [
+        390,
+        6523
+      ],
+      "changedPixelsInCommonArea": 563835,
+      "changedBounds": [
+        0,
+        207,
+        390,
+        6447
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-hub-390-noir.png",
+      "beforeSize": [
+        390,
+        6500
+      ],
+      "afterSize": [
+        390,
+        6521
+      ],
+      "changedPixelsInCommonArea": 390035,
+      "changedBounds": [
+        24,
+        207,
+        366,
+        6445
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-hub-1440-light.png",
+      "beforeSize": [
+        1440,
+        3546
+      ],
+      "afterSize": [
+        1440,
+        3565
+      ],
+      "changedPixelsInCommonArea": 593931,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3489
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-hub-1440-dark.png",
+      "beforeSize": [
+        1440,
+        3546
+      ],
+      "afterSize": [
+        1440,
+        3565
+      ],
+      "changedPixelsInCommonArea": 641343,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3489
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "ceh-hub-1440-noir.png",
+      "beforeSize": [
+        1440,
+        3482
+      ],
+      "afterSize": [
+        1440,
+        3501
+      ],
+      "changedPixelsInCommonArea": 525062,
+      "changedBounds": [
+        124,
+        158,
+        1316,
+        3425
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "module-overview-390-light.png",
+      "beforeSize": [
+        390,
+        4455
+      ],
+      "afterSize": [
+        390,
+        4490
+      ],
+      "changedPixelsInCommonArea": 483915,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        4432
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "module-overview-390-dark.png",
+      "beforeSize": [
+        390,
+        4455
+      ],
+      "afterSize": [
+        390,
+        4490
+      ],
+      "changedPixelsInCommonArea": 485349,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        4432
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "module-overview-390-noir.png",
+      "beforeSize": [
+        390,
+        4404
+      ],
+      "afterSize": [
+        390,
+        4439
+      ],
+      "changedPixelsInCommonArea": 480525,
+      "changedBounds": [
+        0,
+        14,
+        390,
+        4382
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "module-overview-1440-light.png",
+      "beforeSize": [
+        1440,
+        1271
+      ],
+      "afterSize": [
+        1440,
+        1216
+      ],
+      "changedPixelsInCommonArea": 441436,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1198
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "module-overview-1440-dark.png",
+      "beforeSize": [
+        1440,
+        1271
+      ],
+      "afterSize": [
+        1440,
+        1216
+      ],
+      "changedPixelsInCommonArea": 441821,
+      "changedBounds": [
+        0,
+        16,
+        1440,
+        1198
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "module-overview-1440-noir.png",
+      "beforeSize": [
+        1440,
+        1271
+      ],
+      "afterSize": [
+        1440,
+        1216
+      ],
+      "changedPixelsInCommonArea": 437227,
+      "changedBounds": [
+        0,
+        17,
+        1440,
+        1198
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-resume-390-light.png",
+      "beforeSize": [
+        390,
+        5112
+      ],
+      "afterSize": [
+        390,
+        5226
+      ],
+      "changedPixelsInCommonArea": 545141,
+      "changedBounds": [
+        0,
+        4,
+        390,
+        5108
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-resume-390-dark.png",
+      "beforeSize": [
+        390,
+        5112
+      ],
+      "afterSize": [
+        390,
+        5226
+      ],
+      "changedPixelsInCommonArea": 577692,
+      "changedBounds": [
+        0,
+        4,
+        390,
+        5108
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-resume-390-noir.png",
+      "beforeSize": [
+        390,
+        5117
+      ],
+      "afterSize": [
+        390,
+        5231
+      ],
+      "changedPixelsInCommonArea": 343966,
+      "changedBounds": [
+        17,
+        171,
+        372,
+        5113
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-resume-1440-light.png",
+      "beforeSize": [
+        1440,
+        4009
+      ],
+      "afterSize": [
+        1440,
+        4121
+      ],
+      "changedPixelsInCommonArea": 735325,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3993
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-resume-1440-dark.png",
+      "beforeSize": [
+        1440,
+        4009
+      ],
+      "afterSize": [
+        1440,
+        4121
+      ],
+      "changedPixelsInCommonArea": 793827,
+      "changedBounds": [
+        0,
+        4,
+        1440,
+        3993
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    },
+    {
+      "file": "course-resume-1440-noir.png",
+      "beforeSize": [
+        1440,
+        4018
+      ],
+      "afterSize": [
+        1440,
+        4130
+      ],
+      "changedPixelsInCommonArea": 396660,
+      "changedBounds": [
+        123,
+        122,
+        1316,
+        4002
+      ],
+      "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+    }
+  ]
+}

@@ -38,6 +38,7 @@
 (() => {
   'use strict';
   const main = document.querySelector('main');
+  const siteRoot = new URL('../', document.currentScript.src);
   // Static CEH articles and Linux sections share a small local controller adapter.
   // Their source markup stays readable when JavaScript is unavailable.
   let panel = main?.querySelector('article.panel');
@@ -99,8 +100,6 @@
   const lessons = [...panel.querySelectorAll(nested ? '.section-panel' : '.lesson-panel')];
   const tabs = [...panel.querySelectorAll(nested ? '.section-tab' : '.lesson-tab')];
   if (!lessons.length || lessons.length !== tabs.length) return;
-  const moduleTitle = document.querySelector('.project-breadcrumb li:last-child')?.textContent.trim() ||
-    document.querySelector('.brand .sub')?.textContent.trim() || document.title;
   const make = (tag, cls, text) => {
     const el = document.createElement(tag); if (cls) el.className = cls;
     if (text) { el.textContent = text; el.dataset.learningSource = text; }
@@ -113,7 +112,7 @@
   const leftBody = make('div', 'study-rail-body'); left.append(leftBody);
   const course = make('a', 'study-course-link', 'Course modules');
   course.href = document.body.dataset.studyCourse || '../index.html'; leftBody.append(course);
-  leftBody.append(make('p', 'study-eyebrow', 'Study module'), make('h2', 'study-module-title', moduleTitle));
+  leftBody.append(make('h2', 'study-module-title', 'Lessons'));
   const position = make('p', 'study-position');
   const meter = make('progress', 'study-meter'); meter.max = lessons.length;
   meter.setAttribute('aria-label', 'Lesson position'); meter.dataset.learningAriaLabel = 'Lesson position';
@@ -123,8 +122,13 @@
   leftBody.append(list);
   const controls = make('div', 'study-controls');
   const prev = document.getElementById('prevBtn'), next = document.getElementById('nextBtn');
-  if (prev && next) controls.append(prev, next);
+  if (prev && next) {
+    prev.dataset.learningAriaLabel = 'Previous lesson'; prev.setAttribute('aria-label','Previous lesson');
+    next.dataset.learningAriaLabel = 'Next lesson'; next.setAttribute('aria-label','Next lesson');
+    controls.append(prev, next);
+  }
   leftBody.append(controls);
+  const nextLabel = make('p', 'study-next-label'); leftBody.append(nextLabel);
   const right = make('aside', 'study-helper study-rail'); right.setAttribute('aria-label', 'Study tools');
   right.dataset.learningAriaLabel = 'Study tools';
   const tocCard = make('section', 'study-helper-card');
@@ -146,12 +150,23 @@
   }
   const progress = make('a', 'study-tool', 'Your saved activity');
   progress.href = new URL('../progress/index.html', document.currentScript.src).href; tools.append(progress);
-  right.append(tocCard, factsCard, progressCard, tools);
+  const help = make('details','study-helper-card study-help');
+  help.append(make('summary','','Help / related learning'));
+  const modules = make('a','study-tool','Course modules'); modules.href = course.href;
+  const library = make('a','study-tool','Library'); library.href = new URL('IT-Knowledge-Base-Articles/index.html',siteRoot).href;
+  help.append(modules,library);
+  right.append(tocCard, factsCard, progressCard, tools, help);
   const breadcrumb = main.querySelector('.project-breadcrumb');
   const hero = main.querySelector('.hero');
   // Keep module context available without repeating an oversized introduction above every lesson.
   if (hero) {
+    hero.querySelectorAll('h1').forEach(original => {
+      const heading = document.createElement('h2');
+      [...original.attributes].forEach(a=>heading.setAttribute(a.name,a.value));
+      heading.append(...original.childNodes); original.replaceWith(heading);
+    });
     const overview = make('details', 'study-overview');
+    overview.id = 'module-overview';
     overview.append(make('summary', '', 'Module overview'));
     hero.replaceWith(overview); overview.append(hero);
     leftBody.insertBefore(overview, list);
@@ -160,9 +175,25 @@
   if (wrap) wrap.querySelector(':scope > .section-label')?.remove();
   canvas.append(panel);
   if (wrap && !wrap.children.length) wrap.remove();
-  if (breadcrumb) canvas.prepend(breadcrumb);
   layout.append(canvas, left, right); main.prepend(layout);
+  if (breadcrumb) main.prepend(breadcrumb);
   document.body.classList.add('study-page');
+  // Reparent existing controls so their handlers, focus semantics and state survive.
+  function compactHeader() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    const bar = make('div','study-global-bar');
+    const brand = make('a','study-brand','Projects'); brand.href = siteRoot.href;
+    bar.append(brand);
+    const nav = header.querySelector('.roadmap-global-nav');
+    const controls = header.querySelector('.controls');
+    const language = document.querySelector('.site-language-settings');
+    [nav,controls,language].filter(Boolean).forEach(el=>bar.append(el));
+    header.replaceChildren(bar);
+    window.ProjectsLearningLocale?.apply(bar);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',compactHeader,{once:true});
+  else compactHeader();
   const media = matchMedia('(min-width:1100px)');
   const expand = () => { left.open = media.matches; };
   expand(); media.addEventListener('change', expand);
@@ -170,8 +201,19 @@
   // Chunk existing nodes without cloning content, IDs, handlers, or translated text.
   lessons.forEach((lesson, i) => {
     const content = lesson.querySelector('.content') || lesson;
-    const title = content.querySelector('h2');
-    if (title) { title.classList.add('study-title'); title.tabIndex = -1; }
+    const originalTitle = content.querySelector('h2');
+    if (originalTitle) {
+      const title = document.createElement('h1');
+      [...originalTitle.attributes].forEach(a=>title.setAttribute(a.name,a.value));
+      title.append(...originalTitle.childNodes); originalTitle.replaceWith(title);
+      title.classList.add('study-title'); title.tabIndex = -1;
+      title.dataset.learningSource ||= title.textContent.trim();
+      if (!title.id) title.id = `study-${i + 1}-lesson`;
+      else if (title.id !== `study-${i + 1}-lesson`) {
+        const target = make('span','study-lesson-target'); target.id = `study-${i + 1}-lesson`;
+        title.before(target);
+      }
+    }
     let card = null;
     [...content.children].forEach(node => {
       if (node.tagName === 'H3') {
@@ -195,15 +237,15 @@
   const buttons = lessons.map((lesson, i) => {
     const button = make('button', 'study-lesson'); button.type = 'button';
     const number = make('span', 'study-lesson-number'); number.textContent = String(i + 1);
-    const label = make('span', '', tabs[i].textContent.trim());
+    const title = lesson.querySelector('.study-title');
+    const label = make('span', '', title?.dataset.learningSource || title?.textContent.trim() || tabs[i].textContent.trim());
     button.append(number, label); list.append(button);
     button.addEventListener('click', () => select(i, true));
     return button;
   });
   const storageKey = 'projects-study-place:v1:' + location.pathname.replace(/index\.html$/, '');
-  let active = -1, sectionObserver;
+  let active = -1, sectionObserver, restoring = true;
   function select(i, focus) {
-    if (focus && location.hash) history.replaceState(null, '', location.pathname + location.search);
     if (nested) {
       const mod = lessons[i].closest('.module-panel');
       const modules = [...panel.querySelectorAll('.module-panel')];
@@ -222,8 +264,7 @@
       (!nested || l.closest('.module-panel').classList.contains('active')));
     if (i < 0 || i === active) return;
     if (active >= 0) {
-      const hash = location.hash.match(/^#study-(\d+)-/);
-      if (hash && Number(hash[1]) !== i + 1) history.replaceState(null, '', location.pathname + location.search);
+      if (!restoring) history.pushState({...history.state, projectsStudyLesson:i}, '', '#study-'+(i+1)+'-lesson');
       if (lessons[active].contains(document.activeElement)) lessons[i].querySelector('.study-title')?.focus({preventScroll:true});
     }
     active = i;
@@ -231,6 +272,11 @@
       if (i === j) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
     });
     position.textContent = `${i + 1} / ${lessons.length}`; helperPosition.textContent = position.textContent; meter.value = i + 1;
+    nextLabel.replaceChildren();
+    if (i+1 < lessons.length) {
+      nextLabel.append(make('span','','Next lesson'),document.createTextNode(': '),
+        make('span','',lessons[i+1].querySelector('.study-title')?.dataset.learningSource || lessons[i+1].querySelector('.study-title')?.textContent.trim()));
+    } else nextLabel.append(make('span','','End of module'));
     if (media.matches) {
       const bounds = list.getBoundingClientRect(), current = buttons[i].getBoundingClientRect();
       if (current.bottom > bounds.bottom) list.scrollTop += current.bottom - bounds.bottom;
@@ -239,7 +285,7 @@
     try { localStorage.setItem(storageKey, String(i)); } catch (_) { /* Navigation works without storage. */ }
     sectionObserver?.disconnect(); toc.replaceChildren(); facts.replaceChildren();
     const headings = [...lessons[i].querySelectorAll('h3,.summary-label,.exam-tip-label')];
-    if (!headings.length) headings.push(lessons[i].querySelector('h2'));
+    if (!headings.length) headings.push(lessons[i].querySelector('.study-title'));
     headings.filter(Boolean).forEach((heading, j) => {
       if (!heading.id) heading.id = `study-${i + 1}-${j + 1}`;
       heading.tabIndex = -1;
@@ -282,14 +328,26 @@
   if (Number.isInteger(requested) && requested >= 0 && requested < lessons.length) select(requested, false);
   else if (saved !== null && /^\d+$/.test(saved) && Number(saved) < lessons.length) select(Number(saved), false);
   sync();
-  window.addEventListener('hashchange', () => {
+  const initialLesson = active;
+  history.replaceState({...history.state, projectsStudyLesson:active},'');
+  restoring = false;
+  function restoreLocation() {
     const hash = location.hash.match(/^#study-(\d+)-/);
-    const index = hash ? Number(hash[1]) - 1 : lessons.findIndex(l => l.id === location.hash.slice(1));
+    const index = hash ? Number(hash[1]) - 1 : location.hash ? lessons.findIndex(l => l.id === location.hash.slice(1) || [...l.querySelectorAll('[id]')].some(el=>'#'+el.id===location.hash)) : history.state?.projectsStudyLesson ?? initialLesson;
     if (Number.isInteger(index) && index >= 0 && index < lessons.length) {
+      restoring = true;
       select(index, false);
+      restoring = false;
       document.getElementById(location.hash.slice(1))?.scrollIntoView({block:'start'});
     }
-  });
+    if (location.hash === '#module-overview') {
+      left.open=true;
+      const overview=document.getElementById('module-overview'); if (overview) overview.open=true;
+    }
+  }
+  window.addEventListener('hashchange',restoreLocation);
+  window.addEventListener('popstate',restoreLocation);
+  if (location.hash === '#module-overview') restoreLocation();
   document.addEventListener('keydown', event => {
     if (['ArrowLeft','ArrowRight','Home'].includes(event.key) &&
       (event.altKey || event.ctrlKey || event.metaKey || event.target.closest('input,textarea,select,button,a,summary,[contenteditable]'))) {

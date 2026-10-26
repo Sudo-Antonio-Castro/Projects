@@ -6,7 +6,7 @@ from study_cleanup import inventory, ROOT
 report = inventory(ROOT)
 unique = 'CompTIA/A+/1201/Motherboard_and_Connectors/index.html'
 required = ['roadmap-theme.css','navigation.css','study-layout.css']
-scripts = ['roadmap-theme.js','site-language.js','study-layout.js']
+scripts = ['roadmap-theme.js','site-language.js','navigation.js','study-layout.js']
 layout_css = (ROOT/'assets/study-layout.css').read_text(encoding='utf8')
 for template in ['tabs','core1','articles']:
     assert f'html[data-study-template="{template}"]' in layout_css, template

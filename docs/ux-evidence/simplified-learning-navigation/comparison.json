@@ -1,0 +1,1370 @@
+[
+  {
+    "file": "a-core1-390-light.png",
+    "beforeSize": [
+      390,
+      2651
+    ],
+    "afterSize": [
+      390,
+      2673
+    ],
+    "changedPixelsInCommonArea": 368744,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2651
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core1-390-dark.png",
+    "beforeSize": [
+      390,
+      2651
+    ],
+    "afterSize": [
+      390,
+      2673
+    ],
+    "changedPixelsInCommonArea": 369221,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2651
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core1-390-noir.png",
+    "beforeSize": [
+      390,
+      2637
+    ],
+    "afterSize": [
+      390,
+      2659
+    ],
+    "changedPixelsInCommonArea": 362225,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2637
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core1-1440-light.png",
+    "beforeSize": [
+      1440,
+      1271
+    ],
+    "afterSize": [
+      1440,
+      1216
+    ],
+    "changedPixelsInCommonArea": 443979,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1198
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core1-1440-dark.png",
+    "beforeSize": [
+      1440,
+      1271
+    ],
+    "afterSize": [
+      1440,
+      1216
+    ],
+    "changedPixelsInCommonArea": 444429,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1198
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core1-1440-noir.png",
+    "beforeSize": [
+      1440,
+      1271
+    ],
+    "afterSize": [
+      1440,
+      1216
+    ],
+    "changedPixelsInCommonArea": 436685,
+    "changedBounds": [
+      0,
+      17,
+      1440,
+      1198
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core2-390-light.png",
+    "beforeSize": [
+      390,
+      2140
+    ],
+    "afterSize": [
+      390,
+      2162
+    ],
+    "changedPixelsInCommonArea": 313449,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2139
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core2-390-dark.png",
+    "beforeSize": [
+      390,
+      2140
+    ],
+    "afterSize": [
+      390,
+      2162
+    ],
+    "changedPixelsInCommonArea": 313598,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2139
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core2-390-noir.png",
+    "beforeSize": [
+      390,
+      2208
+    ],
+    "afterSize": [
+      390,
+      2230
+    ],
+    "changedPixelsInCommonArea": 306996,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2207
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core2-1440-light.png",
+    "beforeSize": [
+      1440,
+      1082
+    ],
+    "afterSize": [
+      1440,
+      1121
+    ],
+    "changedPixelsInCommonArea": 382532,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1082
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core2-1440-dark.png",
+    "beforeSize": [
+      1440,
+      1082
+    ],
+    "afterSize": [
+      1440,
+      1121
+    ],
+    "changedPixelsInCommonArea": 382679,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1082
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "a-core2-1440-noir.png",
+    "beforeSize": [
+      1440,
+      1068
+    ],
+    "afterSize": [
+      1440,
+      1121
+    ],
+    "changedPixelsInCommonArea": 404695,
+    "changedBounds": [
+      0,
+      17,
+      1440,
+      1047
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-390-light.png",
+    "beforeSize": [
+      390,
+      2074
+    ],
+    "afterSize": [
+      390,
+      2096
+    ],
+    "changedPixelsInCommonArea": 313991,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2073
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-390-dark.png",
+    "beforeSize": [
+      390,
+      2074
+    ],
+    "afterSize": [
+      390,
+      2096
+    ],
+    "changedPixelsInCommonArea": 314123,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2073
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-390-noir.png",
+    "beforeSize": [
+      390,
+      2177
+    ],
+    "afterSize": [
+      390,
+      2199
+    ],
+    "changedPixelsInCommonArea": 308836,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2177
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-1440-light.png",
+    "beforeSize": [
+      1440,
+      1102
+    ],
+    "afterSize": [
+      1440,
+      1121
+    ],
+    "changedPixelsInCommonArea": 377136,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1086
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-1440-dark.png",
+    "beforeSize": [
+      1440,
+      1102
+    ],
+    "afterSize": [
+      1440,
+      1121
+    ],
+    "changedPixelsInCommonArea": 377263,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1086
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-1440-noir.png",
+    "beforeSize": [
+      1440,
+      1088
+    ],
+    "afterSize": [
+      1440,
+      1121
+    ],
+    "changedPixelsInCommonArea": 400199,
+    "changedBounds": [
+      0,
+      17,
+      1440,
+      1086
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-390-light.png",
+    "beforeSize": [
+      390,
+      1894
+    ],
+    "afterSize": [
+      390,
+      1949
+    ],
+    "changedPixelsInCommonArea": 212676,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      1879
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-390-dark.png",
+    "beforeSize": [
+      390,
+      1894
+    ],
+    "afterSize": [
+      390,
+      1949
+    ],
+    "changedPixelsInCommonArea": 212876,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      1879
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-390-noir.png",
+    "beforeSize": [
+      390,
+      2031
+    ],
+    "afterSize": [
+      390,
+      2086
+    ],
+    "changedPixelsInCommonArea": 201949,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      2016
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-1440-light.png",
+    "beforeSize": [
+      1440,
+      1007
+    ],
+    "afterSize": [
+      1440,
+      1089
+    ],
+    "changedPixelsInCommonArea": 289522,
+    "changedBounds": [
+      0,
+      14,
+      1440,
+      982
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-1440-dark.png",
+    "beforeSize": [
+      1440,
+      1007
+    ],
+    "afterSize": [
+      1440,
+      1089
+    ],
+    "changedPixelsInCommonArea": 289705,
+    "changedBounds": [
+      0,
+      14,
+      1440,
+      982
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-1440-noir.png",
+    "beforeSize": [
+      1440,
+      993
+    ],
+    "afterSize": [
+      1440,
+      1075
+    ],
+    "changedPixelsInCommonArea": 277347,
+    "changedBounds": [
+      0,
+      14,
+      1440,
+      968
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-390-light.png",
+    "beforeSize": [
+      390,
+      1373
+    ],
+    "afterSize": [
+      390,
+      1394
+    ],
+    "changedPixelsInCommonArea": 195700,
+    "changedBounds": [
+      0,
+      15,
+      390,
+      1368
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-390-dark.png",
+    "beforeSize": [
+      390,
+      1373
+    ],
+    "afterSize": [
+      390,
+      1394
+    ],
+    "changedPixelsInCommonArea": 195815,
+    "changedBounds": [
+      0,
+      15,
+      390,
+      1368
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-390-noir.png",
+    "beforeSize": [
+      390,
+      1453
+    ],
+    "afterSize": [
+      390,
+      1475
+    ],
+    "changedPixelsInCommonArea": 195451,
+    "changedBounds": [
+      0,
+      16,
+      390,
+      1448
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-1440-light.png",
+    "beforeSize": [
+      1440,
+      960
+    ],
+    "afterSize": [
+      1440,
+      1003
+    ],
+    "changedPixelsInCommonArea": 236641,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      938
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-1440-dark.png",
+    "beforeSize": [
+      1440,
+      960
+    ],
+    "afterSize": [
+      1440,
+      1003
+    ],
+    "changedPixelsInCommonArea": 236766,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      938
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-1440-noir.png",
+    "beforeSize": [
+      1440,
+      960
+    ],
+    "afterSize": [
+      1440,
+      989
+    ],
+    "changedPixelsInCommonArea": 241283,
+    "changedBounds": [
+      0,
+      20,
+      1440,
+      960
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-hub-390-light.png",
+    "beforeSize": [
+      390,
+      5112
+    ],
+    "afterSize": [
+      390,
+      5133
+    ],
+    "changedPixelsInCommonArea": 476276,
+    "changedBounds": [
+      0,
+      4,
+      390,
+      5021
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-hub-390-dark.png",
+    "beforeSize": [
+      390,
+      5112
+    ],
+    "afterSize": [
+      390,
+      5133
+    ],
+    "changedPixelsInCommonArea": 487888,
+    "changedBounds": [
+      0,
+      4,
+      390,
+      5021
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-hub-390-noir.png",
+    "beforeSize": [
+      390,
+      5117
+    ],
+    "afterSize": [
+      390,
+      5138
+    ],
+    "changedPixelsInCommonArea": 320936,
+    "changedBounds": [
+      17,
+      171,
+      372,
+      5026
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-hub-1440-light.png",
+    "beforeSize": [
+      1440,
+      4009
+    ],
+    "afterSize": [
+      1440,
+      4028
+    ],
+    "changedPixelsInCommonArea": 470555,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3900
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-hub-1440-dark.png",
+    "beforeSize": [
+      1440,
+      4009
+    ],
+    "afterSize": [
+      1440,
+      4028
+    ],
+    "changedPixelsInCommonArea": 521386,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3900
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-hub-1440-noir.png",
+    "beforeSize": [
+      1440,
+      4018
+    ],
+    "afterSize": [
+      1440,
+      4037
+    ],
+    "changedPixelsInCommonArea": 391097,
+    "changedBounds": [
+      123,
+      122,
+      1316,
+      3909
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "core2-hub-390-light.png",
+    "beforeSize": [
+      390,
+      4671
+    ],
+    "afterSize": [
+      390,
+      4691
+    ],
+    "changedPixelsInCommonArea": 501956,
+    "changedBounds": [
+      0,
+      4,
+      390,
+      4663
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "core2-hub-390-dark.png",
+    "beforeSize": [
+      390,
+      4671
+    ],
+    "afterSize": [
+      390,
+      4691
+    ],
+    "changedPixelsInCommonArea": 514488,
+    "changedBounds": [
+      0,
+      4,
+      390,
+      4663
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "core2-hub-390-noir.png",
+    "beforeSize": [
+      390,
+      4675
+    ],
+    "afterSize": [
+      390,
+      4696
+    ],
+    "changedPixelsInCommonArea": 351451,
+    "changedBounds": [
+      0,
+      166,
+      390,
+      4668
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "core2-hub-1440-light.png",
+    "beforeSize": [
+      1440,
+      3479
+    ],
+    "afterSize": [
+      1440,
+      3498
+    ],
+    "changedPixelsInCommonArea": 523761,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3470
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "core2-hub-1440-dark.png",
+    "beforeSize": [
+      1440,
+      3479
+    ],
+    "afterSize": [
+      1440,
+      3498
+    ],
+    "changedPixelsInCommonArea": 575456,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3470
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "core2-hub-1440-noir.png",
+    "beforeSize": [
+      1440,
+      3488
+    ],
+    "afterSize": [
+      1440,
+      3507
+    ],
+    "changedPixelsInCommonArea": 448113,
+    "changedBounds": [
+      0,
+      122,
+      1440,
+      3479
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-hub-390-light.png",
+    "beforeSize": [
+      390,
+      8589
+    ],
+    "afterSize": [
+      390,
+      8609
+    ],
+    "changedPixelsInCommonArea": 771950,
+    "changedBounds": [
+      0,
+      171,
+      390,
+      8589
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-hub-390-dark.png",
+    "beforeSize": [
+      390,
+      8589
+    ],
+    "afterSize": [
+      390,
+      8609
+    ],
+    "changedPixelsInCommonArea": 784560,
+    "changedBounds": [
+      0,
+      171,
+      390,
+      8589
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-hub-390-noir.png",
+    "beforeSize": [
+      390,
+      8597
+    ],
+    "afterSize": [
+      390,
+      8618
+    ],
+    "changedPixelsInCommonArea": 608033,
+    "changedBounds": [
+      0,
+      171,
+      390,
+      8597
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-hub-1440-light.png",
+    "beforeSize": [
+      1440,
+      6201
+    ],
+    "afterSize": [
+      1440,
+      6220
+    ],
+    "changedPixelsInCommonArea": 873668,
+    "changedBounds": [
+      0,
+      38,
+      1440,
+      6201
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-hub-1440-dark.png",
+    "beforeSize": [
+      1440,
+      6201
+    ],
+    "afterSize": [
+      1440,
+      6220
+    ],
+    "changedPixelsInCommonArea": 917646,
+    "changedBounds": [
+      0,
+      30,
+      1440,
+      6201
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "security-hub-1440-noir.png",
+    "beforeSize": [
+      1440,
+      6214
+    ],
+    "afterSize": [
+      1440,
+      6233
+    ],
+    "changedPixelsInCommonArea": 797854,
+    "changedBounds": [
+      0,
+      122,
+      1440,
+      6214
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-hub-390-light.png",
+    "beforeSize": [
+      390,
+      6052
+    ],
+    "afterSize": [
+      390,
+      6073
+    ],
+    "changedPixelsInCommonArea": 573276,
+    "changedBounds": [
+      0,
+      171,
+      390,
+      6052
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-hub-390-dark.png",
+    "beforeSize": [
+      390,
+      6052
+    ],
+    "afterSize": [
+      390,
+      6073
+    ],
+    "changedPixelsInCommonArea": 586222,
+    "changedBounds": [
+      0,
+      171,
+      390,
+      6052
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-hub-390-noir.png",
+    "beforeSize": [
+      390,
+      6061
+    ],
+    "afterSize": [
+      390,
+      6082
+    ],
+    "changedPixelsInCommonArea": 425805,
+    "changedBounds": [
+      0,
+      171,
+      390,
+      6061
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-hub-1440-light.png",
+    "beforeSize": [
+      1440,
+      4617
+    ],
+    "afterSize": [
+      1440,
+      4636
+    ],
+    "changedPixelsInCommonArea": 654961,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      4617
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-hub-1440-dark.png",
+    "beforeSize": [
+      1440,
+      4617
+    ],
+    "afterSize": [
+      1440,
+      4636
+    ],
+    "changedPixelsInCommonArea": 700106,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      4617
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "linux-hub-1440-noir.png",
+    "beforeSize": [
+      1440,
+      4630
+    ],
+    "afterSize": [
+      1440,
+      4649
+    ],
+    "changedPixelsInCommonArea": 585311,
+    "changedBounds": [
+      0,
+      122,
+      1440,
+      4630
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-hub-390-light.png",
+    "beforeSize": [
+      390,
+      6503
+    ],
+    "afterSize": [
+      390,
+      6523
+    ],
+    "changedPixelsInCommonArea": 551977,
+    "changedBounds": [
+      0,
+      207,
+      390,
+      6447
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-hub-390-dark.png",
+    "beforeSize": [
+      390,
+      6503
+    ],
+    "afterSize": [
+      390,
+      6523
+    ],
+    "changedPixelsInCommonArea": 563835,
+    "changedBounds": [
+      0,
+      207,
+      390,
+      6447
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-hub-390-noir.png",
+    "beforeSize": [
+      390,
+      6500
+    ],
+    "afterSize": [
+      390,
+      6521
+    ],
+    "changedPixelsInCommonArea": 390035,
+    "changedBounds": [
+      24,
+      207,
+      366,
+      6445
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-hub-1440-light.png",
+    "beforeSize": [
+      1440,
+      3546
+    ],
+    "afterSize": [
+      1440,
+      3565
+    ],
+    "changedPixelsInCommonArea": 593931,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3489
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-hub-1440-dark.png",
+    "beforeSize": [
+      1440,
+      3546
+    ],
+    "afterSize": [
+      1440,
+      3565
+    ],
+    "changedPixelsInCommonArea": 641343,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3489
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "ceh-hub-1440-noir.png",
+    "beforeSize": [
+      1440,
+      3482
+    ],
+    "afterSize": [
+      1440,
+      3501
+    ],
+    "changedPixelsInCommonArea": 525062,
+    "changedBounds": [
+      124,
+      158,
+      1316,
+      3425
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "module-overview-390-light.png",
+    "beforeSize": [
+      390,
+      4455
+    ],
+    "afterSize": [
+      390,
+      4490
+    ],
+    "changedPixelsInCommonArea": 483915,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      4432
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "module-overview-390-dark.png",
+    "beforeSize": [
+      390,
+      4455
+    ],
+    "afterSize": [
+      390,
+      4490
+    ],
+    "changedPixelsInCommonArea": 485349,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      4432
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "module-overview-390-noir.png",
+    "beforeSize": [
+      390,
+      4404
+    ],
+    "afterSize": [
+      390,
+      4439
+    ],
+    "changedPixelsInCommonArea": 480525,
+    "changedBounds": [
+      0,
+      14,
+      390,
+      4382
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "module-overview-1440-light.png",
+    "beforeSize": [
+      1440,
+      1271
+    ],
+    "afterSize": [
+      1440,
+      1216
+    ],
+    "changedPixelsInCommonArea": 441436,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1198
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "module-overview-1440-dark.png",
+    "beforeSize": [
+      1440,
+      1271
+    ],
+    "afterSize": [
+      1440,
+      1216
+    ],
+    "changedPixelsInCommonArea": 441821,
+    "changedBounds": [
+      0,
+      16,
+      1440,
+      1198
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "module-overview-1440-noir.png",
+    "beforeSize": [
+      1440,
+      1271
+    ],
+    "afterSize": [
+      1440,
+      1216
+    ],
+    "changedPixelsInCommonArea": 437227,
+    "changedBounds": [
+      0,
+      17,
+      1440,
+      1198
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-resume-390-light.png",
+    "beforeSize": [
+      390,
+      5112
+    ],
+    "afterSize": [
+      390,
+      5226
+    ],
+    "changedPixelsInCommonArea": 545141,
+    "changedBounds": [
+      0,
+      4,
+      390,
+      5108
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-resume-390-dark.png",
+    "beforeSize": [
+      390,
+      5112
+    ],
+    "afterSize": [
+      390,
+      5226
+    ],
+    "changedPixelsInCommonArea": 577692,
+    "changedBounds": [
+      0,
+      4,
+      390,
+      5108
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-resume-390-noir.png",
+    "beforeSize": [
+      390,
+      5117
+    ],
+    "afterSize": [
+      390,
+      5231
+    ],
+    "changedPixelsInCommonArea": 343966,
+    "changedBounds": [
+      17,
+      171,
+      372,
+      5113
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-resume-1440-light.png",
+    "beforeSize": [
+      1440,
+      4009
+    ],
+    "afterSize": [
+      1440,
+      4121
+    ],
+    "changedPixelsInCommonArea": 735325,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3993
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-resume-1440-dark.png",
+    "beforeSize": [
+      1440,
+      4009
+    ],
+    "afterSize": [
+      1440,
+      4121
+    ],
+    "changedPixelsInCommonArea": 793827,
+    "changedBounds": [
+      0,
+      4,
+      1440,
+      3993
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  },
+  {
+    "file": "course-resume-1440-noir.png",
+    "beforeSize": [
+      1440,
+      4018
+    ],
+    "afterSize": [
+      1440,
+      4130
+    ],
+    "changedPixelsInCommonArea": 396660,
+    "changedBounds": [
+      123,
+      122,
+      1316,
+      4002
+    ],
+    "review": "Intentional compact header/context, lesson labels, next-lesson hint and related-learning links; existing theme tokens and lesson prose retained"
+  }
+]

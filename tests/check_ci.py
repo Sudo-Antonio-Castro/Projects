@@ -30,4 +30,9 @@ assert not re.search(r'deploy-pages|upload-pages-artifact|configure-pages|secret
 assert 'git diff --check' in raw
 assert 'tests/check_source.py' in raw and 'tests/check_learning_catalog.py' in raw
 assert 'tests/design_visual.py --site-root' in raw and '--baseline test-results/visual/before' in raw
+assert raw.count('--exclude-case linux-hub --exclude-case ceh-hub') == 2
+assert raw.count('--exclude-case') == 4, 'Do not exclude additional visual coverage'
+assert 'tests/learning_navigation.py --before --site-root' in raw
+assert 'tests/learning_navigation.py --output' in raw and '--baseline test-results/visual/study-before' in raw
+assert 'tests/build_study_navigation.py --check' in raw
 print('PASS workflow YAML, read-only permission, pinned official actions, all six browser suites, local visual comparison, bounded failure evidence, no deployment or external-service smoke')

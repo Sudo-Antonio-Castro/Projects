@@ -1,5 +1,18 @@
 # UX recovery checks
 
+## Simplified learning navigation
+
+`python tests/build_study_navigation.py --check` validates generated metadata and
+Spanish navigation/title coverage. `tests/learning_navigation.py --output PATH`
+checks five lesson families at 320/390/768/1024/1440 in all three themes and both
+languages, including history, current lesson, prev/next, real course selection,
+resume, original deep links and no-JS navigation. Before/after captures cover all
+five course hubs as well. Use `--before --site-root BASE --output BEFORE`, then
+`--baseline BEFORE --output AFTER` to prove all 200 source lesson subtrees and
+inline controllers unchanged. Navigation visuals intentionally change; 40
+unaffected site states retain strict pixel comparison. See the
+[evidence report](../docs/ux-evidence/simplified-learning-navigation/README.md).
+
 ## Study layout cleanup
 
 `python -X utf8 tests/check_study_cleanup.py` guards shared study assets, template
