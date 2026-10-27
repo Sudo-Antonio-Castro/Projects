@@ -89,8 +89,12 @@ def main():
                 section = route.split('/')[0].lower() if '/' in route else 'home'
                 assert active == section, (route, active)
                 if route and route != 'index.html':
-                    assert p.locator('.project-breadcrumb [aria-current="page"]').inner_text().strip()
-                    assert p.locator('.project-breadcrumb').get_attribute('aria-label') == (CATALOG['Breadcrumb'] if language == 'es' else 'Breadcrumb')
+                    if p.locator('body').get_attribute('data-study-hub'):
+                        assert p.locator('.study-course-select').input_value().endswith(route)
+                    else:
+                        assert p.locator('.project-breadcrumb [aria-current="page"]').inner_text().strip()
+                    label = 'Course and module' if p.locator('body').get_attribute('data-study-course') else 'Breadcrumb'
+                    assert p.locator('.project-breadcrumb').get_attribute('aria-label') == (CATALOG[label] if language == 'es' else label)
                 assert p.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), route
                 evidence.append({'route': route or '/', 'section': active, 'breadcrumb': p.locator('.project-breadcrumb').all_text_contents()})
                 p.close()
@@ -105,7 +109,13 @@ def main():
                 p = visit(c, route)
                 assert p.locator('.roadmap-global-nav a').all_text_contents() == LABELS
                 assert p.locator('.roadmap-global-nav').is_visible()
-                if route != 'index.html':
+                if p.locator('body').get_attribute('data-study-hub'):
+                    # Compact course hubs use their real global section as the
+                    # no-JS fallback; removed repository-folder crumbs are optional.
+                    section = 'comptia' if route.startswith('CompTIA/') else 'ec-council'
+                    parent = p.locator(f'.roadmap-global-nav [data-section="{section}"]')
+                    assert parent.is_visible(); parent.click(); assert p.url.startswith(base)
+                elif route != 'index.html':
                     parent = p.locator('.project-breadcrumb a').last
                     assert parent.is_visible(); parent.click(); assert p.url.startswith(base)
                 else:

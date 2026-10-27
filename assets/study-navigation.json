@@ -1,0 +1,695 @@
+{
+  "courses": [
+    {
+      "label": "A+ Core 1",
+      "path": "CompTIA/A+/1201/index.html"
+    },
+    {
+      "label": "A+ Core 2",
+      "path": "CompTIA/A+/1202/index.html"
+    },
+    {
+      "label": "Security+",
+      "path": "CompTIA/Security+/index.html"
+    },
+    {
+      "label": "Linux+",
+      "path": "CompTIA/Linux+/index.html"
+    },
+    {
+      "label": "CEH",
+      "path": "EC-Council/CEH/index.html"
+    }
+  ],
+  "modules": [
+    {
+      "path": "CompTIA/A+/1201/Local_Networking_Hardware/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Local Networking Hardware",
+      "lessons": [
+        "Network Types",
+        "Networking Hardware",
+        "Network Cable Types",
+        "Wireless Networking Types"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Motherboard_and_Connectors/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Motherboard and Connectors",
+      "lessons": [
+        "Personal Computers & Case Anatomy",
+        "USB Cables & Connector Types",
+        "USB Standards — Speed & Evolution",
+        "Display Technologies",
+        "Display Components & Attributes",
+        "HDMI & DisplayPort Video Cables",
+        "Thunderbolt & Lightning Interfaces",
+        "SATA & Molex Power Connectors",
+        "Motherboard Functions & Overview",
+        "Electrical Safety & Electrostatic Discharge (ESD)",
+        "CPU Sockets & the Chipset",
+        "System Memory Slots & RAM",
+        "Motherboard Storage Interfaces",
+        "PCIe & PCI Expansion Slots",
+        "Motherboard Form Factors",
+        "Motherboard Installation",
+        "Motherboard Headers & Power Connectors",
+        "Expansion Cards",
+        "DVI & VGA Video Interfaces",
+        "Serial Cables (RS-232) & Legacy Ports",
+        "Adapter Cables"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Network_Addressing_and_Internet_Connections/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Network Addressing and Internet Connections",
+      "lessons": [
+        "Internet Connection Types",
+        "TCP/IP Concepts",
+        "Network Communications",
+        "Network Configuration Concepts"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Mobile_Devices/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Supporting Mobile Devices",
+      "lessons": [
+        "Mobile Devices and Peripherals",
+        "Mobile Apps and Data",
+        "Laptop Hardware",
+        "Troubleshoot Mobile Devices"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Network_Services/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Supporting Network Services",
+      "lessons": [
+        "Networked Host Services",
+        "Internet and Embedded Appliances",
+        "Troubleshoot Networks"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Supporting_Print_Devices/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Supporting Print Devices",
+      "lessons": [
+        "Printers and Multifunction Devices",
+        "Print Device Maintenance",
+        "Troubleshoot Print Devices"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/System_Devices/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "System Devices",
+      "lessons": [
+        "Power Supplies and Cooling",
+        "Storage Devices",
+        "System Memory",
+        "CPUs"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Troubleshooting_PC_Hardware/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Troubleshooting PC Hardware",
+      "lessons": [
+        "BIOS and UEFI",
+        "Power and Disk Issues",
+        "System and Display Issues"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1201/Virtualization_and_Cloud_Concepts/index.html",
+      "course": "CompTIA/A+/1201/index.html",
+      "title": "Virtualization and Cloud Concepts",
+      "lessons": [
+        "Client-Side Virtualization",
+        "Cloud Concepts"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Backups_Data_Handling_and_AI/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Backups Data Handling and AI",
+      "lessons": [
+        "Data Backup & Recovery",
+        "Data Handling Best Practices",
+        "Artificial Intelligence Basics"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Endpoint_and_Browser_Security/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Endpoint and Browser Security",
+      "lessons": [
+        "Account Security",
+        "Workstation & Browser Security",
+        "Troubleshoot Workstation Security"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Linux_and_macOS_Support/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Linux and macOS Support",
+      "lessons": [
+        "Linux Features",
+        "Package & Network Management",
+        "macOS Features"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Mobile_Software_and_Security/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Mobile Software and Security",
+      "lessons": [
+        "Mobile OS Security",
+        "Mobile App & Security Troubleshooting"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Operations_Safety_and_Scripting/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Operations Safety and Scripting",
+      "lessons": [
+        "Change & Inventory Management",
+        "Safety, Environmental Procedures & Scripting"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/OS_Installation_and_Upgrades/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "OS Installation and Upgrades",
+      "lessons": [
+        "Windows Editions",
+        "OS Installations & Upgrades"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/SOHO_Security_and_Threats/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "SOHO Security and Threats",
+      "lessons": [
+        "Attacks, Threats & Vulnerabilities",
+        "Wireless Security Protocols",
+        "SOHO Router Security & Layers"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Support_Procedures_and_Communication/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Support Procedures and Communication",
+      "lessons": [
+        "Documentation & Ticketing",
+        "Professional Communication",
+        "Operating System Types"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Security_and_Sharing/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Windows Security and Sharing",
+      "lessons": [
+        "Logical Security Concepts",
+        "Windows Security Settings",
+        "Windows Shares & Permissions"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Setup_and_Configuration/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Windows Setup and Configuration",
+      "lessons": [
+        "Windows User Settings",
+        "Windows System Settings",
+        "Apps & Cloud Services"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Support_and_Troubleshooting/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Windows Support and Troubleshooting",
+      "lessons": [
+        "Windows Networking Troubleshooting",
+        "Remote Access Technologies",
+        "Performance, Tools & Recovery"
+      ]
+    },
+    {
+      "path": "CompTIA/A+/1202/Windows_Tools_and_Management/index.html",
+      "course": "CompTIA/A+/1202/index.html",
+      "title": "Windows Tools and Management",
+      "lessons": [
+        "Management Consoles",
+        "Command-Line Tools",
+        "Windows Networking Utilities"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/bash-scripting-git-and-automation/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Bash Scripting, Git and Automation",
+      "lessons": [
+        "Bash fundamentals",
+        "Git and change tracking",
+        "Automation and AI-aware workflow"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/bootloaders-targets-and-shutdown/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Bootloaders, Targets and Shutdown",
+      "lessons": [
+        "Boot sequence",
+        "GRUB2 and recovery",
+        "systemd startup"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/cloud-containers-and-virtual-machines/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Cloud, Containers and Virtual Machines",
+      "lessons": [
+        "Virtualization basics",
+        "Containers",
+        "Cloud thinking"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/desktops-gui-access-and-usability/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Desktops, GUI Access and Usability",
+      "lessons": [
+        "Graphical sessions",
+        "Desktop choices",
+        "Usability and remote access"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/hardware-drivers-and-kernel-views/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Hardware, Drivers and Kernel Views",
+      "lessons": [
+        "Driver model",
+        "Kernel modules",
+        "Device discovery"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/installation-planning-and-deployment/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Installation Planning and Deployment",
+      "lessons": [
+        "Plan before install",
+        "Installation workflow",
+        "Post-install consistency"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/linux-landscape-and-server-roles/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Linux Landscape and Server Roles",
+      "lessons": [
+        "Linux in context",
+        "Distribution families",
+        "Server roles"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/logging-monitoring-and-performance/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Logging, Monitoring and Performance",
+      "lessons": [
+        "Log collection",
+        "Monitoring basics",
+        "Performance thinking"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/networking-routing-and-firewall-rules/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Networking, Routing and Firewall Rules",
+      "lessons": [
+        "Interface management",
+        "Routing and resolution",
+        "Firewall controls"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/package-management-and-software-sources/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Package Management and Software Sources",
+      "lessons": [
+        "Package ecosystems",
+        "Dependencies and repositories",
+        "Libraries and change control"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/processes-services-and-job-scheduling/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Processes, Services and Job Scheduling",
+      "lessons": [
+        "Process control",
+        "Services and units",
+        "Task scheduling"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/shell-usage-and-text-editing/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Shell Usage and Text Editing",
+      "lessons": [
+        "Shell workflow",
+        "Finding help",
+        "Editing and text processing"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/ssh-access-control-and-hardening/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "SSH, Access Control and Hardening",
+      "lessons": [
+        "Privilege and remote access",
+        "Hardening controls",
+        "Secure service exposure"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/storage-filesystems-and-permissions/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Storage, Filesystems and Permissions",
+      "lessons": [
+        "Storage layout",
+        "Filesystems and mounts",
+        "Permissions and ACLs"
+      ]
+    },
+    {
+      "path": "CompTIA/Linux+/modules/users-groups-and-account-security/index.html",
+      "course": "CompTIA/Linux+/index.html",
+      "title": "Users, Groups and Account Security",
+      "lessons": [
+        "Identity records",
+        "Account administration",
+        "Troubleshooting access"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Application_Web_and_Email_Security/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Application Web and Email Security",
+      "lessons": [
+        "Application Protocol Security Baselines",
+        "Cloud and Web Application Security Concepts"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Cloud_Security_and_Zero_Trust/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Cloud Security and Zero Trust",
+      "lessons": [
+        "Cloud Infrastructure",
+        "Embedded Systems, IoT & Zero Trust"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Data_Protection_Compliance_and_People/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Data Protection Compliance and People",
+      "lessons": [
+        "Data Classification and Compliance",
+        "Personnel Policies"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Encryption_PKI_and_Secure_Cryptography/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Encryption PKI and Secure Cryptography",
+      "lessons": [
+        "Cryptographic Algorithms",
+        "Public Key Infrastructure",
+        "Cryptographic Solutions"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Endpoint_Protection_and_Device_Hardening/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Endpoint Protection and Device Hardening",
+      "lessons": [
+        "Implement Endpoint Security",
+        "Mobile Device Hardening"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Enterprise_Network_Defense_Architecture/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Enterprise Network Defense Architecture",
+      "lessons": [
+        "Enterprise Network Architecture",
+        "Network Security Appliances",
+        "Secure Communications"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Governance_Policy_and_Security_Operations/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Governance Policy and Security Operations",
+      "lessons": [
+        "Policies, Standards, and Procedures",
+        "Change Management",
+        "Automation and Orchestration"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Identity_Authentication_and_Access/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Identity Authentication and Access",
+      "lessons": [
+        "Authentication",
+        "Authorization",
+        "Identity Management"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Incident_Response_and_Security_Monitoring/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Incident Response and Security Monitoring",
+      "lessons": [
+        "Incident Response",
+        "Digital Forensics",
+        "Data Sources",
+        "Alerting and Monitoring Tools"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Indicators_of_Compromise_and_Malicious_Activity/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Indicators of Compromise and Malicious Activity",
+      "lessons": [
+        "Malware Attack Indicators",
+        "Physical and Network Attack Indicators",
+        "Application Attack Indicators"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Network_Security_Baselines_and_Hardening/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Network Security Baselines and Hardening",
+      "lessons": [
+        "Network Security Baselines",
+        "Network Security Capability Enhancement"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Resilience_Redundancy_and_Physical_Protection/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Resilience Redundancy and Physical Protection",
+      "lessons": [
+        "Asset Management",
+        "Redundancy Strategies",
+        "Physical Security"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Risk_Third_Parties_and_Assessments/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Risk Third Parties and Assessments",
+      "lessons": [
+        "Risk Management Processes and Concepts",
+        "Vendor Management Concepts",
+        "Audits and Assessments"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Security_Foundations_and_Control_Models/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Security Foundations and Control Models",
+      "lessons": [
+        "Security Concepts",
+        "Security Controls"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Threat_Actors_and_Attack_Paths/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Threat Actors and Attack Paths",
+      "lessons": [
+        "Threat Actors",
+        "Attack Surfaces",
+        "Social Engineering"
+      ]
+    },
+    {
+      "path": "CompTIA/Security+/Vulnerability_Management_and_Remediation/index.html",
+      "course": "CompTIA/Security+/index.html",
+      "title": "Vulnerability Management and Remediation",
+      "lessons": [
+        "Device and OS Vulnerabilities",
+        "Application and Cloud Vulnerabilities",
+        "Vulnerability Identification Methods",
+        "Vulnerability Analysis and Remediation"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Cloud_and_IoT_Attack_Surface/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Cloud and IoT Attack Surface",
+      "lessons": [
+        "Remote platforms and shared responsibility",
+        "Small devices, large exposure"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Cryptography_and_Key_Management/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Cryptography and Key Management",
+      "lessons": [
+        "Algorithms, hashes, and trust",
+        "Putting cryptography to work"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Enumeration_and_Target_Profiling/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Enumeration and Target Profiling",
+      "lessons": [
+        "Naming the environment",
+        "Restricting service exposure"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Ethical_Hacking_Essentials/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Ethical Hacking Essentials",
+      "lessons": [
+        "Ethical hacking basics",
+        "Working like a tester"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Human_Factors_and_Physical_Access/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Human Factors and Physical Access",
+      "lessons": [
+        "Manipulating trust",
+        "On-site attacks and prevention"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/IDS_Firewalls_and_Deception_Systems/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "IDS Firewalls and Deception Systems",
+      "lessons": [
+        "Seeing and shaping traffic",
+        "Deception as defense"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Malware_Techniques_and_Countermeasures/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Malware Techniques and Countermeasures",
+      "lessons": [
+        "What the code is trying to do",
+        "Defending the endpoint"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Penetration_Testing_Foundations/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Penetration Testing Foundations",
+      "lessons": [
+        "Testing process and phases",
+        "Box testing and team roles"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Reconnaissance_and_Footprinting/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Reconnaissance and Footprinting",
+      "lessons": [
+        "Information gathering strategy",
+        "Reducing public exposure"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Scanning_and_Service_Discovery/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Scanning and Service Discovery",
+      "lessons": [
+        "Seeing the exposed surface",
+        "Service identification"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Sniffing_Hijacking_and_Denial_of_Service/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Sniffing Hijacking and Denial of Service",
+      "lessons": [
+        "Intercepting traffic and sessions",
+        "Breaking availability"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/System_Compromise_and_Privilege_Escalation/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "System Compromise and Privilege Escalation",
+      "lessons": [
+        "Passwords and local compromise",
+        "Privilege, backdoors, and tracks"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Vulnerability_Analysis_and_Prioritization/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Vulnerability Analysis and Prioritization",
+      "lessons": [
+        "Finding and validating weaknesses",
+        "Prioritizing risk"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Web_Servers_Web_Apps_and_SQL_Injection/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Web Servers Web Apps and SQL Injection",
+      "lessons": [
+        "Servers and applications under attack",
+        "Abusing the data layer"
+      ]
+    },
+    {
+      "path": "EC-Council/CEH/Wireless_Bluetooth_and_Mobile_Security/index.html",
+      "course": "EC-Council/CEH/index.html",
+      "title": "Wireless Bluetooth and Mobile Security",
+      "lessons": [
+        "Radio-based exposure",
+        "Portable endpoints with layered risk"
+      ]
+    }
+  ]
+}

@@ -111,6 +111,7 @@ def main():
                 page.locator('.study-layout').wait_for()
                 assert page.locator('.study-lessons button').count() == item['lessons'],item
                 assert page.locator('.study-title:visible').count() == 1,item
+                assert page.locator('#themeBtn').is_visible(),(item,'theme control')
                 page.locator('.study-lessons button').last.click()
                 assert page.locator('#nextBtn').is_disabled(),item
                 assert not sweep_errors,(item,sweep_errors)

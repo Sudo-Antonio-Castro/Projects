@@ -31,7 +31,9 @@ def compare(before,after):
     return result
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--baseline',type=Path);parser.add_argument('--site-root',type=Path,default=ROOT);args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--baseline',type=Path);parser.add_argument('--site-root',type=Path,default=ROOT)
+    parser.add_argument('--exclude-case', action='append', choices=list(CASES), default=[], help='Intentional UI changes must have dedicated replacement coverage')
+    args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     # Keep the measured noise allowance tightly bounded and geometry exact.
     blank=Image.new('RGB',(20,20));noise=blank.copy()
     for x in range(15):noise.putpixel((x,0),(1,1,1))
@@ -56,6 +58,7 @@ def main():
         browser=pw.chromium.launch()
         for width,lang,theme in MATRIX:
             for name,route in CASES.items():
+                if name in args.exclude_case: continue
                 c=browser.new_context(viewport={'width':width,'height':900},reduced_motion='reduce');c.route('https://**/*',lambda r:r.abort())
                 c.add_init_script(f"localStorage.setItem('projects-site-language','{lang}');localStorage.setItem('projects-roadmap-theme','{theme}');localStorage.setItem('kb_theme','{theme}')")
                 p=c.new_page();p.set_default_timeout(10000);errors=[];p.on('pageerror',lambda e:errors.append(str(e)))

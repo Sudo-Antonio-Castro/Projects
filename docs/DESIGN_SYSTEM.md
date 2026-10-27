@@ -1,5 +1,13 @@
 # Working with the Projects visual system
 
+Learning navigation uses compact course/module context across all 67 migrated
+modules and a native selector for the five existing courses. See the
+[navigation contract and evidence](ux-evidence/simplified-learning-navigation/README.md)
+for ownership, metadata generation, resume/history and fallback behavior.
+Do not restore folder-by-folder breadcrumbs or duplicate course selectors in
+individual modules. Navigation UI labels and lesson title labels use the local
+English/Spanish catalog; lesson prose remains semantic source HTML.
+
 Study modules now opt into `assets/study-layout.css` and `assets/study-layout.js`
 after shared theme/navigation assets. The reusable three-column shell, supported
 templates, responsive contract, reading-place memory and migration manifest are
